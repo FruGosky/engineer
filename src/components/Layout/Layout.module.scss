@@ -1,0 +1,30 @@
+$header-height: 56px;
+$footer-height: 28px;
+$main-height: calc(100svh - $header-height - $footer-height);
+
+.header {
+	position: relative;
+	height: $header-height;
+
+	& > * {
+		height: 100%;
+	}
+}
+
+.main {
+	position: relative;
+	height: $main-height;
+
+	& > * {
+		height: 100%;
+	}
+}
+
+.footer {
+	position: relative;
+	height: $footer-height;
+
+	& > * {
+		height: 100%;
+	}
+}
