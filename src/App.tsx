@@ -1,25 +1,54 @@
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Layout from './components/Layout/Layout';
+import { reducer as reducerV, initialState } from './reducer/reducer';
+import LoadingIcon from './components/LoadingIcon/LoadingIcon';
+import { ReducerContext } from './context/reducerContext';
+import { AuthContext } from './context/authContext';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 
 function App() {
+	const [state, dispatch] = useReducer(reducerV, initialState);
+
+	useEffect(() => {
+		setTimeout(() => {
+			dispatch({ type: 'set-loading', loading: false });
+		}, 1_000);
+	}, []);
+
 	return (
 		<div className="App">
-			<Layout
-				header={<Header />}
-				content={<></>}
-				footer={
-					<div
-						className="footer d-flex justify-content-center align-items-center"
-						style={{ backgroundColor: 'rgb(248,249,250)' }}
-					>
-						<span>
-							Page created by <strong>FruGosky</strong>
-						</span>
-					</div>
-				}
-			/>
+			<AuthContext.Provider
+				value={{
+					isAuthenticated: state.isAuthenticated,
+					login: () => dispatch({ type: 'login' }),
+					logout: () => dispatch({ type: 'logout' }),
+				}}
+			>
+				<ReducerContext.Provider
+					value={{
+						state: state,
+						dispatch: dispatch as React.Dispatch<any>,
+					}}
+				>
+					<Router>
+						<Layout
+							header={<Header />}
+							content={
+								state.loading ? (
+									<LoadingIcon />
+								) : (
+									<ContentRoutes />
+								)
+							}
+							footer={<Footer />}
+						/>
+					</Router>
+				</ReducerContext.Provider>
+			</AuthContext.Provider>
 		</div>
 	);
 }

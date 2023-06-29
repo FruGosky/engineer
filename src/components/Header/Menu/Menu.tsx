@@ -1,19 +1,8 @@
-import React from 'react';
 import styles from './Menu.module.scss';
-import Logo from '../Logo/Logo';
+import Logo from '../../Logo/Logo';
+import MenuItems from './MenuItems/MenuItems';
 
-interface IProps {
-	pages: IPages[];
-}
-
-interface IPages {
-	label: string;
-	path: string;
-}
-
-export default function Menu(props: IProps) {
-	const { pages } = props;
-
+export default function Menu() {
 	return (
 		<>
 			<button
@@ -48,25 +37,7 @@ export default function Menu(props: IProps) {
 				</div>
 				<div className="offcanvas-body">
 					<ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-						{pages.map((page: IPages) => {
-							const CURRENT_PATH = window.location.pathname;
-							const { label: PAGE_LABEL, path: PAGE_PATH } = page;
-
-							return (
-								<li className="nav-item">
-									<a
-										className={
-											PAGE_PATH === CURRENT_PATH
-												? 'nav-link active ps-1 border-start border-primary border-3'
-												: 'nav-link'
-										}
-										href={PAGE_PATH}
-									>
-										{PAGE_LABEL}
-									</a>
-								</li>
-							);
-						})}
+						<MenuItems />
 					</ul>
 				</div>
 			</div>
