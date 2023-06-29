@@ -11,7 +11,7 @@ export default function Home() {
 
 	return (
 		<div className="d-flex align-items-center justify-content-center text-light">
-			To jest strona Home
+			To jest strona Główna
 		</div>
 	);
 }
