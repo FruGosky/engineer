@@ -1,8 +1,10 @@
-import React from 'react';
 import styles from './NotFound404.module.scss';
 import sadSmile from '../../assets/iconmonstr-smiley-24.svg';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 
 export default function NotFound404() {
+	useWebsiteTitle('Error - 404');
+
 	return (
 		<div className="d-flex justify-content-center align-items-center flex-column text-danger">
 			<img

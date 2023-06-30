@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import useAuth from '../../hooks/useAuth';
 
-export const TITLE = 'Strona Główna';
-export const LINK = '/';
+export const TITLE = 'Mój Profil';
+export const LINK = '/profile';
 
-export default function Home() {
+export default function Profile() {
 	const [loading, setLoading] = useState(true);
+	const [auth, setAuth] = useAuth();
 
 	useWebsiteTitle(TITLE);
 
@@ -23,7 +25,7 @@ export default function Home() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center text-light">
-			To jest strona Główna
+			To jest strona Mojego Profilu
 		</div>
 	);
 }

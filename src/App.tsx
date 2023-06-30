@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Layout from './components/Layout/Layout';
-import { reducer as reducerV, initialState } from './reducer/reducer';
+import { reducer, initialState } from './reducer/reducer';
 import { ReducerContext } from './context/reducerContext';
 import { AuthContext } from './context/authContext';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -11,7 +11,7 @@ import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
 
 function App() {
-	const [state, dispatch] = useReducer(reducerV, initialState);
+	const [state, dispatch] = useReducer(reducer, initialState);
 
 	return (
 		<div className="App">

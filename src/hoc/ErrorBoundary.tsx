@@ -28,8 +28,6 @@ export default class ErrorBoundary extends Component<
 	// }
 
 	render() {
-		document.title = 'Error - 404';
-
 		if (this.state.hasError) {
 			return (
 				<div className="d-flex align-items-center justify-content-center">

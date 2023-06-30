@@ -9,10 +9,11 @@ import Exercises, {
 	LINK as EXERCISES_LINK,
 	TITLE as EXERCISES_TITLE,
 } from './Exercises/Exercises';
-import FoodExamples, {
-	LINK as FOOD_LINK,
-	TITLE as FOOD_TITLE,
-} from './Food/Food';
+import Food, { LINK as FOOD_LINK, TITLE as FOOD_TITLE } from './Food/Food';
+import Profile, {
+	LINK as PROFILE_LINK,
+	TITLE as PROFILE_TITLE,
+} from './Profile/Profile';
 
 type TPages = {
 	label: string;
@@ -20,7 +21,7 @@ type TPages = {
 	element: JSX.Element;
 };
 
-export const pages: TPages[] = [
+export const menuPages: TPages[] = [
 	{ label: HOME_TITLE, path: HOME_LINK, element: <Home /> },
 	{ label: BMI_TITLE, path: BMI_LINK, element: <Bmi /> },
 	{ label: BMR_TITLE, path: BMR_LINK, element: <Bmr /> },
@@ -29,6 +30,12 @@ export const pages: TPages[] = [
 	{
 		label: FOOD_TITLE,
 		path: FOOD_LINK,
-		element: <FoodExamples />,
+		element: <Food />,
 	},
 ];
+
+export const userIconPages: TPages[] = [
+	{ label: PROFILE_TITLE, path: PROFILE_LINK, element: <Profile /> },
+];
+
+export const pages: TPages[] = [...menuPages, ...userIconPages];
