@@ -10,11 +10,15 @@ import useAuth from '../../../hooks/useAuth';
 export default function UserIcon() {
 	const [auth, setAuth] = useAuth();
 
-	return !auth ? (
-		<button className="btn btn-primary" onClick={() => setAuth(true)}>
-			Zaloguj się
-		</button>
-	) : (
+	if (!auth) {
+		return (
+			<button className="btn btn-primary" onClick={() => setAuth(true)}>
+				Zaloguj się
+			</button>
+		);
+	}
+
+	return (
 		<div className="d-flex align-items-center gap-3">
 			<div className="dropdown">
 				<a
