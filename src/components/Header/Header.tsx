@@ -6,7 +6,7 @@ import { ReducerContext } from '../../context/reducerContext';
 
 export default function Header() {
 	const reducer = useContext(ReducerContext);
-	// reducer.dispatch({ type: 'set-loading', loading: false });
+
 	return (
 		<div>
 			<nav className="navbar bg-body-tertiary fixed-top">
@@ -38,7 +38,6 @@ export default function Header() {
 								Wyloguj się
 							</button>
 						)}
-						{/* <button className="btn btn-primary">Zaloguj się</button> */}
 					</div>
 				</div>
 			</nav>
