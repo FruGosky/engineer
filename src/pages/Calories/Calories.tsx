@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+
+export const TITLE = 'Kalorie';
+export const LINK = '/calories';
 
 export default function Calories() {
 	const [loading, setLoading] = useState(true);
+	useWebsiteTitle(TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {

@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+
+export const TITLE = 'Bmi';
+export const LINK = '/bmi';
 
 export default function Bmi() {
 	const [loading, setLoading] = useState(true);
+	useWebsiteTitle(TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {

@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 
-export default function FoodExamples() {
+export const TITLE = 'Jedzenie';
+export const LINK = '/food';
+
+export default function Food() {
 	const [loading, setLoading] = useState(true);
+	useWebsiteTitle(TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {

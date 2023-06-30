@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+
+export const TITLE = 'Strona Główna';
+export const LINK = '/';
 
 export default function Home() {
 	const [loading, setLoading] = useState(true);
+	useWebsiteTitle(TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -10,6 +15,8 @@ export default function Home() {
 		}, 1_000);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	// throw new Error('Problem z internetem');
 
 	return loading ? (
 		<LoadingIcon />

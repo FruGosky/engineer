@@ -8,6 +8,7 @@ import { AuthContext } from './context/authContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import ContentRoutes from './components/ContentRoutes/ContentRoutes';
+import ErrorBoundary from './hoc/ErrorBoundary';
 
 function App() {
 	const [state, dispatch] = useReducer(reducerV, initialState);
@@ -30,7 +31,11 @@ function App() {
 					<Router>
 						<Layout
 							header={<Header />}
-							content={<ContentRoutes />}
+							content={
+								<ErrorBoundary>
+									<ContentRoutes />
+								</ErrorBoundary>
+							}
 							footer={<Footer />}
 						/>
 					</Router>
