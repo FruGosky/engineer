@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { pages } from '../../../../pages/pages';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface IPages {
 	label: string;
@@ -15,17 +15,17 @@ export default function MenuItems() {
 
 		return (
 			<li className="nav-item" key={pageIndex}>
-				<Link
+				<NavLink
 					className={
 						PAGE_PATH === currentPath
-							? 'nav-link active ps-1 border-start border-primary border-3'
+							? 'nav-link ps-1 border-start border-primary border-3'
 							: 'nav-link'
 					}
 					to={PAGE_PATH}
 					onClick={() => setCurrentPath(PAGE_PATH)}
 				>
 					{PAGE_LABEL}
-				</Link>
+				</NavLink>
 			</li>
 		);
 	});

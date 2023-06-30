@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { pages } from '../../pages/pages';
+import NotFound404 from '../../pages/NotFound404/NotFound404';
 
 export default function ContentRoutes() {
 	return (
@@ -13,6 +14,7 @@ export default function ContentRoutes() {
 					/>
 				);
 			})}
+			<Route path={'*'} element={<NotFound404 />} />
 		</Routes>
 	);
 }
