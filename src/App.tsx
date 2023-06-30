@@ -38,11 +38,10 @@ function App() {
 						<Layout
 							header={<Header />}
 							content={
-								state.loading ? (
-									<LoadingIcon />
-								) : (
+								<>
 									<ContentRoutes />
-								)
+									{state.loading ? <LoadingIcon /> : null}
+								</>
 							}
 							footer={<Footer />}
 						/>

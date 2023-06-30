@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import Menu from './Menu/Menu';
 import Logo from '../Logo/Logo';
 import { ReducerContext } from '../../context/reducerContext';
-// import styles from './Header.module.scss';
 // import Searchbar from './Searchbar/Searchbar';
 
 export default function Header() {

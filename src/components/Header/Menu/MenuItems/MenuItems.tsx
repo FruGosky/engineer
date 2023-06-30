@@ -26,16 +26,6 @@ export default function MenuItems() {
 				>
 					{PAGE_LABEL}
 				</Link>
-				{/* <a
-                    className={
-                        PAGE_PATH === currentPath
-                            ? 'nav-link active ps-1 border-start border-primary border-3'
-                            : 'nav-link'
-                    }
-                    href={PAGE_PATH}
-                >
-                    {PAGE_LABEL}
-                </a> */}
 			</li>
 		);
 	});
