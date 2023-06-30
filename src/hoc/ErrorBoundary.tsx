@@ -1,5 +1,4 @@
 import { Component, ReactNode } from 'react';
-import { ErrorInfo } from 'react-dom/client';
 
 interface ErrorBoundaryProps {
 	children: ReactNode;
@@ -23,10 +22,10 @@ export default class ErrorBoundary extends Component<
 		return { hasError: true, error };
 	}
 
-	componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-		console.log(error);
-		console.log(errorInfo);
-	}
+	// componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+	// 	console.log(error);
+	// 	console.log(errorInfo);
+	// }
 
 	render() {
 		if (this.state.hasError) {
