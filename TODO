@@ -1,0 +1,6 @@
+Todo:
+  ☐ Fix - styles for header bcs its getting broken when users trying to use the page on small mobile phone
+
+  ☐ Delete - all 'to-be-deleted.this-is-page' translations from pages
+
+  ☐ Fix - logout user when he is trying to refresh the page

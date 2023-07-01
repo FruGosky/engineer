@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 
-export const TITLE = 'Mój Profil';
+export const TITLE = 'page.profile.title';
 export const LINK = '/profile';
 
 export default function Profile() {

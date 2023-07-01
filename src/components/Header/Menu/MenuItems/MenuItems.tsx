@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { menuPages } from '../../../../pages/pages';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface IPages {
 	label: string;
@@ -9,6 +10,7 @@ interface IPages {
 
 export default function MenuItems() {
 	const [currentPath, setCurrentPath] = useState(window.location.pathname);
+	const { t: translation } = useTranslation();
 
 	const menuItems = menuPages.map((page: IPages, pageIndex) => {
 		const { label: PAGE_LABEL, path: PAGE_PATH } = page;
@@ -24,7 +26,7 @@ export default function MenuItems() {
 					to={PAGE_PATH}
 					onClick={() => setCurrentPath(PAGE_PATH)}
 				>
-					{PAGE_LABEL}
+					{translation(PAGE_LABEL)}
 				</NavLink>
 			</li>
 		);

@@ -7,15 +7,16 @@ import {
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // import { test } from '../../../translations/translations';
-import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export default function UserIcon() {
 	const [auth, setAuth] = useAuth();
+	const { t: translation } = useTranslation();
 
 	if (!auth) {
 		return (
 			<button className="btn btn-primary" onClick={() => setAuth(true)}>
-				{i18next.t('login', { lng: 'pl' })}
+				{translation('common.login')}
 			</button>
 		);
 	}
@@ -39,7 +40,7 @@ export default function UserIcon() {
 				<ul className={`dropdown-menu ${styles.dropdownMenu}`}>
 					<li>
 						<Link className="dropdown-item" to={PROFILE_LINK}>
-							{PROFILE_TITLE}
+							{translation(PROFILE_TITLE)}
 						</Link>
 					</li>
 					<li>
@@ -50,7 +51,7 @@ export default function UserIcon() {
 							className="dropdown-item"
 							onClick={() => setAuth(false)}
 						>
-							Wyloguj się
+							{translation('common.logout')}
 						</button>
 					</li>
 				</ul>

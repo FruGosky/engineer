@@ -1,13 +1,20 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import { useTranslation } from 'react-i18next';
 
-export const TITLE = 'Kalorie';
+export const TITLE = 'page.calories.title';
 export const LINK = '/calories';
 
 export default function Calories() {
 	const [loading, setLoading] = useState(true);
-	useWebsiteTitle(TITLE);
+	const { t: translation } = useTranslation();
+
+	const TRANSLATED_TITLE = translation(TITLE);
+	// TODO! DELETE THIS TRANSLATION BELOW WHEN U WILL START ADDING SOME CONTENT TO THIS PAGE AND ADD YOURS TRANSLATION DO NOT FORGET TO ADD EN AND PL TRANSLATION NOT ONLY ONE ITS VERY VERY IMPORTANT TO HAVE ALL TRANSLATIONS
+	const THIS_IS_PAGE = translation('to-be-deleted.this-is-page');
+
+	useWebsiteTitle(TRANSLATED_TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -20,7 +27,7 @@ export default function Calories() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center text-light">
-			To jest strona Kalorii
+			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
 		</div>
 	);
 }

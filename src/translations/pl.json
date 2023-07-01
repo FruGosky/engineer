@@ -1,5 +1,40 @@
 {
 	"translation": {
-		"login": "zaloguj się"
+		"common": {
+			"login": "Zaloguj się",
+			"logout": "Wyloguj się",
+			"site-created-by": "Strona stworzona przez"
+		},
+		"page": {
+			"home": {
+				"title": "Strona główna"
+			},
+			"bmi": {
+				"title": "Bmi"
+			},
+			"bmr": {
+				"title": "Bmr"
+			},
+			"calories": {
+				"title": "Kalorie"
+			},
+			"exercises": {
+				"title": "Ćwiczenia"
+			},
+			"food": {
+				"title": "Jedzenie"
+			},
+			"profile": {
+				"title": "Profil"
+			},
+			"not-found-404": {
+				"title": "Error - 404",
+				"page-does-not-exist": "Strona której szukasz nie istnieje lub wystąpił inny błąd",
+				"try-going-to-home-page": "Spróbuj przejść na stronę główną"
+			}
+		},
+		"to-be-deleted": {
+			"this-is-page": "To jest strona"
+		}
 	}
 }

@@ -6,7 +6,7 @@ export default function Menu() {
 	return (
 		<>
 			<button
-				className="navbar-toggler"
+				className="navbar-toggler border-2"
 				type="button"
 				data-bs-toggle="offcanvas"
 				data-bs-target="#offcanvasNavbar"
