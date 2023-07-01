@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
+import './translations/translations';
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);

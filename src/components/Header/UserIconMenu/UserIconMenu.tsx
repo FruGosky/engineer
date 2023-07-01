@@ -6,6 +6,8 @@ import {
 } from '../../../pages/Profile/Profile';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+// import { test } from '../../../translations/translations';
+import i18next from 'i18next';
 
 export default function UserIcon() {
 	const [auth, setAuth] = useAuth();
@@ -13,7 +15,7 @@ export default function UserIcon() {
 	if (!auth) {
 		return (
 			<button className="btn btn-primary" onClick={() => setAuth(true)}>
-				Zaloguj się
+				{i18next.t('login', { lng: 'pl' })}
 			</button>
 		);
 	}
