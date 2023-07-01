@@ -1,19 +1,13 @@
-import Home, { LINK as HOME_LINK, TITLE as HOME_TITLE } from './Home/Home';
-import Bmi, { LINK as BMI_LINK, TITLE as BMI_TITLE } from './Bmi/Bmi';
-import Bmr, { LINK as BMR_LINK, TITLE as BMR_TITLE } from './Bmr/Bmr';
-import Calories, {
-	LINK as CALORIES_LINK,
-	TITLE as CALORIES_TITLE,
-} from './Calories/Calories';
+import Home, { HOME_LINK, HOME_TITLE } from './Home/Home';
+import Bmi, { BMI_LINK, BMI_TITLE } from './Bmi/Bmi';
+import Bmr, { BMR_LINK, BMR_TITLE } from './Bmr/Bmr';
+import Calories, { CALORIES_LINK, CALORIES_TITLE } from './Calories/Calories';
 import Exercises, {
-	LINK as EXERCISES_LINK,
-	TITLE as EXERCISES_TITLE,
+	EXERCISES_LINK,
+	EXERCISES_TITLE,
 } from './Exercises/Exercises';
-import Food, { LINK as FOOD_LINK, TITLE as FOOD_TITLE } from './Food/Food';
-import Profile, {
-	LINK as PROFILE_LINK,
-	TITLE as PROFILE_TITLE,
-} from './Profile/Profile';
+import Food, { FOOD_LINK, FOOD_TITLE } from './Food/Food';
+import Profile, { PROFILE_LINK, PROFILE_TITLE } from './Profile/Profile';
 
 type TPages = {
 	label: string;

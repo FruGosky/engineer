@@ -3,13 +3,13 @@ import sadSmile from '../../assets/iconmonstr-smiley-24.svg';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { LINK as HOME_LINK, TITLE as HOME_TITLE } from '../Home/Home';
+import { HOME_LINK, HOME_TITLE } from '../Home/Home';
 
-export const TITLE = 'page.not-found-404.title';
+export const NOT_FOUND_404_TITLE = 'page.not-found-404.title';
 
 export default function NotFound404() {
 	const { t: translation } = useTranslation();
-	const TRANSLATED_TITLE = translation(TITLE);
+	const TRANSLATED_TITLE = translation(NOT_FOUND_404_TITLE);
 	const PAGE_DOES_NOT_EXIST = translation(
 		'page.not-found-404.page-does-not-exist'
 	);

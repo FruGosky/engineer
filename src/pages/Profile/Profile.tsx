@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 
-export const TITLE = 'page.profile.title';
-export const LINK = '/profile';
+export const PROFILE_TITLE = 'page.profile.title';
+export const PROFILE_LINK = '/profile';
 
 export default function Profile() {
 	const [loading, setLoading] = useState(true);
 
-	useWebsiteTitle(TITLE);
+	useWebsiteTitle(PROFILE_TITLE);
 
 	useEffect(() => {
 		setTimeout(() => {

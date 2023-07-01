@@ -3,14 +3,14 @@ import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 
-export const TITLE = 'page.home.title';
-export const LINK = '/';
+export const HOME_TITLE = 'page.home.title';
+export const HOME_LINK = '/';
 
 export default function Home() {
 	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_TITLE = translation(TITLE);
+	const TRANSLATED_TITLE = translation(HOME_TITLE);
 	// TODO! DELETE THIS TRANSLATION BELOW WHEN U WILL START ADDING SOME CONTENT TO THIS PAGE AND ADD YOURS TRANSLATION DO NOT FORGET TO ADD EN AND PL TRANSLATION NOT ONLY ONE ITS VERY VERY IMPORTANT TO HAVE ALL TRANSLATIONS
 	const THIS_IS_PAGE = translation('to-be-deleted.this-is-page');
 
