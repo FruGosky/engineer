@@ -6,3 +6,5 @@ Todo:
   ☐ Fix - logout user when he is trying to refresh the page
 
   ☐ Fix - change css variables to scss variables in bootstrap
+
+  ☐ Future(optional) - login and register from firebase backend
