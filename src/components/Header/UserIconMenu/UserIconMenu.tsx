@@ -1,9 +1,6 @@
 import userIcon from '../../../assets/iconmonstr-user-20.svg';
 import styles from './UserIconMenu.module.scss';
-import {
-	LINK as PROFILE_LINK,
-	TITLE as PROFILE_TITLE,
-} from '../../../pages/Profile/Profile';
+import { PROFILE_LINK, PROFILE_TITLE } from '../../../pages/Profile/Profile';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // import { test } from '../../../translations/translations';

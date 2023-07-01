@@ -3,7 +3,9 @@
 		"common": {
 			"login": "Zaloguj się",
 			"logout": "Wyloguj się",
-			"site-created-by": "Strona stworzona przez"
+			"site-created-by": "Strona stworzona przez",
+			"issue-has-occurred": "Wystąpił jakiś problem",
+			"internet-problem": "Problem z internetem"
 		},
 		"page": {
 			"home": {

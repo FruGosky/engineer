@@ -1,5 +1,5 @@
 import { Route, Navigate } from 'react-router-dom';
-import { LINK as HOME_LINK } from '../pages/Home/Home';
+import { HOME_LINK } from '../pages/Home/Home';
 import useAuth from '../hooks/useAuth';
 
 export default function AuthenticatedRoute(props: any) {

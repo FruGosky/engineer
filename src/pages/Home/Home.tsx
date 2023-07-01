@@ -23,7 +23,7 @@ export default function Home() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// throw new Error('Problem z internetem');
+	// throw new Error('common.internet-problem');
 
 	return loading ? (
 		<LoadingIcon />

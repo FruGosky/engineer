@@ -1,6 +1,7 @@
 import { Component, ReactNode } from 'react';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
-interface ErrorBoundaryProps {
+interface ErrorBoundaryProps extends WithTranslation {
 	children: ReactNode;
 }
 
@@ -9,10 +10,7 @@ interface ErrorBoundaryState {
 	error: Error | null;
 }
 
-export default class ErrorBoundary extends Component<
-	ErrorBoundaryProps,
-	ErrorBoundaryState
-> {
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 	state: ErrorBoundaryState = {
 		hasError: false,
 		error: null,
@@ -22,17 +20,16 @@ export default class ErrorBoundary extends Component<
 		return { hasError: true, error };
 	}
 
-	// componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-	// 	console.log(error);
-	// 	console.log(errorInfo);
-	// }
-
 	render() {
+		const { t: translation } = this.props;
+
 		if (this.state.hasError) {
 			return (
 				<div className="d-flex align-items-center justify-content-center">
 					<div className="alert alert-danger w-auto h-auto">
-						Wystąpił jakiś problem: {this.state.error?.message}
+						{`${translation(
+							'common.issue-has-occurred'
+						)}: ${translation(`${this.state.error?.message}`)}`}
 					</div>
 				</div>
 			);
@@ -40,3 +37,5 @@ export default class ErrorBoundary extends Component<
 		return this.props.children;
 	}
 }
+
+export default withTranslation()(ErrorBoundary);
