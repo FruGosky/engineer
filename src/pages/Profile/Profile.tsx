@@ -17,8 +17,6 @@ export default function Profile() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// throw new Error('Problem z internetem');
-
 	return loading ? (
 		<LoadingIcon />
 	) : (
