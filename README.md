@@ -1,6 +1,6 @@
 # Page creators
 
-The page was created by FruGosky, {2}, {3} .
+The page was created by FruGosky.
 
 ## Scripts
 
