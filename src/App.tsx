@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Layout from './components/Layout/Layout';
@@ -10,12 +10,18 @@ import Footer from './components/Footer/Footer';
 import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
 import './translations/translations';
+import { ThemeContext, TTheme } from './context/themeContext';
 
-function App() {
+export default function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
+	const localTheme = localStorage.getItem('theme');
+	const localThemeColor =
+		(localTheme === 'dark' ? 'dark' : 'light') ?? 'light';
+	const [theme, setTheme] = useState<TTheme>(localThemeColor);
+
 	return (
-		<div className="App">
+		<div className={`App bg-body bs-text-${theme}`} data-bs-theme={theme}>
 			<AuthContext.Provider
 				value={{
 					isAuthenticated: state.isAuthenticated,
@@ -29,21 +35,21 @@ function App() {
 						dispatch: dispatch as React.Dispatch<any>,
 					}}
 				>
-					<Router>
-						<Layout
-							header={<Header />}
-							content={
-								<ErrorBoundary>
-									<ContentRoutes />
-								</ErrorBoundary>
-							}
-							footer={<Footer />}
-						/>
-					</Router>
+					<ThemeContext.Provider value={[theme, setTheme]}>
+						<Router>
+							<Layout
+								header={<Header />}
+								content={
+									<ErrorBoundary>
+										<ContentRoutes />
+									</ErrorBoundary>
+								}
+								footer={<Footer />}
+							/>
+						</Router>
+					</ThemeContext.Provider>
 				</ReducerContext.Provider>
 			</AuthContext.Provider>
 		</div>
 	);
 }
-
-export default App;

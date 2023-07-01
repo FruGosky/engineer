@@ -3,7 +3,7 @@ interface IProps {
 }
 
 export default function Logo(props: IProps) {
-	const { className } = props;
+	const { className = '' } = props;
 
 	return (
 		// const { className } = props;

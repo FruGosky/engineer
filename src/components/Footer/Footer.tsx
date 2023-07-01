@@ -6,7 +6,9 @@ export default function Footer() {
 	const SITE_CREATED_BY = translation('common.site-created-by');
 
 	return (
-		<div className="footer d-flex justify-content-center align-items-center bg-light">
+		<div
+			className={`footer d-flex justify-content-center align-items-center bg-body-tertiary text-secondary`}
+		>
 			<span>{`${SITE_CREATED_BY} ${creators.join(', ')}.`}</span>
 		</div>
 	);

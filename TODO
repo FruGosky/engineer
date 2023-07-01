@@ -4,3 +4,5 @@ Todo:
   ☐ Delete - all 'to-be-deleted.this-is-page' translations from pages
 
   ☐ Fix - logout user when he is trying to refresh the page
+
+  ☐ Fix - change css variables to scss variables in bootstrap

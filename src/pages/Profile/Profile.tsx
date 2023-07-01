@@ -26,7 +26,7 @@ export default function Profile() {
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div className="d-flex align-items-center justify-content-center text-light">
+		<div className="d-flex align-items-center justify-content-center">
 			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
 		</div>
 	);
