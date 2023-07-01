@@ -5,7 +5,10 @@
 			"logout": "Logout",
 			"site-created-by": "Site created by",
 			"issue-has-occurred": "An issue has occurred",
-			"internet-problem": "Internet problem"
+			"internet-problem": "Internet problem",
+			"search": "Search",
+			"loading": "Loading",
+			"there-is-no-such-action": "There is no such action"
 		},
 		"page": {
 			"home": {

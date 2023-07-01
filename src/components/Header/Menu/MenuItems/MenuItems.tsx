@@ -14,6 +14,7 @@ export default function MenuItems() {
 
 	const menuItems = menuPages.map((page: IPages, pageIndex) => {
 		const { label: PAGE_LABEL, path: PAGE_PATH } = page;
+		const PAGE_LABEL_TRANSLATED = translation(PAGE_LABEL);
 
 		return (
 			<li className="nav-item" key={pageIndex}>
@@ -26,7 +27,7 @@ export default function MenuItems() {
 					to={PAGE_PATH}
 					onClick={() => setCurrentPath(PAGE_PATH)}
 				>
-					{translation(PAGE_LABEL)}
+					{PAGE_LABEL_TRANSLATED}
 				</NavLink>
 			</li>
 		);

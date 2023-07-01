@@ -9,11 +9,14 @@ import { useTranslation } from 'react-i18next';
 export default function UserIcon() {
 	const [auth, setAuth] = useAuth();
 	const { t: translation } = useTranslation();
+	const LOGIN = translation('common.login');
+	const LOGOUT = translation('common.logout');
+	const PROFILE_TITLE_TRANSLATED = translation(PROFILE_TITLE);
 
 	if (!auth) {
 		return (
 			<button className="btn btn-primary" onClick={() => setAuth(true)}>
-				{translation('common.login')}
+				{LOGIN}
 			</button>
 		);
 	}
@@ -37,7 +40,7 @@ export default function UserIcon() {
 				<ul className={`dropdown-menu ${styles.dropdownMenu}`}>
 					<li>
 						<Link className="dropdown-item" to={PROFILE_LINK}>
-							{translation(PROFILE_TITLE)}
+							{PROFILE_TITLE_TRANSLATED}
 						</Link>
 					</li>
 					<li>
@@ -48,7 +51,7 @@ export default function UserIcon() {
 							className="dropdown-item"
 							onClick={() => setAuth(false)}
 						>
-							{translation('common.logout')}
+							{LOGOUT}
 						</button>
 					</li>
 				</ul>

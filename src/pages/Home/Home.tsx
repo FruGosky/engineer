@@ -24,6 +24,9 @@ export default function Home() {
 	}, []);
 
 	// throw new Error('common.internet-problem');
+	// throw Object.assign(new Error('common.there-is-no-such-action'), {
+	// 	code: 'nudy',
+	// });
 
 	return loading ? (
 		<LoadingIcon />

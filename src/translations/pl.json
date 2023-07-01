@@ -5,7 +5,10 @@
 			"logout": "Wyloguj się",
 			"site-created-by": "Strona stworzona przez",
 			"issue-has-occurred": "Wystąpił jakiś problem",
-			"internet-problem": "Problem z internetem"
+			"internet-problem": "Problem z internetem",
+			"search": "Szukaj",
+			"loading": "Ładowanie",
+			"there-is-no-such-action": "Nie ma takiej akcji"
 		},
 		"page": {
 			"home": {

@@ -9,6 +9,8 @@ export const reducer = (state: any, action: any) => {
 		case 'logout':
 			return { ...state, isAuthenticated: false };
 		default:
-			throw new Error(`Nie ma takiej akcji: ${action.type}`);
+			throw Object.assign(new Error('common.there-is-no-such-action'), {
+				code: action.type,
+			});
 	}
 };
