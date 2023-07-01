@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
-import useAuth from '../../hooks/useAuth';
 
 export const TITLE = 'Mój Profil';
 export const LINK = '/profile';
 
 export default function Profile() {
 	const [loading, setLoading] = useState(true);
-	const [auth, setAuth] = useAuth();
 
 	useWebsiteTitle(TITLE);
 
