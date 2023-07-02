@@ -14,7 +14,7 @@ export default function ThemeSwitcher() {
 					type="checkbox"
 					role="switch"
 					checked={isThemeDark}
-					onClick={() => {
+					onChange={() => {
 						setTheme(oppositeThemeName);
 						localStorage.setItem('theme', oppositeThemeName);
 					}}
