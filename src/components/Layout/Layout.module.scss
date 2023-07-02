@@ -9,6 +9,10 @@ $main-height: calc(100svh - $header-height - $footer-height);
 	& > * {
 		height: 100%;
 	}
+	@media (max-width: 575px) {
+		height: 106px;
+		$main-height: calc(100svh - $header-height - $footer-height);
+	}
 }
 
 .main {
@@ -16,7 +20,13 @@ $main-height: calc(100svh - $header-height - $footer-height);
 	height: $main-height;
 
 	& > * {
-		height: 100%;
+		min-height: 100%;
+		max-width: 100svw;
+		// TODO! THIS LINE BELOW IS TEMPORARY AND CAN BE DELETED (IF U WILL DELETE DONT FORGOT TO CHECK OTHER PAGES!!)
+		flex-wrap: wrap;
+	}
+	@media (max-width: 575px) {
+		height: calc(100svh - 106px - $footer-height);
 	}
 }
 

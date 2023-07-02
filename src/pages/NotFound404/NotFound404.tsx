@@ -21,22 +21,20 @@ export default function NotFound404() {
 	useWebsiteTitle(TRANSLATED_TITLE);
 
 	return (
-		<div className="container-fluid">
-			<div className="d-flex justify-content-center align-items-center flex-column text-danger h-100 text-center">
-				<img
-					src={sadSmile}
-					alt="sad smile"
-					className={`w-25 mb-4 ${styles.icon}`}
-				/>
+		<div className="d-flex justify-content-center align-items-center flex-column text-danger h-100 text-center">
+			<img
+				src={sadSmile}
+				alt="sad smile"
+				className={`w-25 mb-4 ${styles.icon}`}
+			/>
 
-				<h2>{TRANSLATED_TITLE}</h2>
-				<p>{`${PAGE_DOES_NOT_EXIST}.`}</p>
-				<p>{`${TRY_GOING_TO_HOME_PAGE}.`}</p>
+			<h2>{TRANSLATED_TITLE}</h2>
+			<p>{`${PAGE_DOES_NOT_EXIST}.`}</p>
+			<p>{`${TRY_GOING_TO_HOME_PAGE}.`}</p>
 
-				<Link to={HOME_LINK} className="btn btn-primary">
-					{TRANSLATED_HOME_TITLE}
-				</Link>
-			</div>
+			<Link to={HOME_LINK} className="btn btn-primary">
+				{TRANSLATED_HOME_TITLE}
+			</Link>
 		</div>
 	);
 }

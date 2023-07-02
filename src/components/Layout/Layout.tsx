@@ -12,9 +12,23 @@ export default function Layout(props: IProps) {
 
 	return (
 		<>
-			{header && <header className={styles.header}>{header}</header>}
-			{content && <main className={styles.main}>{content}</main>}
-			{footer && <footer className={styles.footer}>{footer}</footer>}
+			{header && (
+				<header className={`${styles.header} sticky-top`}>
+					{header}
+				</header>
+			)}
+			{content && (
+				<main
+					className={`${styles.main} overflow-y-scroll container-fluid`}
+				>
+					{content}
+				</main>
+			)}
+			{footer && (
+				<footer className={`${styles.footer} fixed-bottom`}>
+					{footer}
+				</footer>
+			)}
 		</>
 	);
 }
