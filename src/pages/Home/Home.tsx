@@ -31,10 +31,7 @@ export default function Home() {
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div
-			className="d-flex align-items-center justify-content-center"
-			data-bs-theme="dark"
-		>
+		<div className="d-flex align-items-center justify-content-center">
 			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
 		</div>
 	);
