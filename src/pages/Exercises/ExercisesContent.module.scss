@@ -1,0 +1,14 @@
+.exercises_content {
+  width: 100%;
+  height: 100%;
+  margin-top: 6rem;
+  scroll-behavior: smooth;
+}
+.training_plan_section {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 600px; //potem to zmienic
+}

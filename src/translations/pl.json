@@ -1,45 +1,59 @@
 {
-	"translation": {
-		"common": {
-			"login": "Zaloguj się",
-			"logout": "Wyloguj się",
-			"site-created-by": "Strona stworzona przez",
-			"issue-has-occurred": "Wystąpił jakiś problem",
-			"internet-problem": "Problem z internetem",
-			"search": "Szukaj",
-			"loading": "Ładowanie",
-			"there-is-no-such-action": "Nie ma takiej akcji"
-		},
-		"page": {
-			"home": {
-				"title": "Strona główna"
-			},
-			"bmi": {
-				"title": "Bmi"
-			},
-			"bmr": {
-				"title": "Bmr"
-			},
-			"calories": {
-				"title": "Kalorie"
-			},
-			"exercises": {
-				"title": "Ćwiczenia"
-			},
-			"food": {
-				"title": "Jedzenie"
-			},
-			"profile": {
-				"title": "Profil"
-			},
-			"not-found-404": {
-				"title": "Error - 404",
-				"page-does-not-exist": "Strona której szukasz nie istnieje lub wystąpił inny błąd",
-				"try-going-to-home-page": "Spróbuj przejść na stronę główną"
-			}
-		},
-		"to-be-deleted": {
-			"this-is-page": "To jest strona"
-		}
-	}
+  "translation": {
+    "common": {
+      "login": "Zaloguj się",
+      "logout": "Wyloguj się",
+      "site-created-by": "Strona stworzona przez",
+      "issue-has-occurred": "Wystąpił jakiś problem",
+      "internet-problem": "Problem z internetem",
+      "search": "Szukaj",
+      "loading": "Ładowanie",
+      "there-is-no-such-action": "Nie ma takiej akcji"
+    },
+    "page": {
+      "home": {
+        "title": "Strona główna"
+      },
+      "bmi": {
+        "title": "Bmi"
+      },
+      "bmr": {
+        "title": "Bmr"
+      },
+      "calories": {
+        "title": "Kalorie"
+      },
+      "exercises": {
+        "title": "Ćwiczenia"
+      },
+      "food": {
+        "title": "Jedzenie"
+      },
+      "profile": {
+        "title": "Profil"
+      },
+      "not-found-404": {
+        "title": "Error - 404",
+        "page-does-not-exist": "Strona której szukasz nie istnieje lub wystąpił inny błąd",
+        "try-going-to-home-page": "Spróbuj przejść na stronę główną"
+      }
+    },
+    "to-be-deleted": {
+      "this-is-page": "To jest strona"
+    },
+    "main-page-card": {
+      "plan-card": {
+        "header": "Plany treningowe",
+        "description": "Wybierz poziom zaawansowania",
+        "btn-1": "Początkujący",
+        "btn-2": "Średniozaawansowany"
+      },
+      "exercises-description-card": {
+        "header": "Opis ćwiczeń",
+        "description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
+        "btn-1": "ćwiczenia dla początkujących",
+        "btn-2": "ćwiczenia dla średnozaawansowanych"
+      }
+    }
+  }
 }

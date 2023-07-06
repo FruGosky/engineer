@@ -1,45 +1,59 @@
 {
-	"translation": {
-		"common": {
-			"login": "Login",
-			"logout": "Logout",
-			"site-created-by": "Site created by",
-			"issue-has-occurred": "An issue has occurred",
-			"internet-problem": "Internet problem",
-			"search": "Search",
-			"loading": "Loading",
-			"there-is-no-such-action": "There is no such action"
-		},
-		"page": {
-			"home": {
-				"title": "Home"
-			},
-			"bmi": {
-				"title": "Bmi"
-			},
-			"bmr": {
-				"title": "Bmr"
-			},
-			"calories": {
-				"title": "Calories"
-			},
-			"exercises": {
-				"title": "Exercises"
-			},
-			"food": {
-				"title": "Food"
-			},
-			"profile": {
-				"title": "Profile"
-			},
-			"not-found-404": {
-				"title": "Error - 404",
-				"page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
-				"try-going-to-home-page": "Try going to the home page"
-			}
-		},
-		"to-be-deleted": {
-			"this-is-page": "This is page"
-		}
-	}
+  "translation": {
+    "common": {
+      "login": "Login",
+      "logout": "Logout",
+      "site-created-by": "Site created by",
+      "issue-has-occurred": "An issue has occurred",
+      "internet-problem": "Internet problem",
+      "search": "Search",
+      "loading": "Loading",
+      "there-is-no-such-action": "There is no such action"
+    },
+    "page": {
+      "home": {
+        "title": "Home"
+      },
+      "bmi": {
+        "title": "Bmi"
+      },
+      "bmr": {
+        "title": "Bmr"
+      },
+      "calories": {
+        "title": "Calories"
+      },
+      "exercises": {
+        "title": "Exercises"
+      },
+      "food": {
+        "title": "Food"
+      },
+      "profile": {
+        "title": "Profile"
+      },
+      "not-found-404": {
+        "title": "Error - 404",
+        "page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
+        "try-going-to-home-page": "Try going to the home page"
+      }
+    },
+    "to-be-deleted": {
+      "this-is-page": "This is page"
+    },
+    "main-page-card": {
+      "plan-card": {
+        "header": "Training plans",
+        "description": "Choose your skill level",
+        "btn-1": "Beginner",
+        "btn-2": "Intermediate"
+      },
+      "exercises-description-card": {
+        "header": "Description of exercises",
+        "description": "Below you will find exercises, that are used in training plans",
+        "btn-1": "Exercises for beginners",
+        "btn-2": "Exercises for intermediate"
+      }
+    }
+  }
 }

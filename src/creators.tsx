@@ -1,1 +1,1 @@
-export const creators: string[] = ['FruGosky'];
+export const creators: string[] = ["FruGosky", "Filip Kocima"];
