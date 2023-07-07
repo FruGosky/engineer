@@ -4,24 +4,26 @@ import useWebsiteTitle from "../../hooks/useWebsiteTitle";
 import { useTranslation } from "react-i18next";
 import MainPageCard from "./components/MainPageCard";
 import styles from "./ExercisesContent.module.scss";
-import PlanForBegginers from "./ExerciseSubPages/PlanForBegginers";
+import PlanForBegginersWoman from "./content/PlanForBeginnersWoman";
+import PlanForBegginersMan from "./content/PlanForBeginnersMan";
 
 export const EXERCISES_TITLE = "page.exercises.title";
 export const EXERCISES_LINK = "/exercises";
 
-export const PLAN_CARD_HEADER = "main-page-card.plan-card.header";
-export const PLAN_CARD_DESCRIPTION = "main-page-card.plan-card.description";
-export const PLAN_CARD_BTN1 = "main-page-card.plan-card.btn-1";
-export const PLAN_CARD_BTN2 = "main-page-card.plan-card.btn-2";
+export const PLAN_CARD_HEADER = "exercises-main-page-card.plan-card.header";
+export const PLAN_CARD_DESCRIPTION =
+  "exercises-main-page-card.plan-card.description";
+export const PLAN_CARD_BTN1 = "exercises-main-page-card.plan-card.btn-1";
+export const PLAN_CARD_BTN2 = "exercises-main-page-card.plan-card.btn-2";
 
 export const EXERCISE_DESCRIPTION_CARD_HEADER =
-  "main-page-card.exercises-description-card.header";
+  "exercises-main-page-card.exercises-description-card.header";
 export const EXERCISE_DESCRIPTION_CARD_DESCRIPTION =
-  "main-page-card.exercises-description-card.description";
+  "exercises-main-page-card.exercises-description-card.description";
 export const EXERCISE_DESCRIPTION_CARD_BTN1 =
-  "main-page-card.exercises-description-card.btn-1";
+  "exercises-main-page-card.exercises-description-card.btn-1";
 export const EXERCISE_DESCRIPTION_CARD_BTN2 =
-  "main-page-card.exercises-description-card.btn-2";
+  "exercises-main-page-card.exercises-description-card.btn-2";
 
 export default function Exercises() {
   const [loading, setLoading] = useState(true);
@@ -54,13 +56,13 @@ export default function Exercises() {
     }, 1_000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  //TODO! translate PlanForBegginersMan
   return loading ? (
     <LoadingIcon />
   ) : (
-    <div className={`${styles.exercises_content}`}>
-      <section id="main-card-page-section">
-        <div className="d-flex align-items-center justify-content-center flex-column">
+    <div>
+      <div className={`${styles.exercises_main_content} `}>
+        <section className="header_section" id="main-card-page-section">
           <MainPageCard
             header={TRANSLATED_PLAN_CARD_HEADER}
             description={TRANSLATED_PLAN_CARD_DESCRIPTION}
@@ -77,15 +79,20 @@ export default function Exercises() {
             bHref="#beginner-exercises-section"
             iHref="#beginner-exercises-section"
           />
-        </div>
+        </section>
+      </div>
+
+      <section
+        id="beginner-plan-section"
+        className={`${styles.training_plan_section} ${styles.section_clip_path} border-top d-flex align-items-center justify-content-center`}
+      >
+        <PlanForBegginersWoman />
       </section>
       <section
         id="beginner-plan-section"
-        className={`${styles.training_plan_section}`}
+        className={`${styles.training_plan_section} ${styles.section_clip_path} border-top d-flex align-items-center justify-content-center`}
       >
-        Training plans -
-        <div className=""> beginner section - table for man and woman</div>
-        <PlanForBegginers />
+        <PlanForBegginersMan />
       </section>
       <section
         id="intermediate-plan-section"
@@ -108,7 +115,7 @@ export default function Exercises() {
       </section>
       <section
         id="intermediate-exercises-section"
-        className={`${styles.training_plan_section}`}
+        className={`${styles.training_plan_section} secondary_section`}
       >
         Training plans -
         <div className="">

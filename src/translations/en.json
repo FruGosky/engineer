@@ -41,7 +41,7 @@
     "to-be-deleted": {
       "this-is-page": "This is page"
     },
-    "main-page-card": {
+    "exercises-main-page-card": {
       "plan-card": {
         "header": "Training plans",
         "description": "Choose your skill level",
@@ -54,6 +54,28 @@
         "btn-1": "Exercises for beginners",
         "btn-2": "Exercises for intermediate"
       }
+    },
+    "exercises-beginners-plan": {
+      "women": "Women",
+      "men": "Men",
+      "training": "Training",
+      "squats": "Squats",
+      "bench-press": "Bench press",
+      "rowing": "Rowing",
+      "side-raises": "Side rises",
+      "cable-crunch": "Cable crunch",
+      "calves": "Calves",
+      "classic-deadlift": "Classic deadlift",
+      "military-press": "Military press",
+      "close-grip-chin-ups": "Close grip chin ups",
+      "barbell-reverse-lunge": "Barbell reverse lunge",
+      "abductors": "Abductors",
+      "plank": "Plank",
+      "narrow-bench-press": "Narrow bench press",
+      "we-execute-plan-as-follows": "We execute plan as follows",
+      "monday": "Monday",
+      "wednesday": "Wednesday",
+      "friday": "Friday"
     }
   }
 }

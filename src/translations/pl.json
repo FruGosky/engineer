@@ -41,7 +41,7 @@
     "to-be-deleted": {
       "this-is-page": "To jest strona"
     },
-    "main-page-card": {
+    "exercises-main-page-card": {
       "plan-card": {
         "header": "Plany treningowe",
         "description": "Wybierz poziom zaawansowania",
@@ -54,6 +54,28 @@
         "btn-1": "ćwiczenia dla początkujących",
         "btn-2": "ćwiczenia dla średnozaawansowanych"
       }
+    },
+    "exercises-beginners-plan": {
+      "women": "Kobiety",
+      "men": "Mężczyźni",
+      "training": "Trening",
+      "squats": "Przysiady",
+      "bench-press": "Wyciskanie leżąc",
+      "rowing": "Wiosłowanie",
+      "side-raises": "Wznosy bokiem",
+      "cable-crunch": "Allahy",
+      "calves": "Łydki",
+      "classic-deadlift": "Martwy ciąg klasyczny",
+      "military-press": "Wyciskanie żołnierskie",
+      "close-grip-chin-ups": "Podciąganie wąsko",
+      "barbell-reverse-lunge": "Zakroki",
+      "abductors": "Odwodziciele",
+      "plank": "Deska",
+      "narrow-bench-press": "Wyciskanie wąsko",
+      "we-execute-plan-as-follows": "Plan wykonujemy następująco",
+      "monday": "Poniedziałek",
+      "wednesday": "Środa",
+      "friday": "Piątek"
     }
   }
 }
