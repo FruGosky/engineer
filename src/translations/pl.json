@@ -24,7 +24,95 @@
         "title": "Kalorie"
       },
       "exercises": {
-        "title": "Ćwiczenia"
+        "title": "Ćwiczenia",
+        "exercises-main-page-card": {
+          "plan-card": {
+            "header": "Plany treningowe",
+            "description": "Wybierz poziom zaawansowania",
+            "btn-1": "Początkujący",
+            "btn-2": "Średniozaawansowany"
+          },
+          "exercises-description-card": {
+            "header": "Opis ćwiczeń",
+            "description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
+            "btn-1": "ćwiczenia dla początkujących",
+            "btn-2": "ćwiczenia dla średnozaawansowanych"
+          }
+        },
+        "exercises-beginners-plan": {
+          "women": "Kobiety",
+          "men": "Mężczyźni",
+          "training": "Trening",
+          "squats": {
+            "title": "Przysiady",
+            "description": "Stopy ustawiamy równolegle i wąsko na szerokość bioder. Biodra – blokujemy tułów poprzez połączenie napięć brzuch-pośladki. Następnie przechodzimy do łopatek – ruchem zegarowym wprowadzamy je w depresję oraz retrakcję. Szerokość chwytu sztangi determinuje nasza mobilność w barkach - im węziej będziemy w stanie złapać tym stabilniej będziemy trzymać sztangę. Głowa jest przedłużeniem kręgosłupa – nie przechylamy jej ani w górę ani w dół. Sztangę ściągamy ze stojaka w pozycji przysiadu, po ściągnięciu sztangi odchodzimy 2-3 kroki w tył żeby znaleźć się w bezpieczniej odległości od stojaka, następnie napinamy nasze ciało od stóp do ramion i rozpoczynamy przysiad. Zasada jest taka, że schodzimy równomiernie z kolana i biodra zachowując pionową pozycję tułowia. Ważne aby nasze kolana nie zapadały się do środka względem stopy. Przysiad wykonujemy na tyle głęboki na ile pozwala nam nasza budowa – staramy się zejść do pozycji, w której uda są ułożone równolegle z podłogą. Po każdym przysiadzie należy zablokować u góry ruch pośladkami oraz cały czas utrzymywać napięty brzuch.",
+            "link": "http://youtu.be/NEduXlZ8zSk"
+          },
+          "bench-press": {
+            "title": "Wyciskanie leżąc",
+            "description": "Zaczynając od stóp – trzymamy je jak najbliżej naszego ciała, wąsko i  blisko bioder. Kolana kierujemy do zewnątrz. Pośladki utrzymujemy w maksymalnym napięciu, te elementy zapewnią stabilizację dolnej części ciała. Następną rzeczą, na która należy zwrócić uwagę jest napięcie brzucha. Spięcie brzucha i pośladków ustawia naszą miednice w stabilnej pozycji. Następnie przechodzimy do ustawienia łopatek w retrakcji i depresji – to znaczy cofamy łopatki i opuszczamy. Żeby znaleźć optymalną szerokość chwytu sztangi należy szukać tzw. Szerokości biokramicznej – mierzymy odległość od wyrostków barkowych i mnożymy ją przez 1,5. Wynik to odległość na którą powinny być rozstawione palce wskazujące. Gryf powinniśmy trzymać w sposób klasyczny – z zamkniętym kciukiem. Ramię względem tułowia powinno być ustawione pod kątem między 45° a 70°. Po wyniesieniu sztangi nad głowę należy wykonać rotacje wewnętrzną tak jakbyśmy chcieli złamać sztangę. Sztangę należy prowadzić w taki sposób aby łokieć podczas całego ruchu znajdował się pod nadgarstkiem. Na koniec oddech – bierzemy głęboki oddech przed powtórzeniem, kiedy sztanga jest nad barkami, następnie wykonujemy cały ruch i dopiero kiedy sztanga ponownie znajdzie się nad barkami wykonujemy wydech.",
+            "link": "http://youtu.be/bbGuHx07EDc"
+          },
+          "rowing": {
+            "title": "Wiosłowanie",
+            "description": "Zaczynamy od ustawienia nóg – stajemy w pozycji dla nas najbardziej stabilnej – tak aby stopy były równolegle do siebie ułożone. Nogi wraz z torsem trzymamy w pełnym napięciu tj. spięte pośladki, brzuch, łopatki w retrakcji oraz depresji a głowa jest przedłużeniem tułowia. Następnie chwytamy sztangę podchwytem (jest to wersja dla początkujących ponieważ w takim chwycie mamy najsilniejszą pozycję ramienia) na szerokość barków. Następnie opuszczamy tułów, poprzez cofnięcie pośladków (nie schodzimy w dół za pomocą kolan) do pozycji 45° względem podłogi. Jesteśmy już w pozycji do wiosłowania – prowadzimy sztangę pionowo do góry zgodnie z kierunkiem działania grawitacji. Sztangę prowadzimy blisko ud i bioder, do momentu aż łokieć przekroczy linie pleców.",
+            "link": "http://youtu.be/Nxr4-9ZXRBw"
+          },
+          "side-raises": {
+            "title": "Wznosy bokiem",
+            "description": "Ćwiczenie wykonujemy siedząc na ławce, nogi dajemy do przodu, kolana blisko siebie – tak abyśmy mieli miejsce do opuszczania hantli. Ramiona w pozycji początkowej są opuszczone wzdłuż tułowia, łopatki ściągamy do tyłu i w dół (retrakcja i depresja). Rozpoczynamy ruch w górę – do pozycji, w której ramiona są ułożone prostopadle względem tułowia. Ramiona powinny być wychylone w przód pod kątem około 15° - 20°. Zgięcie w łokciach powinno wynosić od 5° - 10°. Ostatnią rzeczą którą wykonujemy jest delikatne wychylenie tułowia w przód.",
+            "link": "http://youtu.be/wzbX9cDlGDs"
+          },
+          "cable-crunch": {
+            "title": "Allahy",
+            "description": "Wykonujemy to ćwiczenie w pozycji klęczącej z uniesionymi biodrami. Łapiemy uchwyt na wysokości głowy – najważniejsze jest to żeby    podczas wykonywania ćwiczenia ramiona nie zmieniały położenia względem głowy. Rączkę wyciągu dobieramy na podstawie własnych preferencji, może to być „warkocz”, „kierownica” lub cokolwiek będzie dla nas optymalne.  Ruch zaczynamy z pozycji w której biodra są wysoko uniesione a kręgosłup w delikatnym przeproście (żeby wstępnie rozciągnąć brzuch), następnie napinamy brzuch i prowadzimy łokcie do kolan.",
+            "link": "http://youtu.be/9zCV0OdlySI"
+          },
+          "calves": {
+            "title": "Łydki",
+            "description": "Stajemy w pozycji wyprostowanej na podwyższeniu, łapiemy obciążenie do ręki po tej samej stronie co łydka wykonująca ćwiczenie. Drugą nogę unosimy w górę. Pięta powinna być obniżona a łydka mocno rozciągnięta. Ruch prowadzimy w górę wspinając się na palce, następnie powolnym kontrolowanych ruchem wracamy do pozycji zaczynającej ruch – do maksymalnego rozciągnięcia łydki.",
+            "link": "https://www.fabrykasily.pl/"
+          },
+          "classic-deadlift": {
+            "title": "Martwy ciąg klasyczny",
+            "description": "Stopy ustawiamy równolegle do siebie na szerokości bioder. Biodra – blokujemy tułów poprzez połączenie napięć brzuch-pośladki. Następnie przechodzimy do łopatek – ruchem zegarowym wprowadzamy je w depresję oraz retrakcję (dokładnie tak jak w przysiadzie). Sztangę łapiemy minimalnie szerzej niż szerokość barków lub na szerokości barków – tak żeby kolana miały miejsce podczas ruchu. Głowa jest przedłużeniem kręgosłupa. Sylwetka od boku powinna wyglądać następująco: Kolano, biodro oraz barki powinny tworzyć trójkąt. Przed rozpoczęciem ruchu naprężamy delikatnie sztangę w celu uniknięcia niepożądanych sił na kręgosłup. Następnie bierzemy wdech i rozpoczynamy ruch z biodra, barki i plecy idą w górę jako pierwsze. Ruch prowadzimy do wyprostowanej sylwetki – uważamy żeby nie doszło do przeprostu. Następnie odkładamy sztangę na ziemię rozpoczynając ruch z biodra, cały czas prowadząc ją blisko nóg i utrzymując spięcie na brzuchu i pośladkach. Kiedy sztanga jest na ziemi wykonujemy wydech (czasami konieczne jest wykonanie wydechu wcześniej – u góry, wtedy bierzemy ponownie wdech i rozpoczynamy ruch w dół).",
+            "link": "http://youtu.be/9GYH8PJ6xA0"
+          },
+          "military-press": {
+            "title": "Wyciskanie żołnierskie",
+            "description": "Stajemy wyprostowani stabilnie na nogach, kolana blokujemy w wyproście. Mięśnie czworogłowe (przód uda) napięte, tak samo pośladek – tworzy to stabilną konstrukcje i fundament do podnoszenia ciężaru nad głowę. Łopatki trzymamy w depresji i retrakcji. Głowa – zaczynamy z wyprostowaną szyją i brodą ściągniętą w dół, w trakcie wyciskania sztangi nad głowę lekko odchylamy głowę do tyłu, żeby zrobić miejsce dla sztangi, która porusza się po jednej linii w górę. Sztangę łapiemy nachwytem na tyle wąsko na ile pozwala nam nasza mobilność – niewiele szerzej od szerokości barków. Łokcie muszą znajdować się pod sztangą lub delikatnie przed nią. Następnie rozpoczynamy wyciskanie – bierzemy wdech i wyciskamy sztangę nad głowę. Ważne aby nie dopuścić do zgięcia pleców w odcinku lędźwiowym, lub zgięcia kolan. Sztangę odkładamy naj najbliżej naszej szyi.",
+            "link": "http://youtu.be/zQRcZjp3ZVI"
+          },
+          "close-grip-chin-ups": {
+            "title": "Podciąganie wąsko",
+            "description": "Ciało stabilizujemy identycznie jak przy wyciskaniu żołnierskim. Drążek łapiemy podchwytem na takiej samej szerokości na jaką złapaliśmy sztangę przy wyciskaniu nad głowę. Nogi podczas całego ruchu są wyprostowane a palce obciągnięte – zapobiegnie to bujaniu się ciała. Łopatki są ściągnięte w tył i w dół. Wykonujemy pełen ruch podciągnięcia, opuszczamy się w dół i puszczamy spięcie w łopatkach, następnie następuje ponowne ściągniecie w tył i dół i wykonujemy kolejne powtórzenie. Ruch prowadzimy do momentu aż łokcie doją do mięśni najszerszych grzbietu.",
+            "link": "http://youtu.be/olxgbxHIHTY"
+          },
+          "barbell-reverse-lunge": {
+            "title": "Zakroki",
+            "description": "Początkowe fazy ćwiczenia (wyjście ze sztangą ze stojaka, przygotowanie się do ruchu) są identyczne jak w przysiadzie. Następnie wykonujemy ruch za siebie pilnując żeby sztanga cały ruch trzymała poziomą pozycję. Nogi przez cały ruch są na szerokości bioder. Kąt zgięcia nóg – schodzimy na taką szerokość nóg żeby piszczel nogi z przodu delikatnie wychylił się do przodu. Po każdym zakroku wracamy do pozycji pionowej, kolejny ruch wykonujemy drugą nogą. Warto na początku spróbować wykonywać wykroki z hantlami w rękach zamiast sztangi w celu wyrobienia sobie ruchu.",
+            "link": "https://www.youtube.com/watch?v=B5yU9VvjOr8"
+          },
+          "abductors": {
+            "title": "Odwodziciele",
+            "description": "Ćwiczenie wykonujemy na maszynie zgodnie z instrukcja - cieżko dostarczyć uniwersalny opis, ponieważ każda maszyna jest trochę inna",
+            "link": "https://www.youtube.com/watch?v=IydaB14rnlg"
+          },
+          "plank": {
+            "title": "Deska",
+            "description": "Zanim zaczniemy ćwiczenie musimy zadbać o odpowiednie ustawienie ciała – leżymy na czworakach z kolanami bardziej z tyłu, opieramy się na łokciach, które znajdują się idealnie pod naszymi barkami. Stopy trzymamy na szerokości bioder. Nasze ciało po uniesieniu jest całe napięte – największa uwagę należy zwrócić na brzuch oraz pośladki. Dodatkowym bardzo ważnym elementem jest głowa, która jest przedłużeniem naszego ciała.",
+            "link": "https://www.youtube.com/watch?v=qN9skuMi6es"
+          },
+          "narrow-bench-press": {
+            "title": "Wyciskanie sztangi wąsko",
+            "description": "Ćwiczenie wyciskania sztangi wąsko to popularne ćwiczenie wykonywane na siłowni. Polega na leżeniu na ławce płaskiej i chwytaniu sztangi nieco bliżej siebie niż przy tradycyjnym wyciskaniu. Następnie, trzymając sztangę nad klatką piersiową, unosimy ją w górę, skupiając się na pracujących mięśniach tricepsów.",
+            "link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
+          },
+          "we-execute-plan-as-follows": "Plan wykonujemy następująco",
+          "monday": "Poniedziałek",
+          "wednesday": "Środa",
+          "friday": "Piątek"
+        }
       },
       "food": {
         "title": "Jedzenie"
@@ -40,42 +128,6 @@
     },
     "to-be-deleted": {
       "this-is-page": "To jest strona"
-    },
-    "exercises-main-page-card": {
-      "plan-card": {
-        "header": "Plany treningowe",
-        "description": "Wybierz poziom zaawansowania",
-        "btn-1": "Początkujący",
-        "btn-2": "Średniozaawansowany"
-      },
-      "exercises-description-card": {
-        "header": "Opis ćwiczeń",
-        "description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
-        "btn-1": "ćwiczenia dla początkujących",
-        "btn-2": "ćwiczenia dla średnozaawansowanych"
-      }
-    },
-    "exercises-beginners-plan": {
-      "women": "Kobiety",
-      "men": "Mężczyźni",
-      "training": "Trening",
-      "squats": "Przysiady",
-      "bench-press": "Wyciskanie leżąc",
-      "rowing": "Wiosłowanie",
-      "side-raises": "Wznosy bokiem",
-      "cable-crunch": "Allahy",
-      "calves": "Łydki",
-      "classic-deadlift": "Martwy ciąg klasyczny",
-      "military-press": "Wyciskanie żołnierskie",
-      "close-grip-chin-ups": "Podciąganie wąsko",
-      "barbell-reverse-lunge": "Zakroki",
-      "abductors": "Odwodziciele",
-      "plank": "Deska",
-      "narrow-bench-press": "Wyciskanie wąsko",
-      "we-execute-plan-as-follows": "Plan wykonujemy następująco",
-      "monday": "Poniedziałek",
-      "wednesday": "Środa",
-      "friday": "Piątek"
     }
   }
 }
