@@ -56,7 +56,7 @@ export default function PlanForIntermediate() {
   );
 
   return (
-    <div className="mt-5 card-body shadow">
+    <div className="mt-5 card-body shadow table-responsive">
       <h2 className="text-center">Intermediate</h2>
       <table className="table text-center">
         <caption className="text-center">{TRANSLATED_CAPTION}</caption>

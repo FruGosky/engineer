@@ -10,6 +10,7 @@ import PlanForIntermediate from "./content/PlanForIntermedaite";
 import Accesory from "./content/Accesory";
 import IntermediateInfo from "./content/IntermediateInfo";
 import ExercisesCard from "./components/ExercisesCard";
+import SingleExercise from "./components/SingleExercise";
 
 export const EXERCISES_TITLE = "page.exercises.title";
 export const EXERCISES_LINK = "/exercises";
@@ -109,6 +110,7 @@ export default function Exercises() {
         id="beginner-exercises-section"
         className={`${styles.training_plan_section} ${styles.section_clip_path}`}
       >
+        <SingleExercise />
         <ExercisesCard />
       </section>
     </div>
