@@ -1,0 +1,116 @@
+{
+//
+// GIT //
+//
+// COMMIT CHANGES WHEN U HAVE EMPTY STAGED CHANGES
+"git.enableSmartCommit": true,
+// AUTO PULL FROM GIT
+"git.autofetch": true,
+// SHOULD CONFIRM SYNC WINDOW BE SHOWN
+"git.confirmSync": false,
+// WRAP LINE AT VIEWPORT
+"editor.wordWrap": "on",
+// SKIP CONFIRMATION
+"gitlens.gitCommands.skipConfirmations": [
+"fetch:command",
+"stash-push:command",
+"branch-create:command"
+],
+// SET PRETTIER AS DEFAULT FORMATER
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+// SET LINE LIMIT
+"prettier.printWidth": 80,
+// SET TAB WIDTH (SPACES)
+"prettier.tabWidth": 4, // ITS NOT WORKING IF USETABS IS TRUE
+// SHOULD USE TAB AS TABS
+"prettier.useTabs": true,
+// SHOULD USE SINGLE QUOTE
+"prettier.singleQuote": true,
+// SHOULD ALWAYS ADD SEMICOLON TO END OF LINE
+"prettier.semi": true,
+
+    //
+    // BRACKETS //
+    //
+    // SHOULD RENDER WHITE SPACES
+    "editor.renderWhitespace": "boundary",
+    // SHOW BRACKET PAIRS UP TO DOWN
+    "editor.guides.bracketPairs": true,
+    // SHOW BRACKET PAIR LEFT TO RIGHT
+    "editor.guides.bracketPairsHorizontal": true,
+    // CUSTOM BRACKET PAIRS FOR HTML
+    // "editor.language.colorizedBracketPairs": [
+    // 	["[", "]"],
+    // 	["(", ")"],
+    // 	["{", "}"],
+    // 	["<", "</"],
+    // 	["<", "/>"]
+    // ],
+
+    //
+    // CURSOR //
+    //
+    // SHOW BLINKING CURSOS
+    "editor.cursorBlinking": "expand",
+    // CUSTOM CURSOR COLOR
+    "workbench.colorCustomizations": {
+    	"editorCursor.foreground": "#ffff00",
+    	"terminalCursor.foreground": "#ffff00"
+    },
+
+    //
+    // FONT //
+    //
+    // SET FONT FAMILY
+    // "terminal.integrated.fontFamily": "monospace" // CONSOLE
+    // "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "JetBrains Mono",
+    // SET FONT SIZE
+    "editor.fontSize": 14,
+    // SET FONT LIGATURES
+    "editor.fontLigatures": true,
+
+    //
+    // THEME //
+    //
+    // SET COLOR THEME
+    "workbench.colorTheme": "One Dark Pro",
+    // SET ICON THEME
+    "workbench.iconTheme": "material-icon-theme",
+    // SET ACTIVE ICON PACK THEME
+    "material-icon-theme.activeIconPack": "nest",
+
+    //
+    // TODO //
+    //
+    // SET REGEX WHAT U WANT TO SEE AS EMBEDDED TODOS
+    "todo.embedded.regex": "^\\t*\\/\\/\\s*TODO\\s*(.*)",
+    // SET REGEX WHAT U WANT TO EXCLUDE FROM SEARCHING EMBEDDED TODOS
+    "todo.embedded.exclude": ["**/.*", "**/.*/**", "**/node_modules/**"],
+
+    //
+    // OTHERS //
+    //
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.defaultSideBySideLayout": "markdownPreview",
+    "editor.formatOnSave": true
+
+    // SCSS LIVE COMPILE DEFAULT SAFE PATH
+    // "liveSassCompile.settings.formats": [
+    //	{
+    //		"format": "expanded",
+    //		"extensionName": ".css",
+    //		"savePath": "~/../css"
+    //	},
+    //	{
+    //		"format": "compressed",
+    //		"extensionName": ".min.css",
+    //		"savePath": "~/../../dist/css"
+    //	}
+    //],
+
+    //
+    // NEW
+    //
+
+}
