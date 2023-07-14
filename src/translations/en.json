@@ -1,134 +1,195 @@
 {
-  "translation": {
-    "common": {
-      "login": "Login",
-      "logout": "Logout",
-      "site-created-by": "Site created by",
-      "issue-has-occurred": "An issue has occurred",
-      "internet-problem": "Internet problem",
-      "search": "Search",
-      "loading": "Loading",
-      "there-is-no-such-action": "There is no such action"
-    },
-    "page": {
-      "home": {
-        "title": "Home"
-      },
-      "bmi": {
-        "title": "Bmi"
-      },
-      "bmr": {
-        "title": "Bmr"
-      },
-      "calories": {
-        "title": "Calories"
-      },
-      "exercises": {
-        "title": "Exercises",
-        "exercises-main-page-card": {
-          "plan-card": {
-            "header": "Training plans",
-            "description": "Choose your skill level",
-            "btn-1": "Beginner",
-            "btn-2": "Intermediate"
-          },
-          "exercises-description-card": {
-            "header": "Description of exercises",
-            "description": "Below you will find exercises, that are used in training plans",
-            "btn-1": "Exercises for beginners",
-            "btn-2": "Exercises for intermediate"
-          }
-        },
-        "exercises-beginners-plan": {
-          "women": "Women",
-          "men": "Men",
-          "training": "Training",
-          "squats": {
-            "title": "Squats",
-            "description": "...",
-            "link": "http://youtu.be/NEduXlZ8zSk"
-          },
-          "bench-press": {
-            "title": "Bench press",
-            "description": "...",
-            "link": "http://youtu.be/bbGuHx07EDc"
-          },
-          "rowing": {
-            "title": "Rowing",
-            "description": "...",
-            "link": "http://youtu.be/Nxr4-9ZXRBw"
-          },
-          "side-raises": {
-            "title": "Side raises",
-            "description": "",
-            "link": "http://youtu.be/wzbX9cDlGDs"
-          },
-          "cable-crunch": {
-            "title": "Cable crunch",
-            "description": "",
-            "link": "http://youtu.be/9zCV0OdlySI"
-          },
-          "calves": {
-            "title": "Calves",
-            "description": "",
-            "link": "https://www.fabrykasily.pl/"
-          },
-          "classic-deadlift": {
-            "title": "Classic deadlift",
-            "description": "",
-            "link": "http://youtu.be/9GYH8PJ6xA0"
-          },
-          "military-press": {
-            "title": "Military press",
-            "description": "",
-            "link": "http://youtu.be/zQRcZjp3ZVI"
-          },
-          "close-grip-chin-ups": {
-            "title": "Close grip chin ups",
-            "description": "",
-            "link": "http://youtu.be/olxgbxHIHTY"
-          },
-          "barbell-reverse-lunge": {
-            "title": "Barbell reverse lunge",
-            "description": "",
-            "link": "https://www.youtube.com/watch?v=B5yU9VvjOr8"
-          },
-          "abductors": {
-            "title": "Abductors",
-            "description": "",
-            "link": "https://www.youtube.com/watch?v=IydaB14rnlg"
-          },
-          "plank": {
-            "title": "Plank",
-            "description": "",
-            "link": "https://www.youtube.com/watch?v=qN9skuMi6es"
-          },
-          "narrow-bench-press": {
-            "title": "Narrow bench press",
-            "description": "",
-            "link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
-          },
-          "we-execute-plan-as-follows": "We execute plan as follows",
-          "monday": "Monday",
-          "wednesday": "Wednesday",
-          "friday": "Friday"
-        },
-        "exercises-intermediate-plan": {}
-      },
-      "food": {
-        "title": "Food"
-      },
-      "profile": {
-        "title": "Profile"
-      },
-      "not-found-404": {
-        "title": "Error - 404",
-        "page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
-        "try-going-to-home-page": "Try going to the home page"
-      }
-    },
-    "to-be-deleted": {
-      "this-is-page": "This is page"
-    }
-  }
+	"translation": {
+		"common": {
+			"login": "Login",
+			"logout": "Logout",
+			"site-created-by": "Site created by",
+			"issue-has-occurred": "An issue has occurred",
+			"internet-problem": "Internet problem",
+			"search": "Search",
+			"loading": "Loading",
+			"to": "to",
+			"there-is-no-such-action": "There is no such action"
+		},
+		"page": {
+			"home": {
+				"title": "Home"
+			},
+			"bmi": {
+				"title": "Bmi"
+			},
+			"bmr": {
+				"title": "Bmr"
+			},
+			"calories": {
+				"title": "Calories"
+			},
+			"exercises": {
+				"title": "Exercises",
+				"main-page-card": {
+					"title": "Time to exercise",
+					"description": "Choose your skill level to go to a training plan best for you, or learn about the exercises that are used in training plans"
+				},
+
+				"plan-card": {
+					"header": "Training plans",
+					"description": "Choose your skill level",
+					"btn-1": "Beginner",
+					"btn-2": "Intermediate"
+				},
+				"description-card": {
+					"header": "Description of exercises",
+					"description": "Below you will find exercises, that are used in training plans",
+					"btn-1": "Exercises for beginners",
+					"btn-2": "Exercises for intermediate"
+				},
+				"we-execute-plan-as-follows": "We execute plan as follows",
+				"monday": "Monday",
+				"wednesday": "Wednesday",
+				"friday": "Friday",
+				"thursday": "Thursday",
+				"saturday": "Sobota",
+				"beginners-plan": {
+					"title": "Beginners plan",
+					"women": "Women",
+					"men": "Men",
+					"training": "Training",
+					"squats": {
+						"title": "Squats",
+						"description": "...",
+						"link": "http://youtu.be/NEduXlZ8zSk"
+					},
+					"bench-press": {
+						"title": "Bench press",
+						"description": "...",
+						"link": "http://youtu.be/bbGuHx07EDc"
+					},
+					"rowing": {
+						"title": "Rowing",
+						"description": "...",
+						"link": "http://youtu.be/Nxr4-9ZXRBw"
+					},
+					"side-raises": {
+						"title": "Side raises",
+						"description": "",
+						"link": "http://youtu.be/wzbX9cDlGDs"
+					},
+					"cable-crunch": {
+						"title": "Cable crunch",
+						"description": "",
+						"link": "http://youtu.be/9zCV0OdlySI"
+					},
+					"calves": {
+						"title": "Calves",
+						"description": "",
+						"link": "https://www.fabrykasily.pl/"
+					},
+					"classic-deadlift": {
+						"title": "Classic deadlift",
+						"description": "",
+						"link": "http://youtu.be/9GYH8PJ6xA0"
+					},
+					"military-press": {
+						"title": "Military press",
+						"description": "",
+						"link": "http://youtu.be/zQRcZjp3ZVI"
+					},
+					"close-grip-chin-ups": {
+						"title": "Close grip chin ups",
+						"description": "",
+						"link": "http://youtu.be/olxgbxHIHTY"
+					},
+					"barbell-reverse-lunge": {
+						"title": "Barbell reverse lunge",
+						"description": "",
+						"link": "https://www.youtube.com/watch?v=B5yU9VvjOr8"
+					},
+					"abductors": {
+						"title": "Abductors",
+						"description": "",
+						"link": "https://www.youtube.com/watch?v=IydaB14rnlg"
+					},
+					"plank": {
+						"title": "Plank",
+						"description": "",
+						"link": "https://www.youtube.com/watch?v=qN9skuMi6es"
+					},
+					"narrow-bench-press": {
+						"title": "Narrow bench press",
+						"description": "",
+						"link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
+					}
+				},
+				"intermediate-plan": {
+					"title": "Intermediate plan",
+					"power-fbw": "POWER FBW (full body workout) - power exercises for all major muscle parts.",
+					"hyper-low": "HYPER LOW - hypertrophy exercises for the lower body.",
+					"hyper-up": "HYPER UP - hypertrophy exercises for the upper body.",
+					"balans-fbw": "BALANCE FBW - balanced training for all major muscle parts.",
+					"about-push": "Under 'push' exercises we select exercises in which we perform a pushing or squeezing movement, similarly under 'pull' exercises we select exercises in which we perform a pulling movement.",
+					"push": "Push",
+					"pull": "Pull",
+					"both-legs": "with both legs",
+					"horizontal": "horizontal",
+					"vertical": "vertical",
+					"single-leg": "with single leg",
+					"freely": "freely",
+					"lower": "lower"
+				},
+				"accessory": {
+					"title": "Accessory",
+					"facepull": {
+						"title": "Facepull"
+					},
+					"y-rise": {
+						"title": "Y-rise"
+					},
+					"butterfly": {
+						"title": "Butterfly"
+					},
+					"shoulder-raises-drop": {
+						"title": "Shoulder raises in drop"
+					},
+					"dumbbell-flys": {
+						"title": "Dumbbell Flys"
+					},
+					"skier": {
+						"title": "Skier"
+					},
+					"upper-lift-pulldown": {
+						"title": "Upper lift pulldown"
+					},
+					"leg-curls-lying": {
+						"title": "Leg curls lying"
+					},
+					"nordic-curls": {
+						"title": "Nordic curls"
+					},
+					"calves-standing": {
+						"title": "Calves standing"
+					},
+					"buttock-isolation": {
+						"title": "Buttock isolation"
+					},
+					"adductors": {
+						"title": "Adductors"
+					}
+				}
+			},
+			"food": {
+				"title": "Food"
+			},
+			"profile": {
+				"title": "Profile"
+			},
+			"not-found-404": {
+				"title": "Error - 404",
+				"page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
+				"try-going-to-home-page": "Try going to the home page"
+			}
+		},
+		"to-be-deleted": {
+			"this-is-page": "This is page"
+		}
+	}
 }

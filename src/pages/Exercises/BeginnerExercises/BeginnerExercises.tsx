@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 import LoadingIcon from '../../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
-import PlanForBegginersMan from '../content/PlanForBeginnersMan';
-import PlanForBegginersWoman from '../content/PlanForBeginnersWoman';
 
-export const BEGINNERS_PLAN_TITLE = 'page.exercises.beginners-plan.title';
-export const BEGINNERS_PLAN_LINK = '/beginners-plan';
+export const BEGINNERS_EXERCISES_TITLE = 'page.beginners-exercises.title';
+export const BEGINNERS_EXERCISES_LINK = '/beginners-exercises';
 
 export default function BeginnersPlan() {
 	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_TITLE = translation(BEGINNERS_PLAN_TITLE);
+	const TRANSLATED_TITLE = translation(BEGINNERS_EXERCISES_TITLE);
+	// TODO! DELETE THIS TRANSLATION BELOW WHEN U WILL START ADDING SOME CONTENT TO THIS PAGE AND ADD YOURS TRANSLATION DO NOT FORGET TO ADD EN AND PL TRANSLATION NOT ONLY ONE ITS VERY VERY IMPORTANT TO HAVE ALL TRANSLATIONS
+	const THIS_IS_PAGE = translation('to-be-deleted.this-is-page');
 
 	useWebsiteTitle(TRANSLATED_TITLE);
 
@@ -27,8 +27,7 @@ export default function BeginnersPlan() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center">
-			<PlanForBegginersMan />
-			<PlanForBegginersWoman />
+			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
 		</div>
 	);
 }

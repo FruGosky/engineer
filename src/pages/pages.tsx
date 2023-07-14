@@ -12,6 +12,18 @@ import BeginnersPlan, {
 	BEGINNERS_PLAN_LINK,
 	BEGINNERS_PLAN_TITLE,
 } from './Exercises/BeginnersPlan/BeginnersPlan';
+import IntermediatePlan, {
+	INTERMEDIATE_PLAN_LINK,
+	INTERMEDIATE_PLAN_TITLE,
+} from './Exercises/IntermediatePlan/IntermediatePlan';
+import BeginnersExercises, {
+	BEGINNERS_EXERCISES_LINK,
+	BEGINNERS_EXERCISES_TITLE,
+} from './Exercises/BeginnerExercises/BeginnerExercises';
+import IntermediateExercises, {
+	INTERMEDIATE_EXERCISES_LINK,
+	INTERMEDIATE_EXERCISES_TITLE,
+} from './Exercises/IntermediateExercises/IntermediateExercises';
 
 type TPages = {
 	label: string;
@@ -58,6 +70,24 @@ export const exercisePages: TPages[] = [
 		label: BEGINNERS_PLAN_TITLE,
 		path: EXERCISES_LINK + BEGINNERS_PLAN_LINK,
 		element: <BeginnersPlan />,
+		needAuth: false,
+	},
+	{
+		label: INTERMEDIATE_PLAN_TITLE,
+		path: EXERCISES_LINK + INTERMEDIATE_PLAN_LINK,
+		element: <IntermediatePlan />,
+		needAuth: false,
+	},
+	{
+		label: BEGINNERS_EXERCISES_TITLE,
+		path: EXERCISES_LINK + BEGINNERS_EXERCISES_LINK,
+		element: <BeginnersExercises />,
+		needAuth: false,
+	},
+	{
+		label: INTERMEDIATE_EXERCISES_TITLE,
+		path: EXERCISES_LINK + INTERMEDIATE_EXERCISES_LINK,
+		element: <IntermediateExercises />,
 		needAuth: false,
 	},
 ];

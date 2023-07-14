@@ -3,56 +3,48 @@ import { useTranslation } from 'react-i18next';
 export default function PlanForBegginersMan() {
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_MEN = translation(
-		'page.exercises.exercises-beginners-plan.men'
-	);
+	const TRANSLATED_MEN = translation('page.exercises.beginners-plan.men');
 	const TRANSLATED_CAPTION = translation(
-		'page.exercises.exercises-beginners-plan.we-execute-plan-as-follows'
+		'page.exercises.we-execute-plan-as-follows'
 	);
-	const TRANSLATED_MONDAY = translation(
-		'page.exercises.exercises-beginners-plan.monday'
-	);
-	const TRANSLATED_WEDNESDAY = translation(
-		'page.exercises.exercises-beginners-plan.wednesday'
-	);
-	const TRANSLATED_FRIDAY = translation(
-		'page.exercises.exercises-beginners-plan.friday'
-	);
+	const TRANSLATED_MONDAY = translation('page.exercises.monday');
+	const TRANSLATED_WEDNESDAY = translation('page.exercises.wednesday');
+	const TRANSLATED_FRIDAY = translation('page.exercises.friday');
 	const TRANSLATED_TRAINING = translation(
-		'page.exercises.exercises-beginners-plan.training'
+		'page.exercises.beginners-plan.training'
 	);
 	const TRANSLATED_SQUATS = translation(
-		'page.exercises.exercises-beginners-plan.squats.title'
+		'page.exercises.beginners-plan.squats.title'
 	);
 	const TRANSLATED_BENCH_PRESS = translation(
-		'page.exercises.exercises-beginners-plan.bench-press.title'
+		'page.exercises.beginners-plan.bench-press.title'
 	);
 	const TRANSLATED_ROWING = translation(
-		'page.exercises.exercises-beginners-plan.rowing.title'
+		'page.exercises.beginners-plan.rowing.title'
 	);
 	const TRANSLATED_SIDE_RAISES = translation(
-		'page.exercises.exercises-beginners-plan.side-raises.title'
+		'page.exercises.beginners-plan.side-raises.title'
 	);
 	const TRANSLATED_CABLE_CRUNCH = translation(
-		'page.exercises.exercises-beginners-plan.cable-crunch.title'
+		'page.exercises.beginners-plan.cable-crunch.title'
 	);
 	const TRANSLATED_CALVES = translation(
-		'page.exercises.exercises-beginners-plan.calves.title'
+		'page.exercises.beginners-plan.calves.title'
 	);
 	const TRANSLATED_CLASSIC_DEADLIFT = translation(
-		'page.exercises.exercises-beginners-plan.classic-deadlift.title'
+		'page.exercises.beginners-plan.classic-deadlift.title'
 	);
 	const TRANSLATED_MILITARY_PRESS = translation(
-		'page.exercises.exercises-beginners-plan.military-press.title'
+		'page.exercises.beginners-plan.military-press.title'
 	);
 	const TRANSLATED_CLOSE_GRIP_CHIN_UPS = translation(
-		'page.exercises.exercises-beginners-plan.close-grip-chin-ups.title'
+		'page.exercises.beginners-plan.close-grip-chin-ups.title'
 	);
 	const TRANSLATED_NARROW_BENCH_PRESS = translation(
-		'page.exercises.exercises-beginners-plan.narrow-bench-press.title'
+		'page.exercises.beginners-plan.narrow-bench-press.title'
 	);
 	const TRANSLATED_PLANK = translation(
-		'page.exercises.exercises-beginners-plan.plank.title'
+		'page.exercises.beginners-plan.plank.title'
 	);
 
 	return (

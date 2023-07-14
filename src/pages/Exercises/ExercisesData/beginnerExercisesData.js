@@ -14,12 +14,12 @@
 //             "link": "http://youtu.be/wzbX9cDlGDs"
 //           }
 
-const arr = ["bench-press", "rowing", "side-raises"];
+const arr = ['bench-press', 'rowing', 'side-raises'];
 arr.map((ex, index) => {
-  return (
-    <div>
-      <span>{t(`${ex}.title`)}</span>
-      <div>{t(`${ex}.description`)}</div>
-    </div>
-  );
+	return (
+		<div id={index}>
+			<span>{t(`${ex}.title`)}</span>
+			<div>{t(`${ex}.description`)}</div>
+		</div>
+	);
 });

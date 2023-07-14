@@ -8,6 +8,7 @@
 			"internet-problem": "Problem z internetem",
 			"search": "Szukaj",
 			"loading": "Ładowanie",
+			"to": "do",
 			"there-is-no-such-action": "Nie ma takiej akcji"
 		},
 		"page": {
@@ -27,23 +28,29 @@
 				"title": "Ćwiczenia",
 				"main-page-card": {
 					"title": "Czas zabrać się za ćwiczenia",
-					"description": "Wybierz swój poziom zaawansowania żeby przejść do planu treningowego dopasowanego do ciebie, lub poznaj ćwiczenia, które są wykorzystywane w planach treningowych"
+					"description": "Wybierz swój poziom zaawansowania aby przejść do planu treningowego dopasowanego do ciebie, lub poznaj ćwiczenia, które są wykorzystywane w planach treningowych"
 				},
-				"exercises-main-page-card": {
-					"plan-card": {
-						"header": "Plany treningowe",
-						"description": "Wybierz poziom zaawansowania",
-						"btn-1": "Początkujący",
-						"btn-2": "Średniozaawansowany"
-					},
-					"exercises-description-card": {
-						"header": "Opis ćwiczeń",
-						"description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
-						"btn-1": "Ćwiczenia dla początkujących",
-						"btn-2": "Ćwiczenia dla średnozaawansowanych"
-					}
+
+				"plan-card": {
+					"header": "Plany treningowe",
+					"description": "Wybierz poziom zaawansowania",
+					"btn-1": "Początkujący",
+					"btn-2": "Średniozaawansowany"
 				},
-				"exercises-beginners-plan": {
+				"description-card": {
+					"header": "Opis ćwiczeń",
+					"description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
+					"btn-1": "Ćwiczenia dla początkujących",
+					"btn-2": "Ćwiczenia dla średnozaawansowanych"
+				},
+				"we-execute-plan-as-follows": "Plan wykonujemy następująco",
+				"monday": "Poniedziałek",
+				"wednesday": "Środa",
+				"friday": "Piątek",
+				"thursday": "Czwartek",
+				"saturday": "Sobota",
+				"beginners-plan": {
+					"title": "Plan dla początkujących",
 					"women": "Kobiety",
 					"men": "Mężczyźni",
 					"training": "Trening",
@@ -111,11 +118,62 @@
 						"title": "Wyciskanie sztangi wąsko",
 						"description": "Ćwiczenie wyciskania sztangi wąsko to popularne ćwiczenie wykonywane na siłowni. Polega na leżeniu na ławce płaskiej i chwytaniu sztangi nieco bliżej siebie niż przy tradycyjnym wyciskaniu. Następnie, trzymając sztangę nad klatką piersiową, unosimy ją w górę, skupiając się na pracujących mięśniach tricepsów.",
 						"link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
+					}
+				},
+				"intermediate-plan": {
+					"title": "Plan dla średniozaawansowanych",
+					"power-fbw": "POWER FBW (full body workout) – ćwiczenia na moc na wszystkie główne partie mięśniowe.",
+					"hyper-low": "HYPER LOW – ćwiczenia na hipertrofie na dolną część ciała.",
+					"hyper-up": "HYPER UP – ćwiczenia na hipertrofie na górną część ciała.",
+					"balans-fbw": "BALANS FBW – zbalansowany trening na wszystkie główne partie mięśniowe.",
+					"about-push": "Pod ćwiczenia „push” dobieramy ćwiczenia w których wykonujemy ruch pchający lub wyciskający, analogicznie pod ćwiczenia „pull” dobieramy ćwiczenia, w których wykonujemy ruch przyciągający.",
+					"push": "Wyciskanie",
+					"pull": "Przyciąganie",
+					"both-legs": "obunóż",
+					"horizontal": "poziomo",
+					"vertical": "pionowo",
+					"single-leg": "jednonóż",
+					"freely": "dowolne",
+					"lower": "dół"
+				},
+				"accessory": {
+					"title": "Akcesorium",
+					"facepull": {
+						"title": "Facepull"
 					},
-					"we-execute-plan-as-follows": "Plan wykonujemy następująco",
-					"monday": "Poniedziałek",
-					"wednesday": "Środa",
-					"friday": "Piątek"
+					"y-rise": {
+						"title": "Y-rise"
+					},
+					"butterfly": {
+						"title": "Butterfly"
+					},
+					"shoulder-raises-drop": {
+						"title": "Wznosy ramion w opadzie"
+					},
+					"dumbbell-flys": {
+						"title": "Spiętki"
+					},
+					"skier": {
+						"title": "Narciarz"
+					},
+					"upper-lift-pulldown": {
+						"title": "Wciąganie"
+					},
+					"leg-curls-lying": {
+						"title": "Uginanie podudzi leżąc"
+					},
+					"nordic-curls": {
+						"title": "Żurawie"
+					},
+					"calves-standing": {
+						"title": "Łydki stojąc"
+					},
+					"buttock-isolation": {
+						"title": "Izolacja pośladka"
+					},
+					"adductors": {
+						"title": "Przywodziciele"
+					}
 				}
 			},
 			"food": {
