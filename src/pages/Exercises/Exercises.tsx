@@ -27,12 +27,6 @@ export default function Exercises() {
 	const TRANSLATED_TITLE = translation(EXERCISES_TITLE);
 	useWebsiteTitle(TRANSLATED_TITLE);
 
-	const TRANSLATED_PLAN_CARD_HEADER = translation(
-		'page.exercises.main-page-card.plan-card.header'
-	);
-	const TRANSLATED_PLAN_CARD_DESCRIPTION = translation(
-		'page.exercises.main-page-card.plan-card.description'
-	);
 	const TRANSLATED_PLAN_CARD_BTN1 = translation(
 		'page.exercises.plan-card.btn-1'
 	);
@@ -40,12 +34,6 @@ export default function Exercises() {
 		'page.exercises.plan-card.btn-2'
 	);
 
-	const TRANSLATED_EXERCISE_DESCRIPTION_CARD_HEADER = translation(
-		'page.exercises.main-page-card.description-card.header'
-	);
-	const TRANSLATED_EXERCISE_DESCRIPTION_CARD_DESCRIPTION = translation(
-		'page.exercises.main-page-card.description-card.description'
-	);
 	const TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN1 = translation(
 		'page.exercises.description-card.btn-1'
 	);
@@ -68,9 +56,7 @@ export default function Exercises() {
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div
-			className={`site-wrapper text-center d-flex align-items-center justify-content-center`}
-		>
+		<div className="site-wrapper text-center d-flex align-items-center justify-content-center">
 			<div className="container inner exercises_main_content p-5 rounded shadow">
 				<div>
 					<svg

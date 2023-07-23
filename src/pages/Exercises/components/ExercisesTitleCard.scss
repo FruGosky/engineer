@@ -1,0 +1,10 @@
+.exercise-card {
+	&.grow {
+		transition: all 0.1s ease-in-out;
+
+		&:hover {
+			transform: scale(1.07);
+			cursor: pointer;
+		}
+	}
+}
