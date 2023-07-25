@@ -12,16 +12,20 @@ export default function ExercisesModal(
 	props: ExercisesModalProps
 ): JSX.Element {
 	const { t: translation } = useTranslation();
+
+	const handleLink = () => {
+		window.open(
+			translation(`page.exercises.${props.level}.${props.exercise}.link`)
+		);
+	};
 	return (
 		<div
 			className="modal fade"
 			id={props.id}
 			tabIndex={-1}
 			key={props.index}
-			// aria-labelledby="exampleModalLabel"
-			// aria-hidden="true"
 		>
-			<div className="modal-dialog">
+			<div className="modal-dialog modal-dialog-centered">
 				<div className="modal-content">
 					<div className="modal-header">
 						<h5 className="modal-title">
@@ -44,18 +48,18 @@ export default function ExercisesModal(
 					<div className="modal-footer">
 						<button
 							type="button"
-							className="btn btn-secondary"
+							className="btn btn-danger"
 							data-bs-dismiss="modal"
 						>
 							Close
 						</button>
-						{/* <button
+						<button
 							type="button"
-							className="btn btn-secondary"
-							ref={`page.exercises.${props.level}.${props.exercise}.link`}
+							className="btn btn-info"
+							onClick={handleLink}
 						>
 							LINK
-						</button> */}
+						</button>
 					</div>
 				</div>
 			</div>

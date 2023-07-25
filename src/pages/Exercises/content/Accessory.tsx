@@ -73,9 +73,21 @@ export default function Accesory() {
 			</tr>
 		));
 	};
+
 	return (
 		<div className="mt-5 card-body shadow table-responsive">
-			<h2 className="text-center">{TRANSLATED_ACCESSORY}</h2>
+			<h2
+				onClick={() =>
+					window.open(
+						// '__dirname/exercises/intermediate-exercises' <- if was online have to figure out sth like this below is temporary
+						'http://localhost:3000/exercises/intermediate-exercises'
+					)
+				}
+				className="text-center hover-overlay"
+				role="button"
+			>
+				{TRANSLATED_ACCESSORY}
+			</h2>
 			<table className="table text-center">
 				<thead>
 					<tr>

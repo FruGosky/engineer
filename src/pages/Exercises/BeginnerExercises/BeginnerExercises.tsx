@@ -47,32 +47,28 @@ export default function BeginnersExercises() {
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div className="container p-5">
+		<div className="container">
 			<div className="container_top mb-5 text-center">
 				<h1>{TRANSLATED_EXERCISE_BEGINNERS}</h1>
 			</div>
 			<div className="container_bottom row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<ExercisesTitleCard
-							level="beginners-plan"
-							exercise={exercise}
-							index={index}
-							target={`#${exercise}`}
-						/>
-					);
-				})}
-			</div>
-			<div className="modal">
-				{exercisesArray.map((exercise, index): JSX.Element => {
-					return (
-						<ExercisesModal
-							link={exercise}
-							level="beginners-plan"
-							id={exercise}
-							exercise={exercise}
-							index={index}
-						/>
+						<div>
+							<ExercisesTitleCard
+								level="beginners-plan"
+								exercise={exercise}
+								index={index}
+								target={`#${exercise}`}
+							/>
+							<ExercisesModal
+								link={exercise}
+								level="beginners-plan"
+								id={exercise}
+								exercise={exercise}
+								index={index}
+							/>
+						</div>
 					);
 				})}
 			</div>

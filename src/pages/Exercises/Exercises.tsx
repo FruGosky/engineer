@@ -4,13 +4,7 @@ import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 // import MainPageCard from './components/MainPageCard';
 import './Exercises.scss';
-import PlanForBegginersWoman from './content/PlanForBeginnersWoman';
-import PlanForBegginersMan from './content/PlanForBeginnersMan';
-import PlanForIntermediate from './content/PlanForIntermedaite';
-import Accesory from './content/Accessory';
-import IntermediateInfo from './content/IntermediateInfo';
-import ExercisesCard from './components/ExercisesCard';
-import SingleExercise from './components/SingleExercise';
+
 import { BEGINNERS_PLAN_LINK } from './BeginnersPlan/BeginnersPlan';
 import { NavLink } from 'react-router-dom';
 import { INTERMEDIATE_PLAN_LINK } from './IntermediatePlan/IntermediatePlan';
@@ -21,6 +15,11 @@ export const EXERCISES_TITLE = 'page.exercises.title';
 export const EXERCISES_LINK = '/exercises';
 
 export default function Exercises() {
+	const backdropElement: HTMLElement | null =
+		document.querySelector('.modal-backdrop');
+	if (backdropElement) {
+		backdropElement.remove();
+	}
 	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
@@ -57,7 +56,7 @@ export default function Exercises() {
 		<LoadingIcon />
 	) : (
 		<div className="site-wrapper text-center d-flex align-items-center justify-content-center">
-			<div className="container inner exercises_main_content p-5 rounded shadow">
+			<div className="container inner exercises_main_content rounded shadow">
 				<div>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +89,7 @@ export default function Exercises() {
 					</p>
 					<div className="lead">
 						<div className="row">
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-2">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
 								<NavLink
 									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
 									to={EXERCISES_LINK + BEGINNERS_PLAN_LINK}
@@ -98,7 +97,7 @@ export default function Exercises() {
 									{TRANSLATED_PLAN_CARD_BTN1}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-2">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
 								<NavLink
 									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
 									to={EXERCISES_LINK + INTERMEDIATE_PLAN_LINK}
@@ -106,7 +105,7 @@ export default function Exercises() {
 									{TRANSLATED_PLAN_CARD_BTN2}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-2">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
 								<NavLink
 									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
 									to={
@@ -117,7 +116,7 @@ export default function Exercises() {
 									{TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN1}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-2">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
 								<NavLink
 									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
 									to={

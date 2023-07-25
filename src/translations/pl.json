@@ -82,7 +82,7 @@
 					"calves": {
 						"title": "Łydki",
 						"description": "Stajemy w pozycji wyprostowanej na podwyższeniu, łapiemy obciążenie do ręki po tej samej stronie co łydka wykonująca ćwiczenie. Drugą nogę unosimy w górę. Pięta powinna być obniżona a łydka mocno rozciągnięta. Ruch prowadzimy w górę wspinając się na palce, następnie powolnym kontrolowanych ruchem wracamy do pozycji zaczynającej ruch – do maksymalnego rozciągnięcia łydki.",
-						"link": "https://www.fabrykasily.pl/"
+						"link": "https://www.fabrykasily.pl/cwiczenia/na-lydki"
 					},
 					"classic-deadlift": {
 						"title": "Martwy ciąg klasyczny",
@@ -139,40 +139,69 @@
 				"accessory": {
 					"title": "Akcesorium",
 					"facepull": {
-						"title": "Facepull"
+						"title": "Facepull",
+						"description": "Ćwiczenie polega na przyciąganiu rączki kablowej na maszynie do twarzy, utrzymując szeroki chwyt. W trakcie wykonywania ćwiczenia skupiasz się na koncentrycznym skurczu mięśni obręczy barkowej, grzbietu i naramiennych. Powoli kontroluj ruch, a po osiągnięciu pełnego skurczu, wracaj do pozycji wyjściowej.",
+						"link": "https://www.youtube.com/watch?v=51AuMQzpBVY"
 					},
 					"y-rise": {
-						"title": "Y-rise"
+						"title": "Y-rise",
+						"description": "Ćwiczenie polega na unoszeniu hantli na boki, tworząc kształt litery 'Y' z wyprostowanymi ramionami. W pozycji wyprostowanej, z lekkim zgięciem w biodrach i kolanach, unosimy hantle na boki, utrzymując lekko zgięte łokcie i prostą pozycję pleców. Unoszenie kontynuujemy aż do osiągnięcia pełnego skurczu mięśni. Następnie powoli opuszczamy hantle, wracając do pozycji wyjściowej. W trakcie ćwiczenia skupiamy się na pracy mięśni pleców i ramion oraz kontrolujemy ruch, aby utrzymać odpowiednią technikę.",
+						"link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
 					},
 					"butterfly": {
-						"title": "Butterfly"
+						"title": "Butterfly",
+						"description": "W ćwiczeniu 'Butterfly' usiądź na ławce ze specjalnymi uchwytami i złap za nie, trzymając ręce w szerokości barków. Zetknij przedramiona, tworząc kształt skrzydeł motyla. Napięte mięśnie klatki piersiowej rozciągaj ramiona, otwierając uchwyty na boki. W pełnym rozwinięciu ramion zetnij się z powrotem, zamykając przedramiona. Skup się na napięciu mięśni klatki piersiowej i kontroluj ruch, utrzymując prawidłową technikę.",
+						"link": "https://www.youtube.com/watch?v=3N5WxWd0hUI"
 					},
 					"shoulder-raises-drop": {
-						"title": "Wznosy ramion w opadzie"
+						"title": "Wznosy ramion w opadzie",
+						"description": "W ćwiczeniu 'wznosy ramion w opadzie' wykonujemy unoszenie hantli na boki, będąc w lekko zgarbionej pozycji. Zaczynamy trzymając hantle wzdłuż ciała, a następnie unosimy ramiona na boki, utrzymując lekko zgięte łokcie. Kontynuujemy unoszenie, aż hantle osiągną poziom barków. Powoli opuszczamy hantle, wracając do pozycji wyjściowej.",
+						"link": "https://www.youtube.com/watch?v=zC0sqmXzEbk"
 					},
 					"dumbbell-flys": {
-						"title": "Spiętki"
+						"title": "Spiętki",
+						"description": "Ćwiczenie wykonujemy na bramie. W pozycji stojącej chwytamy z dwóch stron wyciąg i ściągamy synchronicznie przed siebie. W tym ćwiczeniu należy zwrócić uwagę aby ramiona były  w jednakowym wyproście (nie uginać łokci), napięty brzuch oraz lekko ugięte kolana. Ćwiczenie można wykonywać z jedną nogą delikatnie z przodu oraz tułowiem pochylonym do przodu.",
+						"link": "https://www.youtube.com/watch?v=vM1Ovmiu71M"
 					},
 					"skier": {
-						"title": "Narciarz"
+						"title": "Narciarz",
+						"description": "Stajemy naprzeciwko wyciągu górnego i pochylamy tors do przodu pod kątem ok. 45°. Łapiemy uchwyt tak aby ramiona były przedłużeniem ciała. Następnie prowadzimy wyciąg do bioder utrzymując taką samą odległość ramion od ciała (nie uginamy łokci). Należy zwrócić szczególną uwagę na napięcie brzucha, i spięcie pośladków oraz aby jedyną ruchomą częścią ciała podczas tego ćwiczenia były ramiona.",
+						"link": "https://www.youtube.com/watch?v=LdBjRASibtQ"
 					},
 					"upper-lift-pulldown": {
-						"title": "Wciąganie"
+						"title": "Wciąganie",
+						"description": "Siadamy pod wyciągiem górnym, stopy zablokowane na ziemi, uda zablokowane nieruchomo. Drążek łapiemy nachwytem z wyprostowanymi ramionami. Bierzemy wdech i przyciągamy drążek do klatki piersiowej. Należy zwrócić uwagę na proste plecy oraz stabilność tułowia.",
+						"link": "https://www.youtube.com/watch?v=QoCMWLeA0g4"
 					},
 					"leg-curls-lying": {
-						"title": "Uginanie podudzi leżąc"
+						"title": "Uginanie podudzi leżąc",
+						"description": "W pozycji leżącej na brzuchu, chwytamy rękoma drążki dla stabilności ciała, nogi wyprostowane, kostki znajdują się pod wałkami. Bierzemy wdech i przyciągamy wałek uginając nogi w kolanach w kierunku pośladków. Następnie wracamy powoli do pozycji początkowej.",
+						"link": "https://www.youtube.com/watch?v=xhTprFWnJQw"
 					},
 					"nordic-curls": {
-						"title": "Żurawie"
+						"title": "Żurawie",
+						"description": "Jest to ćwiczenie podobne to uginania podudzi leżąc tylko w tym przypadku nie uginamy podudzi, a wykorzystujemy podudzia do utrzymania masy ciała w trakcie powolnego opadania. Klękamy tyłem do drabinki, następnie blokujemy kostki o drabinki. Napinamy brzuch i powoli opadamy do przodu, aż do momentu w którym podudzia nie są w stanie nas utrzymać.",
+						"link": "https://www.youtube.com/watch?v=HDp0PyxyRbQ"
 					},
 					"calves-standing": {
-						"title": "Łydki stojąc"
+						"title": "Łydki stojąc",
+						"description": "W pozycji stojącej, grzbiet wyprostowany stajemy pod przyrządem i opieramy wałki na barkach. Przednia część stóp oparta o podstawkę. Ruch wykonujemy poprzez wspięcie się na palach, co powoduje napięcie łydki. Lub tak jak w poprzednim rozdziale – wykorzystując obciążenie trzymane w ręku.",
+						"link": "https://www.youtube.com/watch?v=NBUnlzg3IXc"
 					},
 					"buttock-isolation": {
-						"title": "Izolacja pośladka"
+						"title": "Izolacja pośladka",
+						"description": "W pozycji stojącej przed wyciągiem dolnym. Jedna noga stabilnie na ziemie, druga przymocowana do wyciągu dolnego. Ramiona chwytają uchwyt wyciągu dla stabilności. Lekko pochylamy tułów do przodu i napinamy brzuch. Ruch rozpoczynamy przez prowadzenie nogi w tył dążąc do wyprostowania biodra, dla lepszego napięcia mięśnia można w końcowej fazie ruchu przytrzymać nogę nieruchomo ok. 1-2 sek.",
+						"link": "https://www.youtube.com/watch?v=5aCEnAUWqPo"
 					},
 					"adductors": {
-						"title": "Przywodziciele"
+						"title": "Przywodziciele",
+						"description": "W pozycji siedzącej na przyrządzie, kończyny w szerokim rozkroku. Ruch wykonujemy ściągając uda do środka, następnie kontrolując ruch wracamy do pozycji startowej.",
+						"link": "https://www.youtube.com/watch?v=IydaB14rnlg&t=68s"
+					},
+					"hip-thrust": {
+						"title": "Hip-thrust",
+						"description": "Opieramy się o ławeczkę lub miękką skrzynie na wysokości łopatek, punkt podparcia powinien znajdować się kilka centymetrów poniżej wysokości kolana. Stopy na ziemi równolegle na szerokości bioder, powinny być oddalone od punktu oparcia w taki sposób, że gdy wypchniemy sztangę w górę, kąt jaki utworzy się pomiędzy łydką a udem będzie wynosić 90°. Kolana prowadzimy nad kostkami. Następnym elementem jest spięcie pośladków i brzucha – w celu utrzymania stabilnej podstawy. Głowa w odróżnieniu od innych ćwiczeń nie będzie przedłużeniem kręgosłupa a będzie skierowana do przodu. Ruch zaczynamy od dołu, bierzemy wdech i prowadzimy sztangę do góry uzyskując pełny wyprost (nie przeprost), odkładamy sztangę na ziemie i wykonujemy wydech. ",
+						"link": "https://www.youtube.com/watch?v=ezEQkeQWMPM"
 					}
 				}
 			},

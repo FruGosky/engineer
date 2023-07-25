@@ -3,7 +3,8 @@ import LoadingIcon from '../../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import ExercisesTitleCard from '../components/ExercisesTitleCard';
-import Accesory from '../content/Accessory';
+import ExercisesModal from '../components/ExercisesModal';
+import './IntermediateExercises.scss';
 
 export const INTERMEDIATE_EXERCISES_TITLE =
 	'page.exercises.description-card.btn-2';
@@ -39,26 +40,34 @@ export default function IntermediateExercises() {
 		'calves-standing',
 		'buttock-isolation',
 		'adductors',
+		'hip-thrust',
 	];
 
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div className="container p-5">
+		<div className="container">
 			<div className="container_top mb-5 text-center">
-				<h1>
-					{TRANSLATED_EXERCISE_INTERMEDIATE} + {TRANSLATED_ACCESSORY}
-				</h1>
+				<h1>{TRANSLATED_ACCESSORY}</h1>
 			</div>
 			<div className="container_bottom row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<ExercisesTitleCard
-							target={exercise}
-							level="accessory"
-							exercise={exercise}
-							index={index}
-						/>
+						<div>
+							<ExercisesTitleCard
+								level="accessory"
+								exercise={exercise}
+								index={index}
+								target={`#${exercise}`}
+							/>
+							<ExercisesModal
+								link={exercise}
+								level="accessory"
+								id={exercise}
+								exercise={exercise}
+								index={index}
+							/>
+						</div>
 					);
 				})}
 			</div>

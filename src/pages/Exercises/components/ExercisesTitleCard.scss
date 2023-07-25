@@ -1,8 +1,10 @@
 .exercise-card {
+	max-width: 100%;
 	&.grow {
-		transition: all 0.1s ease-in-out;
+		// transition: all 0.2s ease-in-out;
 
 		&:hover {
+			transition: all 0.1s ease-in-out;
 			transform: scale(1.07);
 			cursor: pointer;
 		}
