@@ -47,13 +47,13 @@ export default function IntermediateExercises() {
 		<LoadingIcon />
 	) : (
 		<div className="container">
-			<div className="container_top mb-5 text-center">
+			<div className="container_top m-5 text-center">
 				<h1>{TRANSLATED_ACCESSORY}</h1>
 			</div>
 			<div className="container_bottom row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<div>
+						<div className="d-flex flex-column align-items-center">
 							<ExercisesTitleCard
 								level="accessory"
 								exercise={exercise}

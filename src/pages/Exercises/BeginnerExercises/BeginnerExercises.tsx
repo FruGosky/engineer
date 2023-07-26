@@ -51,10 +51,10 @@ export default function BeginnersExercises() {
 			<div className="container_top mb-5 text-center">
 				<h1>{TRANSLATED_EXERCISE_BEGINNERS}</h1>
 			</div>
-			<div className="container_bottom row">
+			<div className="container_bottom  row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<div>
+						<div className="d-flex flex-column align-items-center">
 							<ExercisesTitleCard
 								level="beginners-plan"
 								exercise={exercise}
