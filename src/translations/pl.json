@@ -9,7 +9,8 @@
 			"search": "Szukaj",
 			"loading": "Ładowanie",
 			"to": "do",
-			"there-is-no-such-action": "Nie ma takiej akcji"
+			"there-is-no-such-action": "Nie ma takiej akcji",
+			"close": "Close"
 		},
 		"page": {
 			"home": {

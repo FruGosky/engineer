@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-
+import './PlanForBeginners.scss';
 export default function PlanForBegginersMan() {
 	const { t: translation } = useTranslation();
 
@@ -52,25 +52,43 @@ export default function PlanForBegginersMan() {
 			<h2 className="text-center">{TRANSLATED_MEN}</h2>
 			<table className="table text-center">
 				<caption className="text-center">
-					{TRANSLATED_CAPTION}
+					{TRANSLATED_CAPTION}:
 					<ul className="list-unstyled">
 						<li>
-							<a>{`${TRANSLATED_MONDAY} A`}</a>
+							<span>
+								{TRANSLATED_MONDAY}
+								<span className="letter_red"> A</span>
+							</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_WEDNESDAY} B`}</a>
+							<span>
+								{TRANSLATED_WEDNESDAY}
+								<span className="letter_green"> B</span>
+							</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_FRIDAY} A`}</a>
+							<span>
+								{TRANSLATED_FRIDAY}
+								<span className="letter_red"> A</span>
+							</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_MONDAY} B`}</a>
+							<span>
+								{TRANSLATED_MONDAY}
+								<span className="letter_green"> B</span>
+							</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_WEDNESDAY} A`}</a>
+							<span>
+								{TRANSLATED_WEDNESDAY}
+								<span className="letter_red"> A</span>
+							</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_FRIDAY} B`}</a>
+							<span>
+								{TRANSLATED_FRIDAY}
+								<span className="letter_green"> B</span>
+							</span>
 						</li>
 					</ul>
 				</caption>

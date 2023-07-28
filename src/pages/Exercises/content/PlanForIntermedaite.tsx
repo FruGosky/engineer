@@ -65,16 +65,16 @@ export default function PlanForIntermediate() {
 					{TRANSLATED_CAPTION}
 					<ul className="list-unstyled">
 						<li>
-							<a>{`${TRANSLATED_MONDAY} 1.`}</a>
+							<span>{`${TRANSLATED_MONDAY} 1.`}</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_WEDNESDAY} 2.`}</a>
+							<span>{`${TRANSLATED_WEDNESDAY} 2.`}</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_THURSDAY} 3.`}</a>
+							<span>{`${TRANSLATED_THURSDAY} 3.`}</span>
 						</li>
 						<li>
-							<a>{`${TRANSLATED_SATURDAY} 4.`}</a>
+							<span>{`${TRANSLATED_SATURDAY} 4.`}</span>
 						</li>
 					</ul>
 				</caption>

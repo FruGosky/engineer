@@ -25,7 +25,6 @@ export default function BeginnersExercises() {
 		setTimeout(() => {
 			setLoading(false);
 		}, 1_000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const exercisesArray: string[] = [
@@ -58,7 +57,7 @@ export default function BeginnersExercises() {
 							<ExercisesTitleCard
 								level="beginners-plan"
 								exercise={exercise}
-								index={index}
+								key={index + 'title'}
 								target={`#${exercise}`}
 							/>
 							<ExercisesModal
@@ -66,7 +65,7 @@ export default function BeginnersExercises() {
 								level="beginners-plan"
 								id={exercise}
 								exercise={exercise}
-								index={index}
+								key={index + 'modal'}
 							/>
 						</div>
 					);

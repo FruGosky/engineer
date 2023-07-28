@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 interface ExercisesModalProps {
 	level: string;
 	id: string;
-	index: number;
 	exercise: string;
 	link: string;
 }
@@ -13,18 +12,15 @@ export default function ExercisesModal(
 ): JSX.Element {
 	const { t: translation } = useTranslation();
 
+	const TRANSLATED_CLOSE = translation('common.close');
+
 	const handleLink = () => {
 		window.open(
 			translation(`page.exercises.${props.level}.${props.exercise}.link`)
 		);
 	};
 	return (
-		<div
-			className="modal fade"
-			id={props.id}
-			tabIndex={-1}
-			key={props.index}
-		>
+		<div className="modal fade" id={props.id} tabIndex={-1}>
 			<div className="modal-dialog modal-dialog-centered">
 				<div className="modal-content">
 					<div className="modal-header">
@@ -51,7 +47,7 @@ export default function ExercisesModal(
 							className="btn btn-danger"
 							data-bs-dismiss="modal"
 						>
-							Close
+							{TRANSLATED_CLOSE}
 						</button>
 						<button
 							type="button"

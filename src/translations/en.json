@@ -9,7 +9,8 @@
 			"search": "Search",
 			"loading": "Loading",
 			"to": "to",
-			"there-is-no-such-action": "There is no such action"
+			"there-is-no-such-action": "There is no such action",
+			"close": "Zamknij"
 		},
 		"page": {
 			"home": {
@@ -146,7 +147,7 @@
 					"y-rise": {
 						"title": "Y-rise",
 						"description": "The exercise involves lifting dumbbells to the sides, forming a 'Y' shape with straight arms. In an upright position, with a slight bend in the hips and knees, lift the dumbbells to the sides, keeping the elbows slightly bent and the back straight. We continue lifting until we reach full muscle contraction. Then slowly lower the dumbbells, returning to the starting position. During the exercise, focus on working the muscles of the back and shoulders, and control the movement to maintain proper technique.",
-						"link": "..."
+						"link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
 					},
 					"butterfly": {
 						"title": "Butterfly",

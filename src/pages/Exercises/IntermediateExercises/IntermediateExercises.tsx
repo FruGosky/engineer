@@ -15,9 +15,6 @@ export default function IntermediateExercises() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(INTERMEDIATE_EXERCISES_TITLE);
-	const TRANSLATED_EXERCISE_INTERMEDIATE = translation(
-		'page.exercises.description-card.btn-2'
-	);
 	const TRANSLATED_ACCESSORY = translation('page.exercises.accessory.title');
 	useWebsiteTitle(TRANSLATED_TITLE);
 
@@ -25,7 +22,6 @@ export default function IntermediateExercises() {
 		setTimeout(() => {
 			setLoading(false);
 		}, 1_000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const exercisesArray: string[] = [
@@ -57,7 +53,7 @@ export default function IntermediateExercises() {
 							<ExercisesTitleCard
 								level="accessory"
 								exercise={exercise}
-								index={index}
+								key={index + 'title'}
 								target={`#${exercise}`}
 							/>
 							<ExercisesModal
@@ -65,7 +61,7 @@ export default function IntermediateExercises() {
 								level="accessory"
 								id={exercise}
 								exercise={exercise}
-								index={index}
+								key={index + 'modal'}
 							/>
 						</div>
 					);

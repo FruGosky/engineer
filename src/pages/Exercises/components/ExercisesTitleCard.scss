@@ -2,8 +2,6 @@
 	max-width: 100%;
 	max-height: 50px !important;
 	&.grow {
-		// transition: all 0.2s ease-in-out;
-
 		&:hover {
 			transition: all 0.1s ease-in-out;
 			transform: scale(1.07);

@@ -3,7 +3,6 @@ import './ExercisesTitleCard.scss';
 
 interface ExercisesHeaderCardProps {
 	level: string;
-	index: number;
 	exercise: string;
 	target: string;
 }
@@ -15,7 +14,6 @@ export default function ExercisesTitleCard(
 		<div
 			data-bs-toggle="modal"
 			data-bs-target={props.target}
-			key={props.index}
 			className="exercise-card col shadow text-center grow"
 		>
 			<span className="fs-3 text-dark">

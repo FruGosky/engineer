@@ -21,7 +21,6 @@ export default function IntermediatePlan() {
 		setTimeout(() => {
 			setLoading(false);
 		}, 1_000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return loading ? (
