@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
-
+import './Bmi.scss';
+import BmiCalculator from './BmiComponents/Calculator';
+import AboutBmi from './BmiComponents/AboutBmi';
 export const BMI_TITLE = 'page.bmi.title';
 export const BMI_LINK = '/bmi';
 
@@ -26,8 +28,9 @@ export default function Bmi() {
 	return loading ? (
 		<LoadingIcon />
 	) : (
-		<div className="d-flex align-items-center justify-content-center">
-			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
+		<div className="d-flex align-items-center justify-content-center ">
+			<BmiCalculator />
+			<AboutBmi />
 		</div>
 	);
 }
