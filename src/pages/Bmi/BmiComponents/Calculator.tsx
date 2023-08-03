@@ -29,7 +29,7 @@ export default function BmiCalculator(): JSX.Element {
 		} else if (BMI >= 30 && BMI < 34.9) {
 			setOutputLabel('Otyłość');
 		} else {
-			setOutputLabel('Zaczna otyłość');
+			setOutputLabel('Znaczna otyłość');
 		}
 	}, [BMI]);
 	return (
@@ -40,7 +40,7 @@ export default function BmiCalculator(): JSX.Element {
 						className="form-check-input"
 						type="radio"
 						name="flexRadioDefault"
-						id="women"
+						id="metric"
 					/>
 					<label className="form-check-label" htmlFor="woman">
 						Metric Units
@@ -51,7 +51,7 @@ export default function BmiCalculator(): JSX.Element {
 						className="form-check-input"
 						type="radio"
 						name="flexRadioDefault"
-						id="man"
+						id="imperial"
 					/>
 					<label className="form-check-label" htmlFor="man">
 						Imperial Units
@@ -123,12 +123,16 @@ export default function BmiCalculator(): JSX.Element {
 				</div>
 				<button className="btn btn-primary col-auto">Oblicz</button>
 			</form>
-			{isSubmitted ? (
+			{isSubmitted && (
 				<div>
 					<div className="mt-3 text-center">
 						<label htmlFor="customRange1" className="form-label">
 							Twoje BMI:
 						</label>
+						<div>
+							<span className="float-start">niskie</span>
+							<span className="float-end">wysokie</span>
+						</div>
 						<input
 							type="range"
 							min="12"
@@ -149,8 +153,6 @@ export default function BmiCalculator(): JSX.Element {
 						Odśwież
 					</button>
 				</div>
-			) : (
-				<></>
 			)}
 		</div>
 	);
