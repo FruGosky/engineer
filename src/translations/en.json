@@ -8,14 +8,39 @@
 			"internet-problem": "Internet problem",
 			"search": "Search",
 			"loading": "Loading",
-			"there-is-no-such-action": "There is no such action"
+			"there-is-no-such-action": "There is no such action",
+			"calculate": "Calculate",
+			"refresh": "Refresh"
 		},
 		"page": {
 			"home": {
 				"title": "Home"
 			},
 			"bmi": {
-				"title": "Bmi"
+				"title": "Bmi",
+				"calculator": {
+					"units": "Units",
+					"imperial": "Imperial",
+					"metric": "Metric",
+					"height": "Height",
+					"weight": "Weight",
+					"your-bmi": "Your BMI",
+					"low": "Low",
+					"high": "High",
+					"underweight": "Underweight",
+					"weight-normal": "Weight normal",
+					"overweight": "Overweight",
+					"obesity": "Obesity",
+					"significant-obesity": "Significant obesity"
+				},
+				"about-bmi": {
+					"about-bmi-info": "Body mass index (BMI), Quetelet indexII - a ratio formed by dividing body weight given in kilograms by the square of height given in meters. The classification (range of values) of BMI has been developed for adults only and cannot be used for children. To assess the normal development of a child, centile grids are used, which should be adjusted for the population.",
+					"underweight-info": "If a person is underweight, it is important to consult a doctor or nutritionist to determine the cause of the underweight and an appropriate treatment plan. If a person is underweight, it is usually necessary to increase the caloric content of the diet, paying attention to the nutritional value of the meals consumed. In some cases, physical therapy or medical interventions may also be necessary, especially if the underweight is caused by health problems.",
+					"weight-normal-info": "Normal weight is a state in which a person's weight is in line with healthy body standards, as measured by the body mass index (BMI). The BMI value is between 18.5 and 24.9, and this result indicates that a person's weight is proportional to his or her height. The BMI range of 18.5 to 24.9 is considered adequate and indicates a healthy body weight.",
+					"overweight-info": "People with a BMI score between 25 and 29.9 are classified as overweight. Being overweight can increase the risk of many health problems, such as heart disease, high blood pressure, type 2 diabetes, respiratory diseases and musculoskeletal problems. In some cases, it can lead to the development of obesity if action is not taken to change lifestyle and diet.",
+					"obesity-info": "Obesity is a chronic disease that is defined as an excessive accumulation of body fat. It is a consequence of a positive energy balance in the body (more energy is supplied than burned by the body). Obese people are much more likely to develop such diseases as type 2 diabetes, hypertension, lipid disorders, heart attack, stroke, osteoarthritis and even some cancers including colon cancer and breast cancer. Obesity impairs fertility in both men and women and affects mood, contributing to depression.",
+					"significant-obesity-info": "People with such significant obesity should consult a doctor to determine an appropriate treatment and weight management plan. Treatment for obesity may include dietary changes, regular physical activity, psychological support, and in some cases, advanced methods such as bariatric surgery may also be considered. It is important to understand that each case of obesity is unique and requires an individualized approach to achieve a healthier lifestyle and improve quality of life."
+				}
 			},
 			"bmr": {
 				"title": "Bmr"

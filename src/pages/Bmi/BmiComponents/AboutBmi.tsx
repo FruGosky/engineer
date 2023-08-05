@@ -1,23 +1,48 @@
-export default function AboutBmi(): JSX.Element {
-	return (
-		<div className="card ">
-			Wskaźnik masy ciała (ang. body mass index, BMI), wskaźnik Queteleta
-			II –
-			<br />
-			współczynnik powstały przez podzielenie masy ciała podanej w
-			kilogramach
-			<br />
-			przez kwadrat wysokości podanej w metrach.
-			<br />
-			Klasyfikacja (zakres wartości) wskaźnika BMI została opracowana
-			wyłącznie
-			<br />
-			dla dorosłych i nie może być stosowana u dzieci.
-			<br />
-			Dla oceny prawidłowego rozwoju dziecka wykorzystuje się siatki
-			centylowe,
-			<br />
-			które powinny być dostosowane dla danej populacji.
-		</div>
+import { useState, useEffect } from 'react';
+import './AboutBmi.scss';
+import { useTranslation } from 'react-i18next';
+
+type aboutBmiProps = {
+	bmiInfo: string;
+};
+export default function AboutBmi(props: aboutBmiProps): JSX.Element {
+	const { t: translation } = useTranslation();
+
+	const T_UNDERWEIGHT = translation('page.bmi.calculator.underweight');
+	const T_WEIGHT_NORMAL = translation('page.bmi.calculator.weight-normal');
+	const T_OVERWEIGHT = translation('page.bmi.calculator.overweight');
+	const T_OBESITY = translation('page.bmi.calculator.obesity');
+	const T_SIGNIFICANT_OBESITY = translation(
+		'page.bmi.calculator.significant-obesity'
 	);
+	const T_ABOUT_BMI_INFO = translation('page.bmi.about-bmi.about-bmi-info');
+	const T_UNDERWEIGHT_INFO = translation(
+		'page.bmi.about-bmi.underweight-info'
+	);
+	const T_NORMAL_WEIGHT_INFO = translation(
+		'page.bmi.about-bmi.weight-normal-info'
+	);
+	const T_OVERWEIGHT_INFO = translation('page.bmi.about-bmi.overweight-info');
+	const T_OBESITY_INFO = translation('page.bmi.about-bmi.obesity-info');
+	const T_SIGNIFICANT_OBESITY_INFO = translation(
+		'page.bmi.about-bmi.significant-obesity-info'
+	);
+	const [aboutBmi, setAboutBmi] = useState<string>('');
+	useEffect(() => {
+		if (props.bmiInfo === T_UNDERWEIGHT) {
+			setAboutBmi(T_UNDERWEIGHT_INFO);
+		} else if (props.bmiInfo === T_WEIGHT_NORMAL) {
+			setAboutBmi(T_NORMAL_WEIGHT_INFO);
+		} else if (props.bmiInfo === T_OVERWEIGHT) {
+			setAboutBmi(T_OVERWEIGHT_INFO);
+		} else if (props.bmiInfo === T_OBESITY) {
+			setAboutBmi(T_OBESITY_INFO);
+		} else if (props.bmiInfo === T_SIGNIFICANT_OBESITY) {
+			setAboutBmi(T_SIGNIFICANT_OBESITY_INFO);
+		} else {
+			setAboutBmi(T_ABOUT_BMI_INFO);
+		}
+	}, [props.bmiInfo]);
+	console.log(aboutBmi);
+	return <div className="card about_bmi shadow">{aboutBmi}</div>;
 }
