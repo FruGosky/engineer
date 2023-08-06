@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import AboutBmi from './AboutBmi';
 import { useTranslation } from 'react-i18next';
-// import { Suspense } from 'react';
-// import { I18nextProvider } from 'react-i18next';
-// import i18n from './i18n'; // Your i18n instance
 
 export default function BmiCalculator(): JSX.Element {
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
@@ -231,12 +228,7 @@ export default function BmiCalculator(): JSX.Element {
 					</div>
 				)}
 			</div>
-			//!TODO fix not translatin aboutbmiinfo at first load
-			{/* <I18nextProvider i18n={i18n}>
-				<Suspense fallback={<div>Loading...</div>}> */}
 			<AboutBmi bmiInfo={outputLabel} />
-			{/* </Suspense>
-			</I18nextProvider> */}
 		</div>
 	);
 }
