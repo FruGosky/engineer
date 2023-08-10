@@ -27,7 +27,7 @@ export default function Bmr() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center">
-			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
+			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE} test here`}
 		</div>
 	);
 }
