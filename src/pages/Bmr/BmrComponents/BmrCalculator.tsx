@@ -1,0 +1,448 @@
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+export default function BmrCalculator(): JSX.Element {
+	type NutritionObject = {
+		protein: number;
+		fat: number;
+		carbs: number;
+	};
+	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+	const [heightValue, setHeightValue] = useState<number>(0);
+	const [weightValue, setWeightValue] = useState<number>(0);
+	const [units, setUnits] = useState<string>('metric');
+	const [weightUnit, setWeightUnit] = useState<string>('kg');
+	const [heightUnit, setHeightUnit] = useState<string>('cm');
+	const [helperUnit, setHeleperUnit] = useState<string>('500g');
+	const [sex, setSex] = useState<string>('');
+	const [activity, setActivity] = useState<string>('none');
+	const [age, setAge] = useState<number>(0);
+	const [BMR, setBmr] = useState<number>(0);
+	const [TDEE, setTDEE] = useState<number>(0);
+	const [keepWeightNutrition, setKeepWeightNutrition] =
+		useState<NutritionObject>({
+			protein: 0,
+			fat: 0,
+			carbs: 0,
+		});
+	const [gainWeightNutrition, setGainWeightNutrition] =
+		useState<NutritionObject>({
+			protein: 0,
+			fat: 0,
+			carbs: 0,
+		});
+	const [loseWeightNutrition, setLoseWeightNutrition] =
+		useState<NutritionObject>({
+			protein: 0,
+			fat: 0,
+			carbs: 0,
+		});
+	const { t: translation } = useTranslation();
+
+	const T_UNITS = translation('page.bmi.calculator.units');
+	const T_IMPERIAL = translation('page.bmi.calculator.imperial');
+	const T_METRIC = translation('page.bmi.calculator.metric');
+	const T_HEIGHT = translation('page.bmi.calculator.height');
+	const T_WEIGHT = translation('page.bmi.calculator.weight');
+
+	const T_CALCULATE = translation('common.calculate');
+	const T_REFRESH = translation('common.refresh');
+
+	useEffect(() => {
+		if (units === 'metric') {
+			setWeightUnit('kg');
+			setHeightUnit('cm');
+			setHeleperUnit('500g');
+		} else if (units === 'imperial') {
+			setWeightUnit('lbs');
+			setHeightUnit('ft');
+			setHeleperUnit('1 lb');
+		}
+	}, [units]);
+
+	const refreshHandler = (): void => {
+		setIsSubmitted(false);
+		setHeightValue(0);
+		setWeightValue(0);
+		setAge(0);
+		setBmr(0);
+		setTDEE(0);
+		setActivity('none');
+	};
+	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		setIsSubmitted(true);
+		if (units === 'metric') {
+			if (sex === 'male') {
+				setBmr(10 * weightValue + 6.25 * heightValue - 5 * age + 5);
+			} else {
+				setBmr(10 * weightValue + 6.25 * heightValue - 5 * age - 161);
+			}
+		} else {
+			if (sex === 'male') {
+				setBmr(
+					66 + 6.23 * weightValue + 12.7 * heightValue - 6.8 * age
+				);
+			} else {
+				setBmr(655 + 4.3 * weightValue + 4.7 * heightValue - 4.7 * age);
+			}
+		}
+	};
+
+	useEffect(() => {
+		if (activity === 'none') {
+			setTDEE(BMR * 1.2);
+		} else if (activity === 'low') {
+			setTDEE(BMR * 1.375);
+		} else if (activity === 'medium') {
+			setTDEE(BMR * 1.55);
+		} else if (activity === 'high') {
+			setTDEE(BMR * 1.725);
+		}
+	}, [BMR, activity]);
+	useEffect(() => {
+		setKeepWeightNutrition({
+			protein: (TDEE * 0.3) / 4,
+			fat: (TDEE * 0.25) / 9,
+			carbs: (TDEE * 0.45) / 4,
+		});
+		setGainWeightNutrition({
+			protein: ((TDEE + 500) * 0.3) / 4,
+			fat: ((TDEE + 500) * 0.25) / 9,
+			carbs: ((TDEE + 500) * 0.45) / 4,
+		});
+		setLoseWeightNutrition({
+			protein: ((TDEE - 500) * 0.3) / 4,
+			fat: ((TDEE - 500) * 0.25) / 9,
+			carbs: ((TDEE - 500) * 0.45) / 4,
+		});
+	}, [TDEE]);
+
+	return (
+		<div className="d-flex align-items-center justify-content-center flex-column">
+			<div className="card shadow">
+				<div className="mb-3 border-bottom border-info">
+					<div className="form-check">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="flexRadioDefault"
+							id="metric"
+							defaultChecked
+							onChange={() => {
+								setUnits('metric');
+								refreshHandler();
+							}}
+						/>
+						<label className="form-check-label" htmlFor="metric">
+							{T_METRIC} {T_UNITS}
+						</label>
+					</div>
+					<div className="form-check ">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="flexRadioDefault"
+							id="imperial"
+							onChange={(): void => {
+								setUnits('imperial');
+								refreshHandler();
+							}}
+						/>
+						<label className="form-check-label" htmlFor="imperial">
+							{T_IMPERIAL} {T_UNITS}
+						</label>
+					</div>
+				</div>
+				<form onSubmit={submitHandler}>
+					<div className="mb-3">
+						<div className="form-check">
+							<input
+								className="form-check-input"
+								type="radio"
+								name="flexRadioDefault"
+								id="male"
+								defaultChecked
+								onChange={() => {
+									setSex('male');
+								}}
+							/>
+							<label className="form-check-label" htmlFor="male">
+								Mężczyzna
+							</label>
+						</div>
+						<div className="form-check">
+							<input
+								className="form-check-input"
+								type="radio"
+								name="flexRadioDefault"
+								id="female"
+								onChange={(): void => {
+									setSex('female');
+								}}
+							/>
+							<label
+								className="form-check-label"
+								htmlFor="female"
+							>
+								Kobieta
+							</label>
+						</div>
+					</div>
+					<label htmlFor="activitySelect" className="mb-2">
+						Wybierz aktywność fizyczną:
+					</label>
+					<select
+						id="activitySelect"
+						className="form-select mb-3"
+						onChange={(event) => {
+							setActivity(event.target.value);
+						}}
+					>
+						<option value="none">
+							Znikoma aktywność (brak ćwiczeń, siedzący tryb
+							życia)
+						</option>
+						<option value="low">
+							Niska aktywność fizyczna (siedzący tryb życia, 1-2
+							treningi w tygodniu)
+						</option>
+						<option value="medium">
+							Średnia aktywność fizyczna (praca fizyczna, 3-5
+							treningi w tygodniu)
+						</option>
+						<option value="high">
+							Wysoka aktywność fizyczna (ciężka praca fizyczna,
+							codzienne treningi)
+						</option>
+					</select>
+					<div className="row g-3  mb-3 d-flex justify-content-between">
+						<div className="col-auto">
+							<label
+								htmlFor="height_input"
+								className="col-form-label"
+							>
+								{T_HEIGHT} -
+							</label>
+						</div>
+						<div className="col-auto">
+							<input
+								type="number"
+								id="height_input"
+								className="form-control info_input"
+								min="1"
+								max="300"
+								step={0.01}
+								inputMode="decimal"
+								onChange={(
+									event: React.ChangeEvent<HTMLInputElement>
+								): void => {
+									setHeightValue(
+										parseFloat(event.target.value)
+									);
+								}}
+								value={heightValue}
+								required
+							/>
+						</div>
+						<div className="col-auto text">
+							<span className="form-text">{heightUnit}</span>
+						</div>
+					</div>
+					<div className="row g-3  mb-3 d-flex justify-content-between">
+						<div className="col-auto">
+							<label
+								htmlFor="weight_input"
+								className="col-form-label "
+							>
+								{T_WEIGHT} -
+							</label>
+						</div>
+						<div className="col-auto">
+							<input
+								type="number"
+								id="weight_input"
+								className="form-control info_input"
+								min="1"
+								max="500"
+								step={0.1}
+								inputMode="decimal"
+								onChange={(
+									event: React.ChangeEvent<HTMLInputElement>
+								): void => {
+									setWeightValue(
+										parseFloat(event.target.value)
+									);
+								}}
+								value={weightValue}
+								required
+							/>
+						</div>
+						<div className="col-auto text">
+							<span className="form-text">{weightUnit}</span>
+						</div>
+					</div>
+					<div className="row g-3  mb-3 d-flex justify-content-between">
+						<div className="col-auto">
+							<label
+								htmlFor="age_input"
+								className="col-form-label"
+							>
+								Age -
+							</label>
+						</div>
+						<div className="col-auto">
+							<input
+								type="number"
+								id="age_input"
+								className="form-control info_input"
+								min="1"
+								max="150"
+								step="1"
+								onChange={(
+									event: React.ChangeEvent<HTMLInputElement>
+								): void => {
+									setAge(parseInt(event.target.value));
+								}}
+								value={age}
+								required
+							/>
+						</div>
+						<div className="col-auto text">
+							<span className="form-text">years</span>
+						</div>
+					</div>
+					<button className="btn btn-primary col-auto">
+						{T_CALCULATE}
+					</button>
+				</form>
+				{isSubmitted && (
+					<div>
+						<div className="text-center mt-3">
+							<label className="form-check-label" htmlFor="bmr">
+								twoje bmr wynosi:
+							</label>
+							<h1 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
+								{BMR.toFixed(0)} kcal
+							</h1>
+						</div>
+						<div className="mt-3 text-center ">
+							<label className="form-label m-3">
+								twoje zapotrzebowanie kalorczyne i
+								makroskładnikowe
+								<br />
+								(utrzymanie masy ciała)
+							</label>
+							<div></div>
+							<div className="nutritions">
+								<p className="text_nutrition text1">
+									białka{' '}
+									<span>
+										{keepWeightNutrition.protein.toFixed(0)}
+										g 35%
+									</span>
+								</p>
+								<p className="text_nutrition text2">
+									tluszcze{' '}
+									<span>
+										{keepWeightNutrition.fat.toFixed(0)}g
+										20%
+									</span>
+								</p>
+								<p className="text_nutrition text3">
+									Węglowodany
+									<span>
+										{keepWeightNutrition.carbs.toFixed(0)}g
+										45%
+									</span>
+								</p>
+							</div>
+							<div className="colors_bmi"></div>
+							<output className="mt-2 text-info">
+								{TDEE.toFixed(0)} kcal
+							</output>
+						</div>
+						<div className="mt-3 text-center ">
+							<label className="form-label m-3">
+								twoje zapotrzebowanie kalorczyne i
+								makroskładnikowe
+								<br />
+								(+{helperUnit} / tydzień)
+							</label>
+
+							<div className="nutritions">
+								<p className="text_nutrition text1">
+									białka
+									<span>
+										{gainWeightNutrition.protein.toFixed(0)}
+										g 35%
+									</span>
+								</p>
+								<p className="text_nutrition text2">
+									tluszcze
+									<span>
+										{gainWeightNutrition.fat.toFixed(0)}g
+										20%
+									</span>
+								</p>
+								<p className="text_nutrition text3">
+									Węglowodany
+									<span>
+										{gainWeightNutrition.carbs.toFixed(0)}g
+										45%
+									</span>
+								</p>
+							</div>
+							<div className="colors_bmi"></div>
+							<output className="mt-2 text-info">
+								{(TDEE + 500).toFixed(0)} kcal
+							</output>
+						</div>
+						<div className="mt-3 text-center ">
+							<label className="form-label m-3">
+								twoje zapotrzebowanie kalorczyne i
+								makroskładnikowe
+								<br />
+								(-{helperUnit} / tydzień)
+							</label>
+
+							<div className="nutritions">
+								<p className="text_nutrition text1">
+									białka{' '}
+									<span>
+										{loseWeightNutrition.protein.toFixed(0)}
+										g 35%
+									</span>
+								</p>
+								<p className="text_nutrition text2">
+									tluszcze{' '}
+									<span>
+										{loseWeightNutrition.fat.toFixed(0)}g
+										20%
+									</span>
+								</p>
+								<p className="text_nutrition text3">
+									Węglowodany{' '}
+									<span>
+										{loseWeightNutrition.carbs.toFixed(0)}g
+										45%
+									</span>
+								</p>
+							</div>
+							<div className="colors_bmi"></div>
+							<output className="mt-2 text-info">
+								{(TDEE - 500).toFixed(0)} kcal
+							</output>
+						</div>
+						<button
+							className="btn btn-primary col-auto mt-2"
+							onClick={refreshHandler}
+						>
+							{T_REFRESH}
+						</button>
+					</div>
+				)}
+			</div>
+		</div>
+	);
+}

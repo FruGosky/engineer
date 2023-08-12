@@ -8,17 +8,31 @@
 			"internet-problem": "Internet problem",
 			"search": "Search",
 			"loading": "Loading",
-			"there-is-no-such-action": "There is no such action"
+			"there-is-no-such-action": "There is no such action",
+			"calculate": "Calculate",
+			"refresh": "Refresh"
 		},
 		"page": {
 			"home": {
 				"title": "Home"
 			},
 			"bmi": {
-				"title": "Bmi"
-			},
-			"bmr": {
-				"title": "Bmr"
+				"title": "Bmi",
+				"calculator": {
+					"units": "Units",
+					"imperial": "Imperial",
+					"metric": "Metric",
+					"height": "Height",
+					"weight": "Weight",
+					"your-bmi": "Your BMI",
+					"low": "Low",
+					"high": "High",
+					"underweight": "Underweight",
+					"weight-normal": "Weight normal",
+					"overweight": "Overweight",
+					"obesity": "Obesity",
+					"significant-obesity": "Significant obesity"
+				}
 			},
 			"calories": {
 				"title": "Calories"

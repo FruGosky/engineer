@@ -1,0 +1,70 @@
+.card {
+	height: fit-content;
+	margin: 2rem;
+	width: fit-content;
+	padding: 2rem;
+}
+.info_input {
+	min-width: 12rem;
+}
+.col-form-label,
+.text {
+	min-width: 65px;
+}
+
+.nutritions {
+	position: relative;
+	width: 100%; /* The width of the parent div */
+	min-height: 30px; /* Adjust the height as needed */
+	height: fit-content;
+	margin-bottom: 30px;
+}
+.text_nutrition {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	height: 100%; /* Take up the full height of the parent div */
+}
+.text1 {
+	left: 0%;
+	width: 35%; /* Adjust the width as needed */
+	text-align: start;
+	color: rgb(236, 46, 135);
+}
+
+.text2 {
+	left: 30%;
+	width: 25%; /* Adjust the width as needed */
+	text-align: start;
+	color: rgb(175, 190, 33);
+}
+
+.text3 {
+	left: 55%;
+	width: 45%; /* Adjust the width as needed */
+	text-align: start;
+	color: rgb(16, 175, 114);
+}
+.colors_bmi {
+	background: linear-gradient(
+		to right,
+		rgb(236, 46, 135) 0,
+		rgb(236, 46, 135) 30%,
+		rgb(175, 190, 33) 30%,
+		rgb(175, 190, 33) 55%,
+		rgb(16, 175, 114) 55%,
+		rgb(16, 175, 114) 100%
+	) !important;
+
+	border-radius: 100px !important;
+	min-height: 12px;
+	width: 100% !important;
+}
+
+@media (max-width: 599px) {
+	.colors_bmi,
+	.card {
+		width: 100% !important;
+	}
+}
