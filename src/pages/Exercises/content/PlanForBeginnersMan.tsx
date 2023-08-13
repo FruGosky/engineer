@@ -57,37 +57,37 @@ export default function PlanForBegginersMan() {
 						<li>
 							<span>
 								{TRANSLATED_MONDAY}
-								<span className="letter_red"> A</span>
+								<span className="letter_red ms-1">A</span>
 							</span>
 						</li>
 						<li>
 							<span>
 								{TRANSLATED_WEDNESDAY}
-								<span className="letter_green"> B</span>
+								<span className="letter_green ms-1">B</span>
 							</span>
 						</li>
 						<li>
 							<span>
 								{TRANSLATED_FRIDAY}
-								<span className="letter_red"> A</span>
+								<span className="letter_red ms-1">A</span>
 							</span>
 						</li>
 						<li>
 							<span>
 								{TRANSLATED_MONDAY}
-								<span className="letter_green"> B</span>
+								<span className="letter_green ms-1">B</span>
 							</span>
 						</li>
 						<li>
 							<span>
 								{TRANSLATED_WEDNESDAY}
-								<span className="letter_red"> A</span>
+								<span className="letter_red ms-1">A</span>
 							</span>
 						</li>
 						<li>
 							<span>
 								{TRANSLATED_FRIDAY}
-								<span className="letter_green"> B</span>
+								<span className="letter_green ms-1">B</span>
 							</span>
 						</li>
 					</ul>
@@ -117,7 +117,7 @@ export default function PlanForBegginersMan() {
 						<td>{`${TRANSLATED_NARROW_BENCH_PRESS} 3x8`}</td>
 					</tr>
 					<tr>
-						<td>Biceps + Triceps</td>
+						<td>{'Biceps + Triceps'}</td>
 						<td>Biceps 3x8</td>
 					</tr>
 					<tr>

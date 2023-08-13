@@ -49,7 +49,10 @@ export default function IntermediateExercises() {
 			<div className="container_bottom row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<div className="d-flex flex-column align-items-center">
+						<div
+							className="d-flex flex-column align-items-center"
+							key={index + 'div'}
+						>
 							<ExercisesTitleCard
 								level="accessory"
 								exercise={exercise}

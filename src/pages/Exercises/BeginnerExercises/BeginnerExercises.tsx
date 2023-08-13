@@ -53,7 +53,10 @@ export default function BeginnersExercises() {
 			<div className="container_bottom  row">
 				{exercisesArray.map((exercise, index): JSX.Element => {
 					return (
-						<div className="d-flex flex-column align-items-center">
+						<div
+							className="d-flex flex-column align-items-center"
+							key={index + 'div'}
+						>
 							<ExercisesTitleCard
 								level="beginners-plan"
 								exercise={exercise}

@@ -31,11 +31,14 @@ export default function IntermediateInfo() {
 			<div className="col-lg-6 mx-auto">
 				<p className="lead mb-4">
 					{TRANSLATED_POWER_FBW}
-					<br /> {TRANSLATED_HYPER_LOW}
+					<br />
+					{TRANSLATED_HYPER_LOW}
 					<br />
 					{TRANSLATED_HYPER_UP}
-					<br /> {TRANSLATED_BALANS_FBW}
-					<br /> {TRANSLATED_ABOUT_PUSH}
+					<br />
+					{TRANSLATED_BALANS_FBW}
+					<br />
+					{TRANSLATED_ABOUT_PUSH}
 				</p>
 				<div className="d-grid gap-2 d-sm-flex justify-content-sm-center"></div>
 			</div>
