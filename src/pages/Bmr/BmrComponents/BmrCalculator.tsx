@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { evaluate } from 'mathjs';
 
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
@@ -23,6 +24,14 @@ export default function BmrCalculator(): JSX.Element {
 	const T_FAT = translation('page.bmr.fat');
 	const T_CARBS = translation('page.bmr.carbohydrates');
 	const T_WEEK = translation('page.bmr.week');
+	const T_UNITS = translation('page.bmi.calculator.units');
+	const T_IMPERIAL = translation('page.bmi.calculator.imperial');
+	const T_METRIC = translation('page.bmi.calculator.metric');
+	const T_HEIGHT = translation('page.bmi.calculator.height');
+	const T_WEIGHT = translation('page.bmi.calculator.weight');
+
+	const T_CALCULATE = translation('common.calculate');
+	const T_REFRESH = translation('common.refresh');
 	type NutritionObject = {
 		protein: number;
 		fat: number;
@@ -59,15 +68,6 @@ export default function BmrCalculator(): JSX.Element {
 			carbs: 0,
 		});
 
-	const T_UNITS = translation('page.bmi.calculator.units');
-	const T_IMPERIAL = translation('page.bmi.calculator.imperial');
-	const T_METRIC = translation('page.bmi.calculator.metric');
-	const T_HEIGHT = translation('page.bmi.calculator.height');
-	const T_WEIGHT = translation('page.bmi.calculator.weight');
-
-	const T_CALCULATE = translation('common.calculate');
-	const T_REFRESH = translation('common.refresh');
-
 	useEffect(() => {
 		if (units === 'metric') {
 			setWeightUnit('kg');
@@ -88,25 +88,6 @@ export default function BmrCalculator(): JSX.Element {
 		setBmr(0);
 		setTDEE(0);
 		setActivity('none');
-	};
-	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		setIsSubmitted(true);
-		if (units === 'metric') {
-			if (sex === 'male') {
-				setBmr(10 * weightValue + 6.25 * heightValue - 5 * age + 5);
-			} else {
-				setBmr(10 * weightValue + 6.25 * heightValue - 5 * age - 161);
-			}
-		} else {
-			if (sex === 'male') {
-				setBmr(
-					66 + 6.23 * weightValue + 12.7 * heightValue - 6.8 * age
-				);
-			} else {
-				setBmr(655 + 4.3 * weightValue + 4.7 * heightValue - 4.7 * age);
-			}
-		}
 	};
 
 	useEffect(() => {
@@ -137,7 +118,56 @@ export default function BmrCalculator(): JSX.Element {
 			carbs: ((TDEE - 500) * 0.45) / 4,
 		});
 	}, [TDEE]);
+	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+		setUnits(e.target.value);
+		refreshHandler();
+	};
+	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+		setSex(e.target.value);
+		refreshHandler();
+	};
 
+	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		setIsSubmitted(true);
+		if (units === 'metric') {
+			if (sex === 'male') {
+				const expression = `66.47 + (13.76 * weightValue) + (5.003 * heightValue) - (6.755 * age)`;
+				const result = evaluate(expression, {
+					weightValue,
+					heightValue,
+					age,
+				});
+				setBmr(result);
+			} else {
+				const expression = `655.1 + ( 9.563 * weightValue ) + ( 1.850 * heightValue ) - ( 4.676 * age )`;
+				const result = evaluate(expression, {
+					weightValue,
+					heightValue,
+					age,
+				});
+				setBmr(result);
+			}
+		} else {
+			if (sex === 'male') {
+				const expression = `66.47 + ( 6.24 * weightValue ) + ( 12.7 * (heightValue * 12) ) - ( 6.755 * age )`;
+				const result = evaluate(expression, {
+					weightValue,
+					heightValue,
+					age,
+				});
+				setBmr(result);
+			} else {
+				const expression = `655.1 + ( 4.35 * weightValue ) + ( 4.7 * (heightValue * 12) ) - ( 4.676 * age )`;
+				const result = evaluate(expression, {
+					weightValue,
+					heightValue,
+					age,
+				});
+				setBmr(result);
+			}
+		}
+	};
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
 			<div className="card shadow">
@@ -148,11 +178,9 @@ export default function BmrCalculator(): JSX.Element {
 							type="radio"
 							name="flexRadioDefault"
 							id="metric"
-							defaultChecked
-							onChange={() => {
-								setUnits('metric');
-								refreshHandler();
-							}}
+							value="metric"
+							checked={units === 'metric'}
+							onChange={onUnitsChange}
 						/>
 						<label className="form-check-label" htmlFor="metric">
 							{T_METRIC} {T_UNITS}
@@ -164,10 +192,9 @@ export default function BmrCalculator(): JSX.Element {
 							type="radio"
 							name="flexRadioDefault"
 							id="imperial"
-							onChange={(): void => {
-								setUnits('imperial');
-								refreshHandler();
-							}}
+							value="imperial"
+							checked={units === 'imperial'}
+							onChange={onUnitsChange}
 						/>
 						<label className="form-check-label" htmlFor="imperial">
 							{T_IMPERIAL} {T_UNITS}
@@ -180,12 +207,12 @@ export default function BmrCalculator(): JSX.Element {
 							<input
 								className="form-check-input"
 								type="radio"
-								name="flexRadioDefault"
+								name="sex"
 								id="male"
-								defaultChecked
-								onChange={() => {
-									setSex('male');
-								}}
+								value="male"
+								checked={sex === 'male'}
+								required
+								onChange={onSexChange}
 							/>
 							<label className="form-check-label" htmlFor="male">
 								{T_MAN}
@@ -195,11 +222,12 @@ export default function BmrCalculator(): JSX.Element {
 							<input
 								className="form-check-input"
 								type="radio"
-								name="flexRadioDefault"
+								name="sex"
 								id="female"
-								onChange={(): void => {
-									setSex('female');
-								}}
+								value="female"
+								checked={sex === 'female'}
+								required
+								onChange={onSexChange}
 							/>
 							<label
 								className="form-check-label"
