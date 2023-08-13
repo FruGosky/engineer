@@ -2,6 +2,27 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function BmrCalculator(): JSX.Element {
+	const { t: translation } = useTranslation();
+	const T_MAN = translation('common.man');
+	const T_WOMAN = translation('common.woman');
+	const T_AGE = translation('common.age');
+	const T_CHOOSE_PHYSICAL_ACTIVITY = translation(
+		'page.bmr.choose-physical-activity'
+	);
+	const T_NONE_ACTIVITY = translation('page.bmr.none-activity');
+	const T_LOW_ACTIVITY = translation('page.bmr.low-activity');
+	const T_MEDIUM_ACTIVITY = translation('page.bmr.medium-activity');
+	const T_HIGH_ACTIVITY = translation('page.bmr.high-activity');
+	const T_YEARS = translation('page.bmr.years');
+	const T_YOUR_BMR = translation('page.bmr.your-bmr');
+	const T_YOUR_CALORIC_NEEDS = translation(
+		'page.bmr.your-caloric-and-macronutrient-needs'
+	);
+	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
+	const T_PROTEIN = translation('page.bmr.protein');
+	const T_FAT = translation('page.bmr.fat');
+	const T_CARBS = translation('page.bmr.carbohydrates');
+	const T_WEEK = translation('page.bmr.week');
 	type NutritionObject = {
 		protein: number;
 		fat: number;
@@ -37,7 +58,6 @@ export default function BmrCalculator(): JSX.Element {
 			fat: 0,
 			carbs: 0,
 		});
-	const { t: translation } = useTranslation();
 
 	const T_UNITS = translation('page.bmi.calculator.units');
 	const T_IMPERIAL = translation('page.bmi.calculator.imperial');
@@ -168,7 +188,7 @@ export default function BmrCalculator(): JSX.Element {
 								}}
 							/>
 							<label className="form-check-label" htmlFor="male">
-								Mężczyzna
+								{T_MAN}
 							</label>
 						</div>
 						<div className="form-check">
@@ -185,12 +205,12 @@ export default function BmrCalculator(): JSX.Element {
 								className="form-check-label"
 								htmlFor="female"
 							>
-								Kobieta
+								{T_WOMAN}
 							</label>
 						</div>
 					</div>
 					<label htmlFor="activitySelect" className="mb-2">
-						Wybierz aktywność fizyczną:
+						{T_CHOOSE_PHYSICAL_ACTIVITY}:
 					</label>
 					<select
 						id="activitySelect"
@@ -199,22 +219,10 @@ export default function BmrCalculator(): JSX.Element {
 							setActivity(event.target.value);
 						}}
 					>
-						<option value="none">
-							Znikoma aktywność (brak ćwiczeń, siedzący tryb
-							życia)
-						</option>
-						<option value="low">
-							Niska aktywność fizyczna (siedzący tryb życia, 1-2
-							treningi w tygodniu)
-						</option>
-						<option value="medium">
-							Średnia aktywność fizyczna (praca fizyczna, 3-5
-							treningi w tygodniu)
-						</option>
-						<option value="high">
-							Wysoka aktywność fizyczna (ciężka praca fizyczna,
-							codzienne treningi)
-						</option>
+						<option value="none">{T_NONE_ACTIVITY}</option>
+						<option value="low">{T_LOW_ACTIVITY}</option>
+						<option value="medium">{T_MEDIUM_ACTIVITY}</option>
+						<option value="high">{T_HIGH_ACTIVITY}</option>
 					</select>
 					<div className="row g-3  mb-3 d-flex justify-content-between">
 						<div className="col-auto">
@@ -288,7 +296,7 @@ export default function BmrCalculator(): JSX.Element {
 								htmlFor="age_input"
 								className="col-form-label"
 							>
-								Age -
+								{T_AGE} -
 							</label>
 						</div>
 						<div className="col-auto">
@@ -309,7 +317,7 @@ export default function BmrCalculator(): JSX.Element {
 							/>
 						</div>
 						<div className="col-auto text">
-							<span className="form-text">years</span>
+							<span className="form-text">{T_YEARS}</span>
 						</div>
 					</div>
 					<button className="btn btn-primary col-auto">
@@ -320,7 +328,7 @@ export default function BmrCalculator(): JSX.Element {
 					<div>
 						<div className="text-center mt-3">
 							<label className="form-check-label" htmlFor="bmr">
-								twoje bmr wynosi:
+								{T_YOUR_BMR}:
 							</label>
 							<h1 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
 								{BMR.toFixed(0)} kcal
@@ -328,29 +336,27 @@ export default function BmrCalculator(): JSX.Element {
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
-								twoje zapotrzebowanie kalorczyne i
-								makroskładnikowe
-								<br />
-								(utrzymanie masy ciała)
+								{T_YOUR_CALORIC_NEEDS}
+								<br />({T_WEIGHT_MAINTANCE})
 							</label>
 							<div></div>
 							<div className="nutritions">
 								<p className="text_nutrition text1">
-									białka{' '}
+									{T_PROTEIN}
 									<span>
 										{keepWeightNutrition.protein.toFixed(0)}
 										g 35%
 									</span>
 								</p>
 								<p className="text_nutrition text2">
-									tluszcze{' '}
+									{T_FAT}
 									<span>
 										{keepWeightNutrition.fat.toFixed(0)}g
 										20%
 									</span>
 								</p>
 								<p className="text_nutrition text3">
-									Węglowodany
+									{T_CARBS}
 									<span>
 										{keepWeightNutrition.carbs.toFixed(0)}g
 										45%
@@ -364,29 +370,28 @@ export default function BmrCalculator(): JSX.Element {
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
-								twoje zapotrzebowanie kalorczyne i
-								makroskładnikowe
+								{T_YOUR_CALORIC_NEEDS}
 								<br />
-								(+{helperUnit} / tydzień)
+								(+{helperUnit} / {T_WEEK})
 							</label>
 
 							<div className="nutritions">
 								<p className="text_nutrition text1">
-									białka
+									{T_PROTEIN}
 									<span>
 										{gainWeightNutrition.protein.toFixed(0)}
 										g 35%
 									</span>
 								</p>
 								<p className="text_nutrition text2">
-									tluszcze
+									{T_FAT}
 									<span>
 										{gainWeightNutrition.fat.toFixed(0)}g
 										20%
 									</span>
 								</p>
 								<p className="text_nutrition text3">
-									Węglowodany
+									{T_CARBS}
 									<span>
 										{gainWeightNutrition.carbs.toFixed(0)}g
 										45%
@@ -400,29 +405,28 @@ export default function BmrCalculator(): JSX.Element {
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
-								twoje zapotrzebowanie kalorczyne i
-								makroskładnikowe
+								{T_YOUR_CALORIC_NEEDS}
 								<br />
-								(-{helperUnit} / tydzień)
+								(-{helperUnit} / {T_WEEK})
 							</label>
 
 							<div className="nutritions">
 								<p className="text_nutrition text1">
-									białka{' '}
+									{T_PROTEIN}
 									<span>
 										{loseWeightNutrition.protein.toFixed(0)}
 										g 35%
 									</span>
 								</p>
 								<p className="text_nutrition text2">
-									tluszcze{' '}
+									{T_FAT}
 									<span>
 										{loseWeightNutrition.fat.toFixed(0)}g
 										20%
 									</span>
 								</p>
 								<p className="text_nutrition text3">
-									Węglowodany{' '}
+									{T_CARBS}
 									<span>
 										{loseWeightNutrition.carbs.toFixed(0)}g
 										45%

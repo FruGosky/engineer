@@ -10,7 +10,10 @@
 			"loading": "Ładowanie",
 			"there-is-no-such-action": "Nie ma takiej akcji",
 			"calculate": "Oblicz",
-			"refresh": "Odśwież"
+			"refresh": "Odśwież",
+			"man": "Mężczyzna",
+			"woman": "Kobieta",
+			"age": "Wiek"
 		},
 		"page": {
 			"home": {
@@ -43,7 +46,20 @@
 				}
 			},
 			"bmr": {
-				"title": "Bmr"
+				"title": "Bmr",
+				"choose-physical-activity": "Wybierz aktywność fizyczną",
+				"none-activity": "Znikoma aktywność (brak ćwiczeń, siedzący tryb życia)",
+				"low-activity": "Niska aktywność fizyczna (siedzący tryb życia, 1-2 treningi w tygodniu)",
+				"medium-activity": "Średnia aktywność fizyczna (praca fizyczna, 3-5 treningi w tygodniu)",
+				"high-activity": "Wysoka aktywność fizyczna (ciężka praca fizyczna, codzienne treningi",
+				"years": "Lat(a)",
+				"your-bmr": "Twoje BMR",
+				"your-caloric-and-macronutrient-needs": "Twoje zapotrzebowanie kalorczyne i makroskładnikowe",
+				"weight-maintenance": "Utrzymanie masy ciała",
+				"protein": "Białka",
+				"fat": "Tłuszcze",
+				"carbohydrates": "Węglowodany",
+				"week": "Tydzień"
 			},
 			"calories": {
 				"title": "Kalorie"

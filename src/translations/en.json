@@ -10,7 +10,10 @@
 			"loading": "Loading",
 			"there-is-no-such-action": "There is no such action",
 			"calculate": "Calculate",
-			"refresh": "Refresh"
+			"refresh": "Refresh",
+			"man": "Man",
+			"woman": "Woman",
+			"age": "Age"
 		},
 		"page": {
 			"home": {
@@ -33,6 +36,22 @@
 					"obesity": "Obesity",
 					"significant-obesity": "Significant obesity"
 				}
+			},
+			"bmr": {
+				"title": "Bmr",
+				"choose-physical-activity": "Choose physical activity",
+				"none-activity": "Little activity (no exercise, sedentary life)",
+				"low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
+				"medium-activity": "Average physical activity (physical work, 3-5 workouts per week)",
+				"high-activity": "High physical activity (hard physical work, daily workouts)",
+				"years": "years",
+				"your-bmr": "Your BMR",
+				"your-caloric-and-macronutrient-needs": "Your caloric and macronutrient needs",
+				"weight-maintenance": "Weight maintenance",
+				"protein": "Protein",
+				"fat": "Fat",
+				"carbohydrates": "Carbohydrates",
+				"week": "Week"
 			},
 			"calories": {
 				"title": "Calories"
