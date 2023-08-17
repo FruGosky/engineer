@@ -304,7 +304,9 @@ export default function BmiCalculator(): JSX.Element {
 							<span>{T_HIGH}</span>
 						</div>
 
-						<output>{`${BMI.toFixed(2)} - ${outputLabel}`}</output>
+						<output className="mt-2">
+							{`${BMI.toFixed(2)} - ${outputLabel}`}
+						</output>
 					</div>
 				)}
 			</div>
