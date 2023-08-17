@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { evaluate } from 'mathjs';
 
+type NutritionObject = {
+	protein: number;
+	fat: number;
+	carbs: number;
+};
+
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -32,11 +38,7 @@ export default function BmrCalculator(): JSX.Element {
 
 	const T_CALCULATE = translation('common.calculate');
 	const T_REFRESH = translation('common.refresh');
-	type NutritionObject = {
-		protein: number;
-		fat: number;
-		carbs: number;
-	};
+
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
@@ -101,6 +103,7 @@ export default function BmrCalculator(): JSX.Element {
 			setTDEE(BMR * 1.725);
 		}
 	}, [BMR, activity]);
+
 	useEffect(() => {
 		setKeepWeightNutrition({
 			protein: (TDEE * 0.3) / 4,
@@ -118,10 +121,12 @@ export default function BmrCalculator(): JSX.Element {
 			carbs: ((TDEE - 500) * 0.45) / 4,
 		});
 	}, [TDEE]);
+
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
 		refreshHandler();
 	};
+
 	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSex(e.target.value);
 		refreshHandler();
@@ -168,6 +173,7 @@ export default function BmrCalculator(): JSX.Element {
 			}
 		}
 	};
+
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
 			<div className="card shadow">
