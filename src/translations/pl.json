@@ -10,6 +10,9 @@
 			"loading": "Ładowanie",
 			"to": "do",
 			"there-is-no-such-action": "Nie ma takiej akcji",
+			"calculate": "Oblicz",
+			"refresh": "Odśwież",
+			"doesnt-exist": "nie istnieje",
 			"close": "Close"
 		},
 		"page": {
@@ -17,7 +20,32 @@
 				"title": "Strona główna"
 			},
 			"bmi": {
-				"title": "Bmi"
+				"title": "Bmi",
+				"calculator": {
+					"units": "Jednostki",
+					"imperial": "Imperialne",
+					"metric": "Metryczne",
+					"height": "Wzrost",
+					"weight": "Waga",
+					"your-bmi": "Twoje BMI",
+					"low": "Niskie",
+					"high": "Wysokie",
+					"underweight": "Niedowaga",
+					"weight-normal": "Waga w normie",
+					"overweight": "Nadwaga",
+					"obesity": "Otyłość",
+					"significant-obesity": "Znaczna otyłość",
+					"title": "Kalkulator BMI",
+					"bmi-category-for": "Kategoria BMI dla"
+				},
+				"about-bmi": {
+					"about-bmi-info": "Wskaźnik masy ciała (ang. body mass index, BMI), wskaźnik QueteletaII – współczynnik powstały przez podzielenie masy ciała podanej w kilogramach przez kwadrat wysokości podanej w metrach. Klasyfikacja (zakres wartości) wskaźnika BMI została opracowana wyłącznie dla dorosłych i nie może być stosowana u dzieci. Dla oceny prawidłowego rozwoju dziecka wykorzystuje się siatki centylowe, które powinny być dostosowane dla danej populacji.",
+					"underweight-info": "Jeśli osoba ma niedowagę, ważne jest, aby zasięgnąć porady lekarza lub dietetyka w celu ustalenia przyczyny niedowagi i odpowiedniego planu leczenia. W przypadku niedowagi zwykle konieczne jest zwiększenie kaloryczności diety, zwracając uwagę na wartość odżywczą spożywanych posiłków. W niektórych przypadkach, terapia fizyczna lub interwencje medyczne mogą być również konieczne, szczególnie jeśli niedowaga jest spowodowana problemami zdrowotnymi.",
+					"weight-normal-info": "Waga prawidłowa to stan, w którym waga osoby jest w zgodzie z normami zdrowego ciała, co jest mierzone za pomocą wskaźnika masy ciała (BMI - Body Mass Index). Wartość BMI mieści się w przedziale od 18,5 do 24,9, a wynik ten wskazuje, że waga osoby jest proporcjonalna do jej wzrostu. Przedział BMI 18,5 do 24,9 jest uznawany za odpowiedni i wskazuje na zdrową masę ciała.",
+					"overweight-info": "Osoby z wynikiem BMI między 25 a 29,9 są sklasyfikowane jako mające nadwagę. Nadwaga może zwiększać ryzyko wielu problemów zdrowotnych, takich jak choroby serca, nadciśnienie, cukrzyca typu 2, choroby układu oddechowego i problemy z układem kostno-mięśniowym. W niektórych przypadkach może prowadzić do rozwoju otyłości, jeśli nie zostanie podjęte działanie w celu zmiany stylu życia i diety.",
+					"obesity-info": "Otyłość to choroba przewlekła, która definiowana jest jako nadmierne nagromadzenie tkanki tłuszczowej w organizmie. Jest konsekwencją dodatniego bilansu energetycznego w organizmie (więcej energii jest dostarczanej niż spalanej przez organizm). U osób otyłych znacznie częściej rozwijają się takie choroby jak: cukrzyca typu 2, nadciśnienie tętnicze, zaburzenia lipidowe, zawał serca, udar mózgu, choroba zwyrodnieniowa stawów a nawet niektóre choroby nowotworowe w tym rak jelita grubego i rak piersi. Otyłość upośledza płodność zarówno u kobiet i mężczyzn oraz wpływa na samopoczucie, przyczyniając się do powstawania depresji.",
+					"significant-obesity-info": "Osoby z tak znaczną otyłością powinny skonsultować się z lekarzem w celu określenia odpowiedniego planu leczenia i zarządzania wagi. Leczenie otyłości może obejmować zmiany w diecie, regularną aktywność fizyczną, wsparcie psychologiczne, a w niektórych przypadkach, zaawansowane metody, takie jak chirurgia bariatryczna, mogą być również rozważane. Ważne jest, aby zrozumieć, że każdy przypadek otyłości jest unikalny i wymaga indywidualnego podejścia w celu osiągnięcia zdrowszego stylu życia i poprawy jakości życia."
+				}
 			},
 			"bmr": {
 				"title": "Bmr"
