@@ -18,6 +18,7 @@ $main-height: calc(100svh - $header-height - $footer-height);
 .main {
 	position: relative;
 	height: $main-height;
+	scroll-behavior: smooth;
 
 	& > * {
 		min-height: 100%;

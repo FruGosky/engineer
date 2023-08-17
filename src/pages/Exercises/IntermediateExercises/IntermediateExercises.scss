@@ -1,0 +1,48 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(111, 126, 213, 0.808),
+		rgba(40, 42, 180, 0.801)
+	);
+
+	flex-direction: column;
+}
+.container_top {
+	padding: 20px;
+}
+
+.container_bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.container_bottom .exercise-card {
+	flex-basis: 200px;
+	flex-grow: 1;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	transition: box-shadow 0.3s;
+}
+
+.container_bottom .exercise-card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container_bottom .header {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.container_top h1 {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
