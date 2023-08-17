@@ -13,7 +13,7 @@ export default function BmiCalculator(): JSX.Element {
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
-	const [outputLabel, setOutputLabel] = useState<string>('');
+	const [nameOfBmiRange, setNameOfBmiRange] = useState<string>('');
 	const [units, setUnits] = useState<string>('metric');
 	const [weightUnit, setWeightUnit] = useState<string>('kg');
 	const [heightUnit, setHeightUnit] = useState<string>('cm');
@@ -68,7 +68,7 @@ export default function BmiCalculator(): JSX.Element {
 		setHeightValue(0);
 
 		setWeightValue(0);
-		setOutputLabel('');
+		setNameOfBmiRange('');
 	};
 
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -93,11 +93,11 @@ export default function BmiCalculator(): JSX.Element {
 			const weightValue = bmiData.weight;
 			const heightValue = bmiData.height;
 			const bmi = (weightValue / (heightValue * heightValue)) * 10000;
-			setOutputLabel(calcBmiRange(bmi));
+			setNameOfBmiRange(calcBmiRange(bmi));
 			return bmi;
 		}
 		const bmi = (weightValue / (heightValue * heightValue)) * 10000;
-		setOutputLabel(calcBmiRange(bmi));
+		setNameOfBmiRange(calcBmiRange(bmi));
 		return bmi;
 	};
 
@@ -108,12 +108,12 @@ export default function BmiCalculator(): JSX.Element {
 			const convertedHeight = heightValue * 12;
 			const bmi =
 				(weightValue * 703) / (convertedHeight * convertedHeight);
-			setOutputLabel(calcBmiRange(bmi));
+			setNameOfBmiRange(calcBmiRange(bmi));
 			return bmi;
 		}
 		const convertedHeight = heightValue * 12;
 		const bmi = (weightValue * 703) / (convertedHeight * convertedHeight);
-		setOutputLabel(calcBmiRange(bmi));
+		setNameOfBmiRange(calcBmiRange(bmi));
 		return bmi;
 	};
 
@@ -288,7 +288,7 @@ export default function BmiCalculator(): JSX.Element {
 				{isSubmitted && (
 					<div className="mt-3 text-center">
 						<label htmlFor="customRange1" className="form-label">
-							{T_YOUR_BMI}:
+							{`${T_YOUR_BMI}:`}
 						</label>
 						<div className="d-flex gap-2">
 							<span>{T_LOW}</span>
@@ -305,12 +305,16 @@ export default function BmiCalculator(): JSX.Element {
 						</div>
 
 						<output className="mt-2">
-							{`${BMI.toFixed(2)} - ${outputLabel}`}
+							{BMI.toFixed(2)} - {nameOfBmiRange}
+						</output>
+
+						<output className="mt-2">
+							{`${BMI.toFixed(2)} - ${nameOfBmiRange}`}
 						</output>
 					</div>
 				)}
 			</div>
-			<AboutBmi bmiInfo={outputLabel} />
+			<AboutBmi bmiInfo={nameOfBmiRange} />
 		</div>
 	);
 }
