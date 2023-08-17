@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import './AboutBmi.scss';
 import { useTranslation } from 'react-i18next';
+import styles from './AboutBmi.module.scss';
 
 type aboutBmiProps = {
 	bmiInfo: string;
@@ -42,7 +42,12 @@ export default function AboutBmi(props: aboutBmiProps): JSX.Element {
 		} else {
 			setAboutBmi(T_ABOUT_BMI_INFO);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [props.bmiInfo]);
-	console.log(aboutBmi);
-	return <div className="card about_bmi shadow">{aboutBmi}</div>;
+
+	return (
+		<div className={`card m-4 p-4 ${styles.about_bmi} shadow`}>
+			{aboutBmi}
+		</div>
+	);
 }

@@ -10,7 +10,8 @@
 			"loading": "Loading",
 			"there-is-no-such-action": "There is no such action",
 			"calculate": "Calculate",
-			"refresh": "Refresh"
+			"refresh": "Refresh",
+			"doesnt-exist": "doesn't exist"
 		},
 		"page": {
 			"home": {
@@ -31,7 +32,9 @@
 					"weight-normal": "Weight normal",
 					"overweight": "Overweight",
 					"obesity": "Obesity",
-					"significant-obesity": "Significant obesity"
+					"significant-obesity": "Significant obesity",
+					"title": "BMI Calculator",
+					"bmi-category-for": "BMI Category for"
 				},
 				"about-bmi": {
 					"about-bmi-info": "Body mass index (BMI), Quetelet indexII - a ratio formed by dividing body weight given in kilograms by the square of height given in meters. The classification (range of values) of BMI has been developed for adults only and cannot be used for children. To assess the normal development of a child, centile grids are used, which should be adjusted for the population.",

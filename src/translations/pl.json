@@ -10,7 +10,8 @@
 			"loading": "Ładowanie",
 			"there-is-no-such-action": "Nie ma takiej akcji",
 			"calculate": "Oblicz",
-			"refresh": "Odśwież"
+			"refresh": "Odśwież",
+			"doesnt-exist": "nie istnieje"
 		},
 		"page": {
 			"home": {
@@ -31,7 +32,9 @@
 					"weight-normal": "Waga w normie",
 					"overweight": "Nadwaga",
 					"obesity": "Otyłość",
-					"significant-obesity": "Znaczna otyłość"
+					"significant-obesity": "Znaczna otyłość",
+					"title": "Kalkulator BMI",
+					"bmi-category-for": "Kategoria BMI dla"
 				},
 				"about-bmi": {
 					"about-bmi-info": "Wskaźnik masy ciała (ang. body mass index, BMI), wskaźnik QueteletaII – współczynnik powstały przez podzielenie masy ciała podanej w kilogramach przez kwadrat wysokości podanej w metrach. Klasyfikacja (zakres wartości) wskaźnika BMI została opracowana wyłącznie dla dorosłych i nie może być stosowana u dzieci. Dla oceny prawidłowego rozwoju dziecka wykorzystuje się siatki centylowe, które powinny być dostosowane dla danej populacji.",

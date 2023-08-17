@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
-import './Bmi.scss';
 import BmiCalculator from './BmiComponents/BmiCalculator';
-import AboutBmi from './BmiComponents/AboutBmi';
 export const BMI_TITLE = 'page.bmi.title';
 export const BMI_LINK = '/bmi';
 
