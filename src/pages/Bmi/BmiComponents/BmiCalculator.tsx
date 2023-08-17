@@ -305,10 +305,6 @@ export default function BmiCalculator(): JSX.Element {
 						</div>
 
 						<output className="mt-2">
-							{BMI.toFixed(2)} - {nameOfBmiRange}
-						</output>
-
-						<output className="mt-2">
 							{`${BMI.toFixed(2)} - ${nameOfBmiRange}`}
 						</output>
 					</div>
