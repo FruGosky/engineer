@@ -59,7 +59,8 @@
 				"protein": "Białka",
 				"fat": "Tłuszcze",
 				"carbohydrates": "Węglowodany",
-				"week": "Tydzień"
+				"week": "Tydzień",
+				"calculator-title": "Kalkulator BMR"
 			},
 			"calories": {
 				"title": "Kalorie"

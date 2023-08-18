@@ -51,7 +51,8 @@
 				"protein": "Protein",
 				"fat": "Fat",
 				"carbohydrates": "Carbohydrates",
-				"week": "Week"
+				"week": "Week",
+				"calculator-title": "Calculator BMR"
 			},
 			"calories": {
 				"title": "Calories"

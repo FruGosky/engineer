@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { evaluate } from 'mathjs';
-
+import './BmrCalculator.scss';
+type NutritionObject = {
+	protein: number;
+	fat: number;
+	carbs: number;
+};
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -29,14 +34,10 @@ export default function BmrCalculator(): JSX.Element {
 	const T_METRIC = translation('page.bmi.calculator.metric');
 	const T_HEIGHT = translation('page.bmi.calculator.height');
 	const T_WEIGHT = translation('page.bmi.calculator.weight');
-
+	const T_CALCULATOR_TITLE = translation('page.bmr.calculator-title');
 	const T_CALCULATE = translation('common.calculate');
 	const T_REFRESH = translation('common.refresh');
-	type NutritionObject = {
-		protein: number;
-		fat: number;
-		carbs: number;
-	};
+
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
@@ -88,6 +89,7 @@ export default function BmrCalculator(): JSX.Element {
 		setBmr(0);
 		setTDEE(0);
 		setActivity('none');
+		localStorage.removeItem('bmrValue');
 	};
 
 	useEffect(() => {
@@ -139,6 +141,7 @@ export default function BmrCalculator(): JSX.Element {
 					age,
 				});
 				setBmr(result);
+				saveBMRToLocalStorage(result);
 			} else {
 				const expression = `655.1 + ( 9.563 * weightValue ) + ( 1.850 * heightValue ) - ( 4.676 * age )`;
 				const result = evaluate(expression, {
@@ -147,6 +150,7 @@ export default function BmrCalculator(): JSX.Element {
 					age,
 				});
 				setBmr(result);
+				saveBMRToLocalStorage(result);
 			}
 		} else {
 			if (sex === 'male') {
@@ -157,6 +161,7 @@ export default function BmrCalculator(): JSX.Element {
 					age,
 				});
 				setBmr(result);
+				saveBMRToLocalStorage(result);
 			} else {
 				const expression = `655.1 + ( 4.35 * weightValue ) + ( 4.7 * (heightValue * 12) ) - ( 4.676 * age )`;
 				const result = evaluate(expression, {
@@ -165,12 +170,29 @@ export default function BmrCalculator(): JSX.Element {
 					age,
 				});
 				setBmr(result);
+				saveBMRToLocalStorage(result);
 			}
 		}
 	};
+	const saveBMRToLocalStorage = (bmrValue?: number) => {
+		if (bmrValue) {
+			localStorage.setItem('bmrValue', bmrValue.toString());
+		}
+	};
+	useEffect(() => {
+		const storedBMR = localStorage.getItem('bmrValue');
+		if (storedBMR) {
+			setIsSubmitted(true);
+			setBmr(parseFloat(storedBMR));
+		}
+	}, []);
+
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
 			<div className="card shadow">
+				<div className="d-flex justify-content-center mb-3">
+					<h2>{T_CALCULATOR_TITLE}</h2>
+				</div>
 				<div className="mb-3 border-bottom border-info">
 					<div className="form-check">
 						<input
@@ -183,7 +205,7 @@ export default function BmrCalculator(): JSX.Element {
 							onChange={onUnitsChange}
 						/>
 						<label className="form-check-label" htmlFor="metric">
-							{T_METRIC} {T_UNITS}
+							{`${T_METRIC} ${T_UNITS}`}
 						</label>
 					</div>
 					<div className="form-check ">
@@ -197,7 +219,7 @@ export default function BmrCalculator(): JSX.Element {
 							onChange={onUnitsChange}
 						/>
 						<label className="form-check-label" htmlFor="imperial">
-							{T_IMPERIAL} {T_UNITS}
+							{`${T_IMPERIAL} ${T_UNITS}`}
 						</label>
 					</div>
 				</div>
@@ -238,7 +260,7 @@ export default function BmrCalculator(): JSX.Element {
 						</div>
 					</div>
 					<label htmlFor="activitySelect" className="mb-2">
-						{T_CHOOSE_PHYSICAL_ACTIVITY}:
+						{`${T_CHOOSE_PHYSICAL_ACTIVITY}:`}
 					</label>
 					<select
 						id="activitySelect"
@@ -252,13 +274,13 @@ export default function BmrCalculator(): JSX.Element {
 						<option value="medium">{T_MEDIUM_ACTIVITY}</option>
 						<option value="high">{T_HIGH_ACTIVITY}</option>
 					</select>
-					<div className="row g-3  mb-3 d-flex justify-content-between">
+					<div className="row g-3  mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="height_input"
 								className="col-form-label"
 							>
-								{T_HEIGHT} -
+								{`${T_HEIGHT} -`}
 							</label>
 						</div>
 						<div className="col-auto">
@@ -285,13 +307,13 @@ export default function BmrCalculator(): JSX.Element {
 							<span className="form-text">{heightUnit}</span>
 						</div>
 					</div>
-					<div className="row g-3  mb-3 d-flex justify-content-between">
+					<div className="row g-3  mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="weight_input"
 								className="col-form-label "
 							>
-								{T_WEIGHT} -
+								{`${T_WEIGHT} -`}
 							</label>
 						</div>
 						<div className="col-auto">
@@ -318,13 +340,13 @@ export default function BmrCalculator(): JSX.Element {
 							<span className="form-text">{weightUnit}</span>
 						</div>
 					</div>
-					<div className="row g-3  mb-3 d-flex justify-content-between">
+					<div className="row g-3  mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="age_input"
 								className="col-form-label"
 							>
-								{T_AGE} -
+								{`${T_AGE} -`}
 							</label>
 						</div>
 						<div className="col-auto">
@@ -356,118 +378,128 @@ export default function BmrCalculator(): JSX.Element {
 					<div>
 						<div className="text-center mt-3">
 							<label className="form-check-label" htmlFor="bmr">
-								{T_YOUR_BMR}:
+								{`${T_YOUR_BMR}:`}
 							</label>
 							<h1 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
-								{BMR.toFixed(0)} kcal
+								{`${BMR.toFixed(0)} kcal`}
 							</h1>
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
 								{T_YOUR_CALORIC_NEEDS}
-								<br />({T_WEIGHT_MAINTANCE})
+								<br />
+								{`(${T_WEIGHT_MAINTANCE})`}
 							</label>
 							<div></div>
 							<div className="nutritions">
 								<p className="text_nutrition text1">
 									{T_PROTEIN}
 									<span>
-										{keepWeightNutrition.protein.toFixed(0)}
-										g 35%
+										{`${keepWeightNutrition.protein.toFixed(
+											0
+										)}g 35%`}
 									</span>
 								</p>
 								<p className="text_nutrition text2">
 									{T_FAT}
 									<span>
-										{keepWeightNutrition.fat.toFixed(0)}g
-										20%
+										{`${keepWeightNutrition.fat.toFixed(0)}g
+										20%`}
 									</span>
 								</p>
 								<p className="text_nutrition text3">
 									{T_CARBS}
 									<span>
-										{keepWeightNutrition.carbs.toFixed(0)}g
-										45%
+										{`${keepWeightNutrition.carbs.toFixed(
+											0
+										)}g
+										45%`}
 									</span>
 								</p>
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{TDEE.toFixed(0)} kcal
+								{`${TDEE.toFixed(0)} kcal`}
 							</output>
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
 								{T_YOUR_CALORIC_NEEDS}
 								<br />
-								(+{helperUnit} / {T_WEEK})
+								{`(+${helperUnit} / ${T_WEEK})`}
 							</label>
 
 							<div className="nutritions">
 								<p className="text_nutrition text1">
 									{T_PROTEIN}
 									<span>
-										{gainWeightNutrition.protein.toFixed(0)}
-										g 35%
+										{`${gainWeightNutrition.protein.toFixed(
+											0
+										)}g 35%`}
 									</span>
 								</p>
 								<p className="text_nutrition text2">
 									{T_FAT}
 									<span>
-										{gainWeightNutrition.fat.toFixed(0)}g
-										20%
+										{`${gainWeightNutrition.fat.toFixed(0)}g
+										20%`}
 									</span>
 								</p>
 								<p className="text_nutrition text3">
 									{T_CARBS}
 									<span>
-										{gainWeightNutrition.carbs.toFixed(0)}g
-										45%
+										{`${gainWeightNutrition.carbs.toFixed(
+											0
+										)}g
+										45%`}
 									</span>
 								</p>
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{(TDEE + 500).toFixed(0)} kcal
+								{`${(TDEE + 500).toFixed(0)} kcal`}
 							</output>
 						</div>
 						<div className="mt-3 text-center ">
 							<label className="form-label m-3">
 								{T_YOUR_CALORIC_NEEDS}
 								<br />
-								(-{helperUnit} / {T_WEEK})
+								{`(-${helperUnit} / ${T_WEEK})`}
 							</label>
 
 							<div className="nutritions">
 								<p className="text_nutrition text1">
 									{T_PROTEIN}
 									<span>
-										{loseWeightNutrition.protein.toFixed(0)}
-										g 35%
+										{`${loseWeightNutrition.protein.toFixed(
+											0
+										)}g 35%`}
 									</span>
 								</p>
 								<p className="text_nutrition text2">
 									{T_FAT}
 									<span>
-										{loseWeightNutrition.fat.toFixed(0)}g
-										20%
+										{`${loseWeightNutrition.fat.toFixed(0)}g
+										20%`}
 									</span>
 								</p>
 								<p className="text_nutrition text3">
 									{T_CARBS}
 									<span>
-										{loseWeightNutrition.carbs.toFixed(0)}g
-										45%
+										{`${loseWeightNutrition.carbs.toFixed(
+											0
+										)}g
+										45%`}
 									</span>
 								</p>
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{(TDEE - 500).toFixed(0)} kcal
+								{`${(TDEE - 500).toFixed(0)} kcal`}
 							</output>
 						</div>
 						<button
-							className="btn btn-primary col-auto mt-2"
+							className="btn btn-secondary col-auto mt-2"
 							onClick={refreshHandler}
 						>
 							{T_REFRESH}
