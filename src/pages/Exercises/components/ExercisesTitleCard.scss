@@ -1,0 +1,27 @@
+.exercise-card {
+	max-width: 100%;
+	max-height: 50px !important;
+	&.grow {
+		&:hover {
+			transition: all 0.1s ease-in-out;
+			transform: scale(1.07);
+			cursor: pointer;
+		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.exercise-card {
+		width: 100%;
+	}
+}
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) {
+	.exercise-card {
+		width: 50%;
+	}
+}
+@media (min-width: 768px) {
+	.exercise-card {
+		width: 50%;
+	}
+}

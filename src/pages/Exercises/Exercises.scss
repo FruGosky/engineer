@@ -1,0 +1,73 @@
+.exercises_main_content {
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(111, 126, 213, 0.808),
+		rgba(40, 42, 180, 0.801)
+	);
+}
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(+3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+.button:link,
+.button:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+
+	display: inline-block;
+	border-radius: 10rem;
+	transition: all 0.2s;
+	position: relative;
+	font-size: 1.2rem;
+	color: #5e5e5e;
+}
+
+.button:hover {
+	transform: translateY(-0.3rem);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+	color: black !important;
+}
+.button:active {
+	transform: translateY(-0.1rem);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.button--white {
+	margin-top: 3rem;
+	background-color: #bbc5fcd5 !important;
+	min-height: 108px;
+}
+
+.button::after {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+}
+.button--white::after {
+	background-color: #bbc5fcd5;
+}
+.button:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+.button--animated {
+	animation-name: moveInBottom;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-delay: 0.75s;
+	animation-fill-mode: backwards;
+}

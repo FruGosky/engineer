@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { evaluate } from 'mathjs';
+<<<<<<< HEAD
 import './BmrCalculator.scss';
+=======
+
+>>>>>>> f0660ef9f3a181af2fe603273f007951760febaf
 type NutritionObject = {
 	protein: number;
 	fat: number;
 	carbs: number;
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0660ef9f3a181af2fe603273f007951760febaf
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -103,6 +111,7 @@ export default function BmrCalculator(): JSX.Element {
 			setTDEE(BMR * 1.725);
 		}
 	}, [BMR, activity]);
+
 	useEffect(() => {
 		setKeepWeightNutrition({
 			protein: (TDEE * 0.3) / 4,
@@ -120,10 +129,12 @@ export default function BmrCalculator(): JSX.Element {
 			carbs: ((TDEE - 500) * 0.45) / 4,
 		});
 	}, [TDEE]);
+
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
 		refreshHandler();
 	};
+
 	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSex(e.target.value);
 		refreshHandler();
@@ -174,6 +185,7 @@ export default function BmrCalculator(): JSX.Element {
 			}
 		}
 	};
+<<<<<<< HEAD
 	const saveBMRToLocalStorage = (bmrValue?: number) => {
 		if (bmrValue) {
 			localStorage.setItem('bmrValue', bmrValue.toString());
@@ -186,6 +198,8 @@ export default function BmrCalculator(): JSX.Element {
 			setBmr(parseFloat(storedBMR));
 		}
 	}, []);
+=======
+>>>>>>> f0660ef9f3a181af2fe603273f007951760febaf
 
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
