@@ -363,7 +363,7 @@ export default function BmrCalculator(): JSX.Element {
 								htmlFor="height_input"
 								className="col-form-label"
 							>
-								{`${T_HEIGHT} -`}
+								{`${T_HEIGHT}:`}
 							</label>
 						</div>
 						<div className="col-auto">
@@ -396,7 +396,7 @@ export default function BmrCalculator(): JSX.Element {
 								htmlFor="weight_input"
 								className="col-form-label "
 							>
-								{`${T_WEIGHT} -`}
+								{`${T_WEIGHT}:`}
 							</label>
 						</div>
 						<div className="col-auto">
@@ -429,7 +429,7 @@ export default function BmrCalculator(): JSX.Element {
 								htmlFor="age_input"
 								className="col-form-label"
 							>
-								{`${T_AGE} -`}
+								{`${T_AGE}:`}
 							</label>
 						</div>
 						<div className="col-auto flex-row">
