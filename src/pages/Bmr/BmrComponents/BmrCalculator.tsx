@@ -86,11 +86,11 @@ export default function BmrCalculator(): JSX.Element {
 		if (units === 'metric') {
 			setWeightUnit('kg');
 			setHeightUnit('cm');
-			setHeleperUnit('500g');
+			setHeleperUnit('600g');
 		} else if (units === 'imperial') {
 			setWeightUnit('lbs');
 			setHeightUnit('ft');
-			setHeleperUnit('1 lb');
+			setHeleperUnit('1,3 lb');
 		}
 	}, [units]);
 
@@ -98,7 +98,6 @@ export default function BmrCalculator(): JSX.Element {
 		setIsSubmitted(false);
 		setHeightValue(0);
 		setWeightValue(0);
-
 		setAge(0);
 		setBmr(0);
 		setTDEE(0);
@@ -126,25 +125,40 @@ export default function BmrCalculator(): JSX.Element {
 			carbs: (TDEE * 0.45) / 4,
 		});
 		setGainWeightNutrition({
-			protein: ((TDEE + 500) * 0.3) / 4,
-			fat: ((TDEE + 500) * 0.25) / 9,
-			carbs: ((TDEE + 500) * 0.45) / 4,
+			protein: weightValue * 2.1,
+			fat: ((TDEE + 600) * 0.25) / 9,
+			carbs: calculateGainWeightCarbs(),
 		});
 		setLoseWeightNutrition({
-			protein: ((TDEE - 500) * 0.3) / 4,
-			fat: ((TDEE - 500) * 0.25) / 9,
-			carbs: ((TDEE - 500) * 0.45) / 4,
+			protein: weightValue * 2.3,
+			fat: ((TDEE - 600) / 9 / 100) * 20,
+			carbs: calculateLoseWeightCarbs(),
 		});
 	}, [TDEE]);
-
+	const calculateLoseWeightCarbs = (): number => {
+		const loseWeightCarbs =
+			TDEE -
+			600 -
+			(loseWeightNutrition.protein * 4 + loseWeightNutrition.fat * 9);
+		return loseWeightCarbs / 4;
+	};
+	const calculateGainWeightCarbs = (): number => {
+		const gainWeightCarbs =
+			TDEE +
+			600 -
+			(gainWeightNutrition.protein * 4 + gainWeightNutrition.fat * 9);
+		return gainWeightCarbs / 4;
+	};
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
 		setWeightValue(0);
 		setHeightValue(0);
+		setIsSubmitted(false);
 	};
 
 	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSex(e.target.value);
+		setIsSubmitted(false);
 	};
 
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -184,10 +198,10 @@ export default function BmrCalculator(): JSX.Element {
 		} else {
 			if (sex === 'male') {
 				const result =
-					66.47 +
-					6.24 * weightValue +
+					66 +
+					6.23 * weightValue +
 					12.7 * (heightValue * 12) -
-					6.755 * age;
+					6.8 * age;
 				const bmrData: bmrData = {
 					units: units,
 					sex: sex,
@@ -201,10 +215,10 @@ export default function BmrCalculator(): JSX.Element {
 				saveBMRToLocalStorage(bmrData);
 			} else {
 				const result =
-					655.1 +
+					655 +
 					4.35 * weightValue +
 					4.7 * (heightValue * 12) -
-					4.676 * age;
+					4.7 * age;
 				setBmr(result);
 				const bmrData: bmrData = {
 					units: units,
@@ -462,14 +476,14 @@ export default function BmrCalculator(): JSX.Element {
 									<span>
 										{`${keepWeightNutrition.protein.toFixed(
 											0
-										)}g 35%`}
+										)}g`}
 									</span>
 								</p>
 								<p className="text_nutrition text2 margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${keepWeightNutrition.fat.toFixed(0)}g
-										20%`}
+										`}
 									</span>
 								</p>
 								<p className="text_nutrition text3 margin_left_carbs">
@@ -478,7 +492,7 @@ export default function BmrCalculator(): JSX.Element {
 										{`${keepWeightNutrition.carbs.toFixed(
 											0
 										)}g
-										45%`}
+										`}
 									</span>
 								</p>
 							</div>
@@ -500,14 +514,14 @@ export default function BmrCalculator(): JSX.Element {
 									<span>
 										{`${gainWeightNutrition.protein.toFixed(
 											0
-										)}g 35%`}
+										)}g`}
 									</span>
 								</p>
 								<p className="text_nutrition text2  margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${gainWeightNutrition.fat.toFixed(0)}g
-										20%`}
+										`}
 									</span>
 								</p>
 								<p className="text_nutrition text3 margin_left_carbs">
@@ -516,13 +530,13 @@ export default function BmrCalculator(): JSX.Element {
 										{`${gainWeightNutrition.carbs.toFixed(
 											0
 										)}g
-										45%`}
+										`}
 									</span>
 								</p>
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{`${(TDEE + 500).toFixed(0)} kcal`}
+								{`${(TDEE + 600).toFixed(0)} kcal`}
 							</output>
 						</div>
 						<div className="mt-3 text-center ">
@@ -538,14 +552,14 @@ export default function BmrCalculator(): JSX.Element {
 									<span>
 										{`${loseWeightNutrition.protein.toFixed(
 											0
-										)}g 35%`}
+										)}g`}
 									</span>
 								</p>
 								<p className="text_nutrition text2  margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${loseWeightNutrition.fat.toFixed(0)}g
-										20%`}
+										`}
 									</span>
 								</p>
 								<p className="text_nutrition text3 margin_left_carbs">
@@ -554,13 +568,13 @@ export default function BmrCalculator(): JSX.Element {
 										{`${loseWeightNutrition.carbs.toFixed(
 											0
 										)}g
-										45%`}
+										`}
 									</span>
 								</p>
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{`${(TDEE - 500).toFixed(0)} kcal`}
+								{`${(TDEE - 600).toFixed(0)} kcal`}
 							</output>
 						</div>
 						<div className="d-flex align-items-center justify-content-center m-3">
