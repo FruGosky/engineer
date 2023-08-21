@@ -12,8 +12,6 @@ export default function Bmr() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(BMR_TITLE);
-	// TODO! DELETE THIS TRANSLATION BELOW WHEN U WILL START ADDING SOME CONTENT TO THIS PAGE AND ADD YOURS TRANSLATION DO NOT FORGET TO ADD EN AND PL TRANSLATION NOT ONLY ONE ITS VERY VERY IMPORTANT TO HAVE ALL TRANSLATIONS
-	const THIS_IS_PAGE = translation('to-be-deleted.this-is-page');
 
 	useWebsiteTitle(TRANSLATED_TITLE);
 
