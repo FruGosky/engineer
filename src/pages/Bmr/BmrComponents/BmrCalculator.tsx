@@ -1,15 +1,23 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { evaluate } from 'mathjs';
 
 import './BmrCalculator.scss';
+import { rest, set } from 'lodash';
 
 type NutritionObject = {
 	protein: number;
 	fat: number;
 	carbs: number;
 };
-
+type bmrData = {
+	units: string;
+	sex: string;
+	activity: string;
+	height: number;
+	weight: number;
+	age: number;
+	bmrValue: number;
+};
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -22,6 +30,8 @@ export default function BmrCalculator(): JSX.Element {
 	const T_LOW_ACTIVITY = translation('page.bmr.low-activity');
 	const T_MEDIUM_ACTIVITY = translation('page.bmr.medium-activity');
 	const T_HIGH_ACTIVITY = translation('page.bmr.high-activity');
+	const T_VERY_HIGH_ACTIVITY = translation('page.bmr.very-high-activity');
+
 	const T_YEARS = translation('page.bmr.years');
 	const T_YOUR_BMR = translation('page.bmr.your-bmr');
 	const T_YOUR_CALORIC_NEEDS = translation(
@@ -48,7 +58,7 @@ export default function BmrCalculator(): JSX.Element {
 	const [weightUnit, setWeightUnit] = useState<string>('kg');
 	const [heightUnit, setHeightUnit] = useState<string>('cm');
 	const [helperUnit, setHeleperUnit] = useState<string>('500g');
-	const [sex, setSex] = useState<string>('');
+	const [sex, setSex] = useState<string>('male');
 	const [activity, setActivity] = useState<string>('none');
 	const [age, setAge] = useState<number>(0);
 	const [BMR, setBmr] = useState<number>(0);
@@ -88,11 +98,11 @@ export default function BmrCalculator(): JSX.Element {
 		setIsSubmitted(false);
 		setHeightValue(0);
 		setWeightValue(0);
+
 		setAge(0);
 		setBmr(0);
 		setTDEE(0);
 		setActivity('none');
-		localStorage.removeItem('bmrValue');
 	};
 
 	useEffect(() => {
@@ -104,6 +114,8 @@ export default function BmrCalculator(): JSX.Element {
 			setTDEE(BMR * 1.55);
 		} else if (activity === 'high') {
 			setTDEE(BMR * 1.725);
+		} else if (activity === 'very-high') {
+			setTDEE(BMR * 2);
 		}
 	}, [BMR, activity]);
 
@@ -127,12 +139,12 @@ export default function BmrCalculator(): JSX.Element {
 
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
-		refreshHandler();
+		setWeightValue(0);
+		setHeightValue(0);
 	};
 
 	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSex(e.target.value);
-		refreshHandler();
 	};
 
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -140,57 +152,91 @@ export default function BmrCalculator(): JSX.Element {
 		setIsSubmitted(true);
 		if (units === 'metric') {
 			if (sex === 'male') {
-				const expression = `66.47 + (13.76 * weightValue) + (5.003 * heightValue) - (6.755 * age)`;
-				const result = evaluate(expression, {
-					weightValue,
-					heightValue,
-					age,
-				});
+				const result =
+					9.99 * weightValue + 6.25 * heightValue - 4.92 * age + 5;
+				const bmrData: bmrData = {
+					units: units,
+					sex: sex,
+					activity: activity,
+					height: heightValue,
+					weight: weightValue,
+					age: age,
+					bmrValue: result,
+				};
 				setBmr(result);
-				saveBMRToLocalStorage(result);
+
+				saveBMRToLocalStorage(bmrData);
 			} else {
-				const expression = `655.1 + ( 9.563 * weightValue ) + ( 1.850 * heightValue ) - ( 4.676 * age )`;
-				const result = evaluate(expression, {
-					weightValue,
-					heightValue,
-					age,
-				});
+				const result =
+					9.99 * weightValue + 6.25 * heightValue - 4.92 * age - 161;
+				const bmrData: bmrData = {
+					units: units,
+					sex: sex,
+					activity: activity,
+					height: heightValue,
+					weight: weightValue,
+					age: age,
+					bmrValue: result,
+				};
 				setBmr(result);
-				saveBMRToLocalStorage(result);
+				saveBMRToLocalStorage(bmrData);
 			}
 		} else {
 			if (sex === 'male') {
-				const expression = `66.47 + ( 6.24 * weightValue ) + ( 12.7 * (heightValue * 12) ) - ( 6.755 * age )`;
-				const result = evaluate(expression, {
-					weightValue,
-					heightValue,
-					age,
-				});
+				const result =
+					66.47 +
+					6.24 * weightValue +
+					12.7 * (heightValue * 12) -
+					6.755 * age;
+				const bmrData: bmrData = {
+					units: units,
+					sex: sex,
+					activity: activity,
+					height: heightValue,
+					weight: weightValue,
+					age: age,
+					bmrValue: result,
+				};
 				setBmr(result);
-				saveBMRToLocalStorage(result);
+				saveBMRToLocalStorage(bmrData);
 			} else {
-				const expression = `655.1 + ( 4.35 * weightValue ) + ( 4.7 * (heightValue * 12) ) - ( 4.676 * age )`;
-				const result = evaluate(expression, {
-					weightValue,
-					heightValue,
-					age,
-				});
+				const result =
+					655.1 +
+					4.35 * weightValue +
+					4.7 * (heightValue * 12) -
+					4.676 * age;
 				setBmr(result);
-				saveBMRToLocalStorage(result);
+				const bmrData: bmrData = {
+					units: units,
+					sex: sex,
+					activity: activity,
+					height: heightValue,
+					weight: weightValue,
+					age: age,
+					bmrValue: result,
+				};
+				saveBMRToLocalStorage(bmrData);
 			}
 		}
 	};
 
-	const saveBMRToLocalStorage = (bmrValue?: number) => {
-		if (bmrValue) {
-			localStorage.setItem('bmrValue', bmrValue.toString());
+	const saveBMRToLocalStorage = (bmrData?: object) => {
+		if (bmrData) {
+			localStorage.setItem('bmr-data', JSON.stringify(bmrData));
 		}
 	};
 	useEffect(() => {
-		const storedBMR = localStorage.getItem('bmrValue');
+		const storedBMR = localStorage.getItem('bmr-data');
 		if (storedBMR) {
+			const parsedBMR = JSON.parse(storedBMR);
 			setIsSubmitted(true);
-			setBmr(parseFloat(storedBMR));
+			setUnits(parsedBMR.units);
+			setSex(parsedBMR.sex);
+			setBmr(parseFloat(parsedBMR.bmrValue));
+			setHeightValue(parseFloat(parsedBMR.height));
+			setWeightValue(parseFloat(parsedBMR.weight));
+			setAge(parseFloat(parsedBMR.age));
+			setActivity(parsedBMR.activity);
 		}
 	}, []);
 
@@ -201,9 +247,9 @@ export default function BmrCalculator(): JSX.Element {
 					<h2>{T_CALCULATOR_TITLE}</h2>
 				</div>
 				<div className="mb-3 border-bottom border-info">
-					<div className="form-check">
+					<div className="form-check d-flex align-items-center justify-content-center">
 						<input
-							className="form-check-input"
+							className="form-check-input "
 							type="radio"
 							name="flexRadioDefault"
 							id="metric"
@@ -211,11 +257,14 @@ export default function BmrCalculator(): JSX.Element {
 							checked={units === 'metric'}
 							onChange={onUnitsChange}
 						/>
-						<label className="form-check-label" htmlFor="metric">
+						<label
+							className="form-check-label ms-2"
+							htmlFor="metric"
+						>
 							{`${T_METRIC} ${T_UNITS}`}
 						</label>
 					</div>
-					<div className="form-check ">
+					<div className="form-check d-flex align-items-center justify-content-center mb-2">
 						<input
 							className="form-check-input"
 							type="radio"
@@ -225,14 +274,17 @@ export default function BmrCalculator(): JSX.Element {
 							checked={units === 'imperial'}
 							onChange={onUnitsChange}
 						/>
-						<label className="form-check-label" htmlFor="imperial">
+						<label
+							className="form-check-label ms-2"
+							htmlFor="imperial"
+						>
 							{`${T_IMPERIAL} ${T_UNITS}`}
 						</label>
 					</div>
 				</div>
 				<form onSubmit={submitHandler}>
-					<div className="mb-3">
-						<div className="form-check">
+					<div className="mb-3 d-flex align-items-center justify-content-center flex-column">
+						<div className="form-check ">
 							<input
 								className="form-check-input"
 								type="radio"
@@ -280,6 +332,9 @@ export default function BmrCalculator(): JSX.Element {
 						<option value="low">{T_LOW_ACTIVITY}</option>
 						<option value="medium">{T_MEDIUM_ACTIVITY}</option>
 						<option value="high">{T_HIGH_ACTIVITY}</option>
+						<option value="very-high">
+							{T_VERY_HIGH_ACTIVITY}
+						</option>
 					</select>
 					<div className="row g-3  mb-3 d-flex justify-content-center">
 						<div className="col-auto">
@@ -356,7 +411,7 @@ export default function BmrCalculator(): JSX.Element {
 								{`${T_AGE} -`}
 							</label>
 						</div>
-						<div className="col-auto">
+						<div className="col-auto flex-row">
 							<input
 								type="number"
 								id="age_input"
@@ -377,9 +432,12 @@ export default function BmrCalculator(): JSX.Element {
 							<span className="form-text">{T_YEARS}</span>
 						</div>
 					</div>
-					<button className="btn btn-primary col-auto">
-						{T_CALCULATE}
-					</button>
+
+					<div className="d-flex align-items-center justify-content-center m-3">
+						<button className="btn btn-primary col-auto mt-2">
+							{T_CALCULATE}
+						</button>
+					</div>
 				</form>
 				{isSubmitted && (
 					<div>
@@ -399,7 +457,7 @@ export default function BmrCalculator(): JSX.Element {
 							</label>
 							<div></div>
 							<div className="nutritions">
-								<p className="text_nutrition text1">
+								<p className="text_nutrition text1 ">
 									{T_PROTEIN}
 									<span>
 										{`${keepWeightNutrition.protein.toFixed(
@@ -407,14 +465,14 @@ export default function BmrCalculator(): JSX.Element {
 										)}g 35%`}
 									</span>
 								</p>
-								<p className="text_nutrition text2">
+								<p className="text_nutrition text2 margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${keepWeightNutrition.fat.toFixed(0)}g
 										20%`}
 									</span>
 								</p>
-								<p className="text_nutrition text3">
+								<p className="text_nutrition text3 margin_left_carbs">
 									{T_CARBS}
 									<span>
 										{`${keepWeightNutrition.carbs.toFixed(
@@ -445,14 +503,14 @@ export default function BmrCalculator(): JSX.Element {
 										)}g 35%`}
 									</span>
 								</p>
-								<p className="text_nutrition text2">
+								<p className="text_nutrition text2  margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${gainWeightNutrition.fat.toFixed(0)}g
 										20%`}
 									</span>
 								</p>
-								<p className="text_nutrition text3">
+								<p className="text_nutrition text3 margin_left_carbs">
 									{T_CARBS}
 									<span>
 										{`${gainWeightNutrition.carbs.toFixed(
@@ -483,14 +541,14 @@ export default function BmrCalculator(): JSX.Element {
 										)}g 35%`}
 									</span>
 								</p>
-								<p className="text_nutrition text2">
+								<p className="text_nutrition text2  margin_left_fat">
 									{T_FAT}
 									<span>
 										{`${loseWeightNutrition.fat.toFixed(0)}g
 										20%`}
 									</span>
 								</p>
-								<p className="text_nutrition text3">
+								<p className="text_nutrition text3 margin_left_carbs">
 									{T_CARBS}
 									<span>
 										{`${loseWeightNutrition.carbs.toFixed(
@@ -505,12 +563,14 @@ export default function BmrCalculator(): JSX.Element {
 								{`${(TDEE - 500).toFixed(0)} kcal`}
 							</output>
 						</div>
-						<button
-							className="btn btn-secondary col-auto mt-2"
-							onClick={refreshHandler}
-						>
-							{T_REFRESH}
-						</button>
+						<div className="d-flex align-items-center justify-content-center m-3">
+							<button
+								className="btn btn-secondary col-auto mt-2"
+								onClick={refreshHandler}
+							>
+								{T_REFRESH}
+							</button>
+						</div>
 					</div>
 				)}
 			</div>

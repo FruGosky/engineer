@@ -5,7 +5,7 @@
 	padding: 2rem;
 }
 .info_input {
-	min-width: 12rem;
+	min-width: 10rem;
 }
 .col-form-label,
 .text {
@@ -14,8 +14,8 @@
 
 .nutritions {
 	position: relative;
-	width: 100%; /* The width of the parent div */
-	min-height: 30px; /* Adjust the height as needed */
+	width: 100%;
+	min-height: 30px;
 	height: fit-content;
 	margin-bottom: 30px;
 }
@@ -24,25 +24,25 @@
 	flex-direction: column;
 	position: absolute;
 	top: 0;
-	height: 100%; /* Take up the full height of the parent div */
+	height: 100%;
 }
 .text1 {
 	left: 0%;
-	width: 35%; /* Adjust the width as needed */
+
 	text-align: start;
 	color: rgb(236, 46, 135);
 }
 
 .text2 {
 	left: 30%;
-	width: 25%; /* Adjust the width as needed */
+
 	text-align: start;
 	color: rgb(175, 190, 33);
 }
 
 .text3 {
 	left: 55%;
-	width: 45%; /* Adjust the width as needed */
+
 	text-align: start;
 	color: rgb(16, 175, 114);
 }
@@ -66,5 +66,11 @@
 	.colors_bmi,
 	.card {
 		width: 100% !important;
+	}
+	.margin_left_fat {
+		margin-left: 0.5rem;
+	}
+	.margin_left_carbs {
+		margin-left: 1rem;
 	}
 }

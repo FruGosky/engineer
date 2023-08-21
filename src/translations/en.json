@@ -57,6 +57,7 @@
 				"low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
 				"medium-activity": "Average physical activity (physical work, 3-5 workouts per week)",
 				"high-activity": "High physical activity (hard physical work, daily workouts)",
+				"very-high-activity": "Very high physical activity (very hard physical work, two workouts per day)",
 				"years": "years",
 				"your-bmr": "Your BMR",
 				"your-caloric-and-macronutrient-needs": "Your caloric and macronutrient needs",
@@ -65,7 +66,7 @@
 				"fat": "Fat",
 				"carbohydrates": "Carbohydrates",
 				"week": "Week",
-				"calculator-title": "BMR Calculator"
+				"calculator-title": "Calculator BMR"
 			},
 			"calories": {
 				"title": "Calories"
