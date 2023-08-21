@@ -66,7 +66,8 @@
 				"fat": "Tłuszcze",
 				"carbohydrates": "Węglowodany",
 				"week": "Tydzień",
-				"calculator-title": "Kalkulator BMR"
+				"calculator-title": "Kalkulator BMR",
+				"wrong-sex-input": "Błędnie wprowadzona płeć"
 			},
 			"calories": {
 				"title": "Kalorie"

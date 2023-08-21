@@ -50,10 +50,13 @@ export default function BmrCalculator(): JSX.Element {
 	const T_CALCULATOR_TITLE = translation('page.bmr.calculator-title');
 	const T_CALCULATE = translation('common.calculate');
 	const T_REFRESH = translation('common.refresh');
+	const T_WRONG_SEX_INPUT = translation('page.bmr.wrong-sex-input');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
+	const [heightValueAsCm, setHeightValueAsCm] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
+	const [weightValueAsKg, setWeightValueAsKg] = useState<number>(0);
 	const [units, setUnits] = useState<string>('metric');
 	const [weightUnit, setWeightUnit] = useState<string>('kg');
 	const [heightUnit, setHeightUnit] = useState<string>('cm');
@@ -86,11 +89,11 @@ export default function BmrCalculator(): JSX.Element {
 		if (units === 'metric') {
 			setWeightUnit('kg');
 			setHeightUnit('cm');
-			setHeleperUnit('600g');
+			setHeleperUnit('500g');
 		} else if (units === 'imperial') {
 			setWeightUnit('lbs');
 			setHeightUnit('ft');
-			setHeleperUnit('1,3 lb');
+			setHeleperUnit('1.1 lb');
 		}
 	}, [units]);
 
@@ -119,37 +122,69 @@ export default function BmrCalculator(): JSX.Element {
 	}, [BMR, activity]);
 
 	useEffect(() => {
-		setKeepWeightNutrition({
-			protein: (TDEE * 0.3) / 4,
-			fat: (TDEE * 0.25) / 9,
-			carbs: (TDEE * 0.45) / 4,
-		});
-		setGainWeightNutrition({
-			protein: weightValue * 2.1,
-			fat: ((TDEE + 600) * 0.25) / 9,
-			carbs: calculateGainWeightCarbs(),
-		});
-		setLoseWeightNutrition({
-			protein: weightValue * 2.3,
-			fat: ((TDEE - 600) / 9 / 100) * 20,
-			carbs: calculateLoseWeightCarbs(),
-		});
+		setLoseWeightNutrition(calculateNutrition('loseWeight'));
+		setKeepWeightNutrition(calculateNutrition('keepWeight'));
+		setGainWeightNutrition(calculateNutrition('gainWeight'));
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [TDEE]);
-	const calculateLoseWeightCarbs = (): number => {
-		const loseWeightCarbs =
-			TDEE -
-			600 -
-			(loseWeightNutrition.protein * 4 + loseWeightNutrition.fat * 9);
-		return loseWeightCarbs / 4;
+
+	const calculateNutrition = (
+		goal: 'loseWeight' | 'keepWeight' | 'gainWeight'
+	): NutritionObject => {
+		let protein = 0;
+		let fat = 0;
+
+		switch (goal) {
+			case 'loseWeight': {
+				protein = weightValueAsKg * 2.5;
+				fat = ((TDEE - 500) * 0.2) / 9;
+				break;
+			}
+			case 'keepWeight': {
+				protein = (TDEE * 0.3) / 4;
+				fat = (TDEE * 0.25) / 9;
+				break;
+			}
+			case 'gainWeight': {
+				protein = weightValueAsKg * 2;
+				fat = ((TDEE + 500) * 0.25) / 9;
+				break;
+			}
+		}
+
+		const nutrition = {
+			protein,
+			fat,
+			carbs: calculateCarbs(protein, fat),
+		};
+
+		return nutrition;
 	};
-	const calculateGainWeightCarbs = (): number => {
-		const gainWeightCarbs =
-			TDEE +
-			600 -
-			(gainWeightNutrition.protein * 4 + gainWeightNutrition.fat * 9);
-		return gainWeightCarbs / 4;
+
+	const calculateCarbs = (protein: number, fat: number): number => {
+		return (TDEE - (protein * 4 + fat * 9)) / 4;
 	};
+
+	const calculateBMR = (): number => {
+		if (sex !== 'male' && sex !== 'female') {
+			throw new Error(`${T_WRONG_SEX_INPUT} '${sex}'`);
+		}
+
+		if (sex === 'male') {
+			return (
+				9.99 * weightValueAsKg + 6.25 * heightValueAsCm - 4.92 * age + 5
+			);
+		} else {
+			return (
+				9.99 * weightValueAsKg +
+				6.25 * heightValueAsCm -
+				4.92 * age -
+				161
+			);
+		}
+	};
+
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
 		setWeightValue(0);
@@ -172,74 +207,18 @@ export default function BmrCalculator(): JSX.Element {
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		setIsSubmitted(true);
-		if (units === 'metric') {
-			if (sex === 'male') {
-				const result =
-					9.99 * weightValue + 6.25 * heightValue - 4.92 * age + 5;
-				const bmrData: bmrData = {
-					units: units,
-					sex: sex,
-					activity: activity,
-					height: heightValue,
-					weight: weightValue,
-					age: age,
-					bmrValue: result,
-				};
-				setBmr(result);
-
-				saveBMRToLocalStorage(bmrData);
-			} else {
-				const result =
-					9.99 * weightValue + 6.25 * heightValue - 4.92 * age - 161;
-				const bmrData: bmrData = {
-					units: units,
-					sex: sex,
-					activity: activity,
-					height: heightValue,
-					weight: weightValue,
-					age: age,
-					bmrValue: result,
-				};
-				setBmr(result);
-				saveBMRToLocalStorage(bmrData);
-			}
-		} else {
-			if (sex === 'male') {
-				const result =
-					66 +
-					6.23 * weightValue +
-					12.7 * (heightValue * 12) -
-					6.8 * age;
-				const bmrData: bmrData = {
-					units: units,
-					sex: sex,
-					activity: activity,
-					height: heightValue,
-					weight: weightValue,
-					age: age,
-					bmrValue: result,
-				};
-				setBmr(result);
-				saveBMRToLocalStorage(bmrData);
-			} else {
-				const result =
-					655 +
-					4.35 * weightValue +
-					4.7 * (heightValue * 12) -
-					4.7 * age;
-				setBmr(result);
-				const bmrData: bmrData = {
-					units: units,
-					sex: sex,
-					activity: activity,
-					height: heightValue,
-					weight: weightValue,
-					age: age,
-					bmrValue: result,
-				};
-				saveBMRToLocalStorage(bmrData);
-			}
-		}
+		const newBmrValue = calculateBMR();
+		const bmrData: bmrData = {
+			units,
+			sex,
+			activity,
+			height: heightValue,
+			weight: weightValue,
+			age,
+			bmrValue: newBmrValue,
+		};
+		setBmr(newBmrValue);
+		saveBMRToLocalStorage(bmrData);
 	};
 
 	const saveBMRToLocalStorage = (bmrData?: object) => {
@@ -262,6 +241,24 @@ export default function BmrCalculator(): JSX.Element {
 		}
 	}, []);
 
+	useEffect(() => {
+		if (units === 'imperial') {
+			setWeightValueAsKg(weightValue * 0.45359237);
+		} else {
+			setWeightValueAsKg(weightValue);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [weightValue]);
+
+	useEffect(() => {
+		if (units === 'imperial') {
+			setHeightValueAsCm(heightValue * 30.48);
+		} else {
+			setHeightValueAsCm(heightValue);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [heightValue]);
+
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
 			<div className="card shadow">
@@ -271,7 +268,7 @@ export default function BmrCalculator(): JSX.Element {
 				<div className="mb-3 border-bottom border-info">
 					<div className="form-check d-flex align-items-center justify-content-center">
 						<input
-							className="form-check-input "
+							className="form-check-input"
 							type="radio"
 							name="flexRadioDefault"
 							id="metric"
@@ -470,83 +467,7 @@ export default function BmrCalculator(): JSX.Element {
 								{`${BMR.toFixed(0)} kcal`}
 							</h1>
 						</div>
-						<div className="mt-3 text-center ">
-							<label className="form-label m-3">
-								{T_YOUR_CALORIC_NEEDS}
-								<br />
-								{`(${T_WEIGHT_MAINTANCE})`}
-							</label>
-							<div></div>
-							<div className="nutritions">
-								<p className="text_nutrition text1 ">
-									{T_PROTEIN}
-									<span>
-										{`${keepWeightNutrition.protein.toFixed(
-											0
-										)}g`}
-									</span>
-								</p>
-								<p className="text_nutrition text2 margin_left_fat">
-									{T_FAT}
-									<span>
-										{`${keepWeightNutrition.fat.toFixed(0)}g
-										`}
-									</span>
-								</p>
-								<p className="text_nutrition text3 margin_left_carbs">
-									{T_CARBS}
-									<span>
-										{`${keepWeightNutrition.carbs.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-							</div>
-							<div className="colors_bmi"></div>
-							<output className="mt-2 text-info">
-								{`${TDEE.toFixed(0)} kcal`}
-							</output>
-						</div>
-						<div className="mt-3 text-center ">
-							<label className="form-label m-3">
-								{T_YOUR_CALORIC_NEEDS}
-								<br />
-								{`(+${helperUnit} / ${T_WEEK})`}
-							</label>
-
-							<div className="nutritions">
-								<p className="text_nutrition text1">
-									{T_PROTEIN}
-									<span>
-										{`${gainWeightNutrition.protein.toFixed(
-											0
-										)}g`}
-									</span>
-								</p>
-								<p className="text_nutrition text2  margin_left_fat">
-									{T_FAT}
-									<span>
-										{`${gainWeightNutrition.fat.toFixed(0)}g
-										`}
-									</span>
-								</p>
-								<p className="text_nutrition text3 margin_left_carbs">
-									{T_CARBS}
-									<span>
-										{`${gainWeightNutrition.carbs.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-							</div>
-							<div className="colors_bmi"></div>
-							<output className="mt-2 text-info">
-								{`${(TDEE + 600).toFixed(0)} kcal`}
-							</output>
-						</div>
-						<div className="mt-3 text-center ">
+						<div className="mt-3 text-center">
 							<label className="form-label m-3">
 								{T_YOUR_CALORIC_NEEDS}
 								<br />
@@ -581,7 +502,82 @@ export default function BmrCalculator(): JSX.Element {
 							</div>
 							<div className="colors_bmi"></div>
 							<output className="mt-2 text-info">
-								{`${(TDEE - 600).toFixed(0)} kcal`}
+								{`${(TDEE - 500).toFixed(0)} kcal`}
+							</output>
+						</div>
+						<div className="mt-3 text-center">
+							<label className="form-label m-3">
+								{T_YOUR_CALORIC_NEEDS}
+								<br />
+								{`(${T_WEIGHT_MAINTANCE})`}
+							</label>
+							<div className="nutritions">
+								<p className="text_nutrition text1 ">
+									{T_PROTEIN}
+									<span>
+										{`${keepWeightNutrition.protein.toFixed(
+											0
+										)}g`}
+									</span>
+								</p>
+								<p className="text_nutrition text2 margin_left_fat">
+									{T_FAT}
+									<span>
+										{`${keepWeightNutrition.fat.toFixed(0)}g
+										`}
+									</span>
+								</p>
+								<p className="text_nutrition text3 margin_left_carbs">
+									{T_CARBS}
+									<span>
+										{`${keepWeightNutrition.carbs.toFixed(
+											0
+										)}g
+										`}
+									</span>
+								</p>
+							</div>
+							<div className="colors_bmi"></div>
+							<output className="mt-2 text-info">
+								{`${TDEE.toFixed(0)} kcal`}
+							</output>
+						</div>
+						<div className="mt-3 text-center">
+							<label className="form-label m-3">
+								{T_YOUR_CALORIC_NEEDS}
+								<br />
+								{`(+${helperUnit} / ${T_WEEK})`}
+							</label>
+
+							<div className="nutritions">
+								<p className="text_nutrition text1">
+									{T_PROTEIN}
+									<span>
+										{`${gainWeightNutrition.protein.toFixed(
+											0
+										)}g`}
+									</span>
+								</p>
+								<p className="text_nutrition text2  margin_left_fat">
+									{T_FAT}
+									<span>
+										{`${gainWeightNutrition.fat.toFixed(0)}g
+										`}
+									</span>
+								</p>
+								<p className="text_nutrition text3 margin_left_carbs">
+									{T_CARBS}
+									<span>
+										{`${gainWeightNutrition.carbs.toFixed(
+											0
+										)}g
+										`}
+									</span>
+								</p>
+							</div>
+							<div className="colors_bmi"></div>
+							<output className="mt-2 text-info">
+								{`${(TDEE + 500).toFixed(0)} kcal`}
 							</output>
 						</div>
 						<div className="d-flex align-items-center justify-content-center m-3">

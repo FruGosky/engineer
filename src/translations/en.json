@@ -66,7 +66,8 @@
 				"fat": "Fat",
 				"carbohydrates": "Carbohydrates",
 				"week": "Week",
-				"calculator-title": "Calculator BMR"
+				"calculator-title": "Calculator BMR",
+				"wrong-sex-input": "Wrong sex input"
 			},
 			"calories": {
 				"title": "Calories"
