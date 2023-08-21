@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import './BmrCalculator.scss';
-import { rest, set } from 'lodash';
 
 type NutritionObject = {
 	protein: number;
 	fat: number;
 	carbs: number;
 };
+
 type bmrData = {
 	units: string;
 	sex: string;
@@ -18,6 +17,7 @@ type bmrData = {
 	age: number;
 	bmrValue: number;
 };
+
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -134,6 +134,7 @@ export default function BmrCalculator(): JSX.Element {
 			fat: ((TDEE - 600) / 9 / 100) * 20,
 			carbs: calculateLoseWeightCarbs(),
 		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [TDEE]);
 	const calculateLoseWeightCarbs = (): number => {
 		const loseWeightCarbs =
@@ -158,6 +159,13 @@ export default function BmrCalculator(): JSX.Element {
 
 	const onSexChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSex(e.target.value);
+		setIsSubmitted(false);
+	};
+
+	const onActivityChange = (
+		e: React.ChangeEvent<HTMLSelectElement>
+	): void => {
+		setActivity(e.target.value);
 		setIsSubmitted(false);
 	};
 
@@ -338,9 +346,8 @@ export default function BmrCalculator(): JSX.Element {
 					<select
 						id="activitySelect"
 						className="form-select mb-3"
-						onChange={(event) => {
-							setActivity(event.target.value);
-						}}
+						onChange={onActivityChange}
+						value={activity}
 					>
 						<option value="none">{T_NONE_ACTIVITY}</option>
 						<option value="low">{T_LOW_ACTIVITY}</option>
