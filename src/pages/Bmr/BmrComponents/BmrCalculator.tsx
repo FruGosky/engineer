@@ -292,8 +292,8 @@ export default function BmrCalculator(): JSX.Element {
 		setIsSubmitted(false);
 	};
 
-	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
+	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
 		setIsSubmitted(true);
 		const newBmrValue = calculateBMR();
 		const bmrData: TBmrData = {
@@ -360,7 +360,6 @@ export default function BmrCalculator(): JSX.Element {
 			keepWeight: calculateNutrition('keepWeight'),
 			gainWeight: calculateNutrition('gainWeight'),
 		});
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [TDEE]);
 
@@ -426,7 +425,7 @@ export default function BmrCalculator(): JSX.Element {
 				</div>
 				<form onSubmit={submitHandler}>
 					<div className="mb-3 d-flex align-items-center justify-content-center flex-column">
-						<div className="form-check ">
+						<div className="form-check">
 							<input
 								className="form-check-input"
 								type="radio"
@@ -477,7 +476,7 @@ export default function BmrCalculator(): JSX.Element {
 							{T_VERY_HIGH_ACTIVITY}
 						</option>
 					</select>
-					<div className="row g-3  mb-3 d-flex justify-content-center">
+					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="height_input"
@@ -496,11 +495,9 @@ export default function BmrCalculator(): JSX.Element {
 								step={0.01}
 								inputMode="decimal"
 								onChange={(
-									event: React.ChangeEvent<HTMLInputElement>
+									e: React.ChangeEvent<HTMLInputElement>
 								): void => {
-									setHeightValue(
-										parseFloat(event.target.value)
-									);
+									setHeightValue(parseFloat(e.target.value));
 								}}
 								value={heightValue}
 								required
@@ -510,11 +507,11 @@ export default function BmrCalculator(): JSX.Element {
 							<span className="form-text">{heightUnit}</span>
 						</div>
 					</div>
-					<div className="row g-3  mb-3 d-flex justify-content-center">
+					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="weight_input"
-								className="col-form-label "
+								className="col-form-label"
 							>
 								{`${T_WEIGHT}:`}
 							</label>
@@ -529,11 +526,9 @@ export default function BmrCalculator(): JSX.Element {
 								step={0.1}
 								inputMode="decimal"
 								onChange={(
-									event: React.ChangeEvent<HTMLInputElement>
+									e: React.ChangeEvent<HTMLInputElement>
 								): void => {
-									setWeightValue(
-										parseFloat(event.target.value)
-									);
+									setWeightValue(parseFloat(e.target.value));
 								}}
 								value={weightValue}
 								required
@@ -543,7 +538,7 @@ export default function BmrCalculator(): JSX.Element {
 							<span className="form-text">{weightUnit}</span>
 						</div>
 					</div>
-					<div className="row g-3  mb-3 d-flex justify-content-center">
+					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
 								htmlFor="age_input"
@@ -561,9 +556,9 @@ export default function BmrCalculator(): JSX.Element {
 								max="150"
 								step="1"
 								onChange={(
-									event: React.ChangeEvent<HTMLInputElement>
+									e: React.ChangeEvent<HTMLInputElement>
 								): void => {
-									setAge(parseInt(event.target.value));
+									setAge(parseInt(e.target.value));
 								}}
 								value={age}
 								required
@@ -607,7 +602,7 @@ export default function BmrCalculator(): JSX.Element {
 									</span>
 								</p>
 								<p
-									className="text_nutrition text2  margin_left_fat"
+									className="text_nutrition text2 margin_left_fat"
 									style={goalsTextAlignStyle.loseWeight.fat}
 								>
 									{T_FAT}
@@ -704,7 +699,7 @@ export default function BmrCalculator(): JSX.Element {
 									</span>
 								</p>
 								<p
-									className="text_nutrition text2  margin_left_fat "
+									className="text_nutrition text2 margin_left_fat"
 									style={goalsTextAlignStyle.gainWeight.fat}
 								>
 									{T_FAT}
