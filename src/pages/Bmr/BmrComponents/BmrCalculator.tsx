@@ -17,7 +17,10 @@ type bmrData = {
 	age: number;
 	bmrValue: number;
 };
-
+type nutritionWidthColors = {
+	proteinWidth: number;
+	fatWidth: number;
+};
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
 	const T_MAN = translation('common.man');
@@ -84,7 +87,28 @@ export default function BmrCalculator(): JSX.Element {
 			fat: 0,
 			carbs: 0,
 		});
-
+	const [loseWeightColors, setLoseWeightColors] = useState<object>({});
+	const [keepWeightColors, setKeepWeightColors] = useState<object>({});
+	const [gainWeightColors, setGainWeightColors] = useState<object>({});
+	const [loseWeightTextFatAllign, setLoseWeightTextFatAllign] =
+		useState<object>({
+			left: '',
+		});
+	const [loseWeightTextCarbsAllign, setLoseWeightTextCarbsAllign] =
+		useState<object>({
+			left: '',
+		});
+	const [keepWeightTextAllign, setKeepWeightTextAllign] = useState<object>(
+		{}
+	);
+	const [gainWeightTextFatAllign, setGainWeightTextFatAllign] =
+		useState<object>({
+			left: '',
+		});
+	const [gainWeightTextCarbsAllign, setGainWeightTextCarbsAllign] =
+		useState<object>({
+			left: '',
+		});
 	useEffect(() => {
 		if (units === 'metric') {
 			setWeightUnit('kg');
@@ -134,21 +158,33 @@ export default function BmrCalculator(): JSX.Element {
 	): NutritionObject => {
 		let protein = 0;
 		let fat = 0;
-
+		let actualTDEE = 0;
 		switch (goal) {
 			case 'loseWeight': {
+				actualTDEE = TDEE - 500;
 				protein = weightValueAsKg * 2.5;
-				fat = ((TDEE - 500) * 0.2) / 9;
+				fat = (actualTDEE * 0.2) / 9;
+				setLoseWeightColors(
+					calculateGradientStylesLoseWeight(protein, fat, actualTDEE)
+				);
 				break;
 			}
 			case 'keepWeight': {
+				actualTDEE = TDEE;
 				protein = (TDEE * 0.3) / 4;
-				fat = (TDEE * 0.25) / 9;
+				fat = (actualTDEE * 0.25) / 9;
+				setKeepWeightColors(
+					calculateGradientStylesKeepWeight(protein, fat, actualTDEE)
+				);
 				break;
 			}
 			case 'gainWeight': {
+				actualTDEE = TDEE + 500;
 				protein = weightValueAsKg * 2;
-				fat = ((TDEE + 500) * 0.25) / 9;
+				fat = (actualTDEE * 0.25) / 9;
+				setGainWeightColors(
+					calculateGradientStylesGainWeight(protein, fat, actualTDEE)
+				);
 				break;
 			}
 		}
@@ -156,14 +192,19 @@ export default function BmrCalculator(): JSX.Element {
 		const nutrition = {
 			protein,
 			fat,
-			carbs: calculateCarbs(protein, fat),
+			carbs: calculateCarbs(protein, fat, actualTDEE),
 		};
-
+		//dodana zmienna actualTDEE ponieważ w calculateCarbs() byla przekazywana zawsze ta sama wartosc
+		//  a nie zapotrzebowanie zalezne od celu
 		return nutrition;
 	};
 
-	const calculateCarbs = (protein: number, fat: number): number => {
-		return (TDEE - (protein * 4 + fat * 9)) / 4;
+	const calculateCarbs = (
+		protein: number,
+		fat: number,
+		actualTDEE: number
+	): number => {
+		return (actualTDEE - (protein * 4 + fat * 9)) / 4;
 	};
 
 	const calculateBMR = (): number => {
@@ -184,7 +225,86 @@ export default function BmrCalculator(): JSX.Element {
 			);
 		}
 	};
+	const calculateGradientStylesLoseWeight = (
+		protein: number,
+		fat: number,
+		actualTDEE: number
+	): object => {
+		const loseWeightColors: nutritionWidthColors = {
+			proteinWidth: ((protein * 4) / actualTDEE) * 100,
+			fatWidth: ((fat * 9) / actualTDEE) * 100,
+		};
+		const loseWeightGradientStyle = {
+			background: `linear-gradient(
+		to right,
+		rgb(236, 46, 135) 0%,
+		rgb(236, 46, 135) ${loseWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${loseWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${loseWeightColors.fatWidth + loseWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) ${loseWeightColors.fatWidth + loseWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) 100%)`,
+		};
+		setLoseWeightTextFatAllign({
+			left: `${loseWeightColors.proteinWidth}%`,
+		});
+		setLoseWeightTextCarbsAllign({
+			left: `${
+				loseWeightColors.proteinWidth + loseWeightColors.fatWidth
+			}%`,
+		});
+		return loseWeightGradientStyle;
+	};
+	const calculateGradientStylesKeepWeight = (
+		protein: number,
+		fat: number,
+		actualTDEE: number
+	): object => {
+		const keepWeightColors: nutritionWidthColors = {
+			proteinWidth: ((protein * 4) / actualTDEE) * 100,
+			fatWidth: ((fat * 9) / actualTDEE) * 100,
+		};
 
+		const keepWeightGradientStyle = {
+			background: `linear-gradient(
+		to right,
+		rgb(236, 46, 135) 0%,
+		rgb(236, 46, 135) ${keepWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${keepWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${keepWeightColors.fatWidth + keepWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) ${keepWeightColors.fatWidth + keepWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) 100%)`,
+		};
+		return keepWeightGradientStyle;
+	};
+	const calculateGradientStylesGainWeight = (
+		protein: number,
+		fat: number,
+		actualTDEE: number
+	): object => {
+		const gainWeightColors: nutritionWidthColors = {
+			proteinWidth: ((protein * 4) / actualTDEE) * 100,
+			fatWidth: ((fat * 9) / actualTDEE) * 100,
+		};
+		const gainWeightGradientStyle = {
+			background: `linear-gradient(
+		to right,
+		rgb(236, 46, 135) 0%,
+		rgb(236, 46, 135) ${gainWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${gainWeightColors.proteinWidth}%,
+		rgb(175, 190, 33) ${gainWeightColors.fatWidth + gainWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) ${gainWeightColors.fatWidth + gainWeightColors.proteinWidth}%,
+		rgb(16, 175, 114) 100%)`,
+		};
+		setGainWeightTextFatAllign({
+			left: `${gainWeightColors.proteinWidth}%`,
+		});
+		setGainWeightTextCarbsAllign({
+			left: `${
+				gainWeightColors.proteinWidth + gainWeightColors.fatWidth
+			}%`,
+		});
+		return gainWeightGradientStyle;
+	};
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setUnits(e.target.value);
 		setWeightValue(0);
@@ -483,14 +603,20 @@ export default function BmrCalculator(): JSX.Element {
 										)}g`}
 									</span>
 								</p>
-								<p className="text_nutrition text2  margin_left_fat">
+								<p
+									className="text_nutrition text2  margin_left_fat"
+									style={loseWeightTextFatAllign}
+								>
 									{T_FAT}
 									<span>
 										{`${loseWeightNutrition.fat.toFixed(0)}g
 										`}
 									</span>
 								</p>
-								<p className="text_nutrition text3 margin_left_carbs">
+								<p
+									className="text_nutrition text3 margin_left_carbs"
+									style={loseWeightTextCarbsAllign}
+								>
 									{T_CARBS}
 									<span>
 										{`${loseWeightNutrition.carbs.toFixed(
@@ -500,7 +626,10 @@ export default function BmrCalculator(): JSX.Element {
 									</span>
 								</p>
 							</div>
-							<div className="colors_bmi"></div>
+							<div
+								className="colors_bmi"
+								style={loseWeightColors}
+							></div>
 							<output className="mt-2 text-info">
 								{`${(TDEE - 500).toFixed(0)} kcal`}
 							</output>
@@ -520,14 +649,20 @@ export default function BmrCalculator(): JSX.Element {
 										)}g`}
 									</span>
 								</p>
-								<p className="text_nutrition text2 margin_left_fat">
+								<p
+									className="text_nutrition text2 margin_left_fat"
+									style={{ left: '30%' }}
+								>
 									{T_FAT}
 									<span>
 										{`${keepWeightNutrition.fat.toFixed(0)}g
 										`}
 									</span>
 								</p>
-								<p className="text_nutrition text3 margin_left_carbs">
+								<p
+									className="text_nutrition text3 margin_left_carbs"
+									style={{ left: '55%' }}
+								>
 									{T_CARBS}
 									<span>
 										{`${keepWeightNutrition.carbs.toFixed(
@@ -537,7 +672,10 @@ export default function BmrCalculator(): JSX.Element {
 									</span>
 								</p>
 							</div>
-							<div className="colors_bmi"></div>
+							<div
+								className="colors_bmi"
+								style={keepWeightColors}
+							></div>
 							<output className="mt-2 text-info">
 								{`${TDEE.toFixed(0)} kcal`}
 							</output>
@@ -558,14 +696,20 @@ export default function BmrCalculator(): JSX.Element {
 										)}g`}
 									</span>
 								</p>
-								<p className="text_nutrition text2  margin_left_fat">
+								<p
+									className="text_nutrition text2  margin_left_fat "
+									style={gainWeightTextFatAllign}
+								>
 									{T_FAT}
 									<span>
 										{`${gainWeightNutrition.fat.toFixed(0)}g
 										`}
 									</span>
 								</p>
-								<p className="text_nutrition text3 margin_left_carbs">
+								<p
+									className="text_nutrition text3 margin_left_carbs"
+									style={gainWeightTextCarbsAllign}
+								>
 									{T_CARBS}
 									<span>
 										{`${gainWeightNutrition.carbs.toFixed(
@@ -575,7 +719,10 @@ export default function BmrCalculator(): JSX.Element {
 									</span>
 								</p>
 							</div>
-							<div className="colors_bmi"></div>
+							<div
+								className="colors_bmi"
+								style={gainWeightColors}
+							></div>
 							<output className="mt-2 text-info">
 								{`${(TDEE + 500).toFixed(0)} kcal`}
 							</output>
