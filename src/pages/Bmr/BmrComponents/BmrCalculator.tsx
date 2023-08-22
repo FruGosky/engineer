@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './BmrCalculator.scss';
+import BmrScore from './BmrScore';
 
 type TNutritionObject = {
 	protein: number;
@@ -37,17 +38,17 @@ type TWeightUnit = 'kg' | 'lbs';
 
 type THeightUnit = 'cm' | 'ft';
 
-type THelperUnit = '500g' | '1.1 lb';
+export type THelperUnit = '500g' | '1.1 lb';
 
 type TActivity = 'none' | 'low' | 'medium' | 'high' | 'very-high';
 
 type TSex = 'male' | 'female';
 
-type TGoalsRainbowStyle = Record<TGoal, TBackgroundStyleObject>;
+export type TGoalsRainbowStyle = Record<TGoal, TBackgroundStyleObject>;
 
-type TGoalsNutrition = Record<TGoal, TNutritionObject>;
+export type TGoalsNutrition = Record<TGoal, TNutritionObject>;
 
-type TGoalsTextAlignStyle = Record<TGoal, TFatCarbsTextAlignStyle>;
+export type TGoalsTextAlignStyle = Record<TGoal, TFatCarbsTextAlignStyle>;
 
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
@@ -64,15 +65,6 @@ export default function BmrCalculator(): JSX.Element {
 	const T_VERY_HIGH_ACTIVITY = translation('page.bmr.very-high-activity');
 
 	const T_YEARS = translation('page.bmr.years');
-	const T_YOUR_BMR = translation('page.bmr.your-bmr');
-	const T_YOUR_CALORIC_NEEDS = translation(
-		'page.bmr.your-caloric-and-macronutrient-needs'
-	);
-	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
-	const T_PROTEIN = translation('page.bmr.protein');
-	const T_FAT = translation('page.bmr.fat');
-	const T_CARBS = translation('page.bmr.carbohydrates');
-	const T_WEEK = translation('page.bmr.week');
 	const T_UNITS = translation('page.bmi.calculator.units');
 	const T_IMPERIAL = translation('page.bmi.calculator.imperial');
 	const T_METRIC = translation('page.bmi.calculator.metric');
@@ -80,7 +72,6 @@ export default function BmrCalculator(): JSX.Element {
 	const T_WEIGHT = translation('page.bmi.calculator.weight');
 	const T_CALCULATOR_TITLE = translation('page.bmr.calculator-title');
 	const T_CALCULATE = translation('common.calculate');
-	const T_REFRESH = translation('common.refresh');
 	const T_WRONG_SEX_INPUT = translation('page.bmr.wrong-sex-input');
 
 	const initialNutrition: TNutritionObject = {
@@ -576,170 +567,15 @@ export default function BmrCalculator(): JSX.Element {
 					</div>
 				</form>
 				{isSubmitted && (
-					<div>
-						<div className="text-center mt-3">
-							<label className="form-check-label" htmlFor="bmr">
-								{`${T_YOUR_BMR}:`}
-							</label>
-							<h1 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
-								{`${BMR.toFixed(0)} kcal`}
-							</h1>
-						</div>
-						<div className="mt-3 text-center">
-							<label className="form-label m-3">
-								{T_YOUR_CALORIC_NEEDS}
-								<br />
-								{`(-${helperUnit} / ${T_WEEK})`}
-							</label>
-
-							<div className="nutritions">
-								<p className="text_nutrition text1">
-									{T_PROTEIN}
-									<span>
-										{`${goalsNutrition.loseWeight.protein.toFixed(
-											0
-										)}g`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text2 margin_left_fat"
-									style={goalsTextAlignStyle.loseWeight.fat}
-								>
-									{T_FAT}
-									<span>
-										{`${goalsNutrition.loseWeight.fat.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text3 margin_left_carbs"
-									style={goalsTextAlignStyle.loseWeight.carbs}
-								>
-									{T_CARBS}
-									<span>
-										{`${goalsNutrition.loseWeight.carbs.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-							</div>
-							<div
-								className="colors_bmi"
-								style={goalsRainbowStyle.loseWeight}
-							></div>
-							<output className="mt-2 text-info">
-								{`${(TDEE - 500).toFixed(0)} kcal`}
-							</output>
-						</div>
-						<div className="mt-3 text-center">
-							<label className="form-label m-3">
-								{T_YOUR_CALORIC_NEEDS}
-								<br />
-								{`(${T_WEIGHT_MAINTANCE})`}
-							</label>
-							<div className="nutritions">
-								<p className="text_nutrition text1">
-									{T_PROTEIN}
-									<span>
-										{`${goalsNutrition.keepWeight.protein.toFixed(
-											0
-										)}g`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text2 margin_left_fat"
-									style={goalsTextAlignStyle.keepWeight.fat}
-								>
-									{T_FAT}
-									<span>
-										{`${goalsNutrition.keepWeight.fat.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text3 margin_left_carbs"
-									style={goalsTextAlignStyle.keepWeight.carbs}
-								>
-									{T_CARBS}
-									<span>
-										{`${goalsNutrition.keepWeight.carbs.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-							</div>
-							<div
-								className="colors_bmi"
-								style={goalsRainbowStyle.keepWeight}
-							></div>
-							<output className="mt-2 text-info">
-								{`${TDEE.toFixed(0)} kcal`}
-							</output>
-						</div>
-						<div className="mt-3 text-center">
-							<label className="form-label m-3">
-								{T_YOUR_CALORIC_NEEDS}
-								<br />
-								{`(+${helperUnit} / ${T_WEEK})`}
-							</label>
-
-							<div className="nutritions">
-								<p className="text_nutrition text1">
-									{T_PROTEIN}
-									<span>
-										{`${goalsNutrition.gainWeight.protein.toFixed(
-											0
-										)}g`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text2 margin_left_fat"
-									style={goalsTextAlignStyle.gainWeight.fat}
-								>
-									{T_FAT}
-									<span>
-										{`${goalsNutrition.gainWeight.fat.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-								<p
-									className="text_nutrition text3 margin_left_carbs"
-									style={goalsTextAlignStyle.gainWeight.carbs}
-								>
-									{T_CARBS}
-									<span>
-										{`${goalsNutrition.gainWeight.carbs.toFixed(
-											0
-										)}g
-										`}
-									</span>
-								</p>
-							</div>
-							<div
-								className="colors_bmi"
-								style={goalsRainbowStyle.gainWeight}
-							></div>
-							<output className="mt-2 text-info">
-								{`${(TDEE + 500).toFixed(0)} kcal`}
-							</output>
-						</div>
-						<div className="d-flex align-items-center justify-content-center m-3">
-							<button
-								className="btn btn-secondary col-auto mt-2"
-								onClick={refreshHandler}
-							>
-								{T_REFRESH}
-							</button>
-						</div>
-					</div>
+					<BmrScore
+						TDEE={TDEE}
+						BMR={BMR}
+						helperUnit={helperUnit}
+						goalsNutrition={goalsNutrition}
+						goalsTextAlignStyle={goalsTextAlignStyle}
+						goalsRainbowStyle={goalsRainbowStyle}
+						refreshHandler={refreshHandler}
+					/>
 				)}
 			</div>
 		</div>
