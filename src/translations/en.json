@@ -11,12 +11,12 @@
 			"there-is-no-such-action": "There is no such action",
 			"calculate": "Calculate",
 			"refresh": "Refresh",
-			"doesnt-exist": "doesn't exist",
+			"doesnt-exist": "Doesn't exist",
 			"man": "Man",
 			"woman": "Woman",
 			"age": "Age",
-			"to": "to",
-			"close": "Zamknij"
+			"to": "To",
+			"close": "Close"
 		},
 		"page": {
 			"home": {
@@ -177,12 +177,12 @@
 					"about-push": "Under 'push' exercises we select exercises in which we perform a pushing or squeezing movement, similarly under 'pull' exercises we select exercises in which we perform a pulling movement.",
 					"push": "Push",
 					"pull": "Pull",
-					"both-legs": "with both legs",
-					"horizontal": "horizontal",
-					"vertical": "vertical",
-					"single-leg": "with single leg",
-					"freely": "freely",
-					"lower": "lower"
+					"both-legs": "With both legs",
+					"horizontal": "Horizontal",
+					"vertical": "Vertical",
+					"single-leg": "With single leg",
+					"freely": "Freely",
+					"lower": "Lower"
 				},
 				"accessory": {
 					"title": "Accessory",

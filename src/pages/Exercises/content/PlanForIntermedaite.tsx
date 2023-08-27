@@ -25,22 +25,22 @@ export default function PlanForIntermediate() {
 	);
 	const TRANSLATED_BOTH_LEGS = translation(
 		'page.exercises.intermediate-plan.both-legs'
-	);
+	).toLowerCase();
 	const TRANSLATED_SINGLE_LEG = translation(
 		'page.exercises.intermediate-plan.single-leg'
-	);
+	).toLowerCase();
 	const TRANSLATED_HORIZONTAL = translation(
 		'page.exercises.intermediate-plan.horizontal'
-	);
+	).toLowerCase();
 	const TRANSLATED_VERTICAL = translation(
 		'page.exercises.intermediate-plan.vertical'
-	);
+	).toLowerCase();
 	const TRANSLATED_FREELY = translation(
 		'page.exercises.intermediate-plan.freely'
-	);
+	).toLowerCase();
 	const TRANSLATED_LOWER = translation(
 		'page.exercises.intermediate-plan.lower'
-	);
+	).toLowerCase();
 
 	const TRANSLATED_POWER_FBW = translation(
 		'page.exercises.intermediate-plan.power-fbw'
@@ -54,7 +54,7 @@ export default function PlanForIntermediate() {
 	const TRANSLATED_BALANS_FBW = translation(
 		'page.exercises.intermediate-plan.balans-fbw'
 	);
-	const TRANSLATED_TO = translation('common.to');
+	const TRANSLATED_TO = translation('common.to').toLowerCase();
 	const TRANSLATED_ACCESSORY = translation('page.exercises.accessory.title');
 
 	return (

@@ -43,7 +43,7 @@ export default function BmiCalculator(): JSX.Element {
 	const T_BMI_CATEGORY_FOR = translation(
 		'page.bmi.calculator.bmi-category-for'
 	);
-	const T_DOESNT_EXIST = translation('common.doesnt-exist');
+	const T_DOESNT_EXIST = translation('common.doesnt-exist').toLowerCase();
 
 	useEffect(() => {
 		if (units === 'metric') {
