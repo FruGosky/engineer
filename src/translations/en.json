@@ -12,6 +12,9 @@
 			"calculate": "Calculate",
 			"refresh": "Refresh",
 			"doesnt-exist": "doesn't exist",
+			"man": "Man",
+			"woman": "Woman",
+			"age": "Age",
 			"to": "to",
 			"close": "Zamknij"
 		},
@@ -48,7 +51,23 @@
 				}
 			},
 			"bmr": {
-				"title": "Bmr"
+				"title": "Bmr",
+				"choose-physical-activity": "Choose physical activity",
+				"none-activity": "Little activity (no exercise, sedentary life)",
+				"low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
+				"medium-activity": "Average physical activity (physical work, 3-5 workouts per week)",
+				"high-activity": "High physical activity (hard physical work, daily workouts)",
+				"very-high-activity": "Very high physical activity (very hard physical work, two workouts per day)",
+				"years": "years",
+				"your-bmr": "Your BMR",
+				"your-caloric-and-macronutrient-needs": "Your caloric and macronutrient needs",
+				"weight-maintenance": "Weight maintenance",
+				"protein": "Protein",
+				"fat": "Fat",
+				"carbohydrates": "Carbohydrates",
+				"week": "Week",
+				"calculator-title": "Calculator BMR",
+				"wrong-sex-input": "Wrong sex input"
 			},
 			"calories": {
 				"title": "Calories"
