@@ -120,11 +120,11 @@ export default function BmiCalculator(): JSX.Element {
 	const calcBmiRange = (bmi: number): string => {
 		if (bmi < 18.5 && bmi !== 0) {
 			return T_UNDERWEIGHT;
-		} else if (bmi >= 18.5 && bmi < 24.9) {
+		} else if (bmi >= 18.5 && bmi < 25) {
 			return T_WEIGHT_NORMAL;
-		} else if (bmi >= 25 && bmi < 29.9) {
+		} else if (bmi >= 25 && bmi < 30) {
 			return T_OVERWEIGHT;
-		} else if (bmi >= 30 && bmi < 34.9) {
+		} else if (bmi >= 30 && bmi < 35) {
 			return T_OBESITY;
 		} else if (bmi >= 35 && bmi <= 42) {
 			return T_SIGNIFICANT_OBESITY;
