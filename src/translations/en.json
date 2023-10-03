@@ -263,7 +263,8 @@
 				"info1": "Add your personal data below - it will automaticly appear in the BMI/BMR",
 				"info2": "calculator and will set daily calories limit in the calories page according to your goal",
 				"success-info1": "Success! You have sucesfully saved your personal data -",
-				"success-info2": " check Calories page or go to BMI / BMR calculator"
+				"success-info2": " check Calories page or go to BMI / BMR calculator",
+				"goal": "Goal"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

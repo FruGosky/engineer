@@ -263,7 +263,8 @@
 				"info1": "Dodaj poniżej swoje dane osobowe - pojawią się one automatycznie w kalkulatorze BMI/BMR",
 				"info2": "oraz zostanie ustawiony dzienny limit kalorii na stronie 'Kalorie' zgodnie z Twoim celem",
 				"success-info1": "Sukces! Pomyślnie zapisałeś swoje dane osobowe -",
-				"success-info2": " sprawdź stronę Kalorie lub przejdź do kalkulatora BMI/BMR"
+				"success-info2": " sprawdź stronę Kalorie lub przejdź do kalkulatora BMI/BMR",
+				"goal": "Cel"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

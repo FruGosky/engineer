@@ -62,6 +62,7 @@ export default function Profile() {
 	const T_SUCCESS_INFO1 = translation('page.profile.success-info1');
 	const T_SUCCESS_INFO2 = translation('page.profile.success-info2');
 	const T_SAVE = translation('common.save');
+	const T_GOAL = translation('page.profile.goal');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
@@ -410,7 +411,7 @@ export default function Profile() {
 								htmlFor="weight_input"
 								className="col-form-label"
 							>
-								{`cel:`}
+								{`${T_GOAL}:`}
 							</label>
 						</div>
 						<div className="col-auto">
