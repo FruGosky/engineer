@@ -11,8 +11,6 @@ export default function Calories() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(CALORIES_TITLE);
-	// TODO! DELETE THIS TRANSLATION BELOW WHEN U WILL START ADDING SOME CONTENT TO THIS PAGE AND ADD YOURS TRANSLATION DO NOT FORGET TO ADD EN AND PL TRANSLATION NOT ONLY ONE ITS VERY VERY IMPORTANT TO HAVE ALL TRANSLATIONS
-	const THIS_IS_PAGE = translation('to-be-deleted.this-is-page');
 
 	useWebsiteTitle(TRANSLATED_TITLE);
 
@@ -27,7 +25,7 @@ export default function Calories() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center">
-			{`${THIS_IS_PAGE} ${TRANSLATED_TITLE}`}
+			<div className="card shadow">work in progres..</div>
 		</div>
 	);
 }

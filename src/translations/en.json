@@ -67,7 +67,10 @@
 				"carbohydrates": "Carbohydrates",
 				"week": "Week",
 				"calculator-title": "Calculator BMR",
-				"wrong-sex-input": "Wrong sex input"
+				"wrong-sex-input": "Wrong sex input",
+				"choose-goal": "Choose goal",
+				"lose-weight": "Lose weight",
+				"gain-weight": "Gain weight"
 			},
 			"calories": {
 				"title": "Calories"
