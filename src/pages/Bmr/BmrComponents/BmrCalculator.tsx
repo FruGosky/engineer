@@ -13,17 +13,17 @@ type TBmrData = {
 	bmrValue: number;
 };
 
-type TUnits = 'metric' | 'imperial';
+export type TUnits = 'metric' | 'imperial';
 
-type TWeightUnit = 'kg' | 'lbs';
+export type TWeightUnit = 'kg' | 'lbs';
 
-type THeightUnit = 'cm' | 'ft';
+export type THeightUnit = 'cm' | 'ft';
 
 export type THelperUnit = '500g' | '1.1 lb';
 
-type TActivity = 'none' | 'low' | 'medium' | 'high' | 'very-high';
+export type TActivity = 'none' | 'low' | 'medium' | 'high' | 'very-high';
 
-type TSex = 'male' | 'female';
+export type TSex = 'male' | 'female';
 
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
@@ -135,7 +135,18 @@ export default function BmrCalculator(): JSX.Element {
 
 	useEffect(() => {
 		const storedBMR = localStorage.getItem('bmr-data');
-		if (storedBMR) {
+		const storedPersonalData = localStorage.getItem('user-personal-data');
+		if (storedPersonalData) {
+			const parsedPersonalData = JSON.parse(storedPersonalData);
+			setIsSubmitted(true);
+			setUnits(parsedPersonalData.units);
+			setSex(parsedPersonalData.sex);
+			setBMR(parseFloat(parsedPersonalData.bmrValue));
+			setHeightValue(parseFloat(parsedPersonalData.height));
+			setWeightValue(parseFloat(parsedPersonalData.weight));
+			setAge(parseFloat(parsedPersonalData.age));
+			setActivity(parsedPersonalData.activity);
+		} else if (storedBMR) {
 			const parsedBMR = JSON.parse(storedBMR);
 			setIsSubmitted(true);
 			setUnits(parsedBMR.units);

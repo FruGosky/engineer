@@ -16,7 +16,9 @@
 			"woman": "Woman",
 			"age": "Age",
 			"to": "To",
-			"close": "Close"
+			"close": "Close",
+			"hello": "Hello",
+			"save": "Save"
 		},
 		"page": {
 			"home": {
@@ -257,7 +259,11 @@
 				"title": "Food"
 			},
 			"profile": {
-				"title": "Profile"
+				"title": "Profile",
+				"info1": "Add your personal data below - it will automaticly appear in the BMI/BMR",
+				"info2": "calculator and will set daily calories limit in the calories page according to your goal",
+				"success-info1": "Success! You have sucesfully saved your personal data -",
+				"success-info2": " check Calories page or go to BMI / BMR calculator"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

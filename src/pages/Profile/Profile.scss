@@ -1,0 +1,28 @@
+.card {
+	height: fit-content;
+	margin: 2rem;
+	width: fit-content;
+	padding: 2rem;
+}
+.info_input {
+	min-width: 10rem;
+}
+.col-form-label,
+.text {
+	min-width: 65px;
+}
+
+@media (max-width: 599px) {
+	.colors_bmi,
+	.card {
+		width: 100% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.margin_left_fat {
+		margin-left: 0.5rem;
+	}
+	.margin_left_carbs {
+		margin-left: 1rem;
+	}
+}

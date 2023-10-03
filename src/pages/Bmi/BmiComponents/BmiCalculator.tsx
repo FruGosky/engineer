@@ -7,6 +7,7 @@ type TBmiData = {
 	units: 'metric' | 'imperial';
 	height: number;
 	weight: number;
+	bmiValue: number;
 };
 
 export default function BmiCalculator(): JSX.Element {
@@ -17,7 +18,8 @@ export default function BmiCalculator(): JSX.Element {
 	const [units, setUnits] = useState<string>('metric');
 	const [weightUnit, setWeightUnit] = useState<string>('kg');
 	const [heightUnit, setHeightUnit] = useState<string>('cm');
-
+	const [heightValueAsCm, setHeightValueAsCm] = useState<number>(0);
+	const [weightValueAsKg, setWeightValueAsKg] = useState<number>(0);
 	const [BMI, setBmi] = useState<number>(0);
 
 	const { t: translation } = useTranslation();
@@ -45,24 +47,6 @@ export default function BmiCalculator(): JSX.Element {
 	);
 	const T_DOESNT_EXIST = translation('common.doesnt-exist').toLowerCase();
 
-	useEffect(() => {
-		if (units === 'metric') {
-			setMetricUnits();
-		} else if (units === 'imperial') {
-			setImperialUnits();
-		}
-	}, [units]);
-
-	const setMetricUnits = () => {
-		setWeightUnit('kg');
-		setHeightUnit('cm');
-	};
-
-	const setImperialUnits = () => {
-		setWeightUnit('lbs');
-		setHeightUnit('ft');
-	};
-
 	const refreshHandler = (): void => {
 		setIsSubmitted(false);
 		setHeightValue(0);
@@ -74,45 +58,21 @@ export default function BmiCalculator(): JSX.Element {
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		setIsSubmitted(true);
+		const newBmiValue = calculateBMI();
 		const bmiData: TBmiData = {
 			units: 'metric',
 			height: heightValue,
 			weight: weightValue,
+			bmiValue: newBmiValue,
 		};
-		if (units === 'metric') {
-			setBmi(calcMetricBmi());
-		} else {
-			bmiData.units = 'imperial';
-			setBmi(calcImperialBmi());
-		}
+		setBmi(newBmiValue);
+
 		localStorage.setItem('bmi-data', JSON.stringify(bmiData));
 	};
 
-	const calcMetricBmi = (bmiData?: TBmiData): number => {
-		if (bmiData) {
-			const weightValue = bmiData.weight;
-			const heightValue = bmiData.height;
-			const bmi = (weightValue / (heightValue * heightValue)) * 10000;
-			setNameOfBmiRange(calcBmiRange(bmi));
-			return bmi;
-		}
-		const bmi = (weightValue / (heightValue * heightValue)) * 10000;
-		setNameOfBmiRange(calcBmiRange(bmi));
-		return bmi;
-	};
-
-	const calcImperialBmi = (bmiData?: TBmiData): number => {
-		if (bmiData) {
-			const weightValue = bmiData.weight;
-			const heightValue = bmiData.height;
-			const convertedHeight = heightValue * 12;
-			const bmi =
-				(weightValue * 703) / (convertedHeight * convertedHeight);
-			setNameOfBmiRange(calcBmiRange(bmi));
-			return bmi;
-		}
-		const convertedHeight = heightValue * 12;
-		const bmi = (weightValue * 703) / (convertedHeight * convertedHeight);
+	const calculateBMI = (): number => {
+		const bmi =
+			(weightValueAsKg / (heightValueAsCm * heightValueAsCm)) * 10000;
 		setNameOfBmiRange(calcBmiRange(bmi));
 		return bmi;
 	};
@@ -135,27 +95,51 @@ export default function BmiCalculator(): JSX.Element {
 	};
 
 	useEffect(() => {
-		if (!localStorage.getItem('bmi-data')) return;
-
-		const bmiData: TBmiData = JSON.parse(
-			'' + localStorage.getItem('bmi-data')
-		);
-		setUnits(bmiData.units);
-		setHeightValue(bmiData.height);
-		setWeightValue(bmiData.weight);
-
-		if (bmiData.units === 'metric') {
-			setMetricUnits();
+		const storedBMI = localStorage.getItem('bmi-data');
+		const storedPersonalData = localStorage.getItem('user-personal-data');
+		if (storedPersonalData) {
+			const parsedPersonalData = JSON.parse(storedPersonalData);
 			setIsSubmitted(true);
-			setBmi(calcMetricBmi(bmiData));
+			setUnits(parsedPersonalData.units);
+			setHeightValue(parsedPersonalData.height);
+			setWeightValue(parsedPersonalData.weight);
+			setBmi(parsedPersonalData.bmiValue);
+		} else if (storedBMI) {
+			const parsedBMIdata = JSON.parse(storedBMI);
+			setIsSubmitted(true);
+			setUnits(parsedBMIdata.units);
+			setHeightValue(parseFloat(parsedBMIdata.height));
+			setWeightValue(parseFloat(parsedBMIdata.weight));
+			setBmi(parsedBMIdata.bmiValue);
+		}
+	}, []);
+	useEffect(() => {
+		if (units === 'metric') {
+			setWeightUnit('kg');
+			setHeightUnit('cm');
+		} else if (units === 'imperial') {
+			setWeightUnit('lbs');
+			setHeightUnit('ft');
+		}
+	}, [units]);
+
+	useEffect(() => {
+		if (units === 'imperial') {
+			setWeightValueAsKg(weightValue * 0.45359237);
 		} else {
-			setImperialUnits();
-			setIsSubmitted(true);
-			setBmi(calcImperialBmi(bmiData));
+			setWeightValueAsKg(weightValue);
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [weightValue, units]);
 
+	useEffect(() => {
+		if (units === 'imperial') {
+			setHeightValueAsCm(heightValue * 30.48);
+		} else {
+			setHeightValueAsCm(heightValue);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [heightValue, units]);
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
 			<div className={`card m-4 p-5 shadow`}>

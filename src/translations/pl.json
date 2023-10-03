@@ -16,7 +16,9 @@
 			"close": "Zamknij",
 			"man": "Mężczyzna",
 			"woman": "Kobieta",
-			"age": "Wiek"
+			"age": "Wiek",
+			"hello": "Witaj",
+			"save": "Zapisz"
 		},
 		"page": {
 			"home": {
@@ -56,8 +58,8 @@
 				"none-activity": "Znikoma aktywność (brak ćwiczeń, siedzący tryb życia)",
 				"low-activity": "Niska aktywność fizyczna (siedzący tryb życia, 1-2 treningi w tygodniu)",
 				"medium-activity": "Średnia aktywność fizyczna (praca fizyczna, 3-5 treningi w tygodniu)",
-				"high-activity": "Wysoka aktywność fizyczna (ciężka praca fizyczna, codzienne treningi",
-				"very-high-activity": "Bardzo wysoka aktywność fizyczna (bardzo ciężka praca fizyczna, codzienne dwa treningi",
+				"high-activity": "Wysoka aktywność fizyczna (ciężka praca fizyczna, codzienne treningi)",
+				"very-high-activity": "Bardzo wysoka aktywność fizyczna (bardzo ciężka praca fizyczna, codzienne dwa treningi)",
 				"years": "Lat(a)",
 				"your-bmr": "Twoje BMR",
 				"your-caloric-and-macronutrient-needs": "Twoje zapotrzebowanie kalorczyne i makroskładnikowe",
@@ -257,7 +259,11 @@
 				"title": "Jedzenie"
 			},
 			"profile": {
-				"title": "Profil"
+				"title": "Profil",
+				"info1": "Dodaj poniżej swoje dane osobowe - pojawią się one automatycznie w kalkulatorze BMI/BMR",
+				"info2": "oraz zostanie ustawiony dzienny limit kalorii na stronie 'Kalorie' zgodnie z Twoim celem",
+				"success-info1": "Sukces! Pomyślnie zapisałeś swoje dane osobowe -",
+				"success-info2": " sprawdź stronę Kalorie lub przejdź do kalkulatora BMI/BMR"
 			},
 			"not-found-404": {
 				"title": "Error - 404",
