@@ -21,15 +21,15 @@ export const PROFILE_LINK = '/profile';
 type TUserPersonalData = {
 	sex: string;
 	activity: string;
-	height: number;
-	weight: number;
-	goalWeight: number;
+	heightValueAsCm: number;
+	weightValueAsKg: number;
 	age: number;
 	bmrValue: number;
 	bmiValue: number;
 	units: string;
+	goal: string;
 };
-
+type TGoal = 'keepWeight' | 'loseWeight' | 'gainWeight';
 export default function Profile() {
 	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
@@ -62,21 +62,23 @@ export default function Profile() {
 	const T_SUCCESS_INFO1 = translation('page.profile.success-info1');
 	const T_SUCCESS_INFO2 = translation('page.profile.success-info2');
 	const T_SAVE = translation('common.save');
-	const T_GOAL = translation('page.profile.goal');
+	const T_CHOOSE_GOAL = translation('page.bmr.choose-goal');
+	const T_LOSE_WEIGHT = translation('page.bmr.lose-weight');
+	const T_GAIN_WEIGHT = translation('page.bmr.gain-weight');
+	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
 	const [heightValueAsCm, setHeightValueAsCm] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
 	const [weightValueAsKg, setWeightValueAsKg] = useState<number>(0);
-	const [goalWeightValue, setGoalWeightValue] = useState<number>(0);
-	const [goalWeightValueAsKg, setGoalWeightValueAsKg] = useState<number>(0);
 	const [units, setUnits] = useState<TUnits>('metric');
 	const [weightUnit, setWeightUnit] = useState<TWeightUnit>('kg');
 	const [heightUnit, setHeightUnit] = useState<THeightUnit>('cm');
 	const [sex, setSex] = useState<TSex>('male');
 	const [activity, setActivity] = useState<TActivity>('none');
 	const [age, setAge] = useState<number>(0);
+	const [goal, setGoal] = useState<TGoal>('keepWeight');
 
 	useWebsiteTitle(TRANSLATED_TITLE);
 
@@ -96,6 +98,10 @@ export default function Profile() {
 		e: React.ChangeEvent<HTMLSelectElement>
 	): void => {
 		setActivity(e.target.value as TActivity);
+		setIsSubmitted(false);
+	};
+	const onGoalChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+		setGoal(e.target.value as TGoal);
 		setIsSubmitted(false);
 	};
 
@@ -130,13 +136,13 @@ export default function Profile() {
 		const userPersonalData: TUserPersonalData = {
 			sex: sex,
 			activity: activity,
-			height: heightValueAsCm,
-			weight: weightValueAsKg,
-			goalWeight: goalWeightValueAsKg,
+			heightValueAsCm: heightValueAsCm,
+			weightValueAsKg: weightValueAsKg,
 			age: age,
 			bmrValue: newBmrValue,
 			bmiValue: newBmiValue,
 			units: units,
+			goal: goal,
 		};
 		setIsSubmitted(true);
 		saveUserPersonalDataToLocalStorage(userPersonalData);
@@ -172,14 +178,6 @@ export default function Profile() {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [weightValue]);
-	useEffect(() => {
-		if (units === 'imperial') {
-			setGoalWeightValueAsKg(goalWeightValue * 0.45359237);
-		} else {
-			setGoalWeightValueAsKg(goalWeightValue);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [goalWeightValue]);
 
 	useEffect(() => {
 		if (units === 'imperial') {
@@ -197,9 +195,9 @@ export default function Profile() {
 			setIsSubmitted(true);
 			setUnits(parsedPersonalData.units);
 			setSex(parsedPersonalData.sex);
-			setHeightValue(parseFloat(parsedPersonalData.height));
-			setWeightValue(parseFloat(parsedPersonalData.weight));
-			setGoalWeightValue(parseFloat(parsedPersonalData.goalWeight));
+			setHeightValue(parseFloat(parsedPersonalData.heightValueAsCm));
+			setWeightValue(parseFloat(parsedPersonalData.weightValueAsKg));
+			setGoal(parsedPersonalData.goal);
 			setAge(parseFloat(parsedPersonalData.age));
 			setActivity(parsedPersonalData.activity);
 		}
@@ -309,6 +307,19 @@ export default function Profile() {
 							{T_VERY_HIGH_ACTIVITY}
 						</option>
 					</select>
+					<label htmlFor="goalSelect" className="mb-2">
+						{T_CHOOSE_GOAL}
+					</label>
+					<select
+						id="goalSelect"
+						className="form-select mb-3"
+						onChange={onGoalChange}
+						value={goal}
+					>
+						<option value="loseWeight">{T_LOSE_WEIGHT}</option>
+						<option value="keepWeight">{T_WEIGHT_MAINTANCE}</option>
+						<option value="gainWeight">{T_GAIN_WEIGHT}</option>
+					</select>
 					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
@@ -341,7 +352,38 @@ export default function Profile() {
 							<span className="form-text">{heightUnit}</span>
 						</div>
 					</div>
-
+					<div className="row g-3 mb-3 d-flex justify-content-center">
+						<div className="col-auto">
+							<label
+								htmlFor="weight_input"
+								className="col-form-label"
+							>
+								{`${T_WEIGHT}:`}
+							</label>
+						</div>
+						<div className="col-auto">
+							<input
+								type="number"
+								id="weight_input"
+								className="form-control info_input"
+								min="1"
+								max="500"
+								step={0.1}
+								inputMode="decimal"
+								onChange={(
+									e: React.ChangeEvent<HTMLInputElement>
+								): void => {
+									setWeightValue(parseFloat(e.target.value));
+									setIsSubmitted(false);
+								}}
+								value={weightValue.toFixed(2)}
+								required
+							/>
+						</div>
+						<div className="col-auto text">
+							<span className="form-text">{weightUnit}</span>
+						</div>
+					</div>
 					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
@@ -373,72 +415,7 @@ export default function Profile() {
 							<span className="form-text">{T_YEARS}</span>
 						</div>
 					</div>
-					<div className="row g-3 mb-3 d-flex justify-content-center">
-						<div className="col-auto">
-							<label
-								htmlFor="weight_input"
-								className="col-form-label"
-							>
-								{`${T_WEIGHT}:`}
-							</label>
-						</div>
-						<div className="col-auto">
-							<input
-								type="number"
-								id="weight_input"
-								className="form-control info_input"
-								min="1"
-								max="500"
-								step={0.1}
-								inputMode="decimal"
-								onChange={(
-									e: React.ChangeEvent<HTMLInputElement>
-								): void => {
-									setWeightValue(parseFloat(e.target.value));
-									setIsSubmitted(false);
-								}}
-								value={weightValue}
-								required
-							/>
-						</div>
-						<div className="col-auto text">
-							<span className="form-text">{weightUnit}</span>
-						</div>
-					</div>
-					<div className="row g-3 mb-3 d-flex justify-content-center">
-						<div className="col-auto">
-							<label
-								htmlFor="weight_input"
-								className="col-form-label"
-							>
-								{`${T_GOAL}:`}
-							</label>
-						</div>
-						<div className="col-auto">
-							<input
-								type="number"
-								id="weight_input"
-								className="form-control info_input"
-								min="1"
-								max="500"
-								step={0.1}
-								inputMode="decimal"
-								onChange={(
-									e: React.ChangeEvent<HTMLInputElement>
-								): void => {
-									setGoalWeightValue(
-										parseFloat(e.target.value)
-									);
-									setIsSubmitted(false);
-								}}
-								value={goalWeightValue}
-								required
-							/>
-						</div>
-						<div className="col-auto text">
-							<span className="form-text">{weightUnit}</span>
-						</div>
-					</div>
+
 					<div className="d-flex align-items-center justify-content-center m-3">
 						<button className="btn btn-primary col-auto mt-2">
 							{T_SAVE}

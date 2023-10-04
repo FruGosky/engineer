@@ -69,7 +69,10 @@
 				"carbohydrates": "Węglowodany",
 				"week": "Tydzień",
 				"calculator-title": "Kalkulator BMR",
-				"wrong-sex-input": "Błędnie wprowadzona płeć"
+				"wrong-sex-input": "Błędnie wprowadzona płeć",
+				"choose-goal": "Wybierz cel",
+				"lose-weight": "Utrata masy ciała",
+				"gain-weight": "Zwiększenie masy ciała"
 			},
 			"calories": {
 				"title": "Kalorie"
