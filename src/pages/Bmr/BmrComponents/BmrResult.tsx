@@ -9,9 +9,24 @@ type TProps = {
 	refreshHandler: () => void;
 	weightValueAsKg: number;
 	goal: string;
+	sex: string;
+	units: string;
+	heightValueAsCm: number;
+	age: number;
+	activity: string;
 };
-
-type TNutritionObject = {
+type TBmrData = {
+	units: string;
+	sex: string;
+	activity: string;
+	heightValueAsCm: number;
+	weightValueAsKg: number;
+	age: number;
+	bmrValue: number;
+	goal: String;
+	nutrition: TNutritionObject;
+};
+export type TNutritionObject = {
 	protein: number;
 	fat: number;
 	carbs: number;
@@ -90,8 +105,19 @@ export default function BmrScore(props: TProps) {
 			...initialGoalsTextAlign,
 		});
 
-	const { BMR, helperUnit, TDEE, refreshHandler, weightValueAsKg, goal } =
-		props;
+	const {
+		BMR,
+		helperUnit,
+		TDEE,
+		refreshHandler,
+		weightValueAsKg,
+		goal,
+		sex,
+		units,
+		heightValueAsCm,
+		age,
+		activity,
+	} = props;
 
 	const calculateNutrition = (goal: TGoal): TNutritionObject => {
 		let protein = 0;
@@ -135,7 +161,6 @@ export default function BmrScore(props: TProps) {
 			fat,
 			carbs: calculateCarbs(protein, fat, actualTDEE),
 		};
-
 		return nutrition;
 	};
 
@@ -196,15 +221,45 @@ export default function BmrScore(props: TProps) {
 		actualTDEE: number
 	): number => (actualTDEE - (protein * 4 + fat * 9)) / 4;
 
+	const getNutritionData = (): TNutritionObject => {
+		if (goal === 'loseWeight') {
+			const nutrition = goalsNutrition.loseWeight;
+			return nutrition;
+		} else if (goal === 'keepWeight') {
+			const nutrition = goalsNutrition.keepWeight;
+			return nutrition;
+		} else {
+			const nutrition = goalsNutrition.gainWeight;
+			return nutrition;
+		}
+	};
+
+	const saveBMRToLocalStorage = (bmrData: TBmrData) => {
+		localStorage.setItem('bmr-data', JSON.stringify(bmrData));
+	};
 	useEffect(() => {
 		setGoalsNutrition({
 			loseWeight: calculateNutrition('loseWeight'),
 			keepWeight: calculateNutrition('keepWeight'),
 			gainWeight: calculateNutrition('gainWeight'),
 		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [TDEE]);
+	}, [TDEE, goal]);
 
+	useEffect(() => {
+		const bmrData: TBmrData = {
+			units: units,
+			sex: sex,
+			activity: activity,
+			heightValueAsCm: heightValueAsCm,
+			weightValueAsKg: weightValueAsKg,
+			age: age,
+			bmrValue: BMR,
+			goal: goal,
+			nutrition: getNutritionData(),
+		};
+
+		saveBMRToLocalStorage(bmrData);
+	}, [goalsNutrition, goal, TDEE]);
 	return (
 		<div>
 			<div className="text-center mt-3">
@@ -215,6 +270,7 @@ export default function BmrScore(props: TProps) {
 					{`${BMR.toFixed(0)} kcal`}
 				</h1>
 			</div>
+
 			{goal === 'loseWeight' && (
 				<div className="mt-3 text-center">
 					<label className="form-label m-3">

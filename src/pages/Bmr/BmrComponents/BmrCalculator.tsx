@@ -1,18 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './BmrCalculator.scss';
-import BmrResult from './BmrResult';
-
-type TBmrData = {
-	units: string;
-	sex: string;
-	activity: string;
-	height: number;
-	weight: number;
-	age: number;
-	bmrValue: number;
-	goal: String;
-};
+import BmrResult, { TNutritionObject } from './BmrResult';
 
 type TUnits = 'metric' | 'imperial';
 
@@ -127,22 +116,7 @@ export default function BmrCalculator(): JSX.Element {
 		e.preventDefault();
 		setIsSubmitted(true);
 		const newBmrValue = calculateBMR();
-		const bmrData: TBmrData = {
-			units,
-			sex,
-			activity,
-			height: heightValue,
-			weight: weightValue,
-			age,
-			bmrValue: newBmrValue,
-			goal: goal,
-		};
 		setBMR(newBmrValue);
-		saveBMRToLocalStorage(bmrData);
-	};
-
-	const saveBMRToLocalStorage = (bmrData: TBmrData) => {
-		localStorage.setItem('bmr-data', JSON.stringify(bmrData));
 	};
 
 	useEffect(() => {
@@ -419,6 +393,11 @@ export default function BmrCalculator(): JSX.Element {
 						refreshHandler={refreshHandler}
 						weightValueAsKg={weightValueAsKg}
 						goal={goal}
+						sex={sex}
+						units={units}
+						heightValueAsCm={heightValueAsCm}
+						age={age}
+						activity={activity}
 					/>
 				)}
 			</div>
