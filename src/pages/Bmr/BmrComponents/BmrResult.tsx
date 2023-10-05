@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { THelperUnit } from './BmrCalculator';
 import { useEffect, useState } from 'react';
+import { TGoal, THelperUnit, TNutritionObject } from '../../../types';
 
 type TProps = {
 	TDEE: number;
@@ -9,13 +9,6 @@ type TProps = {
 	refreshHandler: () => void;
 	weightValueAsKg: number;
 };
-
-type TNutritionObject = {
-	protein: number;
-	fat: number;
-	carbs: number;
-};
-
 type TFatCarbsTextAlignStyle = {
 	fat: {
 		left: string;
@@ -25,11 +18,8 @@ type TFatCarbsTextAlignStyle = {
 	};
 };
 type TGoalsTextAlignStyle = Record<TGoal, TFatCarbsTextAlignStyle>;
-
 type TBackgroundStyleObject = { background: string };
 type TGoalsRainbowStyle = Record<TGoal, TBackgroundStyleObject>;
-
-type TGoal = 'loseWeight' | 'keepWeight' | 'gainWeight';
 type TGoalsNutrition = Record<TGoal, TNutritionObject>;
 
 export default function BmrScore(props: TProps) {

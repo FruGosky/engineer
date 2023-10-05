@@ -1,29 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './BmrCalculator.scss';
 import BmrResult from './BmrResult';
-
-type TBmrData = {
-	units: string;
-	sex: string;
-	activity: string;
-	height: number;
-	weight: number;
-	age: number;
-	bmrValue: number;
-};
-
-type TUnits = 'metric' | 'imperial';
-
-type TWeightUnit = 'kg' | 'lbs';
-
-type THeightUnit = 'cm' | 'ft';
-
-export type THelperUnit = '500g' | '1.1 lb';
-
-type TActivity = 'none' | 'low' | 'medium' | 'high' | 'very-high';
-
-type TSex = 'male' | 'female';
+import {
+	TUnits,
+	TSex,
+	TActivity,
+	TWeightUnit,
+	THeightUnit,
+	THelperUnit,
+	TBmrData,
+	TUserPersonalData,
+} from '../../../types';
 
 export default function BmrCalculator(): JSX.Element {
 	const { t: translation } = useTranslation();
@@ -51,7 +40,6 @@ export default function BmrCalculator(): JSX.Element {
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
-	const [heightValueAsCm, setHeightValueAsCm] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
 	const [weightValueAsKg, setWeightValueAsKg] = useState<number>(0);
 	const [units, setUnits] = useState<TUnits>('metric');
@@ -74,7 +62,12 @@ export default function BmrCalculator(): JSX.Element {
 		setActivity('none');
 	};
 
-	const calculateBMR = (): number => {
+	const calculateBMR = (
+		sex: TSex,
+		weightValueAsKg: number,
+		heightValueAsCm: number,
+		age: number
+	): number => {
 		if (sex !== 'male' && sex !== 'female') {
 			throw new Error(`${T_WRONG_SEX_INPUT} '${sex}'`);
 		}
@@ -114,8 +107,6 @@ export default function BmrCalculator(): JSX.Element {
 
 	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setIsSubmitted(true);
-		const newBmrValue = calculateBMR();
 		const bmrData: TBmrData = {
 			units,
 			sex,
@@ -123,32 +114,72 @@ export default function BmrCalculator(): JSX.Element {
 			height: heightValue,
 			weight: weightValue,
 			age,
-			bmrValue: newBmrValue,
 		};
-		setBMR(newBmrValue);
+		setAllStatesFromData(bmrData);
+		setIsSubmitted(true);
 		saveBMRToLocalStorage(bmrData);
 	};
 
+	const setAllStatesFromData = (props: TBmrData): void => {
+		setUnits(props.units);
+		setSex(props.sex);
+		setHeightValue(props.height);
+		setWeightValue(props.weight);
+		setAge(props.age);
+		setActivity(props.activity);
+		const weightValueAsKg = calcWeightValueAsKg(props.units, props.weight);
+		setWeightValueAsKg(weightValueAsKg);
+		const heightValueAsCm = calcHeightValueAsCm(props.units, props.height);
+		const bmrValue = calculateBMR(
+			props.sex,
+			weightValueAsKg,
+			heightValueAsCm,
+			props.age
+		);
+		setBMR(bmrValue);
+		const TDEEValue = calcTDEE(props.activity, bmrValue);
+		setTDEE(TDEEValue);
+	};
+
 	const saveBMRToLocalStorage = (bmrData: TBmrData) => {
-		localStorage.setItem('bmr-data', JSON.stringify(bmrData));
+		const storedUserPersonalData =
+			localStorage.getItem('user-personal-data');
+		if (storedUserPersonalData) {
+			const parsedUserPersonalData: TUserPersonalData = JSON.parse(
+				storedUserPersonalData
+			);
+			localStorage.setItem(
+				'user-personal-data',
+				JSON.stringify({ ...parsedUserPersonalData, ...bmrData })
+			);
+			return;
+		}
+		localStorage.setItem('user-personal-data', JSON.stringify(bmrData));
 	};
 
 	useEffect(() => {
-		const storedBMR = localStorage.getItem('bmr-data');
-		if (storedBMR) {
-			const parsedBMR = JSON.parse(storedBMR);
-			setIsSubmitted(true);
-			setUnits(parsedBMR.units);
-			setSex(parsedBMR.sex);
-			setBMR(parseFloat(parsedBMR.bmrValue));
-			setHeightValue(parseFloat(parsedBMR.height));
-			setWeightValue(parseFloat(parsedBMR.weight));
-			setAge(parseFloat(parsedBMR.age));
-			setActivity(parsedBMR.activity);
+		const storedUserPersonalData =
+			localStorage.getItem('user-personal-data');
+		if (!storedUserPersonalData) return;
+		const parsedUserPersonalData: TUserPersonalData = JSON.parse(
+			storedUserPersonalData
+		);
+		if (
+			parsedUserPersonalData.height === undefined ||
+			parsedUserPersonalData.weight === undefined ||
+			parsedUserPersonalData.units === undefined ||
+			parsedUserPersonalData.activity === undefined ||
+			parsedUserPersonalData.age === undefined ||
+			parsedUserPersonalData.sex === undefined
+		) {
+			return;
 		}
+		//TODO? Puzzels to discover why it needs type below if ure checking type before
+		setAllStatesFromData(parsedUserPersonalData as TBmrData);
+		setIsSubmitted(true);
 	}, []);
 
-	useEffect(() => {
+	const checkAndSetUnitTypes = (units: TUnits) => {
 		if (units === 'metric') {
 			setWeightUnit('kg');
 			setHeightUnit('cm');
@@ -158,39 +189,50 @@ export default function BmrCalculator(): JSX.Element {
 			setHeightUnit('ft');
 			setHeleperUnit('1.1 lb');
 		}
+	};
+	useEffect(() => {
+		checkAndSetUnitTypes(units);
 	}, [units]);
 
-	useEffect(() => {
-		if (activity === 'none') {
-			setTDEE(BMR * 1.2);
-		} else if (activity === 'low') {
-			setTDEE(BMR * 1.375);
-		} else if (activity === 'medium') {
-			setTDEE(BMR * 1.55);
-		} else if (activity === 'high') {
-			setTDEE(BMR * 1.725);
-		} else if (activity === 'very-high') {
-			setTDEE(BMR * 2);
-		}
-	}, [BMR, activity]);
+	const calcTDEE = (activity: TActivity, BMR: number): number => {
+		const activityMultipliers = {
+			none: 1.2,
+			low: 1.375,
+			medium: 1.55,
+			high: 1.725,
+			'very-high': 2,
+		};
+		const multiplier = activityMultipliers[activity];
+		//TODO! ADD TRANSLATION FOR THIS ERROR
+		if (multiplier === undefined) throw new Error('Activity invalid');
+		return BMR * multiplier;
+	};
 
-	useEffect(() => {
+	const calcWeightValueAsKg = (
+		units: TUnits,
+		weightValue: number
+	): number => {
 		if (units === 'imperial') {
-			setWeightValueAsKg(weightValue * 0.45359237);
-		} else {
-			setWeightValueAsKg(weightValue);
+			return weightValue * 0.45359237;
+		} else if (units === 'metric') {
+			return weightValue;
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [weightValue]);
+		//TODO! ADD TRANSLATION FOR THIS ERROR
+		throw new Error('Units invalid');
+	};
 
-	useEffect(() => {
+	const calcHeightValueAsCm = (
+		units: TUnits,
+		heightValue: number
+	): number => {
 		if (units === 'imperial') {
-			setHeightValueAsCm(heightValue * 30.48);
-		} else {
-			setHeightValueAsCm(heightValue);
+			return heightValue * 30.48;
+		} else if (units === 'metric') {
+			return heightValue;
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [heightValue]);
+		//TODO! ADD TRANSLATION FOR THIS ERROR
+		throw new Error('Units invalid');
+	};
 
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">

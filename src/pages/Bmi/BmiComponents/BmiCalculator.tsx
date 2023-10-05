@@ -2,12 +2,7 @@ import { useState, useEffect } from 'react';
 import AboutBmi from './AboutBmi';
 import { useTranslation } from 'react-i18next';
 import styles from './BmiCalculator.module.scss';
-
-type TBmiData = {
-	units: 'metric' | 'imperial';
-	height: number;
-	weight: number;
-};
+import { TBmiData } from '../../../types';
 
 export default function BmiCalculator(): JSX.Element {
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
@@ -85,7 +80,21 @@ export default function BmiCalculator(): JSX.Element {
 			bmiData.units = 'imperial';
 			setBmi(calcImperialBmi());
 		}
-		localStorage.setItem('bmi-data', JSON.stringify(bmiData));
+		saveBMIToLocalStorage(bmiData);
+	};
+
+	const saveBMIToLocalStorage = (bmiData: TBmiData) => {
+		const storedUserPersonalData =
+			localStorage.getItem('user-personal-data');
+		if (storedUserPersonalData) {
+			const parsedUserPersonalData = JSON.parse(storedUserPersonalData);
+			localStorage.setItem(
+				'user-personal-data',
+				JSON.stringify({ ...parsedUserPersonalData, ...bmiData })
+			);
+			return;
+		}
+		localStorage.setItem('user-personal-data', JSON.stringify(bmiData));
 	};
 
 	const calcMetricBmi = (bmiData?: TBmiData): number => {
@@ -135,23 +144,29 @@ export default function BmiCalculator(): JSX.Element {
 	};
 
 	useEffect(() => {
-		if (!localStorage.getItem('bmi-data')) return;
+		const storedUserPersonalData =
+			localStorage.getItem('user-personal-data');
+		if (!storedUserPersonalData) return;
+		const parsedUserPersonalData = JSON.parse(storedUserPersonalData);
+		if (
+			parsedUserPersonalData.height === undefined ||
+			parsedUserPersonalData.weight === undefined ||
+			parsedUserPersonalData.units === undefined
+		) {
+			return;
+		}
+		setUnits(parsedUserPersonalData.units);
+		setHeightValue(parsedUserPersonalData.height);
+		setWeightValue(parsedUserPersonalData.weight);
 
-		const bmiData: TBmiData = JSON.parse(
-			'' + localStorage.getItem('bmi-data')
-		);
-		setUnits(bmiData.units);
-		setHeightValue(bmiData.height);
-		setWeightValue(bmiData.weight);
-
-		if (bmiData.units === 'metric') {
+		if (parsedUserPersonalData.units === 'metric') {
 			setMetricUnits();
 			setIsSubmitted(true);
-			setBmi(calcMetricBmi(bmiData));
+			setBmi(calcMetricBmi(parsedUserPersonalData));
 		} else {
 			setImperialUnits();
 			setIsSubmitted(true);
-			setBmi(calcImperialBmi(bmiData));
+			setBmi(calcImperialBmi(parsedUserPersonalData));
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
