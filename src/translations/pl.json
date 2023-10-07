@@ -12,11 +12,13 @@
 			"calculate": "Oblicz",
 			"refresh": "Odśwież",
 			"doesnt-exist": "Nie istnieje",
-			"to": "Do",
-			"close": "Zamknij",
 			"man": "Mężczyzna",
 			"woman": "Kobieta",
-			"age": "Wiek"
+			"age": "Wiek",
+			"to": "Do",
+			"close": "Zamknij",
+			"hello": "Witaj",
+			"save": "Zapisz"
 		},
 		"page": {
 			"home": {
@@ -260,7 +262,11 @@
 				"title": "Jedzenie"
 			},
 			"profile": {
-				"title": "Profil"
+				"title": "Profil",
+				"info": "Dodaj poniżej swoje dane osobowe - pojawią się one automatycznie w kalkulatorze BMI/BMR oraz zostanie ustawiony dzienny limit kalorii na stronie 'Kalorie' zgodnie z Twoim celem",
+				"success-info": "Sukces! Pomyślnie zapisałeś swoje dane osobowe teraz możesz sprawdź stronę Kalorii lub przejdź do kalkulatora BMI/BMR",
+				"success-info1": "Sukces! Pomyślnie zapisałeś swoje dane osobowe",
+				"success-info2": "Sprawdź stronę Kalorie lub przejdź do kalkulatora BMI/BMR"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

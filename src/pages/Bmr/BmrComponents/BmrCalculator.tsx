@@ -440,7 +440,7 @@ export default function BmrCalculator(): JSX.Element {
 								): void => {
 									setAge(parseInt(e.target.value));
 								}}
-								value={age}
+								value={age.toFixed(0)}
 								required
 							/>
 						</div>
