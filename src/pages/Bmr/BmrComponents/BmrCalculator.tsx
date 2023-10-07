@@ -12,6 +12,7 @@ import {
 	THelperUnit,
 	TBmrData,
 	TUserPersonalData,
+	TGoal,
 } from '../../../types';
 
 export default function BmrCalculator(): JSX.Element {
@@ -37,6 +38,10 @@ export default function BmrCalculator(): JSX.Element {
 	const T_CALCULATOR_TITLE = translation('page.bmr.calculator-title');
 	const T_CALCULATE = translation('common.calculate');
 	const T_WRONG_SEX_INPUT = translation('page.bmr.wrong-sex-input');
+	const T_CHOOSE_GOAL = translation('page.bmr.choose-goal');
+	const T_LOSE_WEIGHT = translation('page.bmr.lose-weight');
+	const T_GAIN_WEIGHT = translation('page.bmr.gain-weight');
+	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
@@ -48,6 +53,7 @@ export default function BmrCalculator(): JSX.Element {
 	const [helperUnit, setHeleperUnit] = useState<THelperUnit>('500g');
 	const [sex, setSex] = useState<TSex>('male');
 	const [activity, setActivity] = useState<TActivity>('none');
+	const [goal, setGoal] = useState<TGoal>('keepWeight');
 	const [age, setAge] = useState<number>(0);
 	const [BMR, setBMR] = useState<number>(0);
 	const [TDEE, setTDEE] = useState<number>(0);
@@ -105,6 +111,11 @@ export default function BmrCalculator(): JSX.Element {
 		setIsSubmitted(false);
 	};
 
+	const onGoalChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+		setGoal(e.target.value as TGoal);
+		setIsSubmitted(false);
+	};
+
 	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const bmrData: TBmrData = {
@@ -114,6 +125,7 @@ export default function BmrCalculator(): JSX.Element {
 			height: heightValue,
 			weight: weightValue,
 			age,
+			goal,
 		};
 		setAllStatesFromData(bmrData);
 		setIsSubmitted(true);
@@ -127,6 +139,7 @@ export default function BmrCalculator(): JSX.Element {
 		setWeightValue(props.weight);
 		setAge(props.age);
 		setActivity(props.activity);
+		setGoal(props.goal);
 		const weightValueAsKg = calcWeightValueAsKg(props.units, props.weight);
 		setWeightValueAsKg(weightValueAsKg);
 		const heightValueAsCm = calcHeightValueAsCm(props.units, props.height);
@@ -170,7 +183,8 @@ export default function BmrCalculator(): JSX.Element {
 			parsedUserPersonalData.units === undefined ||
 			parsedUserPersonalData.activity === undefined ||
 			parsedUserPersonalData.age === undefined ||
-			parsedUserPersonalData.sex === undefined
+			parsedUserPersonalData.sex === undefined ||
+			parsedUserPersonalData.goal === undefined
 		) {
 			return;
 		}
@@ -329,6 +343,19 @@ export default function BmrCalculator(): JSX.Element {
 							{T_VERY_HIGH_ACTIVITY}
 						</option>
 					</select>
+					<label htmlFor="goalSelect" className="mb-2">
+						{`${T_CHOOSE_GOAL}:`}
+					</label>
+					<select
+						id="goalSelect"
+						className="form-select mb-3"
+						onChange={onGoalChange}
+						value={goal}
+					>
+						<option value="loseWeight">{T_LOSE_WEIGHT}</option>
+						<option value="keepWeight">{T_WEIGHT_MAINTANCE}</option>
+						<option value="gainWeight">{T_GAIN_WEIGHT}</option>
+					</select>
 					<div className="row g-3 mb-3 d-flex justify-content-center">
 						<div className="col-auto">
 							<label
@@ -435,6 +462,7 @@ export default function BmrCalculator(): JSX.Element {
 						helperUnit={helperUnit}
 						refreshHandler={refreshHandler}
 						weightValueAsKg={weightValueAsKg}
+						goal={goal}
 					/>
 				)}
 			</div>

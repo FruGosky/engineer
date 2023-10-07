@@ -31,6 +31,7 @@ export type TBmrData = {
 	sex: TSex;
 	activity: TActivity;
 	age: number;
+	goal: TGoal;
 };
 
 export type TUserPersonalData = {
@@ -40,4 +41,5 @@ export type TUserPersonalData = {
 	sex?: TSex;
 	activity?: TActivity;
 	age?: number;
+	goal?: TGoal;
 };
