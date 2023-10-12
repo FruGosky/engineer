@@ -15,7 +15,6 @@ import {
 	TGoal,
 	TUserPersonalData,
 } from '../../types';
-import toast, { Toaster } from 'react-hot-toast';
 
 export const PROFILE_TITLE = 'page.profile.title';
 export const PROFILE_LINK = '/profile';
