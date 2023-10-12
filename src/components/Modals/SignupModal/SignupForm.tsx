@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FormEvent, useEffect, useState } from 'react';
 import { validateEmail, validatePassword } from '../../../helpers/validations';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 export default function SignupForm() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -33,6 +34,8 @@ export default function SignupForm() {
 	const INVALID_PASSWORD_CONFIMATION = translation(
 		'common.invalid-password-confirmation'
 	);
+	const SUCCESSFUL_SIGNUP = translation('common.successful-signup');
+	const UNSUCCESSFUL_SIGNUP = translation('common.unsuccessful-signup');
 
 	const signup = async (): Promise<boolean> => {
 		return await axios
@@ -55,6 +58,10 @@ export default function SignupForm() {
 				setPassword('');
 				setConfirmPassword('');
 				setAuth(true, response.data);
+				toast.success(`${SUCCESSFUL_SIGNUP}.`, {
+					duration: 3000,
+					position: 'top-right',
+				});
 				return true;
 			})
 			.catch((error) => {
@@ -63,6 +70,10 @@ export default function SignupForm() {
 					...oldFormErrors,
 					backendError: error.response.data.error.message,
 				}));
+				toast.error(`${UNSUCCESSFUL_SIGNUP}!!!`, {
+					duration: 3000,
+					position: 'top-right',
+				});
 				return false;
 			});
 	};

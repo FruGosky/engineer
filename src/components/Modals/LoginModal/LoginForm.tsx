@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FormEvent, useEffect, useState } from 'react';
 import { validateEmail, validatePassword } from '../../../helpers/validations';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 export default function LoginForm() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,6 +28,8 @@ export default function LoginForm() {
 	const NO_ACCOUNT_YET = translation('common.no-account-yet');
 	const INVALID_EMAIL = translation('common.invalid-email');
 	const INVALID_PASSWORD = translation('common.invalid-password');
+	const SUCCESSFUL_LOGIN = translation('common.successful-login');
+	const UNSUCCESSFUL_LOGIN = translation('common.unsuccessful-login');
 
 	const login = async (): Promise<boolean> => {
 		return await axios
@@ -42,10 +45,16 @@ export default function LoginForm() {
 				setFormErrors((oldFormErrors) => ({
 					...oldFormErrors,
 					backendError: '',
+					enabled: false,
+					hasError: false,
 				}));
 				setEmail('');
 				setPassword('');
 				setAuth(true, response.data);
+				toast.success(`${SUCCESSFUL_LOGIN}.`, {
+					duration: 3000,
+					position: 'top-right',
+				});
 				return true;
 			})
 			.catch((error) => {
@@ -54,6 +63,10 @@ export default function LoginForm() {
 					...oldFormErrors,
 					backendError: error.response.data.error.message,
 				}));
+				toast.error(`${UNSUCCESSFUL_LOGIN}!!!`, {
+					duration: 3000,
+					position: 'top-right',
+				});
 				return false;
 			});
 	};

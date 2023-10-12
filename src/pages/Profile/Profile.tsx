@@ -15,6 +15,7 @@ import {
 	TGoal,
 	TUserPersonalData,
 } from '../../types';
+import toast, { Toaster } from 'react-hot-toast';
 
 export const PROFILE_TITLE = 'page.profile.title';
 export const PROFILE_LINK = '/profile';
@@ -175,6 +176,21 @@ export default function Profile() {
 		}, 1_000);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	const notify = () => {
+		toast.error('Unsuccessful login!!!', {
+			duration: 3000,
+			position: 'top-right',
+		});
+		// toast.error('Here is your toast.', {
+		// 	duration: 3000,
+		// 	position: 'top-right',
+		// });
+		// toast.loading('Here is your toast.', {
+		// 	duration: 3000,
+		// 	position: 'top-right',
+		// });
+	};
 
 	return loading ? (
 		<LoadingIcon />
@@ -426,6 +442,9 @@ export default function Profile() {
 							>
 								{T_CALORIES}
 							</NavLink>
+						</div>
+						<div>
+							<button onClick={notify}>Make me a toast</button>
 						</div>
 					</div>
 				)}

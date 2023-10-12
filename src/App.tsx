@@ -12,7 +12,7 @@ import ErrorBoundary from './hoc/ErrorBoundary';
 import './translations/translations';
 import { ThemeContext, TTheme } from './context/themeContext';
 import Modals from './components/Modals/Modals';
-import { MantineProvider } from '@mantine/core';
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -40,14 +40,13 @@ export default function App() {
 					<ThemeContext.Provider value={[theme, setTheme]}>
 						<Router>
 							<ErrorBoundary>
-								<MantineProvider>
-									<Modals />
-									<Layout
-										header={<Header />}
-										content={<ContentRoutes />}
-										footer={<Footer />}
-									/>
-								</MantineProvider>
+								<Toaster />
+								<Modals />
+								<Layout
+									header={<Header />}
+									content={<ContentRoutes />}
+									footer={<Footer />}
+								/>
 							</ErrorBoundary>
 						</Router>
 					</ThemeContext.Provider>
