@@ -177,21 +177,6 @@ export default function Profile() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const notify = () => {
-		toast.error('Unsuccessful login!!!', {
-			duration: 3000,
-			position: 'top-right',
-		});
-		// toast.error('Here is your toast.', {
-		// 	duration: 3000,
-		// 	position: 'top-right',
-		// });
-		// toast.loading('Here is your toast.', {
-		// 	duration: 3000,
-		// 	position: 'top-right',
-		// });
-	};
-
 	return loading ? (
 		<LoadingIcon />
 	) : (
@@ -442,9 +427,6 @@ export default function Profile() {
 							>
 								{T_CALORIES}
 							</NavLink>
-						</div>
-						<div>
-							<button onClick={notify}>Make me a toast</button>
 						</div>
 					</div>
 				)}
