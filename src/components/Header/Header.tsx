@@ -1,8 +1,8 @@
 import Menu from './Menu/Menu';
 import Logo from '../Logo/Logo';
-import UserIcon from './UserIconMenu/UserIconMenu';
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
+import UserMenu from './UserMenu/UserMenu';
 // import Searchbar from './Searchbar/Searchbar';
 
 export default function Header() {
@@ -24,7 +24,7 @@ export default function Header() {
 						<div className="d-flex align-items-center gap-3 col-12 col-sm-6 justify-content-center justify-content-sm-end p-0">
 							<ThemeSwitcher />
 							<LanguageSwitcher />
-							<UserIcon />
+							<UserMenu />
 						</div>
 					</div>
 				</div>

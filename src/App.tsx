@@ -11,6 +11,8 @@ import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
 import './translations/translations';
 import { ThemeContext, TTheme } from './context/themeContext';
+import Modals from './components/Modals/Modals';
+import { MantineProvider } from '@mantine/core';
 
 export default function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -37,15 +39,16 @@ export default function App() {
 				>
 					<ThemeContext.Provider value={[theme, setTheme]}>
 						<Router>
-							<Layout
-								header={<Header />}
-								content={
-									<ErrorBoundary>
-										<ContentRoutes />
-									</ErrorBoundary>
-								}
-								footer={<Footer />}
-							/>
+							<ErrorBoundary>
+								<MantineProvider>
+									<Modals />
+									<Layout
+										header={<Header />}
+										content={<ContentRoutes />}
+										footer={<Footer />}
+									/>
+								</MantineProvider>
+							</ErrorBoundary>
 						</Router>
 					</ThemeContext.Provider>
 				</ReducerContext.Provider>

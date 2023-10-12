@@ -1,5 +1,5 @@
 export const initialState = {
-	isAuthenticated: false,
+	isAuthenticated: window.localStorage.getItem('token') ? true : false,
 };
 
 export const reducer = (state: any, action: any) => {

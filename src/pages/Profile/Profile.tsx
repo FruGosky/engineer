@@ -64,6 +64,9 @@ export default function Profile() {
 	const [age, setAge] = useState<number>(0);
 	const [goal, setGoal] = useState<TGoal>('keepWeight');
 
+	const token = JSON.parse(localStorage.getItem('token') || 'null');
+	const displayName: string = token?.displayName || 'User';
+
 	useWebsiteTitle(TRANSLATED_TITLE);
 
 	const onUnitsChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -179,7 +182,7 @@ export default function Profile() {
 		<div className="d-flex align-items-center justify-content-center">
 			<div className="col-md-12 col-lg-6 col-xl-5 card shadow">
 				<div className="d-flex justify-content-center mb-3 ">
-					<h2>{`${T_HELLO} - User!`}</h2>
+					<h2>{`${T_HELLO} - ${displayName}!`}</h2>
 				</div>
 				<div className="col-md- mb-3 border-bottom border-info">
 					<p className="text-center">{T_INFO}</p>
