@@ -8,7 +8,11 @@ interface IPages {
 	path: string;
 }
 
-export default function MenuItems() {
+type TMenuItemProps = {
+	hideNavbar: () => void;
+};
+
+export default function MenuItems(props: TMenuItemProps) {
 	const [currentPath, setCurrentPath] = useState(window.location.pathname);
 	const { t: translation } = useTranslation();
 
@@ -25,7 +29,10 @@ export default function MenuItems() {
 							: 'nav-link'
 					}
 					to={PAGE_PATH}
-					onClick={() => setCurrentPath(PAGE_PATH)}
+					onClick={() => {
+						props.hideNavbar();
+						setCurrentPath(PAGE_PATH);
+					}}
 				>
 					{PAGE_LABEL_TRANSLATED}
 				</NavLink>

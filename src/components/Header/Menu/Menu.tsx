@@ -1,15 +1,25 @@
 import styles from './Menu.module.scss';
 import Logo from '../../Logo/Logo';
 import MenuItems from './MenuItems/MenuItems';
+import * as bootstrap from 'bootstrap';
+import { useEffect, useState } from 'react';
 
 export default function Menu() {
+	const [navbar, setNavbar] = useState<bootstrap.Offcanvas | null>(null);
+
+	useEffect(() => {
+		const navbarModalElement = document.getElementById('offcanvasNavbar');
+		if (!navbarModalElement) return;
+		const bootstarpNavbar = new bootstrap.Offcanvas(navbarModalElement);
+		setNavbar(bootstarpNavbar);
+	}, []);
+
 	return (
 		<>
 			<button
 				className="navbar-toggler border-2"
 				type="button"
-				data-bs-toggle="offcanvas"
-				data-bs-target="#offcanvasNavbar"
+				onClick={() => navbar?.show()}
 				aria-controls="offcanvasNavbar"
 				aria-label="Toggle navigation"
 			>
@@ -31,13 +41,13 @@ export default function Menu() {
 					<button
 						type="button"
 						className="btn-close"
-						data-bs-dismiss="offcanvas"
+						onClick={() => navbar?.hide()}
 						aria-label="Close"
 					/>
 				</div>
 				<div className="offcanvas-body">
 					<ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-						<MenuItems />
+						<MenuItems hideNavbar={() => navbar?.hide()} />
 					</ul>
 				</div>
 			</div>

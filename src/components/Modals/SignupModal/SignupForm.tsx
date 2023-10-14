@@ -6,6 +6,7 @@ import { validateEmail, validatePassword } from '../../../helpers/validations';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useModals } from '../../../context/modalsContext';
+import LoadingIcon from '../../LoadingIcon/LoadingIcon';
 
 export default function SignupForm() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -23,6 +24,7 @@ export default function SignupForm() {
 		password: '',
 		confirmPassword: '',
 	});
+	const [isLoading, setIsLoading] = useState(false);
 	const { t: translation } = useTranslation();
 	const modals = useModals();
 
@@ -64,6 +66,7 @@ export default function SignupForm() {
 					duration: 3000,
 					position: 'top-right',
 				});
+				setIsLoading(false);
 				return true;
 			})
 			.catch((error) => {
@@ -76,12 +79,14 @@ export default function SignupForm() {
 					duration: 3000,
 					position: 'top-right',
 				});
+				setIsLoading(false);
 				return false;
 			});
 	};
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setIsLoading(true);
 		setFormErrors((oldFormErrors) => ({ ...oldFormErrors, enabled: true }));
 		if (!fullValidationEmail()) return;
 		if (!fullValidationPassword()) return;
@@ -244,13 +249,17 @@ export default function SignupForm() {
 				) : null}
 			</div>
 			<div className="modal-footer justify-content-center flex-column">
-				<button
-					type="submit"
-					className="btn btn-primary"
-					disabled={formErrors.hasError && formErrors.enabled}
-				>
-					{SIGNUP}
-				</button>
+				{isLoading ? (
+					<LoadingIcon />
+				) : (
+					<button
+						type="submit"
+						className="btn btn-primary"
+						disabled={formErrors.hasError && formErrors.enabled}
+					>
+						{SIGNUP}
+					</button>
+				)}
 				<div className="d-flex gap-1">
 					{`${ALREADY_HAVE_ACCOUNT}?`}
 					<a
