@@ -13,7 +13,7 @@ export default function Menu() {
 				aria-controls="offcanvasNavbar"
 				aria-label="Toggle navigation"
 			>
-				<span className="navbar-toggler-icon"></span>
+				<span className="navbar-toggler-icon" />
 			</button>
 			<div
 				className="offcanvas offcanvas-start"
@@ -33,7 +33,7 @@ export default function Menu() {
 						className="btn-close"
 						data-bs-dismiss="offcanvas"
 						aria-label="Close"
-					></button>
+					/>
 				</div>
 				<div className="offcanvas-body">
 					<ul className="navbar-nav justify-content-end flex-grow-1 pe-3">

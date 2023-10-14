@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { validateEmail, validatePassword } from '../../../helpers/validations';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useModals } from '../../../context/modalsContext';
 
 export default function LoginForm() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -21,6 +22,7 @@ export default function LoginForm() {
 		password: '',
 	});
 	const { t: translation } = useTranslation();
+	const modals = useModals();
 
 	const LOGIN = translation('common.login');
 	const SIGNUP = translation('common.signup');
@@ -71,26 +73,12 @@ export default function LoginForm() {
 			});
 	};
 
-	const hideModal = () => {
-		const modal: HTMLElement | null = document.querySelector('#loginModal');
-		const modalBackDrop: HTMLElement | null =
-			document.querySelector('.modal-backdrop');
-		if (modal && modalBackDrop) {
-			modal.classList.remove('show');
-			modal.removeAttribute('role');
-			modal.removeAttribute('aria-modal');
-			modal.ariaHidden = 'true';
-			modal.style.display = 'none';
-			modalBackDrop.remove();
-		}
-	};
-
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setFormErrors((oldFormErrors) => ({ ...oldFormErrors, enabled: true }));
 		if (!fullValidationEmail()) return;
 		if (!fullValidationPassword()) return;
-		if (await login()) hideModal();
+		if (await login()) modals.hideAllModals();
 	};
 
 	const fullValidationEmail = (): boolean => {
@@ -214,8 +202,11 @@ export default function LoginForm() {
 					{`${NO_ACCOUNT_YET}?`}
 					<a
 						href="!"
-						data-bs-toggle="modal"
-						data-bs-target="#signupModal"
+						onClick={(e) => {
+							e.preventDefault();
+							modals.hideAllModals();
+							modals.signupModal?.show();
+						}}
 					>
 						{SIGNUP}
 					</a>

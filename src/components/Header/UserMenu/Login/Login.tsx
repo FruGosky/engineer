@@ -1,22 +1,20 @@
 import { useTranslation } from 'react-i18next';
-import LoginModal from '../../../Modals/LoginModal/LoginModal';
+import { useModals } from '../../../../context/modalsContext';
 
 export default function Login() {
 	const { t: translation } = useTranslation();
 
 	const LOGIN = translation('common.login');
 
+	const modals = useModals();
+
 	return (
-		<>
-			<button
-				type="button"
-				className="btn btn-primary"
-				data-bs-toggle="modal"
-				data-bs-target="#loginModal"
-			>
-				{LOGIN}
-			</button>
-			<LoginModal />
-		</>
+		<button
+			type="button"
+			className="btn btn-primary"
+			onClick={() => modals.loginModal?.show()}
+		>
+			{LOGIN}
+		</button>
 	);
 }

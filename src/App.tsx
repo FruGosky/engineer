@@ -11,8 +11,8 @@ import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
 import './translations/translations';
 import { ThemeContext, TTheme } from './context/themeContext';
-import Modals from './components/Modals/Modals';
 import { Toaster } from 'react-hot-toast';
+import ModalsContextProvider from './context/modalsContext';
 
 export default function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -41,12 +41,13 @@ export default function App() {
 						<Router>
 							<ErrorBoundary>
 								<Toaster />
-								<Modals />
-								<Layout
-									header={<Header />}
-									content={<ContentRoutes />}
-									footer={<Footer />}
-								/>
+								<ModalsContextProvider>
+									<Layout
+										header={<Header />}
+										content={<ContentRoutes />}
+										footer={<Footer />}
+									/>
+								</ModalsContextProvider>
 							</ErrorBoundary>
 						</Router>
 					</ThemeContext.Provider>
