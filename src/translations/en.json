@@ -16,6 +16,9 @@
 			"successful-signup": "Successful signup",
 			"unsuccessful-signup": "Unsuccessful signup",
 			"successful-logout": "Successful logout",
+			"data-changed-successfully": "Data changed successfully",
+			"failed-to-change-data": "Failed to change data",
+			"username": "Username",
 			"site-created-by": "Site created by",
 			"issue-has-occurred": "An issue has occurred",
 			"internet-problem": "Internet problem",
@@ -280,6 +283,9 @@
 				"success-info": "Success! You have sucesfully saved your personal data now u can check Calories page or go to BMI / BMR calculator",
 				"success-info1": "Success! You have sucesfully saved your personal data",
 				"success-info2": "Check Calories page or go to BMI / BMR calculator"
+			},
+			"settings": {
+				"title": "Settings"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

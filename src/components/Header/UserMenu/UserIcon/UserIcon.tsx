@@ -1,12 +1,12 @@
 import userIcon from '../../../../assets/iconmonstr-user-20.svg';
 import styles from './UserIcon.module.scss';
-import { PROFILE_LINK, PROFILE_TITLE } from '../../../../pages/Profile/Profile';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 import * as bootstrap from 'bootstrap';
+import { userIconPages } from '../../../../pages/pages';
 
 export default function UserIcon() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -23,7 +23,6 @@ export default function UserIcon() {
 	}, []);
 
 	const LOGOUT = translation('common.logout');
-	const PROFILE_TITLE_TRANSLATED = translation(PROFILE_TITLE);
 
 	const SUCCESSFUL_LOGOUT = translation('common.successful-logout');
 
@@ -50,15 +49,19 @@ export default function UserIcon() {
 					className={`dropdown-menu ${styles.dropdownMenu}`}
 					id="userIconDropdown"
 				>
-					<li>
-						<Link
-							className="dropdown-item"
-							to={PROFILE_LINK}
-							onClick={() => dropdown?.hide()}
-						>
-							{PROFILE_TITLE_TRANSLATED}
-						</Link>
-					</li>
+					{userIconPages.map((page, pageIndex) => {
+						return (
+							<li key={pageIndex}>
+								<Link
+									className="dropdown-item"
+									to={page.path}
+									onClick={() => dropdown?.hide()}
+								>
+									{translation(page.label)}
+								</Link>
+							</li>
+						);
+					})}
 					<li>
 						<hr className="dropdown-divider" />
 					</li>

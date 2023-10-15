@@ -16,6 +16,9 @@
 			"successful-signup": "Pomyślna rejestracja",
 			"unsuccessful-signup": "Niepomyślna rejestracja",
 			"successful-logout": "Pomyślne wylogowano",
+			"data-changed-successfully": "Pomyślnie zmieniono dane",
+			"failed-to-change-data": "Nie udało się zmienić danych",
+			"username": "Nazwa użytkownika",
 			"site-created-by": "Strona stworzona przez",
 			"issue-has-occurred": "Wystąpił jakiś problem",
 			"internet-problem": "Problem z internetem",
@@ -280,6 +283,9 @@
 				"success-info": "Sukces! Pomyślnie zapisałeś swoje dane osobowe teraz możesz sprawdź stronę Kalorii lub przejdź do kalkulatora BMI/BMR",
 				"success-info1": "Sukces! Pomyślnie zapisałeś swoje dane osobowe",
 				"success-info2": "Sprawdź stronę Kalorie lub przejdź do kalkulatora BMI/BMR"
+			},
+			"settings": {
+				"title": "Ustawienia"
 			},
 			"not-found-404": {
 				"title": "Error - 404",

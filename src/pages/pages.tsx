@@ -24,6 +24,7 @@ import IntermediateExercises, {
 	INTERMEDIATE_EXERCISES_LINK,
 	INTERMEDIATE_EXERCISES_TITLE,
 } from './Exercises/IntermediateExercises/IntermediateExercises';
+import Settings, { SETTINGS_LINK, SETTINGS_TITLE } from './Settings/Settings';
 
 type TPages = {
 	label: string;
@@ -61,6 +62,12 @@ export const userIconPages: TPages[] = [
 		label: PROFILE_TITLE,
 		path: PROFILE_LINK,
 		element: <Profile />,
+		needAuth: true,
+	},
+	{
+		label: SETTINGS_TITLE,
+		path: SETTINGS_LINK,
+		element: <Settings />,
 		needAuth: true,
 	},
 ];
