@@ -72,7 +72,7 @@ export default function UserIcon() {
 								dropdown?.hide();
 								setAuth(false);
 								toast.success(`${SUCCESSFUL_LOGOUT}.`, {
-									duration: 3000,
+									duration: 1000,
 									position: 'top-right',
 								});
 							}}

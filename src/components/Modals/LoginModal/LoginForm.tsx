@@ -2,7 +2,10 @@
 import useAuth from '../../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import { FormEvent, useEffect, useState } from 'react';
-import { validateEmail, validatePassword } from '../../../helpers/validations';
+import {
+	fullValidationEmail,
+	fullValidationPassword,
+} from '../../../helpers/validations';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useModals } from '../../../context/modalsContext';
@@ -56,7 +59,7 @@ export default function LoginForm() {
 				setPassword('');
 				setAuth(true, response.data);
 				toast.success(`${SUCCESSFUL_LOGIN}.`, {
-					duration: 3000,
+					duration: 1000,
 					position: 'top-right',
 				});
 				setIsLoading(false);
@@ -69,7 +72,7 @@ export default function LoginForm() {
 					backendError: error.response.data.error.message,
 				}));
 				toast.error(`${UNSUCCESSFUL_LOGIN}!!!`, {
-					duration: 3000,
+					duration: 1000,
 					position: 'top-right',
 				});
 				setIsLoading(false);
@@ -81,71 +84,37 @@ export default function LoginForm() {
 		e.preventDefault();
 		setIsLoading(true);
 		setFormErrors((oldFormErrors) => ({ ...oldFormErrors, enabled: true }));
-		if (!fullValidationEmail()) return;
-		if (!fullValidationPassword()) return;
+		if (
+			!fullValidationEmail(
+				email,
+				INVALID_EMAIL,
+				setErrors,
+				setFormErrors
+			) ||
+			!fullValidationPassword(
+				password,
+				INVALID_PASSWORD,
+				setErrors,
+				setFormErrors
+			)
+		) {
+			setIsLoading(false);
+			return;
+		}
 		if (await login()) modals.hideAllModals();
 	};
 
-	const fullValidationEmail = (): boolean => {
-		if (validateEmail(email)) {
-			setErrors((oldErrors) => {
-				const newErrors = {
-					...oldErrors,
-					email: '',
-				};
-				setFormErrors((oldFormErrors) => ({
-					...oldFormErrors,
-					hasError: Object.values(newErrors).some((x) => x !== ''),
-				}));
-				return newErrors;
-			});
-			return true;
-		} else {
-			setErrors((oldErrors) => ({
-				...oldErrors,
-				email: INVALID_EMAIL,
-			}));
-			setFormErrors((oldFormErrors) => ({
-				...oldFormErrors,
-				hasError: true,
-			}));
-			return false;
-		}
-	};
-
-	const fullValidationPassword = (): boolean => {
-		if (validatePassword(password)) {
-			setErrors((oldErrors) => {
-				const newErrors = {
-					...oldErrors,
-					password: '',
-				};
-				setFormErrors((oldFormErrors) => ({
-					...oldFormErrors,
-					hasError: Object.values(newErrors).some((x) => x !== ''),
-				}));
-				return newErrors;
-			});
-			return true;
-		} else {
-			setErrors((oldErrors) => ({
-				...oldErrors,
-				password: INVALID_PASSWORD,
-			}));
-			setFormErrors((oldFormErrors) => ({
-				...oldFormErrors,
-				hasError: true,
-			}));
-			return false;
-		}
-	};
-
 	useEffect(() => {
-		fullValidationEmail();
+		fullValidationEmail(email, INVALID_EMAIL, setErrors, setFormErrors);
 	}, [email]);
 
 	useEffect(() => {
-		fullValidationPassword();
+		fullValidationPassword(
+			password,
+			INVALID_PASSWORD,
+			setErrors,
+			setFormErrors
+		);
 	}, [password]);
 
 	return (
