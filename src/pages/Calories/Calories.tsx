@@ -89,9 +89,13 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 
 	// Create a new array that excludes the product with the specified id
 	const newProductsArray = productsArray.filter(product => product.id !== id);
-  
-	// Update the state with the new array
+	//in case i have to switch to removing throught index code below
+	// const newArray = [...productsArray];
+	// newArray.splice(index, 1);
+	// setProductsArray(newArray);
+	//also add index not id in parameters
 	setProductsArray(newProductsArray);
+
   };
  const hanldeAddProductManually = (product: TNewProduct, gramOfProduct: number): void =>{
 
@@ -104,7 +108,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 	const consumedCaloriesFromNewProduct: number = (product['energy-kcal_value']*gramOfProduct/100)
 	//! here add some POST method to post to firebase newProduct to some separate collection 
 
-	//Updating products array with new product
+
 	const newProductsArray = [
 		...productsArray,
 		{
@@ -119,7 +123,6 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 		},
 	  ];
 	
-	  // Update the state with the new array
 	  setProductsArray(newProductsArray);
 	  scrollToConsumedProducts()
  }
@@ -139,7 +142,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
       />
     ));
   };
-	// Function to scroll to the "add_product" div
+	
 	const scrollToProduct = (): void => {
 		if (addProductRef.current) {
 			addProductRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -158,7 +161,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	useEffect(() => {
-		// Calculate the consumed calories and nutrition
+		
 		let totalCalories = 0;
 		let totalProtein = 0;
 		let totalFat = 0;
@@ -167,7 +170,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 		productsArray.forEach((product) => {
 		  totalCalories += product.consumedCalories;
 	  
-		  // Check if nutrition values are defined before adding them
+		  
 		  if (typeof product.consumedProtein === 'number') {
 			totalProtein += product.consumedProtein;
 		  }
@@ -179,7 +182,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 		  }
 		});
 	  
-		// Update state with the calculated values
+	
 		setConsumedCalories(totalCalories);
 		setConsumedNutrition({
 		  protein: totalProtein,
