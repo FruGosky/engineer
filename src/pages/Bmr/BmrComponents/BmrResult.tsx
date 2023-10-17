@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { TGoal, THelperUnit, TNutritionObject } from '../../../types';
@@ -18,10 +19,7 @@ type TFatCarbsTextAlignStyle = {
 		left: string;
 	};
 };
-type TGoalsTextAlignStyle = Record<TGoal, TFatCarbsTextAlignStyle>;
 type TBackgroundStyleObject = { background: string };
-type TGoalsRainbowStyle = Record<TGoal, TBackgroundStyleObject>;
-type TGoalsNutrition = Record<TGoal, TNutritionObject>;
 
 export default function BmrScore(props: TProps) {
 	const { t: translation } = useTranslation();
@@ -41,11 +39,6 @@ export default function BmrScore(props: TProps) {
 		fat: 0,
 		carbs: 0,
 	};
-	const initialGoalsNutrition: TGoalsNutrition = {
-		loseWeight: { ...initialNutrition },
-		keepWeight: { ...initialNutrition },
-		gainWeight: { ...initialNutrition },
-	};
 
 	const initialTextAlign: TFatCarbsTextAlignStyle = {
 		fat: {
@@ -55,34 +48,27 @@ export default function BmrScore(props: TProps) {
 			left: '',
 		},
 	};
-	const initialGoalsTextAlign: TGoalsTextAlignStyle = {
-		loseWeight: { ...initialTextAlign },
-		keepWeight: { ...initialTextAlign },
-		gainWeight: { ...initialTextAlign },
-	};
 
 	const initialRainbow: TBackgroundStyleObject = { background: '' };
-	const initialGoalsRainbow: TGoalsRainbowStyle = {
-		loseWeight: { ...initialRainbow },
-		keepWeight: { ...initialRainbow },
-		gainWeight: { ...initialRainbow },
-	};
 
-	const [goalsNutrition, setGoalsNutrition] = useState<TGoalsNutrition>({
-		...initialGoalsNutrition,
+	const [nutrition, setNutrition] = useState<TNutritionObject>({
+		...initialNutrition,
 	});
-	const [goalsRainbowStyle, setGoalsRainbowStyle] =
-		useState<TGoalsRainbowStyle>({
-			...initialGoalsRainbow,
+	const [rainbowStyle, setRainbowStyle] = useState<TBackgroundStyleObject>({
+		...initialRainbow,
+	});
+	const [textAlignStyle, setTextAlignStyle] =
+		useState<TFatCarbsTextAlignStyle>({
+			...initialTextAlign,
 		});
-	const [goalsTextAlignStyle, setGoalsTextAlignStyle] =
-		useState<TGoalsTextAlignStyle>({
-			...initialGoalsTextAlign,
-		});
+	const [caloriesToAchieveGoal, setCaloriesToAchieveGoal] = useState(0);
 
 	const { BMR, helperUnit, TDEE, refreshHandler, weightValueAsKg } = props;
 
-	const calculateNutrition = (goal: TGoal): TNutritionObject => {
+	const calculateNutrition = (
+		goal: TGoal,
+		newCaloriesToAchiveGoal: number
+	): TNutritionObject => {
 		let protein = 0;
 		let fat = 0;
 		let actualTDEE = 0;
@@ -113,19 +99,59 @@ export default function BmrScore(props: TProps) {
 			fat,
 			actualTDEE
 		);
-		setGoalsRainbowStyle((oldRainbow) => ({
-			...oldRainbow,
-			[goal]: getBackgroundGradientStyle(nutritionPercentage),
-		}));
-		setTextAlign(nutritionPercentage, goal);
+		setRainbowStyle(getBackgroundGradientStyle(nutritionPercentage));
+		setTextAlign(nutritionPercentage);
 
 		const nutrition = {
 			protein,
 			fat,
 			carbs: calculateCarbs(protein, fat, actualTDEE),
 		};
+		const userPersonalData = localStorage.getItem('user-personal-data');
+		let dataForLocalStorage = '';
+		if (userPersonalData) {
+			const parsedUserPersonalData = JSON.parse(userPersonalData);
+			dataForLocalStorage = JSON.stringify({
+				...parsedUserPersonalData,
+				protein: parseInt(nutrition.protein.toFixed(0)),
+				fat: parseInt(nutrition.fat.toFixed(0)),
+				carbs: parseInt(nutrition.carbs.toFixed(0)),
+				// BMR: parseInt(BMR.toFixed(0)),
+				TDEE: parseInt(TDEE.toFixed(0)),
+				caloriesToAchieveGoal: newCaloriesToAchiveGoal,
+			});
+		} else {
+			dataForLocalStorage = JSON.stringify({
+				protein: parseInt(nutrition.protein.toFixed(0)),
+				fat: parseInt(nutrition.fat.toFixed(0)),
+				carbs: parseInt(nutrition.carbs.toFixed(0)),
+				// BMR: parseInt(BMR.toFixed(0)),
+				TDEE: parseInt(TDEE.toFixed(0)),
+				caloriesToAchieveGoal: newCaloriesToAchiveGoal,
+			});
+		}
+		localStorage.setItem('user-personal-data', dataForLocalStorage);
 
 		return nutrition;
+	};
+
+	const calculateCaloriesToAchieveGoal = (): number => {
+		let caloriesForGoal = 0;
+		switch (props.goal) {
+			case 'loseWeight': {
+				caloriesForGoal = parseInt((TDEE - 500).toFixed(0));
+				break;
+			}
+			case 'keepWeight': {
+				caloriesForGoal = parseInt(TDEE.toFixed(0));
+				break;
+			}
+			case 'gainWeight': {
+				caloriesForGoal = parseInt((TDEE + 500).toFixed(0));
+				break;
+			}
+		}
+		return caloriesForGoal;
 	};
 
 	const getNutritionPercentage = (
@@ -158,10 +184,7 @@ export default function BmrScore(props: TProps) {
 				rgb(16, 175, 114) 100%)`,
 	});
 
-	const setTextAlign = (
-		nutritionPercentage: TNutritionObject,
-		goal: TGoal
-	) => {
+	const setTextAlign = (nutritionPercentage: TNutritionObject) => {
 		const fatAlign = {
 			left: `${nutritionPercentage.protein}%`,
 		};
@@ -173,10 +196,7 @@ export default function BmrScore(props: TProps) {
 			carbs: carbsAlign,
 		};
 
-		setGoalsTextAlignStyle((oldGoals) => ({
-			...oldGoals,
-			[goal]: textAlign,
-		}));
+		setTextAlignStyle(textAlign);
 	};
 
 	const calculateCarbs = (
@@ -186,13 +206,16 @@ export default function BmrScore(props: TProps) {
 	): number => (actualTDEE - (protein * 4 + fat * 9)) / 4;
 
 	useEffect(() => {
-		setGoalsNutrition({
-			loseWeight: calculateNutrition('loseWeight'),
-			keepWeight: calculateNutrition('keepWeight'),
-			gainWeight: calculateNutrition('gainWeight'),
-		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		const newCaloriesToAchiveGoal = calculateCaloriesToAchieveGoal();
+		setCaloriesToAchieveGoal(newCaloriesToAchiveGoal);
+		setNutrition(calculateNutrition(props.goal, newCaloriesToAchiveGoal));
 	}, [TDEE]);
+
+	useEffect(() => {
+		const newCaloriesToAchiveGoal = calculateCaloriesToAchieveGoal();
+		setCaloriesToAchieveGoal(newCaloriesToAchiveGoal);
+		setNutrition(calculateNutrition(props.goal, newCaloriesToAchiveGoal));
+	}, []);
 
 	return (
 		<div>
@@ -204,144 +227,45 @@ export default function BmrScore(props: TProps) {
 					{`${BMR.toFixed(0)} kcal`}
 				</h1>
 			</div>
-			{props.goal === 'loseWeight' && (
-				<div className="mt-3 text-center">
-					<label className="form-label m-3">
-						{T_YOUR_CALORIC_NEEDS}
-						<br />
-						{`(-${helperUnit} / ${T_WEEK})`}
-					</label>
-					<div className="nutritions">
-						<p className="text_nutrition text1">
-							{T_PROTEIN}
-							<span>
-								{`${goalsNutrition.loseWeight.protein.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text2 margin_left_fat"
-							style={goalsTextAlignStyle.loseWeight.fat}
-						>
-							{T_FAT}
-							<span>
-								{`${goalsNutrition.loseWeight.fat.toFixed(0)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text3 margin_left_carbs"
-							style={goalsTextAlignStyle.loseWeight.carbs}
-						>
-							{T_CARBS}
-							<span>
-								{`${goalsNutrition.loseWeight.carbs.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-					</div>
-					<div
-						className="colors_bmi"
-						style={goalsRainbowStyle.loseWeight}
-					></div>
-					<output className="mt-2 text-info">
-						{`${(TDEE - 500).toFixed(0)} kcal`}
-					</output>
+			<div className="mt-3 text-center">
+				<label className="form-label m-3">
+					{T_YOUR_CALORIC_NEEDS}
+					<br />
+					{props.goal === 'loseWeight'
+						? `(-${helperUnit} / ${T_WEEK})`
+						: null}
+					{props.goal === 'keepWeight'
+						? `(${T_WEIGHT_MAINTANCE})`
+						: null}
+					{props.goal === 'gainWeight'
+						? `(+${helperUnit} / ${T_WEEK})`
+						: null}
+				</label>
+				<div className="nutritions">
+					<p className="text_nutrition text1">
+						{T_PROTEIN}
+						<span>{`${nutrition.protein.toFixed(0)}g`}</span>
+					</p>
+					<p
+						className="text_nutrition text2 margin_left_fat"
+						style={textAlignStyle.fat}
+					>
+						{T_FAT}
+						<span>{`${nutrition.fat.toFixed(0)}g`}</span>
+					</p>
+					<p
+						className="text_nutrition text3 margin_left_carbs"
+						style={textAlignStyle.carbs}
+					>
+						{T_CARBS}
+						<span>{`${nutrition.carbs.toFixed(0)}g`}</span>
+					</p>
 				</div>
-			)}
-			{props.goal === 'keepWeight' && (
-				<div className="mt-3 text-center">
-					<label className="form-label m-3">
-						{T_YOUR_CALORIC_NEEDS}
-						<br />
-						{`(${T_WEIGHT_MAINTANCE})`}
-					</label>
-					<div className="nutritions">
-						<p className="text_nutrition text1">
-							{T_PROTEIN}
-							<span>
-								{`${goalsNutrition.keepWeight.protein.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text2 margin_left_fat"
-							style={goalsTextAlignStyle.keepWeight.fat}
-						>
-							{T_FAT}
-							<span>
-								{`${goalsNutrition.keepWeight.fat.toFixed(0)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text3 margin_left_carbs"
-							style={goalsTextAlignStyle.keepWeight.carbs}
-						>
-							{T_CARBS}
-							<span>
-								{`${goalsNutrition.keepWeight.carbs.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-					</div>
-					<div
-						className="colors_bmi"
-						style={goalsRainbowStyle.keepWeight}
-					></div>
-					<output className="mt-2 text-info">
-						{`${TDEE.toFixed(0)} kcal`}
-					</output>
-				</div>
-			)}
-			{props.goal === 'gainWeight' && (
-				<div className="mt-3 text-center">
-					<label className="form-label m-3">
-						{T_YOUR_CALORIC_NEEDS}
-						<br />
-						{`(+${helperUnit} / ${T_WEEK})`}
-					</label>
-					<div className="nutritions">
-						<p className="text_nutrition text1">
-							{T_PROTEIN}
-							<span>
-								{`${goalsNutrition.gainWeight.protein.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text2 margin_left_fat"
-							style={goalsTextAlignStyle.gainWeight.fat}
-						>
-							{T_FAT}
-							<span>
-								{`${goalsNutrition.gainWeight.fat.toFixed(0)}g`}
-							</span>
-						</p>
-						<p
-							className="text_nutrition text3 margin_left_carbs"
-							style={goalsTextAlignStyle.gainWeight.carbs}
-						>
-							{T_CARBS}
-							<span>
-								{`${goalsNutrition.gainWeight.carbs.toFixed(
-									0
-								)}g`}
-							</span>
-						</p>
-					</div>
-					<div
-						className="colors_bmi"
-						style={goalsRainbowStyle.gainWeight}
-					></div>
-					<output className="mt-2 text-info">
-						{`${(TDEE + 500).toFixed(0)} kcal`}
-					</output>
-				</div>
-			)}
+				<div className="colors_bmi" style={rainbowStyle} />
+				<output className="mt-2 text-info">
+					{`${caloriesToAchieveGoal} kcal`}
+				</output>
+			</div>
 			<div className="d-flex align-items-center justify-content-center m-3">
 				<button
 					className="btn btn-secondary col-auto mt-2"
