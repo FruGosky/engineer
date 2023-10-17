@@ -305,7 +305,7 @@ export default function BmiCalculator(): JSX.Element {
 						<label htmlFor="customRange1" className="form-label">
 							{`${T_YOUR_BMI}:`}
 						</label>
-						<div className="d-flex gap-2">
+						<div className="d-flex gap-2 align-items-center justify-content-center w-100">
 							<span>{T_LOW}</span>
 							<input
 								type="range"

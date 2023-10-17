@@ -43,3 +43,38 @@ export type TUserPersonalData = {
 	age?: number;
 	goal?: TGoal;
 };
+export type TNewProduct = {
+	id: string;
+	product_name: string;
+	nutrition_data_per: string;
+	'energy-kcal_value': number;
+	fat_value: number | undefined;
+	carbohydrates_value: number | undefined;
+	proteins_value: number | undefined;
+	ingredients_text_pl: string | undefined; //description?
+};
+export type TProductsArray = Array<{
+	id: string;
+	nameOfProduct: string;
+	descriptionOfProduct?: string | undefined;
+	consumedCalories: number;
+	consumedGram: number;
+	consumedProtein?: number | undefined;
+	consumedCarbs?: number | undefined;
+	consumedFat?: number | undefined;
+  }>;
+
+ export type NewProductProps = {
+	id: string;
+	nameOfProduct: string;
+	descriptionOfProduct?: string;
+	consumedCalories: number;
+	consumedGram: number;
+	consumedProtein?: number | undefined;
+	consumedCarbs?: number | undefined;
+	consumedFat?: number | undefined;
+	onRemove: (id: string) => void;
+  };
+ export type TAddProductManuallyProps = {
+	onAdd: (product: TNewProduct, gramOfProduct: number) => void; 
+};
