@@ -1,10 +1,26 @@
 Todo:
-  ☐ Fix - styles for header bcs its getting broken when users trying to use the page on small mobile phone
+  ✔ Fix - styles for header bcs its getting broken when users trying to use the page on small mobile phone @done(23-10-19 09:54)
 
-  ☐ Delete - all 'to-be-deleted.this-is-page' translations from pages
+  ✔ Delete - all 'to-be-deleted.this-is-page' translations from pages @done(23-10-19 09:53)
 
-  ☐ Fix - logout user when he is trying to refresh the page
+  ✔ Fix - logout user when he is trying to refresh the page @done(23-10-19 09:53)
 
-  ☐ Fix - change css variables to scss variables in bootstrap
+  ✔ Fix - change css variables to scss variables in bootstrap @done(23-10-19 09:53)
 
-  ☐ Future(optional) - login and register from firebase backend
+  ✔ Future(optional) - login and registe r from firebase backend @done(23-10-19 09:53)
+
+  ☐ Future(optional) - turn off 1 sec loading
+
+  ☐ Fix - unify [isLoading, setIsLoading] & [loading, setLoading]
+
+  ☐ Fix - add validation for email in page settings
+
+  ☐ Fix(optional) - change all 'if&&(<></>)' to 'if?(<></>):null'
+
+  ☐ Check & Fix(optional) - header behavior on small/medium screens
+
+  ☐ Fix - left menu current page showing
+
+  ☐ Future - add passwordInput(input with eye) to form's like signup/signin
+
+  ☐ Future - user friendly email validation, spread all validations like '12 letters' and '1 sign' to separate regEx and show only invalid ones or show both of them invalid as red and valid as green
