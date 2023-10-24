@@ -13,7 +13,7 @@ export const CALORIES_TITLE = 'page.calories.title';
 export const CALORIES_LINK = '/calories';
 
 export default function Calories() {
-
+	
 	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 	const addProductRef = useRef<HTMLDivElement | null>(null); // Create a ref for the "add_product" div
