@@ -32,9 +32,9 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
 		// adding product to newProduct array and (not yet) posting it to database 
 		setKcalOfProduct(0)
 		setGramOfProduct(0)
-		setProteinOfProduct(undefined)
-		setCarbsOfProduct(undefined)
-		setFatOfProduct(undefined)
+		setProteinOfProduct(0)
+		setCarbsOfProduct(0)
+		setFatOfProduct(0) //after adding product it sets value to 0 but when i set here undefined(setFatOfProduct(undefined)) after executing submit handler it keeps previous value insead of seting it to undef..
 		setNameOfProduct('')
 		setDescriptionOfProduct('')
 	};

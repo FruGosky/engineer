@@ -35,6 +35,11 @@ export type TBmrData = {
 };
 
 export type TUserPersonalData = {
+	caloriesToAchieveGoal?: number;
+	TDEE?: number;
+	carbs?: number;
+	fat?: number;
+	protein?: number;
 	units?: TUnits;
 	height?: number;
 	weight?: number;

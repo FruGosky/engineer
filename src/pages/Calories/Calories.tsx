@@ -7,7 +7,7 @@ import NewProduct from './components/NewProduct';
 import SearchFood from './components/SearchFood';
 import FoundProducts from './components/FoundProducts';
 import AddProductManually from './components/AddProductManually';
-import { TNewProduct, TNutritionObject, TProductsArray } from '../../types';
+import { TNewProduct, TNutritionObject, TProductsArray, TUserPersonalData } from '../../types';
 
 export const CALORIES_TITLE = 'page.calories.title';
 export const CALORIES_LINK = '/calories';
@@ -22,19 +22,21 @@ export default function Calories() {
 	const TRANSLATED_TITLE = translation(CALORIES_TITLE);
 	useWebsiteTitle(TRANSLATED_TITLE);
 
-	const fakeCaloriesGoal = 3534 
-	const fakeProteinGoal = 156
-	const fakeCarbsGoal = 507
-	const fakeFatGoal= 98
-
-		const token = JSON.parse(localStorage.getItem('token') || 'null');
+	const token = JSON.parse(localStorage.getItem('token') || 'null');
 
 	const currentDate = new Date()
 	let day = currentDate.getDate();
-	let month = currentDate.getMonth();
+	let month = currentDate.getMonth() + 1;
 	let year = currentDate.getFullYear();
 
-
+	const [units, setUnits] = useState<string | undefined>('metric')
+	const [userWeight, setUserWeight] = useState<number | undefined>(0)
+	const [caloriesGoal, setCaloriesGoal] = useState<number | undefined>(0)
+	const [nutritionGoal, setNutritionGoal] = useState<TNutritionObject>({
+		protein:0,
+		fat:0,
+		carbs:0
+	})
 	const [consumedCalories, setConsumedCalories] = useState<number>(0)
 	const [consumedNutriotion, setConsumedNutrition] = useState<TNutritionObject>({
 		protein:0,
@@ -126,7 +128,7 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 	  setProductsArray(newProductsArray);
 	  scrollToConsumedProducts()
  }
- const generateProductElements = () => {
+ const renderProductElements = () => {
     return productsArray.map((product) => (
       <NewProduct
         key={product.id}
@@ -189,9 +191,27 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 		  fat: totalFat,
 		  carbs: totalCarbs,
 		});
-		generateProductElements()
+		renderProductElements()
 	  // eslint-disable-next-line react-hooks/exhaustive-deps
 	  }, [productsArray]);
+	  
+	useEffect(() => {
+		const storedUserPersonalData = localStorage.getItem('user-personal-data');
+		
+		if (!storedUserPersonalData) return;
+		const parsedUserPersonalData: TUserPersonalData = JSON.parse(storedUserPersonalData);
+		setCaloriesGoal(parsedUserPersonalData.caloriesToAchieveGoal)
+		setNutritionGoal(
+		{
+		protein: parsedUserPersonalData.protein ?? 0,
+		fat: parsedUserPersonalData.fat ?? 0,
+		carbs: parsedUserPersonalData.carbs ?? 0 
+		})
+		parsedUserPersonalData.units === 'metric'? setUnits('kg') : setUnits('lbs')
+		setUserWeight(parsedUserPersonalData.weight)
+		
+	}, []);
+
 	return loading ? (
 		<LoadingIcon />
 	) : (
@@ -202,23 +222,20 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 				</h1>
 				<div className="head_section  d-flex border-bottom border-info flex-row justify-content-between">
 					<div className="d-flex flex-column justify-content-between">
-						<p>{token?.displayName}</p>
+						<p className='h5 text-info'>{`${token?.displayName} - ${userWeight?.toFixed(2)} ${units}`}</p>
 						<p>{`${day}/${month}/${year}`}</p>
 					</div>
 					<div className="text-end">
-						<p>
-							Limits are set according to your BMR and choice of
-							goal:
-						</p>
-						<p>{`${consumedCalories.toFixed()}/${fakeCaloriesGoal} kcal`}</p>
-						<p>{`${consumedNutriotion.protein.toFixed()}/${fakeProteinGoal} protein`}</p>
-						<p>{`${consumedNutriotion.carbs.toFixed()}/${fakeCarbsGoal} carbs`}</p>
-						<p>{`${consumedNutriotion.fat.toFixed()}/${fakeFatGoal} fat`}</p>
+					
+						<p className='h5 text-info'>{`${consumedCalories.toFixed()}/${caloriesGoal} kcal`}</p>
+						<p className='text_protein'>{`${consumedNutriotion.protein.toFixed()}/${nutritionGoal.protein} g protein`}</p>
+						<p className='text_fat'>{`${consumedNutriotion.fat.toFixed()}/${nutritionGoal.fat} g fat`}</p>
+						<p className='text_carbs'>{`${consumedNutriotion.carbs.toFixed()}/${nutritionGoal.carbs} g carbs`}</p>
 						
 					</div>
 				</div>
 				<div className="mb-3 border-bottom border-info flex-column d-flex align-items-center justify-content-center" ref={addConsumedProducts} >
-				{generateProductElements()}
+				{renderProductElements()}
 					<button
 						className="btn btn-primary m-3"
 						onClick={scrollToProduct}
