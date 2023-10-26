@@ -3,11 +3,19 @@
 }
 .card {
 	width: 60vw;
+	margin: 0;
 }
 .new_product {
 	width: 55vw;
 }
 
+@media (max-width: 599px) {
+	.card,
+	.head_section {
+		width: 100%;
+		margin: 0;
+	}
+}
 @media (max-width: 599px) {
 	.card,
 	.head_section {

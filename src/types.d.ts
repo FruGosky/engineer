@@ -1,3 +1,4 @@
+
 export type TUnits = 'metric' | 'imperial';
 
 export type TWeightUnit = 'kg' | 'lbs';
@@ -83,3 +84,13 @@ export type TProductsArray = Array<{
  export type TAddProductManuallyProps = {
 	onAdd: (product: TNewProduct, gramOfProduct: number) => void; 
 };
+export type TProduct= {
+  	brands?: string;
+  	product_name_pl?: string;
+  	product_name_en?: string;
+  	ingredients_text_pl?: string;
+    proteins_value?: number;
+    fat_value?: number;
+	carbohydrates_value?: number;
+	['energy-kcal_value']?: number;
+}

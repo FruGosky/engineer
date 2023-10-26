@@ -245,9 +245,6 @@ const [productsArray, setProductsArray] = useState<TProductsArray>([
 				</div>
 				<div className="mb-3 border-bottom border-info flex-column d-flex align-items-center justify-content-center">
 					<SearchFood />
-					<FoundProducts />
-					<FoundProducts />
-					<FoundProducts />
 				</div>
 				<div
 					id="add_product"
