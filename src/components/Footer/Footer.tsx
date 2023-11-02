@@ -9,7 +9,7 @@ export default function Footer() {
 		<div
 			className={`d-flex justify-content-center align-items-center bg-body-tertiary text-secondary`}
 		>
-			<span>{`${SITE_CREATED_BY} ${creators.join(', ')}.`}</span>
+			<span>{`${SITE_CREATED_BY}: ${creators.join(', ')}.`}</span>
 		</div>
 	);
 }
