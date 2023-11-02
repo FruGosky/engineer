@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { TProduct } from "../../../types";
 
-export default function FoundProducts(props: { products: TProduct[] }) {
+export default function FoundProducts(props: {
+  products: TProduct[];
+  selectedLanguage: string;
+  onProductSelect(product: TProduct, howMuchGramEaten: number): void;
+}) {
   const [howMuchGramEaten, setHowMuchGramEaten] = useState<number>(0);
 
   const productsArray = props.products;
 
-  const handleAddThisProduct = () => {
-    //here get data from specific product idk how yet
+  const handleAddThisProduct = (product: TProduct) => {
+    props.onProductSelect(product, howMuchGramEaten);
   };
 
   return (
@@ -16,17 +20,19 @@ export default function FoundProducts(props: { products: TProduct[] }) {
         return (
           <div
             key={index}
-            className="d-flex flex-row card new_product border-success mb-3 w-100 d-flex align-items-center justify-content-center"
+            className="d-flex flex-row card new_product border-success mb-3 w-100 d-flex align-items-center justify-content-around"
           >
             <div className="d-flex flex-column align-items-center justify-content-center text-center overflow-hidden">
               <p className="m-2">
-                {`${el.product_name_pl} - ${el.ingredients_text_pl}`}
+                {props.selectedLanguage === "pl"
+                  ? `${el.product_name_pl} - ${el.ingredients_text_pl || ""}`
+                  : `${el.product_name_en} - ${el.ingredients_text_en || ""}`}
               </p>
 
               <div className="d-flex align-items-center justify-content-center">
                 <button
                   className="btn btn-primary mt-3"
-                  onClick={handleAddThisProduct}
+                  onClick={() => handleAddThisProduct(el)}
                 >
                   Add this product
                 </button>

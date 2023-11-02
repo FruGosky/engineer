@@ -1,7 +1,7 @@
-import React from 'react';
-import { NewProductProps } from '../../../types';
+import React from "react";
+import { TNewProductProps } from "../../../types";
 
-export default function NewProduct(props: NewProductProps) {
+export default function NewProduct(props: TNewProductProps) {
   const {
     id,
     nameOfProduct,
@@ -11,7 +11,7 @@ export default function NewProduct(props: NewProductProps) {
     consumedProtein,
     consumedCarbs,
     consumedFat,
-    onRemove
+    onRemove,
   } = props;
 
   return (
@@ -25,16 +25,26 @@ export default function NewProduct(props: NewProductProps) {
         <ul className="list-group text-center">
           <li className="list-group-item border-info">{`${consumedCalories.toFixed()} kcal`}</li>
           <li className="list-group-item border-info">{`${consumedGram.toFixed()} g`}</li>
-          <li className="list-group-item border-info">{consumedProtein ? `${consumedProtein?.toFixed()} g protein` : '--  / g protein'}</li>
-          <li className="list-group-item border-info">{consumedCarbs ? `${consumedCarbs?.toFixed()} g carbohydrates` : '--  / g carbohydrates'}</li>
-          <li className="list-group-item border-info">{consumedFat ? `${consumedFat?.toFixed()} g fat` : '--  / g fat'}</li>
+          <li className="list-group-item border-info">
+            {consumedProtein
+              ? `${consumedProtein?.toFixed()} g protein`
+              : "--  / g protein"}
+          </li>
+          <li className="list-group-item border-info">
+            {consumedCarbs
+              ? `${consumedCarbs?.toFixed()} g carbohydrates`
+              : "--  / g carbohydrates"}
+          </li>
+          <li className="list-group-item border-info">
+            {consumedFat ? `${consumedFat?.toFixed()} g fat` : "--  / g fat"}
+          </li>
         </ul>
       </div>
       <button
         type="button"
         className="btn-close"
         data-bs-dismiss="alert"
-        onClick={() => onRemove(id)} // Use an arrow function to pass the id correctly
+        onClick={() => onRemove(id)}
       ></button>
     </div>
   );
