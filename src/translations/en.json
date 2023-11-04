@@ -8,6 +8,7 @@
 			"confirm-password": "Confirm password",
 			"no-account-yet": "No account yet",
 			"already-have-account": "Already have account",
+			"invalid-username": "Invalid username: Only numbers and letters are allowed",
 			"invalid-email": "Invalid email: Plase make sure you have provided the correct email e.g. email@gmail.com",
 			"invalid-password": "Invalid password: Minimum 12 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
 			"invalid-password-confirmation": "Invalid password confirmation: Field 'Password' and 'Confirm Password' needs to be the same",

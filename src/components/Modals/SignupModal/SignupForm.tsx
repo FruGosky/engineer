@@ -87,6 +87,33 @@ export default function SignupForm() {
 			});
 	};
 
+	const sendEmailVerification = async (): Promise<boolean> => {
+		setIsLoading(true);
+		const token = localStorage.getItem('token');
+		if (!token) {
+			setIsLoading(false);
+			return false;
+		}
+		const parsedToken = JSON.parse(token);
+		return await axios
+			.post(
+				`${process.env.REACT_APP_SEND_EMAIL_VERIFICATION_URL}?key=${process.env.REACT_APP_API_KEY}`,
+				{
+					idToken: parsedToken.idToken,
+					requestType: 'VERIFY_EMAIL',
+				}
+			)
+			.then((response) => {
+				setIsLoading(false);
+				return true;
+			})
+			.catch((error) => {
+				console.error(error);
+				setIsLoading(false);
+				return false;
+			});
+	};
+
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setIsLoading(true);
@@ -108,7 +135,10 @@ export default function SignupForm() {
 			setIsLoading(false);
 			return;
 		}
-		if (await signup()) modals.hideAllModals();
+		if (await signup()) {
+			sendEmailVerification();
+			modals.hideAllModals();
+		}
 	};
 
 	useEffect(() => {
