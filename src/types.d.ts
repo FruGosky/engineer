@@ -49,7 +49,6 @@ export type TUserPersonalData = {
   goal?: TGoal;
 };
 export type TNewProduct = {
-  id: string;
   product_name_pl: string;
   nutrition_data_per: string;
   "energy-kcal_value": number;

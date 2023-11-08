@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TProduct } from "../../../types";
-
+import styles from "../Calories.module.scss";
 export default function FoundProducts(props: {
   products: TProduct[];
   selectedLanguage: string;
@@ -20,7 +20,7 @@ export default function FoundProducts(props: {
         return (
           <div
             key={index}
-            className="d-flex flex-row card new_product border-success mb-3 w-100 d-flex align-items-center justify-content-around"
+            className={`d-flex flex-md-row flex-sm-column card ${styles.item_card} ${styles.new_product} border-success mb-3 w-100 d-flex align-items-center justify-content-around`}
           >
             <div className="d-flex flex-column align-items-center justify-content-center text-center overflow-hidden">
               <p className="m-2">
@@ -31,7 +31,7 @@ export default function FoundProducts(props: {
 
               <div className="d-flex align-items-center justify-content-center">
                 <button
-                  className="btn btn-primary mt-3"
+                  className="btn btn-primary mt-3 mb-3"
                   onClick={() => handleAddThisProduct(el)}
                 >
                   Add this product

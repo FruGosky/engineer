@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import LoadingIcon from "../../components/LoadingIcon/LoadingIcon";
 import useWebsiteTitle from "../../hooks/useWebsiteTitle";
 import { useTranslation } from "react-i18next";
-import "./Calories.scss";
+import styles from "./Calories.module.scss";
 import NewProduct from "./components/NewProduct";
 import SearchFood from "./components/SearchFood";
 import AddProductManually from "./components/AddProductManually";
@@ -94,16 +94,9 @@ export default function Calories() {
   ]);
 
   const handleRemoveProduct = (id: string) => {
-    // Create a new array that excludes the product with the specified id
     const newProductsArray = productsArray.filter(
       (product) => product.id !== id
     );
-    //TODO! fix bug: when i add same product many times and then i want to remove it from products array - clicking on 1 removes all. maybe check if all id is in fact unique.
-    //in case i have to switch to removing throught index code below
-    // const newArray = [...productsArray];
-    // newArray.splice(index, 1);
-    // setProductsArray(newArray);
-    //also add index not id in parameters
     setProductsArray(newProductsArray);
   };
 
@@ -131,11 +124,11 @@ export default function Calories() {
     const consumedCaloriesFromNewProduct: number =
       (product["energy-kcal_value"] * gramOfProduct) / 100;
 
-    //!NOTE maybe here create function that generates unique id and pass it to every product below
+    let newID = "id" + Math.random().toString(16).slice(2);
     const newProductsArray = [
       ...productsArray,
       {
-        id: product.id,
+        id: newID,
         nameOfProduct: product.product_name_pl,
         descriptionOfProduct: product.ingredients_text_pl,
         consumedCalories: consumedCaloriesFromNewProduct,
@@ -243,11 +236,13 @@ export default function Calories() {
     <LoadingIcon />
   ) : (
     <div className="d-flex align-items-center justify-content-center">
-      <div className="card shadow">
+      <div className={`${styles.main_card} card shadow`}>
         <h1 className="text-center border-bottom border-info p-2">
           Monitor your daily calories and macro nutrition here
         </h1>
-        <div className="head_section  d-flex border-bottom border-info flex-row justify-content-between">
+        <div
+          className={`${styles.head_section}  d-flex border-bottom border-info flex-row justify-content-between`}
+        >
           <div className="d-flex flex-column justify-content-between">
             <p className="h5 text-info">{`${
               token?.displayName
@@ -256,13 +251,19 @@ export default function Calories() {
           </div>
           <div className="text-end">
             <p className="h5 text-info">{`${consumedCalories.toFixed()}/${caloriesGoal} kcal`}</p>
-            <p className="text_protein">{`${consumedNutriotion.protein.toFixed()}/${
+            <p
+              className={`${styles.text_protein}`}
+            >{`${consumedNutriotion.protein.toFixed()}/${
               nutritionGoal.protein
             } g protein`}</p>
-            <p className="text_fat">{`${consumedNutriotion.fat.toFixed()}/${
+            <p
+              className={`${styles.text_fat}`}
+            >{`${consumedNutriotion.fat.toFixed()}/${
               nutritionGoal.fat
             } g fat`}</p>
-            <p className="text_carbs">{`${consumedNutriotion.carbs.toFixed()}/${
+            <p
+              className={`${styles.text_carbs}`}
+            >{`${consumedNutriotion.carbs.toFixed()}/${
               nutritionGoal.carbs
             } g carbs`}</p>
           </div>

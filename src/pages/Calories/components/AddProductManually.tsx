@@ -20,7 +20,6 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
     e.preventDefault();
 
     const newProduct: TNewProduct = {
-      id: "id" + Math.random().toString(16).slice(2),
       product_name_pl,
       nutrition_data_per,
       "energy-kcal_value": kcalOfProduct,
@@ -53,7 +52,8 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
     if (tokenData) {
       const userUID = tokenData.localId;
       try {
-        const postURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userUID}.json?auth=${process.env.REACT_APP_DATABASE_SECRET}`;
+        const postURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userUID}.
+        json?auth=${process.env.REACT_APP_DATABASE_SECRET}`;
         await axios.post(postURL, newProduct);
       } catch (error) {
         console.log(error);

@@ -1,5 +1,6 @@
 import React from "react";
 import { TNewProductProps } from "../../../types";
+import styles from "../Calories.module.scss";
 
 export default function NewProduct(props: TNewProductProps) {
   const {
@@ -15,9 +16,11 @@ export default function NewProduct(props: TNewProductProps) {
   } = props;
 
   return (
-    <div className="card new_product border-success m-2 alert alert-dismissible fade show ">
+    <div
+      className={`card ${styles.new_product} border-success m-2 alert alert-dismissible fade show`}
+    >
       <div className="d-flex flex-column flex-sm-row justify-content-between">
-        <div className="d-flex align-items-center justify-content-center text-center overflow-hidden">
+        <div className="d-flex align-items-center justify-content-center text-center">
           <p className="mb-2 ">
             {nameOfProduct} - {descriptionOfProduct}
           </p>
