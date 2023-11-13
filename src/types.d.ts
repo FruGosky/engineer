@@ -55,7 +55,7 @@ export type TNewProduct = {
   fat_value: number | undefined;
   carbohydrates_value: number | undefined;
   proteins_value: number | undefined;
-  ingredients_text_pl: string | undefined; //description?
+  ingredients_text_pl: string | undefined; //description
 };
 export type TProductsArray = Array<{
   id: string;

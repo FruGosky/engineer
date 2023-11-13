@@ -27,7 +27,10 @@ export default function SearchFood(props: TProductSelect) {
       const searchQueryJSON = JSON.stringify(searchQuery);
       const encodedSearchQuery = encodeURIComponent(searchQueryJSON);
 
-      const mainDatabaseSearchURL = `${process.env.REACT_APP_DATABASE_URL}food.json?auth=${process.env.REACT_APP_DATABASE_SECRET}&orderBy="product_name_${selectedLanguage}"&equalTo=${encodedSearchQuery}&limitToFirst=5`;
+      const mainDatabaseSearchURL = `${process.env.REACT_APP_DATABASE_URL}food
+      .json?auth=${process.env.REACT_APP_DATABASE_SECRET}
+      &orderBy="product_name_${selectedLanguage}"
+      &equalTo=${encodedSearchQuery}&limitToFirst=5`;
 
       const mainDatabaseResponse = await axios.get(mainDatabaseSearchURL);
 
@@ -39,7 +42,10 @@ export default function SearchFood(props: TProductSelect) {
       // Check if the token exists before querying the user-specific database
       let userResults: TProduct[] = [];
       if (token) {
-        const usersFoodSearchURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userTokenUID}.json?auth=${process.env.REACT_APP_DATABASE_SECRET}&orderBy="product_name_${selectedLanguage}"&equalTo=${encodedSearchQuery}`;
+        const usersFoodSearchURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userTokenUID}
+        .json?auth=${process.env.REACT_APP_DATABASE_SECRET}
+        &orderBy="product_name_${selectedLanguage}"
+        &equalTo=${encodedSearchQuery}`;
         const usersFoodDatabaseResponse = await axios.get(usersFoodSearchURL);
 
         if (usersFoodDatabaseResponse.data !== null) {

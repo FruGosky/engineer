@@ -49,15 +49,13 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
     newProduct: TNewProduct,
     tokenData: { localId: string }
   ) => {
-    if (tokenData) {
-      const userUID = tokenData.localId;
-      try {
-        const postURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userUID}.
+    const userUID = tokenData.localId;
+    try {
+      const postURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userUID}.
         json?auth=${process.env.REACT_APP_DATABASE_SECRET}`;
-        await axios.post(postURL, newProduct);
-      } catch (error) {
-        console.log(error);
-      }
+      await axios.post(postURL, newProduct);
+    } catch (error) {
+      console.log(error);
     }
   };
   // TODO! fix error with uncontrolled component for protein carbs and fat on input
