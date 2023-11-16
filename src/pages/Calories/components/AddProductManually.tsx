@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TAddProductManuallyProps, TNewProduct } from "../../../types";
-import axios from "axios";
 import { useTranslation } from "react-i18next";
+import { initializeApp } from "firebase/app";
+import { getDatabase, push, ref } from "firebase/database";
 
 export default function AddProductManually(props: TAddProductManuallyProps) {
     const { onAdd } = props;
@@ -31,7 +32,17 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
     const TRANSLATION_TYPE_DESCRIPTION = translation(
         "page.calories.type-description.."
     );
-
+    const firebaseConfig = {
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+        databaseURL: process.env.REACT_APP_DATABASE_URL,
+        projectId: process.env.REACT_APP_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+        messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+        appId: process.env.REACT_APP_APP_ID,
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
     const nutrition_data_per = "100g"; //bcs database collets this kind of data and it will be constant everitime on POST
 
     const handleAddNewProduct = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -69,9 +80,9 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
     ) => {
         const userUID = tokenData.localId;
         try {
-            const postURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userUID}.
-        json?auth=${process.env.REACT_APP_DATABASE_SECRET}`;
-            await axios.post(postURL, newProduct);
+            const usersFoodRef = ref(db, `usersFood/${userUID}`);
+            // Push the new product to the user-specific catalog in Firebase
+            await push(usersFoodRef, newProduct);
         } catch (error) {
             console.log(error);
         }

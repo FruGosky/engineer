@@ -1,9 +1,31 @@
 import { FormEvent, useEffect, useState } from "react";
-import axios from "../../../axios";
+import { initializeApp } from "firebase/app";
+import "firebase/database";
 import FoundProducts from "./FoundProducts";
 import LoadingIcon from "../../../components/LoadingIcon/LoadingIcon";
 import { TProduct, TProductSelect } from "../../../types";
 import { useTranslation } from "react-i18next";
+import {
+    getDatabase,
+    ref,
+    query,
+    orderByChild,
+    equalTo,
+    limitToFirst,
+    get,
+} from "firebase/database";
+
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+};
+
+const app = initializeApp(firebaseConfig);
 
 export default function SearchFood(props: TProductSelect) {
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -12,7 +34,7 @@ export default function SearchFood(props: TProductSelect) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [userTokenUID, setUserTokenUID] = useState<string>("");
     const { t: translation } = useTranslation();
-
+    const [showGoogleQuery, setShowGoogleQuery] = useState<boolean>(false);
     const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
@@ -25,43 +47,50 @@ export default function SearchFood(props: TProductSelect) {
 
         try {
             getCurrentLanguage();
-            const searchQueryJSON = JSON.stringify(searchQuery);
-            const encodedSearchQuery = encodeURIComponent(searchQueryJSON);
 
-            const mainDatabaseSearchURL = `${process.env.REACT_APP_DATABASE_URL}food
-      .json?auth=${process.env.REACT_APP_DATABASE_SECRET}
-      &orderBy="product_name_${selectedLanguage}"
-      &equalTo=${encodedSearchQuery}&limitToFirst=5`;
+            const db = getDatabase(app);
+            const mainDatabaseRef = ref(db, "food");
 
-            const mainDatabaseResponse = await axios.get(mainDatabaseSearchURL);
+            const mainDatabaseResponse = await query(
+                mainDatabaseRef,
+                orderByChild(`product_name_${selectedLanguage}`),
+                equalTo(searchQuery),
+                limitToFirst(5)
+            );
+            const mainSnapshot = await get(mainDatabaseResponse);
 
-            let mainResults: TProduct[] = [];
-            if (mainDatabaseResponse.data !== null) {
-                mainResults = Object.values(mainDatabaseResponse.data);
-            }
+            const mainResults: TProduct[] = [];
+            mainSnapshot.forEach((childSnapshot) => {
+                const childData = childSnapshot.val();
+                mainResults.push(childData);
+            });
 
             // Check if the token exists before querying the user-specific database
             let userResults: TProduct[] = [];
             if (token) {
-                const usersFoodSearchURL = `${process.env.REACT_APP_DATABASE_URL}usersFood/${userTokenUID}
-        .json?auth=${process.env.REACT_APP_DATABASE_SECRET}
-        &orderBy="product_name_${selectedLanguage}"
-        &equalTo=${encodedSearchQuery}`;
-                const usersFoodDatabaseResponse = await axios.get(
-                    usersFoodSearchURL
-                );
+                const usersFoodRef = ref(db, `usersFood/${userTokenUID}`);
 
-                if (usersFoodDatabaseResponse.data !== null) {
-                    userResults = Object.values(usersFoodDatabaseResponse.data);
-                }
+                const usersFoodDatabaseResponse = await query(
+                    usersFoodRef,
+                    orderByChild(`product_name_${selectedLanguage}`),
+                    equalTo(searchQuery)
+                );
+                const usersSnapshot = await get(usersFoodDatabaseResponse);
+
+                usersSnapshot.forEach((childSnapshot) => {
+                    const childData = childSnapshot.val();
+                    userResults.push(childData);
+                });
             }
 
             // Combine mainResults and userResults
             const combinedResults = [...mainResults, ...userResults];
-
             setSearchResults(combinedResults);
+            combinedResults.length === 0
+                ? setShowGoogleQuery(true)
+                : setShowGoogleQuery(false);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             setSearchResults([]);
         } finally {
             setIsLoading(false);
@@ -119,7 +148,7 @@ export default function SearchFood(props: TProductSelect) {
                     onProductSelect={props.onProductSelect}
                 />
             )}
-            {searchResults.length === 0 ? (
+            {showGoogleQuery ? (
                 <div className="alert alert-warning" role="alert">
                     {translation("page.calories.no-data-found")}{" "}
                     <a
