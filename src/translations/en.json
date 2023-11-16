@@ -1,300 +1,321 @@
 {
-	"translation": {
-		"common": {
-			"login": "Login",
-			"logout": "Logout",
-			"signup": "Signup",
-			"password": "Password",
-			"confirm-password": "Confirm password",
-			"no-account-yet": "No account yet",
-			"already-have-account": "Already have account",
-			"invalid-email": "Invalid email: Plase make sure you have provided the correct email e.g. email@gmail.com",
-			"invalid-password": "Invalid password: Minimum 12 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
-			"invalid-password-confirmation": "Invalid password confirmation: Field 'Password' and 'Confirm Password' needs to be the same",
-			"successful-login": "Successful login",
-			"unsuccessful-login": "Unsuccessful login",
-			"successful-signup": "Successful signup",
-			"unsuccessful-signup": "Unsuccessful signup",
-			"successful-logout": "Successful logout",
-			"data-changed-successfully": "Data changed successfully",
-			"failed-to-change-data": "Failed to change data",
-			"username": "Username",
-			"site-created-by": "Site created by",
-			"issue-has-occurred": "An issue has occurred",
-			"internet-problem": "Internet problem",
-			"search": "Search",
-			"loading": "Loading",
-			"there-is-no-such-action": "There is no such action",
-			"calculate": "Calculate",
-			"refresh": "Refresh",
-			"doesnt-exist": "Doesn't exist",
-			"man": "Man",
-			"woman": "Woman",
-			"age": "Age",
-			"to": "To",
-			"close": "Close",
-			"hello": "Hello",
-			"save": "Save"
-		},
-		"page": {
-			"home": {
-				"title": "Home"
-			},
-			"bmi": {
-				"title": "Bmi",
-				"calculator": {
-					"units": "Units",
-					"imperial": "Imperial",
-					"metric": "Metric",
-					"height": "Height",
-					"weight": "Weight",
-					"your-bmi": "Your BMI",
-					"low": "Low",
-					"high": "High",
-					"underweight": "Underweight",
-					"weight-normal": "Weight normal",
-					"overweight": "Overweight",
-					"obesity": "Obesity",
-					"significant-obesity": "Significant obesity",
-					"title": "BMI Calculator",
-					"bmi-category-for": "BMI Category for"
-				},
-				"about-bmi": {
-					"about-bmi-info": "Body mass index (BMI), Quetelet indexII - a ratio formed by dividing body weight given in kilograms by the square of height given in meters. The classification (range of values) of BMI has been developed for adults only and cannot be used for children. To assess the normal development of a child, centile grids are used, which should be adjusted for the population.",
-					"underweight-info": "If a person is underweight, it is important to consult a doctor or nutritionist to determine the cause of the underweight and an appropriate treatment plan. If a person is underweight, it is usually necessary to increase the caloric content of the diet, paying attention to the nutritional value of the meals consumed. In some cases, physical therapy or medical interventions may also be necessary, especially if the underweight is caused by health problems.",
-					"weight-normal-info": "Normal weight is a state in which a person's weight is in line with healthy body standards, as measured by the body mass index (BMI). The BMI value is between 18.5 and 24.9, and this result indicates that a person's weight is proportional to his or her height. The BMI range of 18.5 to 24.9 is considered adequate and indicates a healthy body weight.",
-					"overweight-info": "People with a BMI score between 25 and 29.9 are classified as overweight. Being overweight can increase the risk of many health problems, such as heart disease, high blood pressure, type 2 diabetes, respiratory diseases and musculoskeletal problems. In some cases, it can lead to the development of obesity if action is not taken to change lifestyle and diet.",
-					"obesity-info": "Obesity is a chronic disease that is defined as an excessive accumulation of body fat. It is a consequence of a positive energy balance in the body (more energy is supplied than burned by the body). Obese people are much more likely to develop such diseases as type 2 diabetes, hypertension, lipid disorders, heart attack, stroke, osteoarthritis and even some cancers including colon cancer and breast cancer. Obesity impairs fertility in both men and women and affects mood, contributing to depression.",
-					"significant-obesity-info": "People with such significant obesity should consult a doctor to determine an appropriate treatment and weight management plan. Treatment for obesity may include dietary changes, regular physical activity, psychological support, and in some cases, advanced methods such as bariatric surgery may also be considered. It is important to understand that each case of obesity is unique and requires an individualized approach to achieve a healthier lifestyle and improve quality of life."
-				}
-			},
-			"bmr": {
-				"title": "Bmr",
-				"choose-physical-activity": "Choose physical activity",
-				"none-activity": "Little activity (no exercise, sedentary life)",
-				"low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
-				"medium-activity": "Average physical activity (physical work, 3-5 workouts per week)",
-				"high-activity": "High physical activity (hard physical work, daily workouts)",
-				"very-high-activity": "Very high physical activity (very hard physical work, two workouts per day)",
-				"years": "years",
-				"your-bmr": "Your BMR",
-				"your-caloric-and-macronutrient-needs": "Your caloric and macronutrient needs",
-				"protein": "Protein",
-				"fat": "Fat",
-				"carbohydrates": "Carbohydrates",
-				"week": "Week",
-				"calculator-title": "Calculator BMR",
-				"wrong-sex-input": "Wrong sex input",
-				"choose-goal": "Choose goal",
-				"lose-weight": "Lose weight",
-				"weight-maintenance": "Weight maintenance",
-				"gain-weight": "Gain weight"
-			},
-			"calories": {
-				"title": "Calories"
-			},
-			"exercises": {
-				"title": "Exercises",
-				"main-page-card": {
-					"title": "Time to exercise",
-					"description": "Choose your skill level to go to a training plan best for you, or learn about the exercises that are used in training plans"
-				},
+    "translation": {
+        "common": {
+            "login": "Login",
+            "logout": "Logout",
+            "signup": "Signup",
+            "password": "Password",
+            "confirm-password": "Confirm password",
+            "no-account-yet": "No account yet",
+            "already-have-account": "Already have account",
+            "invalid-email": "Invalid email: Plase make sure you have provided the correct email e.g. email@gmail.com",
+            "invalid-password": "Invalid password: Minimum 12 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
+            "invalid-password-confirmation": "Invalid password confirmation: Field 'Password' and 'Confirm Password' needs to be the same",
+            "successful-login": "Successful login",
+            "unsuccessful-login": "Unsuccessful login",
+            "successful-signup": "Successful signup",
+            "unsuccessful-signup": "Unsuccessful signup",
+            "successful-logout": "Successful logout",
+            "data-changed-successfully": "Data changed successfully",
+            "failed-to-change-data": "Failed to change data",
+            "username": "Username",
+            "site-created-by": "Site created by",
+            "issue-has-occurred": "An issue has occurred",
+            "internet-problem": "Internet problem",
+            "search": "Search",
+            "loading": "Loading",
+            "there-is-no-such-action": "There is no such action",
+            "calculate": "Calculate",
+            "refresh": "Refresh",
+            "doesnt-exist": "Doesn't exist",
+            "man": "Man",
+            "woman": "Woman",
+            "age": "Age",
+            "to": "To",
+            "close": "Close",
+            "hello": "Hello",
+            "save": "Save",
+            "find": "Find"
+        },
+        "page": {
+            "home": {
+                "title": "Home"
+            },
+            "bmi": {
+                "title": "Bmi",
+                "calculator": {
+                    "units": "Units",
+                    "imperial": "Imperial",
+                    "metric": "Metric",
+                    "height": "Height",
+                    "weight": "Weight",
+                    "your-bmi": "Your BMI",
+                    "low": "Low",
+                    "high": "High",
+                    "underweight": "Underweight",
+                    "weight-normal": "Weight normal",
+                    "overweight": "Overweight",
+                    "obesity": "Obesity",
+                    "significant-obesity": "Significant obesity",
+                    "title": "BMI Calculator",
+                    "bmi-category-for": "BMI Category for"
+                },
+                "about-bmi": {
+                    "about-bmi-info": "Body mass index (BMI), Quetelet indexII - a ratio formed by dividing body weight given in kilograms by the square of height given in meters. The classification (range of values) of BMI has been developed for adults only and cannot be used for children. To assess the normal development of a child, centile grids are used, which should be adjusted for the population.",
+                    "underweight-info": "If a person is underweight, it is important to consult a doctor or nutritionist to determine the cause of the underweight and an appropriate treatment plan. If a person is underweight, it is usually necessary to increase the caloric content of the diet, paying attention to the nutritional value of the meals consumed. In some cases, physical therapy or medical interventions may also be necessary, especially if the underweight is caused by health problems.",
+                    "weight-normal-info": "Normal weight is a state in which a person's weight is in line with healthy body standards, as measured by the body mass index (BMI). The BMI value is between 18.5 and 24.9, and this result indicates that a person's weight is proportional to his or her height. The BMI range of 18.5 to 24.9 is considered adequate and indicates a healthy body weight.",
+                    "overweight-info": "People with a BMI score between 25 and 29.9 are classified as overweight. Being overweight can increase the risk of many health problems, such as heart disease, high blood pressure, type 2 diabetes, respiratory diseases and musculoskeletal problems. In some cases, it can lead to the development of obesity if action is not taken to change lifestyle and diet.",
+                    "obesity-info": "Obesity is a chronic disease that is defined as an excessive accumulation of body fat. It is a consequence of a positive energy balance in the body (more energy is supplied than burned by the body). Obese people are much more likely to develop such diseases as type 2 diabetes, hypertension, lipid disorders, heart attack, stroke, osteoarthritis and even some cancers including colon cancer and breast cancer. Obesity impairs fertility in both men and women and affects mood, contributing to depression.",
+                    "significant-obesity-info": "People with such significant obesity should consult a doctor to determine an appropriate treatment and weight management plan. Treatment for obesity may include dietary changes, regular physical activity, psychological support, and in some cases, advanced methods such as bariatric surgery may also be considered. It is important to understand that each case of obesity is unique and requires an individualized approach to achieve a healthier lifestyle and improve quality of life."
+                }
+            },
+            "bmr": {
+                "title": "Bmr",
+                "choose-physical-activity": "Choose physical activity",
+                "none-activity": "Little activity (no exercise, sedentary life)",
+                "low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
+                "medium-activity": "Average physical activity (physical work, 3-5 workouts per week)",
+                "high-activity": "High physical activity (hard physical work, daily workouts)",
+                "very-high-activity": "Very high physical activity (very hard physical work, two workouts per day)",
+                "years": "years",
+                "your-bmr": "Your BMR",
+                "your-caloric-and-macronutrient-needs": "Your caloric and macronutrient needs",
+                "protein": "Protein",
+                "fat": "Fat",
+                "carbohydrates": "Carbohydrates",
+                "week": "Week",
+                "calculator-title": "Calculator BMR",
+                "wrong-sex-input": "Wrong sex input",
+                "choose-goal": "Choose goal",
+                "lose-weight": "Lose weight",
+                "weight-maintenance": "Weight maintenance",
+                "gain-weight": "Gain weight"
+            },
+            "calories": {
+                "title": "Calories",
+                "look-through-our-food-product-database": "Look through our food product database",
+                "type-name-of-the-product-here...": "Type name of the product here...",
+                "no-data-found": "No data found.",
+                "visit-this-page": "Visit this page",
+                "to-look-for-more-products": "to look for more products",
+                "how-much-gram-eaten": "How much gram eaten",
+                "add-this-product": "Add this product",
+                "add-your-product": "Add your product",
+                "add-product": "Add product",
+                "name-of-the-product": "Name of the product",
+                "name": "Name",
+                "in": "W",
+                "description-(optional)": "Description (optional)",
+                "type-description..": "Type description..",
+                "type-name": "Type name..",
+                "protein-2": "Protein",
+                "carbohydrates-2": "Carbohydrates",
+                "fat-2": "Fat",
+                "add": "Add",
+                "monitor-your-daily-calories": "Monitor your daily calories and macro nutrition here"
+            },
+            "exercises": {
+                "title": "Exercises",
+                "main-page-card": {
+                    "title": "Time to exercise",
+                    "description": "Choose your skill level to go to a training plan best for you, or learn about the exercises that are used in training plans"
+                },
 
-				"plan-card": {
-					"header": "Training plans",
-					"description": "Choose your skill level",
-					"btn-1": "Beginner",
-					"btn-2": "Intermediate"
-				},
-				"description-card": {
-					"header": "Description of exercises",
-					"description": "Below you will find exercises, that are used in training plans",
-					"btn-1": "Exercises for beginners",
-					"btn-2": "Exercises for intermediate"
-				},
-				"we-execute-plan-as-follows": "We execute plan as follows",
-				"monday": "Monday",
-				"wednesday": "Wednesday",
-				"friday": "Friday",
-				"thursday": "Thursday",
-				"saturday": "Sobota",
-				"beginners-plan": {
-					"title": "Beginners plan",
-					"women": "Women",
-					"men": "Men",
-					"training": "Training",
-					"squats": {
-						"title": "Squats",
-						"description": "Place feet parallel and narrowly at hip width. Hips - we lock the torso by combining abdominal-belly tensions. Then we move to the shoulder blades - with a clockwork motion we bring them into depression and retraction. The width of the barbell grip determines our mobility in the shoulders - the narrower we can catch the more stable we will be in holding the barbell. The head is an extension of the spine - we do not tilt it up or down. We pull the barbell from the rack in a squat position, after pulling the barbell we walk 2-3 steps back to be at a safer distance from the rack, then we tighten our body from feet to shoulders and start the squat. The rule is that we come down evenly from the knee and hip, maintaining an upright torso position. It is important that our knees do not collapse inward relative to the foot. We perform the squat as deep as our build allows - we try to descend to a position where the thighs are parallel with the floor. After each squat, block the movement of the buttocks at the top and keep the abdomen tight at all times.",
-						"link": "http://youtu.be/NEduXlZ8zSk"
-					},
-					"bench-press": {
-						"title": "Bench press",
-						"description": "Starting with the feet - we keep them as close to our body as possible, narrow and close to the hips. We point the knees outward. We keep the buttocks as tight as possible, these elements will ensure the stabilization of the lower body. The next thing to pay attention to is abdominal tension. Tightening the abdomen and buttocks puts our pelvis in a stable position. Then we move on to positioning the shoulder blades in retraction and depression - that is, retracting the shoulder blades and lowering them. To find the optimal width of the barbell grip, we should look for the so-called Biocramic width - 'we measure the distance from the shoulder processes and multiply it by 1.5'.The result is the distance to which the index fingers should be spread. We should hold the griffin in the classic way - with the thumb closed. The arm relative to the torso should be at an angle between 45° and 70°. After elevating the barbell above your head, you should perform an internal rotation as if you wanted to break the barbell. The barbell should be guided in such a way that the elbow is under the wrist during the entire movement. Finally, breathe - take a deep breath before the repetition when the barbell is over the shoulders, then perform the entire movement and only when the barbell is over the shoulders again exhale.",
-						"link": "http://youtu.be/bbGuHx07EDc"
-					},
-					"rowing": {
-						"title": "Rowing",
-						"description": "We start with the positioning of the legs - we stand in the most stable position for us - so that the feet are parallel to each other. We keep the legs together with the torso in full tension, i.e. tense buttocks, abdomen, shoulder blades in retraction and depression, and the head is an extension of the torso. Then we grasp the barbell with an underhand grip (this is the version for beginners because in such a grip we have the strongest arm position) at shoulder width. Then we lower the torso, by pulling back the buttocks (not going down with the knees) to a position of 45° relative to the floor. We are already in the rowing position - we lead the barbell vertically upward in accordance with the direction of gravity. Run the barbell close to the thighs and hips until the elbow crosses the back line.",
-						"link": "http://youtu.be/Nxr4-9ZXRBw"
-					},
-					"side-raises": {
-						"title": "Side raises",
-						"description": "The exercise is performed sitting on a bench, the legs are given forward, the knees close together - so that we have room to lower the dumbbells. The arms in the starting position are lowered along the torso, the shoulder blades are pulled back and down (retraction and depression). We begin the movement upwards - to a position where the arms are perpendicular to the torso. The arms should be swung forward at an angle of about 15° - 20°. The flexion at the elbows should be between 5° - 10°. The last thing we do is to gently swing the torso forward.",
-						"link": "http://youtu.be/wzbX9cDlGDs"
-					},
-					"cable-crunch": {
-						"title": "Cable crunch",
-						"description": "We perform this exercise in a kneeling position with the hips raised. We catch the handle at the height of the head - the most important thing is that while performing the exercise the arms do not change their position in relation to the head. We choose the handle of the lift based on our own preferences, it can be a 'braid', 'handlebar' or whatever will be optimal for us.  We start the movement from a position in which the hips are raised high and the spine in a gentle diagonal (to pre-stretch the abdomen), then tighten the abdomen and bring the elbows to the knees.",
-						"link": "http://youtu.be/9zCV0OdlySI"
-					},
-					"calves": {
-						"title": "Calves",
-						"description": "Standing upright on an elevated position, catch the load in the hand on the same side as the calf performing the exercise. We lift the other leg up. The heel should be lowered and the calf stretched tightly. We conduct the movement upward climbing on our toes, then with a slow controlled movement return to the position that started the movement - to the maximum stretch of the calf.",
-						"link": "https://www.fabrykasily.pl/cwiczenia/na-lydki"
-					},
-					"classic-deadlift": {
-						"title": "Classic deadlift",
-						"description": "Place feet parallel to each other at hip width. Hips - we lock the torso by combining abdominal-belly tensions. Then we move to the shoulder blades - in a clockwork motion we bring them into depression and retraction (exactly as in the squat). We catch the barbell minimally wider than shoulder-width or at shoulder-width - so that the knees have room during the movement. The head is an extension of the spine. The knee, hip and shoulders should form a triangle. Before starting the movement, we gently tighten the barbell to avoid unwanted forces on the spine. Then we take an inhale and start the movement from the hip, shoulders and back going up first. We guide the movement to an upright posture - being careful not to overextend. Then we put the barbell on the ground starting the movement from the hip, all the time leading it close to the legs and keeping the abdomen and buttocks tense. When the barbell is on the ground we exhale (sometimes it is necessary to exhale earlier - at the top, then we take another inhale and start the downward movement).",
-						"link": "http://youtu.be/9GYH8PJ6xA0"
-					},
-					"military-press": {
-						"title": "Military press",
-						"description": "We stand upright stable on our feet, locking our knees in extension. The quadriceps (front of the thigh) muscles tense, so does the gluteus maximus - this creates a stable structure and foundation for lifting the weight overhead. The shoulder blades are kept in depression and retraction. Head - we start with a straight neck and chin pulled down, as we press the barbell overhead we slightly tilt our head back to make room for the barbell, which moves in a single upward line. We catch the barbell with an overhand grip as narrow as our mobility allows - not much wider than shoulder width. The elbows must be under the barbell or slightly in front of it. Then start the press-up - take an inhale and press the barbell overhead. It is important not to let your back bend in the lumbar region, or bend your knees. We put the barbell down as close as possible to our neck.",
-						"link": "http://youtu.be/zQRcZjp3ZVI"
-					},
-					"close-grip-chin-ups": {
-						"title": "Close grip chin ups",
-						"description": "We stabilize the body identically to the soldier press. We catch the bar with an underhand grip at the same width as we caught the barbell when pressing overhead. The legs during the entire movement are straight and the toes are drawn together - this will prevent the body from rocking. The shoulder blades are pulled back and down. We perform a full pull-up movement, lower down and let go of the tension in the shoulder blades, then there is a pull back and down again and we perform another repetition. Keep the movement going until the elbows milk the back's widest muscles.",
-						"link": "http://youtu.be/olxgbxHIHTY"
-					},
-					"barbell-reverse-lunge": {
-						"title": "Barbell reverse lunge",
-						"description": "The initial phases of the exercise (exit with the barbell from the rack, preparation for the movement) are identical to those in the squat. Then perform the movement behind you, making sure that the barbell holds a horizontal position throughout the movement. The legs are at hip width throughout the movement. Leg flexion angle - we descend to such a width of the legs that the tibia of the leg in front gently swings forward. After each bend we return to the vertical position, the next movement is performed with the other leg. It is worth trying at first to perform bends with dumbbells in your hands instead of a barbell in order to develop the movement.",
-						"link": "https://www.youtube.com/watch?v=B5yU9VvjOr8"
-					},
-					"abductors": {
-						"title": "Abductors",
-						"description": "The exercise is performed on the machine according to the instructions - it is difficult to provide a universal description, because each machine is a little different",
-						"link": "https://www.youtube.com/watch?v=IydaB14rnlg"
-					},
-					"plank": {
-						"title": "Plank",
-						"description": "Before we start the exercise, we need to make sure that our body is properly aligned - we lie on all fours with our knees more behind, resting on our elbows, which are ideally under our shoulders. We keep our feet at hip width. Our body after lifting is all taut - the greatest attention should be paid to the abdomen and buttocks. An additional very important element is the head, which is an extension of our body.",
-						"link": "https://www.youtube.com/watch?v=qN9skuMi6es"
-					},
-					"narrow-bench-press": {
-						"title": "Narrow bench press",
-						"description": "The narrow barbell press exercise is a popular exercise performed at the gym. It involves lying on a flat bench and gripping the barbell a little closer to yourself than in a traditional bench press. Then, holding the barbell above your chest, you lift it up, focusing on your working triceps muscles.",
-						"link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
-					}
-				},
-				"intermediate-plan": {
-					"title": "Intermediate plan",
-					"power-fbw": "POWER FBW (full body workout) - power exercises for all major muscle parts.",
-					"hyper-low": "HYPER LOW - hypertrophy exercises for the lower body.",
-					"hyper-up": "HYPER UP - hypertrophy exercises for the upper body.",
-					"balans-fbw": "BALANCE FBW - balanced training for all major muscle parts.",
-					"about-push": "Under 'push' exercises we select exercises in which we perform a pushing or squeezing movement, similarly under 'pull' exercises we select exercises in which we perform a pulling movement.",
-					"push": "Push",
-					"pull": "Pull",
-					"both-legs": "With both legs",
-					"horizontal": "Horizontal",
-					"vertical": "Vertical",
-					"single-leg": "With single leg",
-					"freely": "Freely",
-					"lower": "Lower"
-				},
-				"accessory": {
-					"title": "Accessory",
-					"facepull": {
-						"title": "Facepull",
-						"description": "The exercise involves pulling the cable handle on the machine towards your face, maintaining a wide grip. During the exercise, you focus on concentric contraction of the shoulder girdle, back and shoulder muscles. Slowly control the movement, and when you reach full contraction, return to the starting position.",
-						"link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
-					},
-					"y-rise": {
-						"title": "Y-rise",
-						"description": "The exercise involves lifting dumbbells to the sides, forming a 'Y' shape with straight arms. In an upright position, with a slight bend in the hips and knees, lift the dumbbells to the sides, keeping the elbows slightly bent and the back straight. We continue lifting until we reach full muscle contraction. Then slowly lower the dumbbells, returning to the starting position. During the exercise, focus on working the muscles of the back and shoulders, and control the movement to maintain proper technique.",
-						"link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
-					},
-					"butterfly": {
-						"title": "Butterfly",
-						"description": "In the 'Butterfly' exercise, sit on a bench with special handles and grab them, keeping your hands at shoulder width. Interlock your forearms, forming the shape of butterfly wings. Tense your chest muscles and stretch your arms, opening the handles to the sides. In full arm extension, cut back, closing your forearms. Focus on tensing your chest muscles and control the movement, maintaining correct technique.",
-						"link": "https://www.youtube.com/watch?v=3N5WxWd0hUI"
-					},
-					"shoulder-raises-drop": {
-						"title": "Shoulder raises in drop",
-						"description": "In the exercise 'shoulder raises in drop', we perform dumbbell raises to the sides, being in a slightly bent position. We start by holding the dumbbells along the body, and then lift the arms to the sides, keeping the elbows slightly bent. Continue lifting until the dumbbells reach shoulder level. Slowly lower the dumbbells, returning to the starting position.",
-						"link": "https://www.youtube.com/watch?v=zC0sqmXzEbk"
-					},
-					"dumbbell-flys": {
-						"title": "Dumbbell Flys",
-						"description": "The exercise is performed on a gate. In a standing position, grab the lift from both sides and pull it synchronously in front of you. In this exercise, it is important to pay attention to keep the arms equally straight (do not bend the elbows), a tight abdomen and slightly bent knees. The exercise can be performed with one leg gently in front and the torso leaning forward.",
-						"link": "https://www.youtube.com/watch?v=vM1Ovmiu71M"
-					},
-					"skier": {
-						"title": "Skier",
-						"description": "Stand facing the overhead lift and lean your torso forward at an angle of about 45°. We catch the handle so that the arms are an extension of the body. Then we lead the lift to the hips, maintaining the same distance between the arms and the body (we do not bend the elbows). We pay special attention to abdominal tension and tight glutes, and to ensure that the only moving part of the body during this exercise is the arms.",
-						"link": "https://www.youtube.com/watch?v=LdBjRASibtQ"
-					},
-					"upper-lift-pulldown": {
-						"title": "Upper lift pulldown",
-						"description": "Sit under the overhead lift, feet locked on the ground, thighs locked stationary. We catch the bar with an overhand grip with straight arms. Take an inhale and draw the bar to your chest. Pay attention to straight back and torso stability.",
-						"link": "https://www.youtube.com/watch?v=QoCMWLeA0g4"
-					},
-					"leg-curls-lying": {
-						"title": "Leg curls lying",
-						"description": "In a supine position, grasp the bars with your hands for body stability, legs straight, ankles are under the rollers. Take an inhalation and draw the roller by bending the legs at the knees towards the buttocks. Then we slowly return to the initial position.",
-						"link": "https://www.youtube.com/watch?v=xhTprFWnJQw"
-					},
-					"nordic-curls": {
-						"title": "Nordic curls",
-						"description": "This is an exercise similar to the leg raise lying down only in this case we don't bend our shins, but use our shins to support our body weight as we slowly descend. Kneel with your back to the ladder, then lock your ankles against the ladder. We tighten our abdominals and slowly fall forward until our shins can't support us.",
-						"link": "https://www.youtube.com/watch?v=HDp0PyxyRbQ"
-					},
-					"calves-standing": {
-						"title": "Calves standing",
-						"description": "In a standing position, back straight stand under the apparatus and rest the rollers on the shoulders. The front of the feet resting on the stand. The movement is performed by climbing on the toes, which causes tension in the calf. Or as in the previous section - using a load held in the hand.",
-						"link": "https://www.youtube.com/watch?v=NBUnlzg3IXc"
-					},
-					"buttock-isolation": {
-						"title": "Buttock isolation",
-						"description": "In a standing position in front of the bottom lift. One leg steady on the ground, the other attached to the bottom lift. Arms grasp the handle of the lift for stability. Slightly bend the torso forward and tighten the abdomen. Start the movement by leading the leg backwards aiming to straighten the hip, for better muscle tone you can hold the leg stationary about 1-2 sec in the final phase of the movement.",
-						"link": "https://www.youtube.com/watch?v=5aCEnAUWqPo"
-					},
-					"adductors": {
-						"title": "Adductors",
-						"description": "In a sitting position on the instrument, limbs in a wide spread. Perform the movement by pulling the thighs inward, then controlling the movement return to the starting position.",
-						"link": "https://www.youtube.com/watch?v=IydaB14rnlg&t=68s"
-					},
-					"hip-thrust": {
-						"title": "Hip-thrust",
-						"description": "Lean against a bench or soft box at shoulder height, the point of support should be a few inches below knee height. Feet on the ground parallel at hip width, should be away from the point of support in such a way that when we push the barbell up, the angle that will form between the calf and thigh will be 90°. The knees are guided over the ankles. The next element is to tense the glutes and abdominals - in order to maintain a stable base. The head, unlike other exercises, will not be an extension of the spine and will face forward. We start the movement from the bottom, take an inhale and lead the barbell upwards achieving a full upright (not over-extended), put the barbell on the ground and exhale. ",
-						"link": "https://www.youtube.com/watch?v=ezEQkeQWMPM"
-					}
-				}
-			},
-			"food": {
-				"title": "Food"
-			},
-			"profile": {
-				"title": "Profile",
-				"info": "Add your personal data below - it will automaticly appear in the BMI/BMR calculator and will set daily calories limit in the calories page according to your goal",
-				"success-info": "Success! You have sucesfully saved your personal data now u can check Calories page or go to BMI / BMR calculator",
-				"success-info1": "Success! You have sucesfully saved your personal data",
-				"success-info2": "Check Calories page or go to BMI / BMR calculator"
-			},
-			"settings": {
-				"title": "Settings"
-			},
-			"not-found-404": {
-				"title": "Error - 404",
-				"page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
-				"try-going-to-home-page": "Try going to the home page"
-			}
-		},
-		"to-be-deleted": {
-			"this-is-page": "This is page"
-		}
-	}
+                "plan-card": {
+                    "header": "Training plans",
+                    "description": "Choose your skill level",
+                    "btn-1": "Beginner",
+                    "btn-2": "Intermediate"
+                },
+                "description-card": {
+                    "header": "Description of exercises",
+                    "description": "Below you will find exercises, that are used in training plans",
+                    "btn-1": "Exercises for beginners",
+                    "btn-2": "Exercises for intermediate"
+                },
+                "we-execute-plan-as-follows": "We execute plan as follows",
+                "monday": "Monday",
+                "wednesday": "Wednesday",
+                "friday": "Friday",
+                "thursday": "Thursday",
+                "saturday": "Sobota",
+                "beginners-plan": {
+                    "title": "Beginners plan",
+                    "women": "Women",
+                    "men": "Men",
+                    "training": "Training",
+                    "squats": {
+                        "title": "Squats",
+                        "description": "Place feet parallel and narrowly at hip width. Hips - we lock the torso by combining abdominal-belly tensions. Then we move to the shoulder blades - with a clockwork motion we bring them into depression and retraction. The width of the barbell grip determines our mobility in the shoulders - the narrower we can catch the more stable we will be in holding the barbell. The head is an extension of the spine - we do not tilt it up or down. We pull the barbell from the rack in a squat position, after pulling the barbell we walk 2-3 steps back to be at a safer distance from the rack, then we tighten our body from feet to shoulders and start the squat. The rule is that we come down evenly from the knee and hip, maintaining an upright torso position. It is important that our knees do not collapse inward relative to the foot. We perform the squat as deep as our build allows - we try to descend to a position where the thighs are parallel with the floor. After each squat, block the movement of the buttocks at the top and keep the abdomen tight at all times.",
+                        "link": "http://youtu.be/NEduXlZ8zSk"
+                    },
+                    "bench-press": {
+                        "title": "Bench press",
+                        "description": "Starting with the feet - we keep them as close to our body as possible, narrow and close to the hips. We point the knees outward. We keep the buttocks as tight as possible, these elements will ensure the stabilization of the lower body. The next thing to pay attention to is abdominal tension. Tightening the abdomen and buttocks puts our pelvis in a stable position. Then we move on to positioning the shoulder blades in retraction and depression - that is, retracting the shoulder blades and lowering them. To find the optimal width of the barbell grip, we should look for the so-called Biocramic width - 'we measure the distance from the shoulder processes and multiply it by 1.5'.The result is the distance to which the index fingers should be spread. We should hold the griffin in the classic way - with the thumb closed. The arm relative to the torso should be at an angle between 45° and 70°. After elevating the barbell above your head, you should perform an internal rotation as if you wanted to break the barbell. The barbell should be guided in such a way that the elbow is under the wrist during the entire movement. Finally, breathe - take a deep breath before the repetition when the barbell is over the shoulders, then perform the entire movement and only when the barbell is over the shoulders again exhale.",
+                        "link": "http://youtu.be/bbGuHx07EDc"
+                    },
+                    "rowing": {
+                        "title": "Rowing",
+                        "description": "We start with the positioning of the legs - we stand in the most stable position for us - so that the feet are parallel to each other. We keep the legs together with the torso in full tension, i.e. tense buttocks, abdomen, shoulder blades in retraction and depression, and the head is an extension of the torso. Then we grasp the barbell with an underhand grip (this is the version for beginners because in such a grip we have the strongest arm position) at shoulder width. Then we lower the torso, by pulling back the buttocks (not going down with the knees) to a position of 45° relative to the floor. We are already in the rowing position - we lead the barbell vertically upward in accordance with the direction of gravity. Run the barbell close to the thighs and hips until the elbow crosses the back line.",
+                        "link": "http://youtu.be/Nxr4-9ZXRBw"
+                    },
+                    "side-raises": {
+                        "title": "Side raises",
+                        "description": "The exercise is performed sitting on a bench, the legs are given forward, the knees close together - so that we have room to lower the dumbbells. The arms in the starting position are lowered along the torso, the shoulder blades are pulled back and down (retraction and depression). We begin the movement upwards - to a position where the arms are perpendicular to the torso. The arms should be swung forward at an angle of about 15° - 20°. The flexion at the elbows should be between 5° - 10°. The last thing we do is to gently swing the torso forward.",
+                        "link": "http://youtu.be/wzbX9cDlGDs"
+                    },
+                    "cable-crunch": {
+                        "title": "Cable crunch",
+                        "description": "We perform this exercise in a kneeling position with the hips raised. We catch the handle at the height of the head - the most important thing is that while performing the exercise the arms do not change their position in relation to the head. We choose the handle of the lift based on our own preferences, it can be a 'braid', 'handlebar' or whatever will be optimal for us.  We start the movement from a position in which the hips are raised high and the spine in a gentle diagonal (to pre-stretch the abdomen), then tighten the abdomen and bring the elbows to the knees.",
+                        "link": "http://youtu.be/9zCV0OdlySI"
+                    },
+                    "calves": {
+                        "title": "Calves",
+                        "description": "Standing upright on an elevated position, catch the load in the hand on the same side as the calf performing the exercise. We lift the other leg up. The heel should be lowered and the calf stretched tightly. We conduct the movement upward climbing on our toes, then with a slow controlled movement return to the position that started the movement - to the maximum stretch of the calf.",
+                        "link": "https://www.fabrykasily.pl/cwiczenia/na-lydki"
+                    },
+                    "classic-deadlift": {
+                        "title": "Classic deadlift",
+                        "description": "Place feet parallel to each other at hip width. Hips - we lock the torso by combining abdominal-belly tensions. Then we move to the shoulder blades - in a clockwork motion we bring them into depression and retraction (exactly as in the squat). We catch the barbell minimally wider than shoulder-width or at shoulder-width - so that the knees have room during the movement. The head is an extension of the spine. The knee, hip and shoulders should form a triangle. Before starting the movement, we gently tighten the barbell to avoid unwanted forces on the spine. Then we take an inhale and start the movement from the hip, shoulders and back going up first. We guide the movement to an upright posture - being careful not to overextend. Then we put the barbell on the ground starting the movement from the hip, all the time leading it close to the legs and keeping the abdomen and buttocks tense. When the barbell is on the ground we exhale (sometimes it is necessary to exhale earlier - at the top, then we take another inhale and start the downward movement).",
+                        "link": "http://youtu.be/9GYH8PJ6xA0"
+                    },
+                    "military-press": {
+                        "title": "Military press",
+                        "description": "We stand upright stable on our feet, locking our knees in extension. The quadriceps (front of the thigh) muscles tense, so does the gluteus maximus - this creates a stable structure and foundation for lifting the weight overhead. The shoulder blades are kept in depression and retraction. Head - we start with a straight neck and chin pulled down, as we press the barbell overhead we slightly tilt our head back to make room for the barbell, which moves in a single upward line. We catch the barbell with an overhand grip as narrow as our mobility allows - not much wider than shoulder width. The elbows must be under the barbell or slightly in front of it. Then start the press-up - take an inhale and press the barbell overhead. It is important not to let your back bend in the lumbar region, or bend your knees. We put the barbell down as close as possible to our neck.",
+                        "link": "http://youtu.be/zQRcZjp3ZVI"
+                    },
+                    "close-grip-chin-ups": {
+                        "title": "Close grip chin ups",
+                        "description": "We stabilize the body identically to the soldier press. We catch the bar with an underhand grip at the same width as we caught the barbell when pressing overhead. The legs during the entire movement are straight and the toes are drawn together - this will prevent the body from rocking. The shoulder blades are pulled back and down. We perform a full pull-up movement, lower down and let go of the tension in the shoulder blades, then there is a pull back and down again and we perform another repetition. Keep the movement going until the elbows milk the back's widest muscles.",
+                        "link": "http://youtu.be/olxgbxHIHTY"
+                    },
+                    "barbell-reverse-lunge": {
+                        "title": "Barbell reverse lunge",
+                        "description": "The initial phases of the exercise (exit with the barbell from the rack, preparation for the movement) are identical to those in the squat. Then perform the movement behind you, making sure that the barbell holds a horizontal position throughout the movement. The legs are at hip width throughout the movement. Leg flexion angle - we descend to such a width of the legs that the tibia of the leg in front gently swings forward. After each bend we return to the vertical position, the next movement is performed with the other leg. It is worth trying at first to perform bends with dumbbells in your hands instead of a barbell in order to develop the movement.",
+                        "link": "https://www.youtube.com/watch?v=B5yU9VvjOr8"
+                    },
+                    "abductors": {
+                        "title": "Abductors",
+                        "description": "The exercise is performed on the machine according to the instructions - it is difficult to provide a universal description, because each machine is a little different",
+                        "link": "https://www.youtube.com/watch?v=IydaB14rnlg"
+                    },
+                    "plank": {
+                        "title": "Plank",
+                        "description": "Before we start the exercise, we need to make sure that our body is properly aligned - we lie on all fours with our knees more behind, resting on our elbows, which are ideally under our shoulders. We keep our feet at hip width. Our body after lifting is all taut - the greatest attention should be paid to the abdomen and buttocks. An additional very important element is the head, which is an extension of our body.",
+                        "link": "https://www.youtube.com/watch?v=qN9skuMi6es"
+                    },
+                    "narrow-bench-press": {
+                        "title": "Narrow bench press",
+                        "description": "The narrow barbell press exercise is a popular exercise performed at the gym. It involves lying on a flat bench and gripping the barbell a little closer to yourself than in a traditional bench press. Then, holding the barbell above your chest, you lift it up, focusing on your working triceps muscles.",
+                        "link": "https://www.youtube.com/watch?v=5zhNzc4DMMw"
+                    }
+                },
+                "intermediate-plan": {
+                    "title": "Intermediate plan",
+                    "power-fbw": "POWER FBW (full body workout) - power exercises for all major muscle parts.",
+                    "hyper-low": "HYPER LOW - hypertrophy exercises for the lower body.",
+                    "hyper-up": "HYPER UP - hypertrophy exercises for the upper body.",
+                    "balans-fbw": "BALANCE FBW - balanced training for all major muscle parts.",
+                    "about-push": "Under 'push' exercises we select exercises in which we perform a pushing or squeezing movement, similarly under 'pull' exercises we select exercises in which we perform a pulling movement.",
+                    "push": "Push",
+                    "pull": "Pull",
+                    "both-legs": "With both legs",
+                    "horizontal": "Horizontal",
+                    "vertical": "Vertical",
+                    "single-leg": "With single leg",
+                    "freely": "Freely",
+                    "lower": "Lower"
+                },
+                "accessory": {
+                    "title": "Accessory",
+                    "facepull": {
+                        "title": "Facepull",
+                        "description": "The exercise involves pulling the cable handle on the machine towards your face, maintaining a wide grip. During the exercise, you focus on concentric contraction of the shoulder girdle, back and shoulder muscles. Slowly control the movement, and when you reach full contraction, return to the starting position.",
+                        "link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
+                    },
+                    "y-rise": {
+                        "title": "Y-rise",
+                        "description": "The exercise involves lifting dumbbells to the sides, forming a 'Y' shape with straight arms. In an upright position, with a slight bend in the hips and knees, lift the dumbbells to the sides, keeping the elbows slightly bent and the back straight. We continue lifting until we reach full muscle contraction. Then slowly lower the dumbbells, returning to the starting position. During the exercise, focus on working the muscles of the back and shoulders, and control the movement to maintain proper technique.",
+                        "link": "https://www.youtube.com/watch?v=2KWhRFlBuSA"
+                    },
+                    "butterfly": {
+                        "title": "Butterfly",
+                        "description": "In the 'Butterfly' exercise, sit on a bench with special handles and grab them, keeping your hands at shoulder width. Interlock your forearms, forming the shape of butterfly wings. Tense your chest muscles and stretch your arms, opening the handles to the sides. In full arm extension, cut back, closing your forearms. Focus on tensing your chest muscles and control the movement, maintaining correct technique.",
+                        "link": "https://www.youtube.com/watch?v=3N5WxWd0hUI"
+                    },
+                    "shoulder-raises-drop": {
+                        "title": "Shoulder raises in drop",
+                        "description": "In the exercise 'shoulder raises in drop', we perform dumbbell raises to the sides, being in a slightly bent position. We start by holding the dumbbells along the body, and then lift the arms to the sides, keeping the elbows slightly bent. Continue lifting until the dumbbells reach shoulder level. Slowly lower the dumbbells, returning to the starting position.",
+                        "link": "https://www.youtube.com/watch?v=zC0sqmXzEbk"
+                    },
+                    "dumbbell-flys": {
+                        "title": "Dumbbell Flys",
+                        "description": "The exercise is performed on a gate. In a standing position, grab the lift from both sides and pull it synchronously in front of you. In this exercise, it is important to pay attention to keep the arms equally straight (do not bend the elbows), a tight abdomen and slightly bent knees. The exercise can be performed with one leg gently in front and the torso leaning forward.",
+                        "link": "https://www.youtube.com/watch?v=vM1Ovmiu71M"
+                    },
+                    "skier": {
+                        "title": "Skier",
+                        "description": "Stand facing the overhead lift and lean your torso forward at an angle of about 45°. We catch the handle so that the arms are an extension of the body. Then we lead the lift to the hips, maintaining the same distance between the arms and the body (we do not bend the elbows). We pay special attention to abdominal tension and tight glutes, and to ensure that the only moving part of the body during this exercise is the arms.",
+                        "link": "https://www.youtube.com/watch?v=LdBjRASibtQ"
+                    },
+                    "upper-lift-pulldown": {
+                        "title": "Upper lift pulldown",
+                        "description": "Sit under the overhead lift, feet locked on the ground, thighs locked stationary. We catch the bar with an overhand grip with straight arms. Take an inhale and draw the bar to your chest. Pay attention to straight back and torso stability.",
+                        "link": "https://www.youtube.com/watch?v=QoCMWLeA0g4"
+                    },
+                    "leg-curls-lying": {
+                        "title": "Leg curls lying",
+                        "description": "In a supine position, grasp the bars with your hands for body stability, legs straight, ankles are under the rollers. Take an inhalation and draw the roller by bending the legs at the knees towards the buttocks. Then we slowly return to the initial position.",
+                        "link": "https://www.youtube.com/watch?v=xhTprFWnJQw"
+                    },
+                    "nordic-curls": {
+                        "title": "Nordic curls",
+                        "description": "This is an exercise similar to the leg raise lying down only in this case we don't bend our shins, but use our shins to support our body weight as we slowly descend. Kneel with your back to the ladder, then lock your ankles against the ladder. We tighten our abdominals and slowly fall forward until our shins can't support us.",
+                        "link": "https://www.youtube.com/watch?v=HDp0PyxyRbQ"
+                    },
+                    "calves-standing": {
+                        "title": "Calves standing",
+                        "description": "In a standing position, back straight stand under the apparatus and rest the rollers on the shoulders. The front of the feet resting on the stand. The movement is performed by climbing on the toes, which causes tension in the calf. Or as in the previous section - using a load held in the hand.",
+                        "link": "https://www.youtube.com/watch?v=NBUnlzg3IXc"
+                    },
+                    "buttock-isolation": {
+                        "title": "Buttock isolation",
+                        "description": "In a standing position in front of the bottom lift. One leg steady on the ground, the other attached to the bottom lift. Arms grasp the handle of the lift for stability. Slightly bend the torso forward and tighten the abdomen. Start the movement by leading the leg backwards aiming to straighten the hip, for better muscle tone you can hold the leg stationary about 1-2 sec in the final phase of the movement.",
+                        "link": "https://www.youtube.com/watch?v=5aCEnAUWqPo"
+                    },
+                    "adductors": {
+                        "title": "Adductors",
+                        "description": "In a sitting position on the instrument, limbs in a wide spread. Perform the movement by pulling the thighs inward, then controlling the movement return to the starting position.",
+                        "link": "https://www.youtube.com/watch?v=IydaB14rnlg&t=68s"
+                    },
+                    "hip-thrust": {
+                        "title": "Hip-thrust",
+                        "description": "Lean against a bench or soft box at shoulder height, the point of support should be a few inches below knee height. Feet on the ground parallel at hip width, should be away from the point of support in such a way that when we push the barbell up, the angle that will form between the calf and thigh will be 90°. The knees are guided over the ankles. The next element is to tense the glutes and abdominals - in order to maintain a stable base. The head, unlike other exercises, will not be an extension of the spine and will face forward. We start the movement from the bottom, take an inhale and lead the barbell upwards achieving a full upright (not over-extended), put the barbell on the ground and exhale. ",
+                        "link": "https://www.youtube.com/watch?v=ezEQkeQWMPM"
+                    }
+                }
+            },
+            "food": {
+                "title": "Food"
+            },
+            "profile": {
+                "title": "Profile",
+                "info": "Add your personal data below - it will automaticly appear in the BMI/BMR calculator and will set daily calories limit in the calories page according to your goal",
+                "success-info": "Success! You have sucesfully saved your personal data now u can check Calories page or go to BMI / BMR calculator",
+                "success-info1": "Success! You have sucesfully saved your personal data",
+                "success-info2": "Check Calories page or go to BMI / BMR calculator"
+            },
+            "settings": {
+                "title": "Settings"
+            },
+            "not-found-404": {
+                "title": "Error - 404",
+                "page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
+                "try-going-to-home-page": "Try going to the home page"
+            }
+        },
+        "to-be-deleted": {
+            "this-is-page": "This is page"
+        }
+    }
 }
