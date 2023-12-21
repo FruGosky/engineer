@@ -19,23 +19,23 @@ root.render(
 	</React.StrictMode>
 );
 
-getLCP((metric) => {
-	if (metric.value > 3000) {
-		console.log('LCP', metric);
-	}
-}, true);
-
-getFID((metric) => {
-	if (metric.value > 100) {
-		console.log('FID', metric);
-	}
-}, true);
-
-getCLS((metric) => {
-	if (metric.value > 0.25) {
-		console.log('CLS', metric);
-	}
-}, true);
+if (process.env.NODE_ENV === 'development') {
+	getLCP((metric: { value: number }) => {
+		if (metric.value > 3000) {
+			console.log('LCP', metric);
+		}
+	}, true);
+	getFID((metric: { value: number }) => {
+		if (metric.value > 100) {
+			console.log('FID', metric);
+		}
+	}, true);
+	getCLS((metric: { value: number }) => {
+		if (metric.value > 0.25) {
+			console.log('CLS', metric);
+		}
+	}, true);
+}
 
 // For React v17
 // ReactDOM.render(

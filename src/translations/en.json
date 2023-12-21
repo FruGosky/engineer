@@ -39,7 +39,8 @@
 		},
 		"page": {
 			"home": {
-				"title": "Home"
+				"title": "Home",
+				"welcome": "Welcome to the DoIt-Healthy website"
 			},
 			"bmi": {
 				"title": "Bmi",
@@ -313,9 +314,6 @@
 				"page-does-not-exist": "The page you are looking for doesn't exist or an other error occurred",
 				"try-going-to-home-page": "Try going to the home page"
 			}
-		},
-		"to-be-deleted": {
-			"this-is-page": "This is page"
 		}
 	}
 }
