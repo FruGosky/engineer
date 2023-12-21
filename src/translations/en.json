@@ -8,7 +8,6 @@
 			"confirm-password": "Confirm password",
 			"no-account-yet": "No account yet",
 			"already-have-account": "Already have account",
-			"invalid-username": "Invalid username: Only numbers and letters are allowed",
 			"invalid-email": "Invalid email: Plase make sure you have provided the correct email e.g. email@gmail.com",
 			"invalid-password": "Invalid password: Minimum 12 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
 			"invalid-password-confirmation": "Invalid password confirmation: Field 'Password' and 'Confirm Password' needs to be the same",
@@ -35,7 +34,8 @@
 			"to": "To",
 			"close": "Close",
 			"hello": "Hello",
-			"save": "Save"
+			"save": "Save",
+			"find": "Find"
 		},
 		"page": {
 			"home": {
@@ -92,7 +92,27 @@
 				"gain-weight": "Gain weight"
 			},
 			"calories": {
-				"title": "Calories"
+				"title": "Calories",
+				"look-through-our-food-product-database": "Look through our food product database",
+				"type-name-of-the-product-here...": "Type name of the product here...",
+				"no-data-found": "No data found.",
+				"visit-this-page": "Visit this page",
+				"to-look-for-more-products": "to look for more products",
+				"how-much-gram-eaten": "How much gram eaten",
+				"add-this-product": "Add this product",
+				"add-your-product": "Add your product",
+				"add-product": "Add product",
+				"name-of-the-product": "Name of the product",
+				"name": "Name",
+				"in": "W",
+				"description-(optional)": "Description (optional)",
+				"type-description..": "Type description..",
+				"type-name": "Type name..",
+				"protein-2": "Protein",
+				"carbohydrates-2": "Carbohydrates",
+				"fat-2": "Fat",
+				"add": "Add",
+				"monitor-your-daily-calories": "Monitor your daily calories and macro nutrition here"
 			},
 			"exercises": {
 				"title": "Exercises",

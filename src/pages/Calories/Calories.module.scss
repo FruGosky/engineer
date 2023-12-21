@@ -1,0 +1,34 @@
+.head_section {
+  width: 100%;
+}
+.main_card {
+  width: 60vw;
+  margin: 0;
+}
+.item_card {
+  width: 60vw;
+  margin: 0;
+}
+.new_product {
+  width: 55vw;
+}
+
+@media (max-width: 599px) {
+  .main_card,
+  .item_card,
+  .head_section {
+    width: 100%;
+    margin: 0;
+  }
+}
+.text_protein {
+  color: rgb(236, 46, 135);
+}
+
+.text_fat {
+  color: rgb(175, 190, 33);
+}
+
+.text_carbs {
+  color: rgb(16, 175, 114);
+}

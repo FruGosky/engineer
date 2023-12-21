@@ -8,7 +8,6 @@
 			"confirm-password": "Potwierdź hasło",
 			"no-account-yet": "Nie masz jeszcze konta",
 			"already-have-account": "Masz już konto",
-			"invalid-username": "Nieprawidłowa nazwa użytkownika: Dozwolone są tylko liczby i litery",
 			"invalid-email": "Nieprawidłowy email: Upewnij się, że podałeś poprawny adres e-mail, np. email@gmail.com",
 			"invalid-password": "Nieprawidłowe hasło: Minimum 12 znaków, co najmniej 1 wielka litera, 1 mała litera, 1 cyfra i 1 znak specjalny",
 			"invalid-password-confirmation": "Nieudane potwierdzenie hasła: Pole 'Hasło' i 'Potwierdź hasło' musza być takie same",
@@ -35,7 +34,8 @@
 			"to": "Do",
 			"close": "Zamknij",
 			"hello": "Witaj",
-			"save": "Zapisz"
+			"save": "Zapisz",
+			"find": "Szukaj"
 		},
 		"page": {
 			"home": {
@@ -92,7 +92,27 @@
 				"gain-weight": "Zwiększenie masy ciała"
 			},
 			"calories": {
-				"title": "Kalorie"
+				"title": "Kalorie",
+				"look-through-our-food-product-database": "Przejżyj naszą bazę danych w celu znalezienia produktu",
+				"type-name-of-the-product-here...": "Wpisz nazwę produktu...",
+				"no-data-found": "Nie znaleziono produktu.",
+				"visit-this-page": "Odwiedź tę stronę",
+				"to-look-for-more-products": "w celu znalezienia większej ilości produktów. ",
+				"how-much-gram-eaten": "Ile gram skonsumowano",
+				"add-this-product": "Dodaj ten produkt",
+				"add-your-product": "Dodaj swój produkt",
+				"add-product": "Dodaj produkt",
+				"name-of-the-product": "Nazwa produktu",
+				"name": "Nazwa",
+				"in": "w",
+				"description-(optional)": "Opis (opcjonalnie)",
+				"type-description..": "opis...",
+				"type-name": "Podaj nazwę..",
+				"protein-2": "Białko",
+				"carbohydrates-2": "Węglowodanów",
+				"fat-2": "Tłuszczy",
+				"add": "Dodaj",
+				"monitor-your-daily-calories": "Tutaj możesz korygować dzienną liczbę kalorii i makroskładników odżywczych"
 			},
 			"exercises": {
 				"title": "Ćwiczenia",
