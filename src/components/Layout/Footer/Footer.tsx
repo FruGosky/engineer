@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { creators } from '../../creators';
+import { creators } from '../../../creators';
 
 export default function Footer() {
 	const { t: translation } = useTranslation();

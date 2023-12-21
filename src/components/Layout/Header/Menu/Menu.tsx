@@ -1,5 +1,5 @@
 import styles from './Menu.module.scss';
-import Logo from '../../Logo/Logo';
+import Logo from '../../../Logo/Logo';
 import MenuItems from './MenuItems/MenuItems';
 import * as bootstrap from 'bootstrap';
 import { useEffect, useState } from 'react';

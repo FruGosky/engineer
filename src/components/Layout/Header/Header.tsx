@@ -1,5 +1,5 @@
 import Menu from './Menu/Menu';
-import Logo from '../Logo/Logo';
+import Logo from '../../Logo/Logo';
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 import UserMenu from './UserMenu/UserMenu';

@@ -25,7 +25,7 @@ import IntermediateExercises, {
 } from './Exercises/IntermediateExercises/IntermediateExercises';
 import Settings, { SETTINGS_LINK, SETTINGS_TITLE } from './Settings/Settings';
 
-type TPages = {
+export type TPages = {
 	label: string;
 	path: string;
 	element: JSX.Element;
@@ -40,7 +40,7 @@ export const menuPages: TPages[] = [
 		label: CALORIES_TITLE,
 		path: CALORIES_LINK,
 		element: <Calories />,
-		needAuth: false,
+		needAuth: true,
 	},
 	{
 		label: EXERCISES_TITLE,

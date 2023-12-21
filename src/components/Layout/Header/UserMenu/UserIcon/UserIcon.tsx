@@ -1,12 +1,12 @@
-import userIcon from '../../../../assets/iconmonstr-user-20.svg';
+import userIcon from '../../../../../assets/iconmonstr-user-20.svg';
 import styles from './UserIcon.module.scss';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../../hooks/useAuth';
+import useAuth from '../../../../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 import * as bootstrap from 'bootstrap';
-import { userIconPages } from '../../../../pages/pages';
+import { userIconPages } from '../../../../../pages/pages';
 
 export default function UserIcon() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars

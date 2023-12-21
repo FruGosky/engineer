@@ -1,12 +1,8 @@
 import { useState } from 'react';
-import { menuPages } from '../../../../pages/pages';
+import { TPages, menuPages } from '../../../../../pages/pages';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
-interface IPages {
-	label: string;
-	path: string;
-}
+import useAuth from '../../../../../hooks/useAuth';
 
 type TMenuItemProps = {
 	hideNavbar: () => void;
@@ -15,10 +11,13 @@ type TMenuItemProps = {
 export default function MenuItems(props: TMenuItemProps) {
 	const [currentPath, setCurrentPath] = useState(window.location.pathname);
 	const { t: translation } = useTranslation();
+	const [auth] = useAuth();
 
-	const menuItems = menuPages.map((page: IPages, pageIndex) => {
+	const menuItems = menuPages.map((page: TPages, pageIndex) => {
 		const { label: PAGE_LABEL, path: PAGE_PATH } = page;
 		const PAGE_LABEL_TRANSLATED = translation(PAGE_LABEL);
+
+		if (page.needAuth && !auth) return null;
 
 		return (
 			<li className="nav-item" key={pageIndex}>

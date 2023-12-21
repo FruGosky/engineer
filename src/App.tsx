@@ -1,12 +1,12 @@
 import React, { useReducer, useState } from 'react';
 import './App.scss';
-import Header from './components/Header/Header';
+import Header from './components/Layout/Header/Header';
 import Layout from './components/Layout/Layout';
 import { reducer, initialState } from './reducer/reducer';
 import { ReducerContext } from './context/reducerContext';
 import { AuthContext } from './context/authContext';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Layout/Footer/Footer';
 import ContentRoutes from './components/ContentRoutes/ContentRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
 import './translations/translations';

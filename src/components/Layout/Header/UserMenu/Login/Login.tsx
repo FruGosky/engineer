@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useModals } from '../../../../context/modalsContext';
+import { useModals } from '../../../../../context/modalsContext';
 
 export default function Login() {
 	const { t: translation } = useTranslation();

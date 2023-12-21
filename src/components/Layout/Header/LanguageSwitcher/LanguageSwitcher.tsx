@@ -1,4 +1,4 @@
-import { languages } from '../../../translations/translations';
+import { languages } from '../../../../translations/translations';
 import { useTranslation } from 'react-i18next';
 import styles from './LanguageSwitcher.module.scss';
 import { useEffect, useState } from 'react';
