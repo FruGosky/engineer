@@ -6,7 +6,6 @@ import Exercises, {
 	EXERCISES_LINK,
 	EXERCISES_TITLE,
 } from './Exercises/Exercises';
-import Food, { FOOD_LINK, FOOD_TITLE } from './Food/Food';
 import Profile, { PROFILE_LINK, PROFILE_TITLE } from './Profile/Profile';
 import BeginnersPlan, {
 	BEGINNERS_PLAN_LINK,
@@ -47,12 +46,6 @@ export const menuPages: TPages[] = [
 		label: EXERCISES_TITLE,
 		path: EXERCISES_LINK,
 		element: <Exercises />,
-		needAuth: false,
-	},
-	{
-		label: FOOD_TITLE,
-		path: FOOD_LINK,
-		element: <Food />,
 		needAuth: false,
 	},
 ];
