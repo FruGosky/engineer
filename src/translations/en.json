@@ -2,6 +2,7 @@
 	"translation": {
 		"common": {
 			"app-name": "DoIt-Healthy",
+			"description": "Explore the journey to weight loss and well-being with DoItHealthy's BMI, BMR, Calories calculators, and exercise plans",
 			"login": "Login",
 			"logout": "Logout",
 			"signup": "Signup",
@@ -46,7 +47,7 @@
 			"home": {
 				"title": "Home",
 				"header": "Calculate, Track, and Stay Fit with DoIt-Healthy",
-				"description": "Welcome to DoIt-Healthy – your comprehensive wellness destination where health meets simplicity. Calculate, track, and embark on your journey to a healthier lifestyle with our suite of tools designed to empower your well-being.",
+				"description": "Welcome to DoIt-Healthy, your go-to destination for wellness simplicity. Empower your well-being with our suite of tools, including BMI and BMR calculators, a calories calculator, and tailored exercise plans for beginners and intermediates. Start your journey to a healthier lifestyle with DoIt-Healthy",
 				"summary": "DoIt-Healthy is not just a website. It's your partner in the journey to a healthier you. Empower yourself with knowledge, track your progress, and make informed decisions about your well-being. Start your transformative experience today!",
 				"bmi": {
 					"title": "BMI Calculator",

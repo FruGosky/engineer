@@ -64,7 +64,10 @@ export default function Home() {
 					<article className="row card">
 						<div className="card-body">
 							<h2 className="card-title">
-								<Link to={BMI_LINK}>{`${BMI_TITLE}`}</Link>
+								<Link
+									to={BMI_LINK}
+									title={`${BMI_TITLE}`}
+								>{`${BMI_TITLE}`}</Link>
 							</h2>
 							<p>{`${BMI_DESCRIPTION}`}</p>
 						</div>
@@ -72,7 +75,10 @@ export default function Home() {
 					<article className="row card">
 						<div className="card-body">
 							<h2 className="card-title">
-								<Link to={BMR_LINK}>{`${BMR_TITLE}`}</Link>
+								<Link
+									to={BMR_LINK}
+									title={`${BMR_TITLE}`}
+								>{`${BMR_TITLE}`}</Link>
 							</h2>
 							<p>{`${BMR_DESCRIPTION}`}</p>
 						</div>
@@ -82,6 +88,7 @@ export default function Home() {
 							<h2 className="card-title">
 								<Link
 									to={EXERCISES_LINK}
+									title={`${EXERCISES_TITLE}`}
 								>{`${EXERCISES_TITLE}`}</Link>
 							</h2>
 							<p>{`${EXERCISES_DESCRIPTION}`}</p>
@@ -93,6 +100,7 @@ export default function Home() {
 								{auth ? (
 									<Link
 										to={CALORIES_LINK}
+										title={`${CALORIES_TITLE}`}
 									>{`${CALORIES_TITLE}`}</Link>
 								) : (
 									`${CALORIES_TITLE}`

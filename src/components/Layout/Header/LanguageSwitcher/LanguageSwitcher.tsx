@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import styles from './LanguageSwitcher.module.scss';
 import { useEffect, useState } from 'react';
 import * as bootstrap from 'bootstrap';
+import useCurrentLanguage from '../../../../hooks/useCurrentLanguage';
 
 export default function LanguageSwitcher() {
-	const { i18n } = useTranslation();
+	const { i18n, t: translation } = useTranslation();
+	const currentLanguage = useCurrentLanguage();
 	const [dropdown, setDropdown] = useState<bootstrap.Dropdown | null>(null);
 
 	useEffect(() => {
@@ -16,6 +18,13 @@ export default function LanguageSwitcher() {
 		const bootstrapDropdown = new bootstrap.Dropdown(dropdownModalElement);
 		setDropdown(bootstrapDropdown);
 	}, []);
+
+	useEffect(() => {
+		document.documentElement.lang = currentLanguage;
+		document
+			.querySelector('meta[name="description"]')
+			?.setAttribute('content', translation('common.description'));
+	}, [currentLanguage, translation]);
 
 	return (
 		<div className="dropdown">
