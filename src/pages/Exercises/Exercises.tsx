@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import './Exercises.scss';
@@ -16,10 +14,8 @@ export const EXERCISES_LINK = '/exercises';
 export default function Exercises() {
 	const backdropElement: HTMLElement | null =
 		document.querySelector('.modal-backdrop');
-	if (backdropElement) {
-		backdropElement.remove();
-	}
-	const [loading, setLoading] = useState(true);
+	if (backdropElement) backdropElement.remove();
+
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(EXERCISES_TITLE);
@@ -45,15 +41,7 @@ export default function Exercises() {
 		'page.exercises.main-page-card.description'
 	);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 1_000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	return loading ? (
-		<LoadingIcon />
-	) : (
+	return (
 		<div className="site-wrapper text-center d-flex align-items-center justify-content-center">
 			<div className="container inner exercises_main_content rounded shadow">
 				<div>

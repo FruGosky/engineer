@@ -27,7 +27,7 @@ export default function BmrScore(props: TProps) {
 	const T_YOUR_CALORIC_NEEDS = translation(
 		'page.bmr.your-caloric-and-macronutrient-needs'
 	);
-	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
+	const T_WEIGHT_MAINTENANCE = translation('page.bmr.weight-maintenance');
 	const T_PROTEIN = translation('page.bmr.protein');
 	const T_FAT = translation('page.bmr.fat');
 	const T_CARBS = translation('page.bmr.carbohydrates');
@@ -67,7 +67,7 @@ export default function BmrScore(props: TProps) {
 
 	const calculateNutrition = (
 		goal: TGoal,
-		newCaloriesToAchiveGoal: number
+		newCaloriesToAchieveGoal: number
 	): TNutritionObject => {
 		let protein = 0;
 		let fat = 0;
@@ -118,7 +118,7 @@ export default function BmrScore(props: TProps) {
 				carbs: parseInt(nutrition.carbs.toFixed(0)),
 				// BMR: parseInt(BMR.toFixed(0)),
 				TDEE: parseInt(TDEE.toFixed(0)),
-				caloriesToAchieveGoal: newCaloriesToAchiveGoal,
+				caloriesToAchieveGoal: newCaloriesToAchieveGoal,
 			});
 		} else {
 			dataForLocalStorage = JSON.stringify({
@@ -127,7 +127,7 @@ export default function BmrScore(props: TProps) {
 				carbs: parseInt(nutrition.carbs.toFixed(0)),
 				// BMR: parseInt(BMR.toFixed(0)),
 				TDEE: parseInt(TDEE.toFixed(0)),
-				caloriesToAchieveGoal: newCaloriesToAchiveGoal,
+				caloriesToAchieveGoal: newCaloriesToAchieveGoal,
 			});
 		}
 		localStorage.setItem('user-personal-data', dataForLocalStorage);
@@ -206,15 +206,15 @@ export default function BmrScore(props: TProps) {
 	): number => (actualTDEE - (protein * 4 + fat * 9)) / 4;
 
 	useEffect(() => {
-		const newCaloriesToAchiveGoal = calculateCaloriesToAchieveGoal();
-		setCaloriesToAchieveGoal(newCaloriesToAchiveGoal);
-		setNutrition(calculateNutrition(props.goal, newCaloriesToAchiveGoal));
+		const newCaloriesToAchieveGoal = calculateCaloriesToAchieveGoal();
+		setCaloriesToAchieveGoal(newCaloriesToAchieveGoal);
+		setNutrition(calculateNutrition(props.goal, newCaloriesToAchieveGoal));
 	}, [TDEE]);
 
 	useEffect(() => {
-		const newCaloriesToAchiveGoal = calculateCaloriesToAchieveGoal();
-		setCaloriesToAchieveGoal(newCaloriesToAchiveGoal);
-		setNutrition(calculateNutrition(props.goal, newCaloriesToAchiveGoal));
+		const newCaloriesToAchieveGoal = calculateCaloriesToAchieveGoal();
+		setCaloriesToAchieveGoal(newCaloriesToAchieveGoal);
+		setNutrition(calculateNutrition(props.goal, newCaloriesToAchieveGoal));
 	}, []);
 
 	return (
@@ -235,13 +235,13 @@ export default function BmrScore(props: TProps) {
 						? `(-${helperUnit} / ${T_WEEK})`
 						: null}
 					{props.goal === 'keepWeight'
-						? `(${T_WEIGHT_MAINTANCE})`
+						? `(${T_WEIGHT_MAINTENANCE})`
 						: null}
 					{props.goal === 'gainWeight'
 						? `(+${helperUnit} / ${T_WEEK})`
 						: null}
 				</label>
-				<div className="nutritions">
+				<div className="nutritious">
 					<p className="text_nutrition text1">
 						{T_PROTEIN}
 						<span>{`${nutrition.protein.toFixed(0)}g`}</span>

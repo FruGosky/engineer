@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-export default function PlanForBegginersWoman() {
+export default function PlanForBeginnersWoman() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_WOMEN = translation('page.exercises.beginners-plan.women');

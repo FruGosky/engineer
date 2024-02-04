@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import './PlanForBeginners.scss';
-export default function PlanForBegginersMan() {
+export default function PlanForBeginnersMan() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_MEN = translation('page.exercises.beginners-plan.men');

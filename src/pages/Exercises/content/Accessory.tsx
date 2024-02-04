@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { EXERCISES_LINK } from '../Exercises';
 import { INTERMEDIATE_EXERCISES_LINK } from '../IntermediateExercises/IntermediateExercises';
 
-export default function Accesory() {
+export default function Accessory() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_SIDE_RAISES = translation(

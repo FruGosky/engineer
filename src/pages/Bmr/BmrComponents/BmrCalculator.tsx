@@ -41,7 +41,7 @@ export default function BmrCalculator(): JSX.Element {
 	const T_CHOOSE_GOAL = translation('page.bmr.choose-goal');
 	const T_LOSE_WEIGHT = translation('page.bmr.lose-weight');
 	const T_GAIN_WEIGHT = translation('page.bmr.gain-weight');
-	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
+	const T_WEIGHT_MAINTENANCE = translation('page.bmr.weight-maintenance');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
@@ -50,7 +50,7 @@ export default function BmrCalculator(): JSX.Element {
 	const [units, setUnits] = useState<TUnits>('metric');
 	const [weightUnit, setWeightUnit] = useState<TWeightUnit>('kg');
 	const [heightUnit, setHeightUnit] = useState<THeightUnit>('cm');
-	const [helperUnit, setHeleperUnit] = useState<THelperUnit>('500g');
+	const [helperUnit, setHelperUnit] = useState<THelperUnit>('500g');
 	const [sex, setSex] = useState<TSex>('male');
 	const [activity, setActivity] = useState<TActivity>('none');
 	const [goal, setGoal] = useState<TGoal>('keepWeight');
@@ -188,7 +188,7 @@ export default function BmrCalculator(): JSX.Element {
 		) {
 			return;
 		}
-		//TODO? Puzzels to discover why it needs type below if ure checking type before
+		//TODO? Puzzles to discover why it needs type below if ure checking type before
 		setAllStatesFromData(parsedUserPersonalData as TBmrData);
 		setIsSubmitted(true);
 	}, []);
@@ -197,11 +197,11 @@ export default function BmrCalculator(): JSX.Element {
 		if (units === 'metric') {
 			setWeightUnit('kg');
 			setHeightUnit('cm');
-			setHeleperUnit('500g');
+			setHelperUnit('500g');
 		} else if (units === 'imperial') {
 			setWeightUnit('lbs');
 			setHeightUnit('ft');
-			setHeleperUnit('1.1 lb');
+			setHelperUnit('1.1 lb');
 		}
 	};
 	useEffect(() => {
@@ -353,7 +353,9 @@ export default function BmrCalculator(): JSX.Element {
 						value={goal}
 					>
 						<option value="loseWeight">{T_LOSE_WEIGHT}</option>
-						<option value="keepWeight">{T_WEIGHT_MAINTANCE}</option>
+						<option value="keepWeight">
+							{T_WEIGHT_MAINTENANCE}
+						</option>
 						<option value="gainWeight">{T_GAIN_WEIGHT}</option>
 					</select>
 					<div className="row g-3 mb-3 d-flex justify-content-center">

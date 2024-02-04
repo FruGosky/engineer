@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import LoadingIcon from '../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
@@ -20,7 +19,6 @@ export const PROFILE_TITLE = 'page.profile.title';
 export const PROFILE_LINK = '/profile';
 
 export default function Profile() {
-	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(PROFILE_TITLE);
@@ -51,7 +49,7 @@ export default function Profile() {
 	const T_CHOOSE_GOAL = translation('page.bmr.choose-goal');
 	const T_LOSE_WEIGHT = translation('page.bmr.lose-weight');
 	const T_GAIN_WEIGHT = translation('page.bmr.gain-weight');
-	const T_WEIGHT_MAINTANCE = translation('page.bmr.weight-maintenance');
+	const T_WEIGHT_MAINTENANCE = translation('page.bmr.weight-maintenance');
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
@@ -168,16 +166,7 @@ export default function Profile() {
 		}
 	}, []);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 1_000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	return loading ? (
-		<LoadingIcon />
-	) : (
+	return (
 		<div className="d-flex align-items-center justify-content-center">
 			<div className="col-md-12 col-lg-6 col-xl-5 card shadow">
 				<div className="d-flex justify-content-center mb-3 ">
@@ -289,7 +278,9 @@ export default function Profile() {
 						value={goal}
 					>
 						<option value="loseWeight">{T_LOSE_WEIGHT}</option>
-						<option value="keepWeight">{T_WEIGHT_MAINTANCE}</option>
+						<option value="keepWeight">
+							{T_WEIGHT_MAINTENANCE}
+						</option>
 						<option value="gainWeight">{T_GAIN_WEIGHT}</option>
 					</select>
 					<div className="row g-3 mb-3 d-flex justify-content-center">

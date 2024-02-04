@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import LoadingIcon from '../../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import './BeginnerExercises.scss';
@@ -11,7 +9,6 @@ export const BEGINNERS_EXERCISES_TITLE =
 export const BEGINNERS_EXERCISES_LINK = '/beginners-exercises';
 
 export default function BeginnersExercises() {
-	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(BEGINNERS_EXERCISES_TITLE);
@@ -20,12 +17,6 @@ export default function BeginnersExercises() {
 	);
 
 	useWebsiteTitle(TRANSLATED_TITLE);
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 1_000);
-	}, []);
 
 	const exercisesArray: string[] = [
 		'squats',
@@ -43,9 +34,7 @@ export default function BeginnersExercises() {
 		'narrow-bench-press',
 	];
 
-	return loading ? (
-		<LoadingIcon />
-	) : (
+	return (
 		<div className="container">
 			<div className="container_top mb-5 text-center">
 				<h1>{TRANSLATED_EXERCISE_BEGINNERS}</h1>

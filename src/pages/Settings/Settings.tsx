@@ -21,8 +21,7 @@ type TBodyForPostUpdate = {
 };
 
 export default function Settings() {
-	const [isLoading, setIsLoading] = useState(true);
-	const [isSubmited, setIsSubmited] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 	const { t: translation } = useTranslation();
 	const [token, setToken] = useState<any>({});
 	const [username, setUsername] = useState('');
@@ -50,7 +49,7 @@ export default function Settings() {
 
 	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setIsSubmited(true);
+		setIsSubmitted(true);
 		saveData();
 	};
 
@@ -88,7 +87,7 @@ export default function Settings() {
 					})
 				);
 				loadDataFromLocalStorage();
-				setIsSubmited(false);
+				setIsSubmitted(false);
 				return true;
 			})
 			.catch((error) => {
@@ -101,7 +100,7 @@ export default function Settings() {
 					duration: 1000,
 					position: 'top-right',
 				});
-				setIsSubmited(false);
+				setIsSubmitted(false);
 				return false;
 			});
 	};
@@ -123,15 +122,7 @@ export default function Settings() {
 		loadDataFromLocalStorage();
 	}, []);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setIsLoading(false);
-		}, 1_000);
-	}, []);
-
-	return isLoading ? (
-		<LoadingIcon />
-	) : (
+	return (
 		<div className="d-flex align-items-center justify-content-center">
 			<div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 card shadow">
 				<div className="d-flex justify-content-center mb-3">
@@ -179,7 +170,7 @@ export default function Settings() {
 					) : null}
 
 					<div className="d-flex align-items-center justify-content-center mt-3">
-						{isSubmited ? (
+						{isSubmitted ? (
 							<LoadingIcon />
 						) : (
 							<button

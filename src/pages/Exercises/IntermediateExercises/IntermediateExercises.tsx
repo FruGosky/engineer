@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import LoadingIcon from '../../../components/LoadingIcon/LoadingIcon';
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import ExercisesTitleCard from '../components/ExercisesTitleCard';
@@ -11,18 +9,11 @@ export const INTERMEDIATE_EXERCISES_TITLE =
 export const INTERMEDIATE_EXERCISES_LINK = '/intermediate-exercises';
 
 export default function IntermediateExercises() {
-	const [loading, setLoading] = useState(true);
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(INTERMEDIATE_EXERCISES_TITLE);
 	const TRANSLATED_ACCESSORY = translation('page.exercises.accessory.title');
 	useWebsiteTitle(TRANSLATED_TITLE);
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 1_000);
-	}, []);
 
 	const exercisesArray: string[] = [
 		'y-rise',
@@ -39,9 +30,7 @@ export default function IntermediateExercises() {
 		'hip-thrust',
 	];
 
-	return loading ? (
-		<LoadingIcon />
-	) : (
+	return (
 		<div className="container">
 			<div className="container_top m-5 text-center">
 				<h1>{TRANSLATED_ACCESSORY}</h1>
