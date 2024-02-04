@@ -41,7 +41,11 @@
 			"option-available-only-for-login-users": "Opcja dostępna tylko dla zalogowanych użytkowników!",
 			"click": "Kliknij",
 			"here": "Tutaj",
-			"to-register": "Aby się zarejestrować"
+			"to-register": "Aby się zarejestrować",
+			"switch-to": "Zmień na",
+			"dark": "Ciemny",
+			"light": "Jasny",
+			"theme": "Motyw"
 		},
 		"page": {
 			"home": {

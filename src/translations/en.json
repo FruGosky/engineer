@@ -41,7 +41,11 @@
 			"option-available-only-for-login-users": "Option available only for login users!",
 			"click": "Click",
 			"here": "Here",
-			"to-register": "To register"
+			"to-register": "To register",
+			"switch-to": "Switch to",
+			"dark": "Dark",
+			"light": "Light",
+			"theme": "Theme"
 		},
 		"page": {
 			"home": {
