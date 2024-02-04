@@ -181,7 +181,7 @@ export default function Calories() {
 	}, []);
 
 	return (
-		<div className="d-flex align-items-center justify-content-center">
+		<div className="d-flex align-items-center justify-content-center my-3">
 			<div className={`${styles.main_card} card shadow`}>
 				<h2 className="text-center border-bottom border-info p-2">
 					{translation('page.calories.monitor-your-daily-calories')}
@@ -191,27 +191,29 @@ export default function Calories() {
 				>
 					<div className="d-flex flex-column justify-content-between">
 						<p className="h5 text-info">{`${
-							token?.displayName
-						} - ${userWeight?.toFixed(2)} ${units}`}</p>
+							token?.displayName || ''
+						} ${userWeight?.toFixed(2)} ${units}`}</p>
 						<p>{`${day}/${month}/${year}`}</p>
 					</div>
 					<div className="text-end">
-						<p className="h5 text-info">{`${consumedCalories.toFixed()}/${caloriesGoal} kcal`}</p>
-						<p
-							className={`${styles.text_protein}`}
-						>{`${consumedNutrition.protein.toFixed()}/${
-							nutritionGoal.protein
-						} g ${TRANSLATION_PROTEIN}`}</p>{' '}
-						<p
-							className={`${styles.text_fat}`}
-						>{`${consumedNutrition.fat.toFixed()}/${
-							nutritionGoal.fat
-						} g ${TRANSLATION_FAT}`}</p>{' '}
-						<p
-							className={`${styles.text_carbs}`}
-						>{`${consumedNutrition.carbs.toFixed()}/${
-							nutritionGoal.carbs
-						} g ${TRANSLATION_CARBS}`}</p>{' '}
+						<p className="h5 text-info">
+							{`${consumedCalories.toFixed()}/${caloriesGoal} kcal`}
+						</p>
+						<p className={`${styles.text_protein}`}>
+							{`${consumedNutrition.protein.toFixed()}/${
+								nutritionGoal.protein
+							} g ${TRANSLATION_PROTEIN}`}
+						</p>
+						<p className={`${styles.text_fat}`}>
+							{`${consumedNutrition.fat.toFixed()}/${
+								nutritionGoal.fat
+							} g ${TRANSLATION_FAT}`}
+						</p>
+						<p className={`${styles.text_carbs}`}>
+							{`${consumedNutrition.carbs.toFixed()}/${
+								nutritionGoal.carbs
+							} g ${TRANSLATION_CARBS}`}
+						</p>
 					</div>
 				</div>
 				<div

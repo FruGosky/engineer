@@ -51,6 +51,11 @@ export default function Profile() {
 	const T_GAIN_WEIGHT = translation('page.bmr.gain-weight');
 	const T_WEIGHT_MAINTENANCE = translation('page.bmr.weight-maintenance');
 
+	const T_CLOSE = translation('common.close');
+	const T_GO_TO = translation('common.go-to');
+	const T_BMI = translation('page.bmi.title');
+	const T_BMR = translation('page.bmr.title');
+
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const [heightValue, setHeightValue] = useState<number>(0);
 	const [weightValue, setWeightValue] = useState<number>(0);
@@ -396,27 +401,34 @@ export default function Profile() {
 								type="button"
 								className="btn-close"
 								data-bs-dismiss="alert"
-								aria-label="Close"
+								aria-label={`${T_CLOSE}`}
+								title={`${T_CLOSE}`}
 								onClick={() => setIsSubmitted(false)}
-							></button>
+							/>
 						</div>
 
 						<div className="d-flex justify-content-around align-items-center flex-column m-2">
 							<NavLink
 								className="btn btn-outline-info w-lg-25 w-sm-75 m-2"
 								to={BMI_LINK}
+								title={`${T_GO_TO} ${T_BMI}`}
+								aria-label={`${T_GO_TO} ${T_BMI}`}
 							>
-								BMI
+								{`${T_BMI}`}
 							</NavLink>
 							<NavLink
 								className="btn btn-outline-info w-lg-25 w-sm-75 m-2"
 								to={BMR_LINK}
+								title={`${T_GO_TO} ${T_BMR}`}
+								aria-label={`${T_GO_TO} ${T_BMR}`}
 							>
-								BMR
+								{`${T_BMR}`}
 							</NavLink>
 							<NavLink
 								className="btn btn-outline-info w-lg-25 w-sm-75 m-2"
 								to={CALORIES_LINK}
+								title={`${T_GO_TO} ${T_CALORIES}`}
+								aria-label={`${T_GO_TO} ${T_CALORIES}`}
 							>
 								{T_CALORIES}
 							</NavLink>

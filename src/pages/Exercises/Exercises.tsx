@@ -51,7 +51,7 @@ export default function Exercises() {
 
 	return (
 		<div className="site-wrapper text-center d-flex align-items-center justify-content-center">
-			<div className="container inner exercises_main_content rounded shadow">
+			<div className="container inner rounded">
 				<div>
 					<img src={dumbbell} alt="dumbbell" />
 					<h2 className="cover-heading text-center">

@@ -3,9 +3,15 @@ import Logo from '../../../Logo/Logo';
 import MenuItems from './MenuItems/MenuItems';
 import * as bootstrap from 'bootstrap';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Menu() {
 	const [navbar, setNavbar] = useState<bootstrap.Offcanvas | null>(null);
+	const { t: translation } = useTranslation();
+
+	const TOGGLE = translation('common.toggle');
+	const MENU = translation('common.menu').toLowerCase();
+	const CLOSE = translation('common.close');
 
 	useEffect(() => {
 		const navbarModalElement = document.getElementById('offcanvasNavbar');
@@ -21,7 +27,8 @@ export default function Menu() {
 				type="button"
 				onClick={() => navbar?.show()}
 				aria-controls="offcanvasNavbar"
-				aria-label="Toggle navigation"
+				title={`${TOGGLE} ${MENU}`}
+				aria-label={`${TOGGLE} ${MENU}`}
 			>
 				<span className="navbar-toggler-icon" />
 			</button>
@@ -42,7 +49,8 @@ export default function Menu() {
 						type="button"
 						className="btn-close"
 						onClick={() => navbar?.hide()}
-						aria-label="Close"
+						title={`${CLOSE} ${MENU}`}
+						aria-label={`${CLOSE} ${MENU}`}
 					/>
 				</div>
 				<div className="offcanvas-body">

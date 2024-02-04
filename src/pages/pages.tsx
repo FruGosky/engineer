@@ -37,16 +37,16 @@ export const menuPages: TPages[] = [
 	{ label: BMI_TITLE, path: BMI_LINK, element: <Bmi />, needAuth: false },
 	{ label: BMR_TITLE, path: BMR_LINK, element: <Bmr />, needAuth: false },
 	{
-		label: CALORIES_TITLE,
-		path: CALORIES_LINK,
-		element: <Calories />,
-		needAuth: true,
-	},
-	{
 		label: EXERCISES_TITLE,
 		path: EXERCISES_LINK,
 		element: <Exercises />,
 		needAuth: false,
+	},
+	{
+		label: CALORIES_TITLE,
+		path: CALORIES_LINK,
+		element: <Calories />,
+		needAuth: true,
 	},
 ];
 

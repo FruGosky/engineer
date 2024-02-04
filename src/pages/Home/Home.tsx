@@ -46,6 +46,8 @@ export default function Home() {
 	const CLICK = translation('common.click');
 	const HERE = translation('common.here').toLowerCase();
 	const TO_REGISTER = translation('common.to-register').toLowerCase();
+	const GO_TO = translation('common.go-to');
+	const REGISTRATION = translation('common.registration').toLowerCase();
 
 	// THROWING ERROR EXAMPLES LEAVE IT FOR NOW
 	// throw new Error('common.internet-problem');
@@ -66,7 +68,8 @@ export default function Home() {
 							<h3 className="card-title">
 								<Link
 									to={BMI_LINK}
-									title={`${BMI_TITLE}`}
+									aria-label={`${GO_TO} ${BMI_TITLE}`}
+									title={`${GO_TO} ${BMI_TITLE}`}
 								>{`${BMI_TITLE}`}</Link>
 							</h3>
 							<p>{`${BMI_DESCRIPTION}`}</p>
@@ -77,7 +80,8 @@ export default function Home() {
 							<h3 className="card-title">
 								<Link
 									to={BMR_LINK}
-									title={`${BMR_TITLE}`}
+									aria-label={`${GO_TO} ${BMR_TITLE}`}
+									title={`${GO_TO} ${BMR_TITLE}`}
 								>{`${BMR_TITLE}`}</Link>
 							</h3>
 							<p>{`${BMR_DESCRIPTION}`}</p>
@@ -88,7 +92,8 @@ export default function Home() {
 							<h3 className="card-title">
 								<Link
 									to={EXERCISES_LINK}
-									title={`${EXERCISES_TITLE}`}
+									aria-label={`${GO_TO} ${EXERCISES_TITLE}`}
+									title={`${GO_TO} ${EXERCISES_TITLE}`}
 								>{`${EXERCISES_TITLE}`}</Link>
 							</h3>
 							<p>{`${EXERCISES_DESCRIPTION}`}</p>
@@ -100,7 +105,8 @@ export default function Home() {
 								{auth ? (
 									<Link
 										to={CALORIES_LINK}
-										title={`${CALORIES_TITLE}`}
+										aria-label={`${GO_TO} ${CALORIES_TITLE}`}
+										title={`${GO_TO} ${CALORIES_TITLE}`}
 									>{`${CALORIES_TITLE}`}</Link>
 								) : (
 									`${CALORIES_TITLE}`
@@ -115,6 +121,8 @@ export default function Home() {
 									onClick={() => {
 										modals.signupModal?.show();
 									}}
+									aria-label={`${GO_TO} ${REGISTRATION}`}
+									title={`${GO_TO} ${REGISTRATION}`}
 								>
 									{`${HERE}`}
 								</button>

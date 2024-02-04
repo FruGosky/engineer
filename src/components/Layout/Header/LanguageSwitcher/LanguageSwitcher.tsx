@@ -10,6 +10,13 @@ export default function LanguageSwitcher() {
 	const currentLanguage = useCurrentLanguage();
 	const [dropdown, setDropdown] = useState<bootstrap.Dropdown | null>(null);
 
+	const T_TOGGLE_LANGUAGE_SWITCHER_MENU = translation(
+		'common.toggle-language-switcher-menu'
+	);
+	const T_CURRENT_LANGUAGE = translation(
+		'common.current-language'
+	).toLowerCase();
+
 	useEffect(() => {
 		const dropdownModalElement = document.getElementById(
 			'languageSwitcherDropdown'
@@ -32,6 +39,8 @@ export default function LanguageSwitcher() {
 				className="dropdown-toggle btn btn-primary border-2"
 				onClick={() => dropdown?.toggle()}
 				aria-expanded="false"
+				title={`${T_TOGGLE_LANGUAGE_SWITCHER_MENU} - ${T_CURRENT_LANGUAGE}: ${currentLanguage}`}
+				aria-label={`${T_TOGGLE_LANGUAGE_SWITCHER_MENU} - ${T_CURRENT_LANGUAGE}: ${currentLanguage}`}
 			>
 				{i18n.language.toUpperCase()}
 			</button>

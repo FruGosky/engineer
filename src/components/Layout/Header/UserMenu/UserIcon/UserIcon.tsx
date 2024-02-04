@@ -21,8 +21,9 @@ export default function UserIcon() {
 		setDropdown(bootstrapDropdown);
 	}, []);
 
+	const TOGGLE = translation('common.toggle');
+	const MENU = translation('common.menu').toLowerCase();
 	const LOGOUT = translation('common.logout');
-
 	const SUCCESSFUL_LOGOUT = translation('common.successful-logout');
 
 	return (
@@ -37,6 +38,8 @@ export default function UserIcon() {
 						e.preventDefault();
 						dropdown?.toggle();
 					}}
+					title={`${TOGGLE} ${MENU}`}
+					aria-label={`${TOGGLE} ${MENU}`}
 				>
 					<img
 						src={userIcon}

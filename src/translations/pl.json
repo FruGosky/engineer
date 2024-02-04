@@ -10,6 +10,7 @@
 			"confirm-password": "Potwierdź hasło",
 			"no-account-yet": "Nie masz jeszcze konta",
 			"already-have-account": "Masz już konto",
+			"invalid-username": "Nieprawidłowa nazwa użytkownika: Upewnij się, że podałeś poprawną nazwę użytkownika",
 			"invalid-email": "Nieprawidłowy email: Upewnij się, że podałeś poprawny adres e-mail, np. email@gmail.com",
 			"invalid-password": "Nieprawidłowe hasło: Minimum 12 znaków, co najmniej 1 wielka litera, 1 mała litera, 1 cyfra i 1 znak specjalny",
 			"invalid-password-confirmation": "Nieudane potwierdzenie hasła: Pole 'Hasło' i 'Potwierdź hasło' musza być takie same",
@@ -45,7 +46,13 @@
 			"switch-to": "Zmień na",
 			"dark": "Ciemny",
 			"light": "Jasny",
-			"theme": "Motyw"
+			"theme": "Motyw",
+			"toggle-language-switcher-menu": "Przełącz menu zmiany języka",
+			"current-language": "Obecny język",
+			"toggle": "Przełącz",
+			"menu": "Menu",
+			"go-to": "Przejdź do",
+			"registration": "Rejestracji"
 		},
 		"page": {
 			"home": {

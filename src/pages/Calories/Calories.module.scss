@@ -1,34 +1,37 @@
 .head_section {
-  width: 100%;
+	width: 100%;
 }
 .main_card {
-  width: 60vw;
-  margin: 0;
+	width: 60vw;
+	margin: 0;
 }
 .item_card {
-  width: 60vw;
-  margin: 0;
+	width: 60vw;
+	margin: 0;
 }
 .new_product {
-  width: 55vw;
+	width: 55vw;
 }
 
 @media (max-width: 599px) {
-  .main_card,
-  .item_card,
-  .head_section {
-    width: 100%;
-    margin: 0;
-  }
+	.main_card,
+	.item_card,
+	.head_section {
+		width: 100%;
+		margin: 0;
+	}
 }
 .text_protein {
-  color: rgb(236, 46, 135);
+	color: rgb(236, 46, 135);
+	font-weight: 500;
 }
 
 .text_fat {
-  color: rgb(175, 190, 33);
+	color: rgb(175, 190, 33);
+	font-weight: 500;
 }
 
 .text_carbs {
-  color: rgb(16, 175, 114);
+	color: rgb(16, 175, 114);
+	font-weight: 500;
 }

@@ -27,6 +27,7 @@ export default function ThemeSwitcher() {
 		<>
 			<div className="form-check form-switch d-flex align-items-center justify-content-center">
 				<input
+					title={ariaLabelForThemeSwitcher}
 					className="form-check-input"
 					type="checkbox"
 					role="switch"

@@ -12,7 +12,7 @@ export default function ExercisesModal(
 ): JSX.Element {
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_CLOSE = translation('common.close');
+	const CLOSE = translation('common.close');
 
 	const handleLink = () => {
 		window.open(
@@ -33,10 +33,11 @@ export default function ExercisesModal(
 							type="button"
 							className="btn-close"
 							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
+							aria-label={`${CLOSE}`}
+							title={`${CLOSE}`}
+						/>
 					</div>
-					<div className="modal-body">
+					<div className="modal-body bg-body-secondary">
 						{translation(
 							`page.exercises.${props.level}.${props.exercise}.description`
 						)}
@@ -47,7 +48,7 @@ export default function ExercisesModal(
 							className="btn btn-danger"
 							data-bs-dismiss="modal"
 						>
-							{TRANSLATED_CLOSE}
+							{`${CLOSE}`}
 						</button>
 						<button
 							type="button"
