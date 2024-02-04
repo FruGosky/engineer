@@ -48,88 +48,90 @@ export default function PlanForBeginnersMan() {
 	);
 
 	return (
-		<div className="mt-5 card-body shadow">
-			<h2 className="text-center">{TRANSLATED_MEN}</h2>
-			<table className="table text-center">
-				<caption className="text-center">
-					{TRANSLATED_CAPTION}:
-					<ul className="list-unstyled">
-						<li>
-							<span>
-								{TRANSLATED_MONDAY}
-								<span className="letter_red ms-1">A</span>
-							</span>
-						</li>
-						<li>
-							<span>
-								{TRANSLATED_WEDNESDAY}
-								<span className="letter_green ms-1">B</span>
-							</span>
-						</li>
-						<li>
-							<span>
-								{TRANSLATED_FRIDAY}
-								<span className="letter_red ms-1">A</span>
-							</span>
-						</li>
-						<li>
-							<span>
-								{TRANSLATED_MONDAY}
-								<span className="letter_green ms-1">B</span>
-							</span>
-						</li>
-						<li>
-							<span>
-								{TRANSLATED_WEDNESDAY}
-								<span className="letter_red ms-1">A</span>
-							</span>
-						</li>
-						<li>
-							<span>
-								{TRANSLATED_FRIDAY}
-								<span className="letter_green ms-1">B</span>
-							</span>
-						</li>
-					</ul>
-				</caption>
+		<div className="mt-5 pt-2 pb-0 card">
+			<div className="card-body">
+				<h2 className="text-center card-title">{TRANSLATED_MEN}</h2>
+				<table className="table text-center m-0">
+					<caption className="text-center">
+						{TRANSLATED_CAPTION}:
+						<ul className="list-unstyled m-1">
+							<li>
+								<span>
+									{TRANSLATED_MONDAY}
+									<span className="letter_red ms-1">A</span>
+								</span>
+							</li>
+							<li>
+								<span>
+									{TRANSLATED_WEDNESDAY}
+									<span className="letter_green ms-1">B</span>
+								</span>
+							</li>
+							<li>
+								<span>
+									{TRANSLATED_FRIDAY}
+									<span className="letter_red ms-1">A</span>
+								</span>
+							</li>
+							<li>
+								<span>
+									{TRANSLATED_MONDAY}
+									<span className="letter_green ms-1">B</span>
+								</span>
+							</li>
+							<li>
+								<span>
+									{TRANSLATED_WEDNESDAY}
+									<span className="letter_red ms-1">A</span>
+								</span>
+							</li>
+							<li>
+								<span>
+									{TRANSLATED_FRIDAY}
+									<span className="letter_green ms-1">B</span>
+								</span>
+							</li>
+						</ul>
+					</caption>
 
-				<thead>
-					<tr>
-						<th scope="col">{`${TRANSLATED_TRAINING} A`}</th>
-						<th scope="col">{`${TRANSLATED_TRAINING} B`}</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{`${TRANSLATED_SQUATS} 5x5`}</td>
-						<td>{`${TRANSLATED_CLASSIC_DEADLIFT} 5x5`}</td>
-					</tr>
-					<tr>
-						<td>{`${TRANSLATED_BENCH_PRESS} 5x5`}</td>
-						<td>{`${TRANSLATED_MILITARY_PRESS} 5x5`}</td>
-					</tr>
-					<tr>
-						<td>{`${TRANSLATED_ROWING} 5x5`}</td>
-						<td>{`${TRANSLATED_CLOSE_GRIP_CHIN_UPS} 5x5`}</td>
-					</tr>
-					<tr>
-						<td>{`${TRANSLATED_SIDE_RAISES} 3x8`}</td>
-						<td>{`${TRANSLATED_NARROW_BENCH_PRESS} 3x8`}</td>
-					</tr>
-					<tr>
-						<td>{'Biceps + Triceps'}</td>
-						<td>Biceps 3x8</td>
-					</tr>
-					<tr>
-						<td>{`${TRANSLATED_CABLE_CRUNCH} 3x8`}</td>
-						<td>{`${TRANSLATED_PLANK} 3x8`}</td>
-					</tr>
-					<tr>
-						<td>{`${TRANSLATED_CALVES} 3x8`}</td>
-						<td>{`${TRANSLATED_CALVES} 3x8`}</td>
-					</tr>
-				</tbody>
-			</table>
+					<thead>
+						<tr>
+							<th scope="col">{`${TRANSLATED_TRAINING} A`}</th>
+							<th scope="col">{`${TRANSLATED_TRAINING} B`}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{`${TRANSLATED_SQUATS} 5x5`}</td>
+							<td>{`${TRANSLATED_CLASSIC_DEADLIFT} 5x5`}</td>
+						</tr>
+						<tr>
+							<td>{`${TRANSLATED_BENCH_PRESS} 5x5`}</td>
+							<td>{`${TRANSLATED_MILITARY_PRESS} 5x5`}</td>
+						</tr>
+						<tr>
+							<td>{`${TRANSLATED_ROWING} 5x5`}</td>
+							<td>{`${TRANSLATED_CLOSE_GRIP_CHIN_UPS} 5x5`}</td>
+						</tr>
+						<tr>
+							<td>{`${TRANSLATED_SIDE_RAISES} 3x8`}</td>
+							<td>{`${TRANSLATED_NARROW_BENCH_PRESS} 3x8`}</td>
+						</tr>
+						<tr>
+							<td>{'Biceps + Triceps'}</td>
+							<td>Biceps 3x8</td>
+						</tr>
+						<tr>
+							<td>{`${TRANSLATED_CABLE_CRUNCH} 3x8`}</td>
+							<td>{`${TRANSLATED_PLANK} 3x8`}</td>
+						</tr>
+						<tr>
+							<td>{`${TRANSLATED_CALVES} 3x8`}</td>
+							<td>{`${TRANSLATED_CALVES} 3x8`}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }
