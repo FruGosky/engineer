@@ -21,12 +21,12 @@ export default function LoginModal() {
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h1
+							<h2
 								className="modal-title fs-5"
 								id="loginModalLabel"
 							>
 								{LOGIN}
-							</h1>
+							</h2>
 							<button
 								type="button"
 								className="btn-close"

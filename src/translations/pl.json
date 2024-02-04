@@ -39,8 +39,26 @@
 		},
 		"page": {
 			"home": {
-				"title": "Strona główna",
-				"welcome": "Witaj na stronie DoIt-Healthy"
+				"title": "DoIt-Healthy",
+				"header": "Obliczaj, Śledź i Bądź Fit z DoIt-Healthy",
+				"description": "Witaj w DoIt-Healthy – Twoim kompleksowym miejscu do dbania o zdrowie, gdzie zdrowie spotyka się z prostotą. Obliczaj, śledź i rozpocznij podróż ku zdrowszemu stylowi życia dzięki naszym narzędziom stworzonym, aby wzmocnić Twoje dobre samopoczucie.",
+				"summary": "DoIt-Healthy to nie tylko strona internetowa; to Twoi partnerzy w podróży ku zdrowszej wersji siebie. Wzbogać się w wiedzę, śledź postępy i podejmuj świadome decyzje dotyczące własnego samopoczucia. Rozpocznij swoje transformacyjne doświadczenie już dziś!",
+				"bmi": {
+					"title": "Kalkulator BMI",
+					"description": "Odkryj tajniki składu swojego ciała za pomocą intuicyjnego kalkulatora BMI. Bez względu na to, czy ustawiasz cele fitness czy monitorujesz postępy, nasze narzędzie zapewnia szybką i dokładną ocenę, kierując Cię ścieżką do optymalnego zdrowia."
+				},
+				"bmr": {
+					"title": "Kalkulator BMR",
+					"description": "Zrozum bazowy poziom swojego organizmu dzięki naszemu kalkulatorowi BMR. Odkryj ilość kalorii, jaką Twój organizm potrzebuje w stanie spoczynku, i dostosuj swój plan żywieniowy dla zrównoważonego zarządzania wagą. Pozbądź się domysłów przy utrzymaniu zdrowej równowagi."
+				},
+				"exercises": {
+					"title": "Biblioteka Ćwiczeń",
+					"description": "Przeglądaj naszą dobrze dobraną listę ćwiczeń odpowiednich dla wszystkich poziomów sprawności. Od treningu siłowego po kardio i rutyny elastyczności, nasza biblioteka ćwiczeń zapewnia dostęp do różnorodnych treningów, sprawiając, że fitness staje się przyjemny i dostępny."
+				},
+				"calories": {
+					"title": "Kalkulator Kalorii",
+					"description": "Doprecyzuj swoją dietę dzięki naszemu kalkulatorowi kalorii. Bez względu na to, czy celem jest utrata wagi, utrzymanie, czy zyskanie mięśni, dostosuj swój plan żywieniowy z precyzją. Osiągnij równowagę zgodną z Twoim unikalnym stylem życia i celami."
+				}
 			},
 			"bmi": {
 				"title": "Bmi",
@@ -197,7 +215,7 @@
 					},
 					"abductors": {
 						"title": "Odwodziciele",
-						"description": "Ćwiczenie wykonujemy na maszynie zgodnie z instrukcja - cieżko dostarczyć uniwersalny opis, ponieważ każda maszyna jest trochę inna",
+						"description": "Ćwiczenie wykonujemy na maszynie zgodnie z instrukcja - ciężko dostarczyć uniwersalny opis, ponieważ każda maszyna jest trochę inna",
 						"link": "https://www.youtube.com/watch?v=IydaB14rnlg"
 					},
 					"plank": {

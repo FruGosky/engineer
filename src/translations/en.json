@@ -8,7 +8,7 @@
 			"confirm-password": "Confirm password",
 			"no-account-yet": "No account yet",
 			"already-have-account": "Already have account",
-			"invalid-email": "Invalid email: Plase make sure you have provided the correct email e.g. email@gmail.com",
+			"invalid-email": "Invalid email: Please make sure you have provided the correct email e.g. email@gmail.com",
 			"invalid-password": "Invalid password: Minimum 12 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
 			"invalid-password-confirmation": "Invalid password confirmation: Field 'Password' and 'Confirm Password' needs to be the same",
 			"successful-login": "Successful login",
@@ -39,8 +39,26 @@
 		},
 		"page": {
 			"home": {
-				"title": "Home",
-				"welcome": "Welcome to the DoIt-Healthy website"
+				"title": "DoIt-Healthy",
+				"header": "Calculate, Track, and Stay Fit with DoIt-Healthy",
+				"description": "Welcome to DoIt-Healthy – your comprehensive wellness destination where health meets simplicity. Calculate, track, and embark on your journey to a healthier lifestyle with our suite of tools designed to empower your well-being.",
+				"summary": "DoIt-Healthy is not just a website; it's your partner in the journey to a healthier you. Empower yourself with knowledge, track your progress, and make informed decisions about your well-being. Start your transformative experience today!",
+				"bmi": {
+					"title": "BMI Calculator",
+					"description": "Uncover insights into your body composition with our intuitive BMI calculator. Whether you're setting fitness goals or monitoring progress, our tool provides a quick and accurate assessment to guide your path to optimal health."
+				},
+				"bmr": {
+					"title": "BMR Calculator",
+					"description": "Understand your body's baseline with our BMR calculator. Discover the calories your body needs at rest and tailor your nutrition plan for sustainable weight management. Take the guesswork out of maintaining a healthy balance."
+				},
+				"exercises": {
+					"title": "Exercises Library",
+					"description": "Explore our curated list of exercises suitable for all fitness levels. From strength training to cardio and flexibility routines, our exercise library ensures you have access to diverse workouts, making fitness enjoyable and accessible."
+				},
+				"calories": {
+					"title": "Calories Calculator",
+					"description": "Fine-tune your nutrition with our calories calculator. Whether your goal is weight loss, maintenance, or muscle gain, personalize your diet plan with precision. Achieve the balance that aligns with your unique lifestyle and objectives."
+				}
 			},
 			"bmi": {
 				"title": "Bmi",
@@ -301,9 +319,9 @@
 			},
 			"profile": {
 				"title": "Profile",
-				"info": "Add your personal data below - it will automaticly appear in the BMI/BMR calculator and will set daily calories limit in the calories page according to your goal",
-				"success-info": "Success! You have sucesfully saved your personal data now u can check Calories page or go to BMI / BMR calculator",
-				"success-info1": "Success! You have sucesfully saved your personal data",
+				"info": "Add your personal data below - it will automatically appear in the BMI/BMR calculator and will set daily calories limit in the calories page according to your goal",
+				"success-info": "Success! You have successfully saved your personal data now u can check Calories page or go to BMI / BMR calculator",
+				"success-info1": "Success! You have successfully saved your personal data",
 				"success-info2": "Check Calories page or go to BMI / BMR calculator"
 			},
 			"settings": {

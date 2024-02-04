@@ -11,7 +11,7 @@ export default function Home() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(HOME_TITLE);
-	const WELCOME_MESSAGE = translation('page.home.welcome');
+	const HEADER = translation('page.home.header');
 
 	useWebsiteTitle(TRANSLATED_TITLE);
 
@@ -32,7 +32,7 @@ export default function Home() {
 		<LoadingIcon />
 	) : (
 		<div className="d-flex align-items-center justify-content-center">
-			{`${WELCOME_MESSAGE}`}
+			<h1>{`${HEADER}`}</h1>
 		</div>
 	);
 }

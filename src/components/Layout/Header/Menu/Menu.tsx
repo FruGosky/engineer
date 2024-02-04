@@ -10,8 +10,8 @@ export default function Menu() {
 	useEffect(() => {
 		const navbarModalElement = document.getElementById('offcanvasNavbar');
 		if (!navbarModalElement) return;
-		const bootstarpNavbar = new bootstrap.Offcanvas(navbarModalElement);
-		setNavbar(bootstarpNavbar);
+		const bootstrapNavbar = new bootstrap.Offcanvas(navbarModalElement);
+		setNavbar(bootstrapNavbar);
 	}, []);
 
 	return (
@@ -32,12 +32,12 @@ export default function Menu() {
 				aria-labelledby="offcanvasNavbarLabel"
 			>
 				<div className={`offcanvas-header ${styles.menuHeader}`}>
-					<h5
+					<span
 						className="offcanvas-title m-auto"
 						id="offcanvasNavbarLabel"
 					>
 						<Logo />
-					</h5>
+					</span>
 					<button
 						type="button"
 						className="btn-close"
