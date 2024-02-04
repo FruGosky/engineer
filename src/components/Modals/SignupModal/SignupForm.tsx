@@ -12,8 +12,7 @@ import { useModals } from '../../../context/modalsContext';
 import LoadingIcon from '../../LoadingIcon/LoadingIcon';
 
 export default function SignupForm() {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const [auth, setAuth] = useAuth();
+	const [, setAuth] = useAuth();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');

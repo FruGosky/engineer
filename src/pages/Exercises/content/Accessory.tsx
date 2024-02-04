@@ -121,6 +121,7 @@ export default function Accessory() {
 						<td>{TRANSLATED_BUTTERFLY}</td>
 						<td>{TRANSLATED_BUTTOCK_ISOLATION}</td>
 						<td>{TRANSLATED_BUTTERFLY}</td>
+						<td>{'-'}</td>
 					</tr>
 					<tr>
 						<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>

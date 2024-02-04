@@ -9,7 +9,6 @@ export default function Bmr() {
 	const { t: translation } = useTranslation();
 
 	const TRANSLATED_TITLE = translation(BMR_TITLE);
-
 	useWebsiteTitle(TRANSLATED_TITLE);
 
 	return (

@@ -1,6 +1,7 @@
 {
 	"translation": {
 		"common": {
+			"app-name": "DoIt-Healthy",
 			"login": "Zaloguj się",
 			"logout": "Wyloguj się",
 			"signup": "Zarejestruj się",
@@ -35,14 +36,18 @@
 			"close": "Zamknij",
 			"hello": "Witaj",
 			"save": "Zapisz",
-			"find": "Szukaj"
+			"find": "Szukaj",
+			"option-available-only-for-login-users": "Opcja dostępna tylko dla zalogowanych użytkowników!",
+			"click": "Kliknij",
+			"here": "Tutaj",
+			"to-register": "Aby się zarejestrować"
 		},
 		"page": {
 			"home": {
-				"title": "DoIt-Healthy",
+				"title": "Strona główna",
 				"header": "Obliczaj, Śledź i Bądź Fit z DoIt-Healthy",
 				"description": "Witaj w DoIt-Healthy – Twoim kompleksowym miejscu do dbania o zdrowie, gdzie zdrowie spotyka się z prostotą. Obliczaj, śledź i rozpocznij podróż ku zdrowszemu stylowi życia dzięki naszym narzędziom stworzonym, aby wzmocnić Twoje dobre samopoczucie.",
-				"summary": "DoIt-Healthy to nie tylko strona internetowa; to Twoi partnerzy w podróży ku zdrowszej wersji siebie. Wzbogać się w wiedzę, śledź postępy i podejmuj świadome decyzje dotyczące własnego samopoczucia. Rozpocznij swoje transformacyjne doświadczenie już dziś!",
+				"summary": "DoIt-Healthy to nie tylko strona internetowa.. To Twoi partnerzy w podróży ku zdrowszej wersji siebie. Wzbogać się w wiedzę, śledź postępy i podejmuj świadome decyzje dotyczące własnego samopoczucia. Rozpocznij swoje transformacyjne doświadczenie już dziś!",
 				"bmi": {
 					"title": "Kalkulator BMI",
 					"description": "Odkryj tajniki składu swojego ciała za pomocą intuicyjnego kalkulatora BMI. Bez względu na to, czy ustawiasz cele fitness czy monitorujesz postępy, nasze narzędzie zapewnia szybką i dokładną ocenę, kierując Cię ścieżką do optymalnego zdrowia."
@@ -139,18 +144,15 @@
 					"title": "Czas zabrać się za ćwiczenia",
 					"description": "Wybierz swój poziom zaawansowania aby przejść do planu treningowego dopasowanego do ciebie, lub poznaj ćwiczenia, które są wykorzystywane w planach treningowych"
 				},
-
-				"plan-card": {
-					"header": "Plany treningowe",
-					"description": "Wybierz poziom zaawansowania",
-					"btn-1": "Początkujący",
-					"btn-2": "Średniozaawansowany"
-				},
 				"description-card": {
 					"header": "Opis ćwiczeń",
-					"description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych",
-					"btn-1": "Ćwiczenia dla początkujących",
-					"btn-2": "Ćwiczenia dla średnozaawansowanych"
+					"description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych"
+				},
+				"beginners-exercises": {
+					"title": "Ćwiczenia dla początkujących"
+				},
+				"intermediate-exercises": {
+					"title": "Ćwiczenia dla średnozaawansowanych"
 				},
 				"we-execute-plan-as-follows": "Plan wykonujemy następująco",
 				"monday": "Poniedziałek",

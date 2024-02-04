@@ -22,6 +22,7 @@ export default function Calories() {
 
 	const TRANSLATED_TITLE = translation(CALORIES_TITLE);
 	useWebsiteTitle(TRANSLATED_TITLE);
+
 	const TRANSLATION_CARBS = translation('page.calories.carbohydrates-2');
 	const TRANSLATION_FAT = translation('page.calories.fat-2');
 	const TRANSLATION_PROTEIN = translation('page.bmr.protein');

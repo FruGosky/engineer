@@ -1,6 +1,7 @@
 {
 	"translation": {
 		"common": {
+			"app-name": "DoIt-Healthy",
 			"login": "Login",
 			"logout": "Logout",
 			"signup": "Signup",
@@ -35,14 +36,18 @@
 			"close": "Close",
 			"hello": "Hello",
 			"save": "Save",
-			"find": "Find"
+			"find": "Find",
+			"option-available-only-for-login-users": "Option available only for login users!",
+			"click": "Click",
+			"here": "Here",
+			"to-register": "To register"
 		},
 		"page": {
 			"home": {
-				"title": "DoIt-Healthy",
+				"title": "Home",
 				"header": "Calculate, Track, and Stay Fit with DoIt-Healthy",
 				"description": "Welcome to DoIt-Healthy – your comprehensive wellness destination where health meets simplicity. Calculate, track, and embark on your journey to a healthier lifestyle with our suite of tools designed to empower your well-being.",
-				"summary": "DoIt-Healthy is not just a website; it's your partner in the journey to a healthier you. Empower yourself with knowledge, track your progress, and make informed decisions about your well-being. Start your transformative experience today!",
+				"summary": "DoIt-Healthy is not just a website. It's your partner in the journey to a healthier you. Empower yourself with knowledge, track your progress, and make informed decisions about your well-being. Start your transformative experience today!",
 				"bmi": {
 					"title": "BMI Calculator",
 					"description": "Uncover insights into your body composition with our intuitive BMI calculator. Whether you're setting fitness goals or monitoring progress, our tool provides a quick and accurate assessment to guide your path to optimal health."
@@ -139,18 +144,15 @@
 					"title": "Time to exercise",
 					"description": "Choose your skill level to go to a training plan best for you, or learn about the exercises that are used in training plans"
 				},
-
-				"plan-card": {
-					"header": "Training plans",
-					"description": "Choose your skill level",
-					"btn-1": "Beginner",
-					"btn-2": "Intermediate"
-				},
 				"description-card": {
 					"header": "Description of exercises",
-					"description": "Below you will find exercises, that are used in training plans",
-					"btn-1": "Exercises for beginners",
-					"btn-2": "Exercises for intermediate"
+					"description": "Below you will find exercises, that are used in training plans"
+				},
+				"beginners-exercises": {
+					"title": "Exercises for beginners"
+				},
+				"intermediate-exercises": {
+					"title": "Exercises for intermediate"
 				},
 				"we-execute-plan-as-follows": "We execute plan as follows",
 				"monday": "Monday",

@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
+import { INTERMEDIATE_PLAN_TITLE } from '../IntermediatePlan/IntermediatePlan';
 
 export default function PlanForIntermediate() {
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_INTERMEDIATE = translation(
-		'page.exercises.plan-card.btn-2'
-	);
+	const TRANSLATED_INTERMEDIATE = translation(INTERMEDIATE_PLAN_TITLE);
 	const TRANSLATED_CAPTION = translation(
 		'page.exercises.we-execute-plan-as-follows'
 	);

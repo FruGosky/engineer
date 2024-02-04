@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import dumbbell from '../../../assets/dumbbell.svg';
+import { INTERMEDIATE_PLAN_TITLE } from '../IntermediatePlan/IntermediatePlan';
 export default function IntermediateInfo() {
 	const { t: translation } = useTranslation();
 
-	const TREANSLATED_INTERMEDIATE = translation(
-		'page.exercises.plan-card.btn-2'
-	);
+	const TRANSLATED_INTERMEDIATE = translation(INTERMEDIATE_PLAN_TITLE);
 	const TRANSLATED_POWER_FBW = translation(
 		'page.exercises.intermediate-plan.power-fbw'
 	);
@@ -26,7 +25,7 @@ export default function IntermediateInfo() {
 		<div className="px-4 py-5 my-5 text-center">
 			<img src={dumbbell} alt="dumbbell" />
 			<h2 className="display-5 fw-bold text-body-emphasis">
-				{`${TREANSLATED_INTERMEDIATE}:`}
+				{`${TRANSLATED_INTERMEDIATE}:`}
 			</h2>
 			<div className="col-lg-6 mx-auto">
 				<p className="lead mb-4">

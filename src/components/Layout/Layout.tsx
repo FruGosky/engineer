@@ -19,7 +19,7 @@ export default function Layout(props: IProps) {
 			)}
 			{content && (
 				<main
-					className={`${styles.main} overflow-y-scroll container-fluid`}
+					className={`${styles.main} overflow-y-scroll container-fluid bg-body-secondary`}
 				>
 					{content}
 				</main>

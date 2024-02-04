@@ -9,8 +9,7 @@ import * as bootstrap from 'bootstrap';
 import { userIconPages } from '../../../../../pages/pages';
 
 export default function UserIcon() {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const [auth, setAuth] = useAuth();
+	const [, setAuth] = useAuth();
 	const { t: translation } = useTranslation();
 	const [dropdown, setDropdown] = useState<bootstrap.Dropdown | null>(null);
 
@@ -18,8 +17,8 @@ export default function UserIcon() {
 		const dropdownModalElement =
 			document.getElementById('userIconDropdown');
 		if (!dropdownModalElement) return;
-		const bootstarpDropdown = new bootstrap.Dropdown(dropdownModalElement);
-		setDropdown(bootstarpDropdown);
+		const bootstrapDropdown = new bootstrap.Dropdown(dropdownModalElement);
+		setDropdown(bootstrapDropdown);
 	}, []);
 
 	const LOGOUT = translation('common.logout');

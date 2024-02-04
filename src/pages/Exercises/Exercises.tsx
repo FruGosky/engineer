@@ -2,11 +2,23 @@ import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 import { useTranslation } from 'react-i18next';
 import './Exercises.scss';
 import dumbbell from '../../assets/dumbbell.svg';
-import { BEGINNERS_PLAN_LINK } from './BeginnersPlan/BeginnersPlan';
+import {
+	BEGINNERS_PLAN_LINK,
+	BEGINNERS_PLAN_TITLE,
+} from './BeginnersPlan/BeginnersPlan';
 import { NavLink } from 'react-router-dom';
-import { INTERMEDIATE_PLAN_LINK } from './IntermediatePlan/IntermediatePlan';
-import { BEGINNERS_EXERCISES_LINK } from './BeginnerExercises/BeginnerExercises';
-import { INTERMEDIATE_EXERCISES_LINK } from './IntermediateExercises/IntermediateExercises';
+import {
+	INTERMEDIATE_PLAN_LINK,
+	INTERMEDIATE_PLAN_TITLE,
+} from './IntermediatePlan/IntermediatePlan';
+import {
+	BEGINNERS_EXERCISES_LINK,
+	BEGINNERS_EXERCISES_TITLE,
+} from './BeginnerExercises/BeginnerExercises';
+import {
+	INTERMEDIATE_EXERCISES_LINK,
+	INTERMEDIATE_EXERCISES_TITLE,
+} from './IntermediateExercises/IntermediateExercises';
 
 export const EXERCISES_TITLE = 'page.exercises.title';
 export const EXERCISES_LINK = '/exercises';
@@ -21,18 +33,14 @@ export default function Exercises() {
 	const TRANSLATED_TITLE = translation(EXERCISES_TITLE);
 	useWebsiteTitle(TRANSLATED_TITLE);
 
-	const TRANSLATED_PLAN_CARD_BTN1 = translation(
-		'page.exercises.plan-card.btn-1'
-	);
-	const TRANSLATED_PLAN_CARD_BTN2 = translation(
-		'page.exercises.plan-card.btn-2'
-	);
+	const TRANSLATED_PLAN_CARD_BTN1 = translation(BEGINNERS_PLAN_TITLE);
+	const TRANSLATED_PLAN_CARD_BTN2 = translation(INTERMEDIATE_PLAN_TITLE);
 
-	const TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN1 = translation(
-		'page.exercises.description-card.btn-1'
+	const TRANSLATED_EXERCISE_BEGINNERS_EXERCISES_TITLE = translation(
+		BEGINNERS_EXERCISES_TITLE
 	);
-	const TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN2 = translation(
-		'page.exercises.description-card.btn-2'
+	const TRANSLATED_INTERMEDIATE_EXERCISES_TITLE = translation(
+		INTERMEDIATE_EXERCISES_TITLE
 	);
 	const TRANSLATED_TITLE_MAIN_PAGE = translation(
 		'page.exercises.main-page-card.title'
@@ -78,7 +86,9 @@ export default function Exercises() {
 										BEGINNERS_EXERCISES_LINK
 									}
 								>
-									{TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN1}
+									{
+										TRANSLATED_EXERCISE_BEGINNERS_EXERCISES_TITLE
+									}
 								</NavLink>
 							</div>
 							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
@@ -89,7 +99,7 @@ export default function Exercises() {
 										INTERMEDIATE_EXERCISES_LINK
 									}
 								>
-									{TRANSLATED_EXERCISE_DESCRIPTION_CARD_BTN2}
+									{TRANSLATED_INTERMEDIATE_EXERCISES_TITLE}
 								</NavLink>
 							</div>
 						</div>

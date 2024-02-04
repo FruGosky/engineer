@@ -13,8 +13,8 @@ export default function LanguageSwitcher() {
 			'languageSwitcherDropdown'
 		);
 		if (!dropdownModalElement) return;
-		const bootstarpDropdown = new bootstrap.Dropdown(dropdownModalElement);
-		setDropdown(bootstarpDropdown);
+		const bootstrapDropdown = new bootstrap.Dropdown(dropdownModalElement);
+		setDropdown(bootstrapDropdown);
 	}, []);
 
 	return (

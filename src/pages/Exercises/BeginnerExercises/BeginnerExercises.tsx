@@ -5,7 +5,7 @@ import ExercisesTitleCard from '../components/ExercisesTitleCard';
 import ExercisesModal from '../components/ExercisesModal';
 
 export const BEGINNERS_EXERCISES_TITLE =
-	'page.exercises.description-card.btn-1';
+	'page.exercises.beginners-exercises.title';
 export const BEGINNERS_EXERCISES_LINK = '/beginners-exercises';
 
 export default function BeginnersExercises() {
@@ -13,7 +13,7 @@ export default function BeginnersExercises() {
 
 	const TRANSLATED_TITLE = translation(BEGINNERS_EXERCISES_TITLE);
 	const TRANSLATED_EXERCISE_BEGINNERS = translation(
-		'page.exercises.description-card.btn-1'
+		BEGINNERS_EXERCISES_TITLE
 	);
 
 	useWebsiteTitle(TRANSLATED_TITLE);
@@ -35,7 +35,7 @@ export default function BeginnersExercises() {
 	];
 
 	return (
-		<div className="container">
+		<div className="container exerciseContainer">
 			<div className="container_top mb-5 text-center">
 				<h1>{TRANSLATED_EXERCISE_BEGINNERS}</h1>
 			</div>

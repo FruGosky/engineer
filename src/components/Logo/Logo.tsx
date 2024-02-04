@@ -1,9 +1,13 @@
-interface IProps {
-	className?: string;
-}
+import { useTranslation } from 'react-i18next';
 
-export default function Logo(props: IProps) {
+type TProps = {
+	className?: string;
+};
+
+export default function Logo(props: TProps) {
 	const { className = '' } = props;
+	const { t: translation } = useTranslation();
+	const TRANSLATED_APP_NAME = translation('common.app-name');
 
 	return (
 		// const { className } = props;
@@ -15,10 +19,10 @@ export default function Logo(props: IProps) {
 		// 	to={HOME_PAGE ? HOME_PAGE.path : '/'}
 		// 	// onClick={() => setCurrentPath(HOME_PAGE?.path)}
 		// >
-		// 	DoIt-Healthy
+		// 	{`${TRANSLATED_APP_NAME}`}
 		// </Link>
 		<a className={`navbar-brand ${className}`} href="/">
-			DoIt-Healthy
+			{`${TRANSLATED_APP_NAME}`}
 		</a>
 	);
 }

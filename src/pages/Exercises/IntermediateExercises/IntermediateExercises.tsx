@@ -5,7 +5,7 @@ import ExercisesModal from '../components/ExercisesModal';
 import './IntermediateExercises.scss';
 
 export const INTERMEDIATE_EXERCISES_TITLE =
-	'page.exercises.description-card.btn-2';
+	'page.exercises.intermediate-exercises.title';
 export const INTERMEDIATE_EXERCISES_LINK = '/intermediate-exercises';
 
 export default function IntermediateExercises() {
@@ -31,7 +31,7 @@ export default function IntermediateExercises() {
 	];
 
 	return (
-		<div className="container">
+		<div className="container exerciseContainer">
 			<div className="container_top m-5 text-center">
 				<h1>{TRANSLATED_ACCESSORY}</h1>
 			</div>
