@@ -37,7 +37,7 @@ export default function SignupForm() {
 	const ALREADY_HAVE_ACCOUNT = translation('common.already-have-account');
 	const INVALID_EMAIL = translation('common.invalid-email');
 	const INVALID_PASSWORD = translation('common.invalid-password');
-	const INVALID_PASSWORD_CONFIMATION = translation(
+	const INVALID_PASSWORD_CONFIRMATION = translation(
 		'common.invalid-password-confirmation'
 	);
 	const SUCCESSFUL_SIGNUP = translation('common.successful-signup');
@@ -169,7 +169,7 @@ export default function SignupForm() {
 		} else {
 			setErrors((oldErrors) => ({
 				...oldErrors,
-				confirmPassword: INVALID_PASSWORD_CONFIMATION,
+				confirmPassword: INVALID_PASSWORD_CONFIRMATION,
 			}));
 			setFormErrors((oldFormErrors) => ({
 				...oldFormErrors,
