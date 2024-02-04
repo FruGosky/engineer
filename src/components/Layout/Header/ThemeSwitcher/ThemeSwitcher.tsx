@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from '../../../../context/themeContext';
 import { useTranslation } from 'react-i18next';
 
@@ -16,6 +16,12 @@ export default function ThemeSwitcher() {
 	const ariaLabelForThemeSwitcher = isThemeDark
 		? `${SWITCH_TO} ${LIGHT} ${THEME}`
 		: `${SWITCH_TO} ${DARK} ${THEME}`;
+
+	useEffect(() => {
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute('content', theme);
+	}, [theme]);
 
 	return (
 		<>
