@@ -58,45 +58,45 @@ export default function Home() {
 			<div className="row justify-content-center">
 				<div className="col-12 col-md-9 col-xl-7 my-4">
 					<article className="row mb-4">
-						<h1 className="p-2">{`${HEADER}`}</h1>
+						<h2 className="p-2">{`${HEADER}`}</h2>
 						<p className="px-4">{`${DESCRIPTION}`}</p>
 					</article>
 					<article className="row card">
 						<div className="card-body">
-							<h2 className="card-title">
+							<h3 className="card-title">
 								<Link
 									to={BMI_LINK}
 									title={`${BMI_TITLE}`}
 								>{`${BMI_TITLE}`}</Link>
-							</h2>
+							</h3>
 							<p>{`${BMI_DESCRIPTION}`}</p>
 						</div>
 					</article>
 					<article className="row card">
 						<div className="card-body">
-							<h2 className="card-title">
+							<h3 className="card-title">
 								<Link
 									to={BMR_LINK}
 									title={`${BMR_TITLE}`}
 								>{`${BMR_TITLE}`}</Link>
-							</h2>
+							</h3>
 							<p>{`${BMR_DESCRIPTION}`}</p>
 						</div>
 					</article>
 					<article className="row card">
 						<div className="card-body">
-							<h2 className="card-title">
+							<h3 className="card-title">
 								<Link
 									to={EXERCISES_LINK}
 									title={`${EXERCISES_TITLE}`}
 								>{`${EXERCISES_TITLE}`}</Link>
-							</h2>
+							</h3>
 							<p>{`${EXERCISES_DESCRIPTION}`}</p>
 						</div>
 					</article>
 					<article className="row card">
 						<div className="card-body">
-							<h2 className="card-title">
+							<h3 className="card-title">
 								{auth ? (
 									<Link
 										to={CALORIES_LINK}
@@ -105,7 +105,7 @@ export default function Home() {
 								) : (
 									`${CALORIES_TITLE}`
 								)}
-							</h2>
+							</h3>
 							<p>{`${CALORIES_DESCRIPTION}`}</p>
 							<span className="text-danger">
 								{`${OPTION_AVAILABLE_ONLY_FOR_LOGIN_USERS} ${CLICK} `}

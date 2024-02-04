@@ -33,7 +33,7 @@ export default function IntermediateExercises() {
 	return (
 		<div className="container exerciseContainer">
 			<div className="container_top m-5 text-center">
-				<h1>{TRANSLATED_ACCESSORY}</h1>
+				<h2>{TRANSLATED_ACCESSORY}</h2>
 			</div>
 			<div className="container_bottom row">
 				{exercisesArray.map((exercise, index): JSX.Element => {

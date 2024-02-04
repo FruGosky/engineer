@@ -183,9 +183,9 @@ export default function Calories() {
 	return (
 		<div className="d-flex align-items-center justify-content-center">
 			<div className={`${styles.main_card} card shadow`}>
-				<h1 className="text-center border-bottom border-info p-2">
+				<h2 className="text-center border-bottom border-info p-2">
 					{translation('page.calories.monitor-your-daily-calories')}
-				</h1>
+				</h2>
 				<div
 					className={`${styles.head_section}  d-flex border-bottom border-info flex-row justify-content-between`}
 				>

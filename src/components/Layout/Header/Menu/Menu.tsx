@@ -36,7 +36,7 @@ export default function Menu() {
 						className="offcanvas-title m-auto"
 						id="offcanvasNavbarLabel"
 					>
-						<Logo />
+						<Logo Tag={'h2'} />
 					</span>
 					<button
 						type="button"

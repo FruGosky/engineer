@@ -24,11 +24,11 @@ export default function ExercisesModal(
 			<div className="modal-dialog modal-dialog-centered">
 				<div className="modal-content">
 					<div className="modal-header">
-						<h5 className="modal-title">
+						<h3 className="modal-title">
 							{translation(
 								`page.exercises.${props.level}.${props.exercise}.title`
 							)}
-						</h5>
+						</h3>
 						<button
 							type="button"
 							className="btn-close"

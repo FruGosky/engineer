@@ -54,9 +54,9 @@ export default function Exercises() {
 			<div className="container inner exercises_main_content rounded shadow">
 				<div>
 					<img src={dumbbell} alt="dumbbell" />
-					<h1 className="cover-heading text-center">
+					<h2 className="cover-heading text-center">
 						{TRANSLATED_TITLE_MAIN_PAGE}
-					</h1>
+					</h2>
 					<p className="lead text-center">
 						{TRANSLATED_DESCRIPTION_MAIN_PAGE}
 					</p>

@@ -37,7 +37,7 @@ export default function BeginnersExercises() {
 	return (
 		<div className="container exerciseContainer">
 			<div className="container_top mb-5 text-center">
-				<h1>{TRANSLATED_EXERCISE_BEGINNERS}</h1>
+				<h2>{TRANSLATED_EXERCISE_BEGINNERS}</h2>
 			</div>
 			<div className="container_bottom  row">
 				{exercisesArray.map((exercise, index): JSX.Element => {

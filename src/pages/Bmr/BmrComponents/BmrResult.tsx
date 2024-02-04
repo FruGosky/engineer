@@ -223,9 +223,9 @@ export default function BmrScore(props: TProps) {
 				<label className="form-check-label" htmlFor="bmr">
 					{`${T_YOUR_BMR}:`}
 				</label>
-				<h1 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
+				<h3 className="text-info bg-info bg-opacity-10 border border-info rounded p-2 mt-2">
 					{`${BMR.toFixed(0)} kcal`}
-				</h1>
+				</h3>
 			</div>
 			<div className="mt-3 text-center">
 				<label className="form-label m-3">
