@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
 	return (
 		<div className="dropdown">
 			<button
-				className="dropdown-toggle btn btn-outline-primary border-2"
+				className="dropdown-toggle btn btn-primary border-2"
 				onClick={() => dropdown?.toggle()}
 				aria-expanded="false"
 			>
