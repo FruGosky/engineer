@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://engineer-81890.web.app</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/bmi</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/bmr</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/exercises</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/exercises/beginners-plan</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/exercises/intermediate-plan</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/exercises/beginners-exercises</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://engineer-81890.web.app/exercises/intermediate-exercises</loc>
+	</sitemap>
+</sitemapindex>
