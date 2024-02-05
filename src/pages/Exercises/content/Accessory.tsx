@@ -77,79 +77,81 @@ export default function Accessory() {
 	};
 
 	return (
-		<div className="mt-5 card-body shadow table-responsive">
-			<h2
-				onClick={() => {
-					window.open(
-						`${window.location.origin}${EXERCISES_LINK}${INTERMEDIATE_EXERCISES_LINK}`
-					);
-				}}
-				className="text-center hover-overlay"
-				role="button"
-			>
-				{TRANSLATED_ACCESSORY}
-			</h2>
-			<table className="table text-center">
-				<thead>
-					<tr>
-						<th scope="col">{`${TRANSLATED_ACCESSORY} A `}</th>
-						<th scope="col">{`${TRANSLATED_ACCESSORY} B `}</th>
-						<th scope="col">{`${TRANSLATED_ACCESSORY} C `}</th>
-						<th scope="col">{`${TRANSLATED_ACCESSORY} D `}</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{TRANSLATED_SIDE_RAISES}</td>
-						<td>{TRANSLATED_LEG_CURLS_LYING}</td>
-						<td>{TRANSLATED_SIDE_RAISES}</td>
-						<td>{TRANSLATED_SIDE_RAISES}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_FACEPULL}</td>
-						<td>{TRANSLATED_NORDIC_CURLS}</td>
-						<td>{TRANSLATED_FACEPULL}</td>
-						<td>{TRANSLATED_FACEPULL}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_YRISE}</td>
-						<td>{TRANSLATED_CALVES_STANDING}</td>
-						<td>{TRANSLATED_YRISE}</td>
-						<td>{TRANSLATED_YRISE}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_BUTTERFLY}</td>
-						<td>{TRANSLATED_BUTTOCK_ISOLATION}</td>
-						<td>{TRANSLATED_BUTTERFLY}</td>
-						<td>{'-'}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
-						<td>{TRANSLATED_ADDUCTORS}</td>
-						<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
-						<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_DUMBBELL_FLYS}</td>
-						<td>{`${TRANSLATED_CABLE_CRUNCH} 3x8`}</td>
-						<td>{TRANSLATED_DUMBBELL_FLYS}</td>
-						<td>{TRANSLATED_DUMBBELL_FLYS}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_SKIER}</td>
-						<td>{TRANSLATED_PLANK}</td>
-						<td>{TRANSLATED_SKIER}</td>
-						<td>{TRANSLATED_SKIER}</td>
-					</tr>
-					<tr>
-						<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
-						<td>Hollow Body</td>
-						<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
-						<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
-					</tr>
-					{accessoryLoop(accessoryArray)}
-				</tbody>
-			</table>
+		<div className="mt-5 pt-2 pb-0 card table-responsive px-0 px-md-4">
+			<div className="card-body px-0 px-md-4">
+				<h2
+					onClick={() => {
+						window.open(
+							`${window.location.origin}${EXERCISES_LINK}${INTERMEDIATE_EXERCISES_LINK}`
+						);
+					}}
+					className="text-center card-title mb-3 hover-overlay"
+					role="button"
+				>
+					{TRANSLATED_ACCESSORY}
+				</h2>
+				<table className="table table-striped-columns text-center">
+					<thead>
+						<tr>
+							<th scope="col">{`${TRANSLATED_ACCESSORY} A `}</th>
+							<th scope="col">{`${TRANSLATED_ACCESSORY} B `}</th>
+							<th scope="col">{`${TRANSLATED_ACCESSORY} C `}</th>
+							<th scope="col">{`${TRANSLATED_ACCESSORY} D `}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{TRANSLATED_SIDE_RAISES}</td>
+							<td>{TRANSLATED_LEG_CURLS_LYING}</td>
+							<td>{TRANSLATED_SIDE_RAISES}</td>
+							<td>{TRANSLATED_SIDE_RAISES}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_FACEPULL}</td>
+							<td>{TRANSLATED_NORDIC_CURLS}</td>
+							<td>{TRANSLATED_FACEPULL}</td>
+							<td>{TRANSLATED_FACEPULL}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_YRISE}</td>
+							<td>{TRANSLATED_CALVES_STANDING}</td>
+							<td>{TRANSLATED_YRISE}</td>
+							<td>{TRANSLATED_YRISE}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_BUTTERFLY}</td>
+							<td>{TRANSLATED_BUTTOCK_ISOLATION}</td>
+							<td>{TRANSLATED_BUTTERFLY}</td>
+							<td>{'-'}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
+							<td>{TRANSLATED_ADDUCTORS}</td>
+							<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
+							<td>{TRANSLATED_SHOULDER_RAISES_DROP}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_DUMBBELL_FLYS}</td>
+							<td>{`${TRANSLATED_CABLE_CRUNCH} 3x8`}</td>
+							<td>{TRANSLATED_DUMBBELL_FLYS}</td>
+							<td>{TRANSLATED_DUMBBELL_FLYS}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_SKIER}</td>
+							<td>{TRANSLATED_PLANK}</td>
+							<td>{TRANSLATED_SKIER}</td>
+							<td>{TRANSLATED_SKIER}</td>
+						</tr>
+						<tr>
+							<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
+							<td>Hollow Body</td>
+							<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
+							<td>{TRANSLATED_UPPER_LIFT_PULLDOWN}</td>
+						</tr>
+						{accessoryLoop(accessoryArray)}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }
