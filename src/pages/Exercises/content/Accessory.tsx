@@ -1,6 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { EXERCISES_LINK } from '../Exercises';
-import { INTERMEDIATE_EXERCISES_LINK } from '../IntermediateExercises/IntermediateExercises';
 
 export default function Accessory() {
 	const { t: translation } = useTranslation();
@@ -79,15 +77,7 @@ export default function Accessory() {
 	return (
 		<div className="mt-5 pt-2 pb-0 card table-responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md-4">
-				<h2
-					onClick={() => {
-						window.open(
-							`${window.location.origin}${EXERCISES_LINK}${INTERMEDIATE_EXERCISES_LINK}`
-						);
-					}}
-					className="text-center card-title mb-3 hover-overlay"
-					role="button"
-				>
+				<h2 className="text-center card-title mb-3">
 					{TRANSLATED_ACCESSORY}
 				</h2>
 				<table className="table table-striped-columns text-center">

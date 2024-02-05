@@ -94,7 +94,7 @@ export default function AddProductManually(props: TAddProductManuallyProps) {
 				{translation('page.calories.add-your-product')}
 			</h2>
 			<form onSubmit={handleAddNewProduct}>
-				<div className="">
+				<div>
 					<div className="mb-3 d-flex align-items-center justify-content-center">
 						<div className="add_product row g-3 mb-3 w-100 ">
 							<div className="d-flex flex-column flex-md-row justify-content-between border-bottom border-secondary p-2">

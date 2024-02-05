@@ -103,48 +103,46 @@ export default function PlanForIntermediate() {
 					</thead>
 					<tbody>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_BOTH_LEGS}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_BOTH_LEGS}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_HORIZONTAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH}/${TRANSLATED_PULL} ${TRANSLATED_LOWER}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_BOTH_LEGS}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_BOTH_LEGS}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_HORIZONTAL}`}</td>
+							<td>{`${TRANSLATED_PUSH}/${TRANSLATED_PULL} ${TRANSLATED_LOWER}`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_BOTH_LEGS}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_BOTH_LEGS}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_FREELY}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_BOTH_LEGS}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_BOTH_LEGS}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_FREELY}`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_HORIZONTAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_SINGLE_LEG}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_VERTICAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_FREELY}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_HORIZONTAL}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_SINGLE_LEG}`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_VERTICAL}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_FREELY}`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_FREELY}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_FREELY}`}</td>
+							<td>{`${TRANSLATED_PULL} ${TRANSLATED_VERTICAL}`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_PUSH} ${TRANSLATED_VERTICAL}`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">
-								Biceps + Triceps 2x8 - 10
-							</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_PUSH} ${TRANSLATED_VERTICAL}`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>Biceps + Triceps 2x8 - 10</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
 						</tr>
 						<tr>
-							<td className="text-wrap">-</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
-							<td className="text-wrap">{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>-</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
+							<td>{`${TRANSLATED_ACCESSORY} 2x8 - 10`}</td>
 						</tr>
 					</tbody>
 				</table>

@@ -395,7 +395,7 @@ export default function Profile() {
 						className="alert alert-success alert-dismissible fade show text-center"
 						role="alert"
 					>
-						<div className="">
+						<div>
 							{T_SUCCESS_INFO}
 							<button
 								type="button"
