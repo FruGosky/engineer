@@ -124,7 +124,7 @@ export default function Settings() {
 
 	return (
 		<div className="d-flex align-items-center justify-content-center">
-			<div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 card shadow">
+			<div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 card">
 				<div className="d-flex justify-content-center mb-3">
 					<h2>{TRANSLATED_TITLE}</h2>
 				</div>

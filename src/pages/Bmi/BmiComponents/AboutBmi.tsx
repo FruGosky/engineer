@@ -45,9 +45,5 @@ export default function AboutBmi(props: aboutBmiProps): JSX.Element {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [props.bmiInfo]);
 
-	return (
-		<div className={`card m-4 p-4 ${styles.about_bmi} shadow`}>
-			{aboutBmi}
-		</div>
-	);
+	return <div className={`card m-4 p-4 ${styles.about_bmi}`}>{aboutBmi}</div>;
 }

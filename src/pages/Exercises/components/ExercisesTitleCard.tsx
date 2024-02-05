@@ -14,7 +14,7 @@ export default function ExercisesTitleCard(
 		<div
 			data-bs-toggle="modal"
 			data-bs-target={props.target}
-			className="exercise-card col shadow text-center grow d-flex align-items-center justify-content-center"
+			className="exercise-card col text-center grow d-flex align-items-center justify-content-center"
 		>
 			<span className="fs-3 text-dark">
 				{translation(
