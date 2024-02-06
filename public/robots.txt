@@ -1,4 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
-Sitemap: https://engineer-81890.web.app/DoIt-Healthy_sitemap.xml
+Allow: /
+
+Sitemap: https://engineer-81890.web.app/sitemap.xml
