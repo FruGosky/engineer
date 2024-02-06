@@ -1,19 +1,30 @@
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
+import useWebsiteDescription from '../../../hooks/useWebsiteDescription';
+import useWebsiteKeywords from '../../../hooks/useWebsiteKeywords';
 import { useTranslation } from 'react-i18next';
 import ExercisesTitleCard from '../components/ExercisesTitleCard';
 import ExercisesModal from '../components/ExercisesModal';
 import './IntermediateExercises.scss';
 
+export const INTERMEDIATE_EXERCISES_LINK = '/intermediate-exercises';
 export const INTERMEDIATE_EXERCISES_TITLE =
 	'page.exercises.intermediate-exercises.title';
-export const INTERMEDIATE_EXERCISES_LINK = '/intermediate-exercises';
+export const INTERMEDIATE_EXERCISES_DESCRIPTION =
+	'page.exercises.intermediate-exercises.description';
+export const INTERMEDIATE_EXERCISES_KEYWORDS =
+	'page.exercises.intermediate-exercises.keywords';
 
 export default function IntermediateExercises() {
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_TITLE = translation(INTERMEDIATE_EXERCISES_TITLE);
+	const TITLE = translation(INTERMEDIATE_EXERCISES_TITLE);
+	useWebsiteTitle(TITLE);
+	const DESCRIPTION = translation(INTERMEDIATE_EXERCISES_DESCRIPTION);
+	useWebsiteDescription(DESCRIPTION);
+	const KEYWORDS = translation(INTERMEDIATE_EXERCISES_KEYWORDS);
+	useWebsiteKeywords(KEYWORDS);
+
 	const TRANSLATED_ACCESSORY = translation('page.exercises.accessory.title');
-	useWebsiteTitle(TRANSLATED_TITLE);
 
 	const exercisesArray: string[] = [
 		'y-rise',

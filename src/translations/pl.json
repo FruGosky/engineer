@@ -2,7 +2,8 @@
 	"translation": {
 		"common": {
 			"app-name": "DoIt-Healthy",
-			"description": "Odkryj drogę do utraty wagi i dobrej kondycji z kalkulatorami BMI, BMR, kalorii oraz spersonalizowanymi planami treningowymi dostępnymi na DoIt-Healthy",
+			"description": "Odkryj drogę do utraty wagi i dobrej kondycji z kalkulatorami BMI, BMR, kalorii oraz planami treningowymi dostępnymi na DoIt-Healthy.",
+			"keywords": "DoIt-Healthy, Łukasz Komandzik, kalkulator BMI, kalkulator BMR, kalkulator Kalorii, Ćwiczenia, Jak schudnąć, Jak przytyć, Dobre samopoczucie",
 			"login": "Zaloguj się",
 			"logout": "Wyloguj się",
 			"signup": "Zarejestruj się",
@@ -58,7 +59,8 @@
 			"home": {
 				"title": "Strona główna",
 				"header": "Obliczaj, Śledź i Bądź Fit z DoIt-Healthy",
-				"description": "Witaj w DoIt-Healthy – kompleksowym miejscu dla Twojego zdrowia, gdzie prostota spotyka się z dobrostanem. Wzmocnij swoje samopoczucie dzięki naszym narzędziom, takim jak kalkulatory BMI i BMR, kalkulator kalorii oraz spersonalizowane plany treningowe dla początkujących i średniozaawansowanych. Rozpocznij podróż ku zdrowszemu stylowi życia z DoIt-Healthy.",
+				"description": "Odkryj drogę do utraty wagi i dobrej kondycji z kalkulatorami BMI, BMR, kalorii oraz planami treningowymi dostępnymi na DoIt-Healthy.",
+				"keywords": "DoIt-Healthy, Łukasz Komandzik, kalkulator BMI, kalkulator BMR, kalkulator Kalorii, Ćwiczenia, Jak schudnąć, Jak przytyć, Dobre samopoczucie",
 				"summary": "DoIt-Healthy to nie tylko strona internetowa.. To Twoi partnerzy w podróży ku zdrowszej wersji siebie. Wzbogać się w wiedzę, śledź postępy i podejmuj świadome decyzje dotyczące własnego samopoczucia. Rozpocznij swoje transformacyjne doświadczenie już dziś!",
 				"bmi": {
 					"title": "Kalkulator BMI",
@@ -79,6 +81,8 @@
 			},
 			"bmi": {
 				"title": "Bmi",
+				"description": "Szybko oblicz swój wskaźnik masy ciała (BMI) za pomocą naszego wygodnego kalkulatora BMI. Śledź swoje zdrowie i monitoruj postępy w kierunku idealnej wagi bez wysiłku.",
+				"keywords": "DoIt-Healthy, Łukasz Komandzik, kalkulator BMI, kalkulator Body Mass Index, oblicz BMI, jakie jest moje BMI, zakres BMI, wzor na BMI, kalkulator BMI online, kalkulator BMI dla zdrowia",
 				"calculator": {
 					"units": "Jednostki",
 					"imperial": "Imperialne",
@@ -107,6 +111,8 @@
 			},
 			"bmr": {
 				"title": "Bmr",
+				"description": "Oblicz swój podstawowy metabolizm (BMR) łatwo i precyzyjnie dzięki naszemu kalkulatorowi. Poznaj zapotrzebowanie kaloryczne potrzebne do utrzymania wagi lub osiągnięcia celów fitness.",
+				"keywords": "DoIt-Healthy, Łukasz Komandzik, kalkulator BMR, kalkulator Basal Metabolic Rate, oblicz BMR, jakie jest moje BMR, zakres BMR, wzór na BMR, kalkulator BMR online, kalkulator BMR dla zdrowia",
 				"choose-physical-activity": "Wybierz aktywność fizyczną",
 				"none-activity": "Znikoma aktywność (brak ćwiczeń, siedzący tryb życia)",
 				"low-activity": "Niska aktywność fizyczna (siedzący tryb życia, 1-2 treningi w tygodniu)",
@@ -129,6 +135,8 @@
 			},
 			"calories": {
 				"title": "Kalorie",
+				"description": "Łatwo śledź swoje codzienne spożycie odżywcze dzięki naszemu kompleksowemu kalkulatorowi kalorii. Dodawaj posiłki, korzystaj z naszej bazy danych produktów lub dodawaj własne, aby monitorować spożycie węglowodanów, białka, tłuszczu i całkowitej ilości kalorii.",
+				"keywords": "DoIt-Healthy, Łukasz Komandzik, kalkulator kalorii, kalkulator makroskładnikow, kalkulator wartości odżywczych, licznik kalorii, śledzenie żywności, planowanie posiłków, śledzenie diety, kalkulator dziennego spożycia kalorii",
 				"look-through-our-food-product-database": "Przejrzyj naszą bazę danych w celu znalezienia produktu",
 				"type-name-of-the-product-here...": "Wpisz nazwę produktu...",
 				"no-data-found": "Nie znaleziono produktu.",
@@ -152,6 +160,8 @@
 			},
 			"exercises": {
 				"title": "Ćwiczenia",
+				"description": "Rozpocznij swoją przygodę z fitnessem dzięki naszym planom treningowym dla początkujących i średnio zaawansowanych. Odkryj szczegółowe opisy każdego ćwiczenia z linkami do przykładów, zapewniając poprawną formę i technikę.",
+				"keywords": "DoIt-Healthy, Łukasz Komandzik, Ćwiczenia dla początkujących, Ćwiczenia dla średniozaawansowanych, Plany treningowe, Procedury ćwiczeń, Jak wykonywać ćwiczenia, Plan treningowy, Wskazówki dotyczące ćwiczeń",
 				"main-page-card": {
 					"title": "Czas zabrać się za ćwiczenia",
 					"description": "Wybierz swój poziom zaawansowania aby przejść do planu treningowego dopasowanego do ciebie, lub poznaj ćwiczenia, które są wykorzystywane w planach treningowych"
@@ -161,10 +171,14 @@
 					"description": "Poniżej znajdziesz ćwiczenia, które są wykorzystywane w planach treningowych"
 				},
 				"beginners-exercises": {
-					"title": "Ćwiczenia dla początkujących"
+					"title": "Ćwiczenia dla początkujących",
+					"description": "Rozpocznij swoją przygodę ze sportem dzięki naszym specjalnie dostosowanym ćwiczeniom dla początkujących. Skorzystaj z prostych, ale skutecznych treningów, które pomogą Ci rozpocząć regularną aktywność fizyczną i zbudować solidne podstawy.",
+					"keywords": "DoIt-Healthy, Łukasz Komandzik, ćwiczenia dla początkujących, ćwiczenia przyjazne dla początkujących, proste ćwiczenia dla początkujących, łatwe ćwiczenia dla początkujących"
 				},
 				"intermediate-exercises": {
-					"title": "Ćwiczenia dla średnozaawansowanych"
+					"title": "Ćwiczenia dla średnozaawansowanych",
+					"description": "Podnieś swoje treningi na wyższy poziom dzięki ćwiczeniom dla osób średnio zaawansowanych. Wyzwij się dzięki trudniejszym, ale nadal osiągalnym treningom, które pomogą Ci przekroczyć swoje granice i poprawić postępy.",
+					"keywords": "DoIt-Healthy, Łukasz Komandzik, ćwiczenia dla średniozaawansowanych, ćwiczenia przyjazne dla średniozaawansowanych, proste ćwiczenia dla średniozaawansowanych, łatwe ćwiczenia dla średniozaawansowanych"
 				},
 				"we-execute-plan-as-follows": "Plan wykonujemy następująco",
 				"monday": "Poniedziałek",
@@ -174,6 +188,8 @@
 				"saturday": "Sobota",
 				"beginners-plan": {
 					"title": "Plan dla początkujących",
+					"description": "Rozpocznij swoją przygodę ze sportem dzięki naszemu strukturalnemu planowi treningowemu dla początkujących. Postępuj zgodnie z systematycznym podejściem do budowania siły, elastyczności i wytrzymałości, które zostało stworzone, aby ułatwić Ci regularną aktywność fizyczną.",
+					"keywords": "DoIt-Healthy, Łukasz Komandzik, Plan dla początkujących, Plan treningowy dla początkujących, Plan fitness dla początkujących, Łatwy plan treningowy dla początkujących, Prosty plan fitness dla początkujących",
 					"women": "Kobiety",
 					"men": "Mężczyźni",
 					"training": "Trening",
@@ -245,6 +261,8 @@
 				},
 				"intermediate-plan": {
 					"title": "Plan dla średniozaawansowanych",
+					"description": "Podnieś swoją formę na wyższy poziom dzięki naszemu planowi treningowemu dla osób średnio zaawansowanych. Stworzony, aby wyzwalać i rozwijać, ten strukturalny program pomoże Ci poprawić siłę, wytrzymałość i ogólną kondycję fizyczną.",
+					"keywords": "DoIt-Healthy, Łukasz Komandzik, Plan dla średniozaawansowanych, Plan treningowy dla średniozaawansowanych, Plan fitness dla średniozaawansowanych, Łatwy plan treningowy dla średniozaawansowanych, Prosty plan fitness dla średniozaawansowanych",
 					"power-fbw": "POWER FBW (full body workout) – ćwiczenia na moc na wszystkie główne partie mięśniowe.",
 					"hyper-low": "HYPER LOW – ćwiczenia na hipertrofie na dolną część ciała.",
 					"hyper-up": "HYPER UP – ćwiczenia na hipertrofie na górną część ciała.",
@@ -327,9 +345,6 @@
 						"link": "https://www.youtube.com/watch?v=ezEQkeQWMPM"
 					}
 				}
-			},
-			"food": {
-				"title": "Jedzenie"
 			},
 			"profile": {
 				"title": "Profil",

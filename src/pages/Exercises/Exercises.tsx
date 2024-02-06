@@ -1,4 +1,6 @@
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import useWebsiteDescription from '../../hooks/useWebsiteDescription';
+import useWebsiteKeywords from '../../hooks/useWebsiteKeywords';
 import { useTranslation } from 'react-i18next';
 import './Exercises.scss';
 import dumbbell from '../../assets/dumbbell.svg';
@@ -20,8 +22,10 @@ import {
 	INTERMEDIATE_EXERCISES_TITLE,
 } from './IntermediateExercises/IntermediateExercises';
 
-export const EXERCISES_TITLE = 'page.exercises.title';
 export const EXERCISES_LINK = '/exercises';
+export const EXERCISES_TITLE = 'page.exercises.title';
+export const EXERCISES_DESCRIPTION = 'page.exercises.description';
+export const EXERCISES_KEYWORDS = 'page.exercises.keywords';
 
 export default function Exercises() {
 	const backdropElement: HTMLElement | null =
@@ -30,8 +34,12 @@ export default function Exercises() {
 
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_TITLE = translation(EXERCISES_TITLE);
-	useWebsiteTitle(TRANSLATED_TITLE);
+	const TITLE = translation(EXERCISES_TITLE);
+	useWebsiteTitle(TITLE);
+	const DESCRIPTION = translation(EXERCISES_DESCRIPTION);
+	useWebsiteDescription(DESCRIPTION);
+	const KEYWORDS = translation(EXERCISES_KEYWORDS);
+	useWebsiteKeywords(KEYWORDS);
 
 	const TRANSLATED_PLAN_CARD_BTN1 = translation(BEGINNERS_PLAN_TITLE);
 	const TRANSLATED_PLAN_CARD_BTN2 = translation(INTERMEDIATE_PLAN_TITLE);

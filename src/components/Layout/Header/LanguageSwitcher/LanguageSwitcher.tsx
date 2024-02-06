@@ -28,10 +28,7 @@ export default function LanguageSwitcher() {
 
 	useEffect(() => {
 		document.documentElement.lang = currentLanguage;
-		document
-			.querySelector('meta[name="description"]')
-			?.setAttribute('content', translation('common.description'));
-	}, [currentLanguage, translation]);
+	}, [currentLanguage]);
 
 	return (
 		<div className="dropdown">

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import useWebsiteDescription from '../../hooks/useWebsiteDescription';
+import useWebsiteKeywords from '../../hooks/useWebsiteKeywords';
 import { useTranslation } from 'react-i18next';
 import styles from './Calories.module.scss';
 import NewProduct from './components/NewProduct';
@@ -12,16 +14,22 @@ import {
 	TUserPersonalData,
 } from '../../types';
 
-export const CALORIES_TITLE = 'page.calories.title';
 export const CALORIES_LINK = '/calories';
+export const CALORIES_TITLE = 'page.calories.title';
+export const CALORIES_DESCRIPTION = 'page.calories.description';
+export const CALORIES_KEYWORDS = 'page.calories.keywords';
 
 export default function Calories() {
 	const { t: translation } = useTranslation();
 	const addProductRef = useRef<HTMLDivElement | null>(null);
 	const addConsumedProducts = useRef<HTMLDivElement | null>(null);
 
-	const TRANSLATED_TITLE = translation(CALORIES_TITLE);
-	useWebsiteTitle(TRANSLATED_TITLE);
+	const TITLE = translation(CALORIES_TITLE);
+	useWebsiteTitle(TITLE);
+	const DESCRIPTION = translation(CALORIES_DESCRIPTION);
+	useWebsiteDescription(DESCRIPTION);
+	const KEYWORDS = translation(CALORIES_KEYWORDS);
+	useWebsiteKeywords(KEYWORDS);
 
 	const TRANSLATION_CARBS = translation('page.calories.carbohydrates-2');
 	const TRANSLATION_FAT = translation('page.calories.fat-2');

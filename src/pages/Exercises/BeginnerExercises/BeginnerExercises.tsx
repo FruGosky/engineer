@@ -1,22 +1,28 @@
 import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
+import useWebsiteDescription from '../../../hooks/useWebsiteDescription';
+import useWebsiteKeywords from '../../../hooks/useWebsiteKeywords';
 import { useTranslation } from 'react-i18next';
 import './BeginnerExercises.scss';
 import ExercisesTitleCard from '../components/ExercisesTitleCard';
 import ExercisesModal from '../components/ExercisesModal';
 
+export const BEGINNERS_EXERCISES_LINK = '/beginners-exercises';
 export const BEGINNERS_EXERCISES_TITLE =
 	'page.exercises.beginners-exercises.title';
-export const BEGINNERS_EXERCISES_LINK = '/beginners-exercises';
+export const BEGINNERS_EXERCISES_DESCRIPTION =
+	'page.exercises.beginners-exercises.description';
+export const BEGINNERS_EXERCISES_KEYWORDS =
+	'page.exercises.beginners-exercises.keywords';
 
 export default function BeginnersExercises() {
 	const { t: translation } = useTranslation();
 
-	const TRANSLATED_TITLE = translation(BEGINNERS_EXERCISES_TITLE);
-	const TRANSLATED_EXERCISE_BEGINNERS = translation(
-		BEGINNERS_EXERCISES_TITLE
-	);
-
-	useWebsiteTitle(TRANSLATED_TITLE);
+	const TITLE = translation(BEGINNERS_EXERCISES_TITLE);
+	useWebsiteTitle(TITLE);
+	const DESCRIPTION = translation(BEGINNERS_EXERCISES_DESCRIPTION);
+	useWebsiteDescription(DESCRIPTION);
+	const KEYWORDS = translation(BEGINNERS_EXERCISES_KEYWORDS);
+	useWebsiteKeywords(KEYWORDS);
 
 	const exercisesArray: string[] = [
 		'squats',
@@ -37,7 +43,7 @@ export default function BeginnersExercises() {
 	return (
 		<div className="container exerciseContainer">
 			<div className="container_top mb-5 text-center">
-				<h2>{TRANSLATED_EXERCISE_BEGINNERS}</h2>
+				<h2>{TITLE}</h2>
 			</div>
 			<div className="container_bottom  row">
 				{exercisesArray.map((exercise, index): JSX.Element => {

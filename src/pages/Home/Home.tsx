@@ -1,4 +1,6 @@
 import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import useWebsiteDescription from '../../hooks/useWebsiteDescription';
+import useWebsiteKeywords from '../../hooks/useWebsiteKeywords';
 import { useTranslation } from 'react-i18next';
 import { BMI_LINK } from '../Bmi/Bmi';
 import { Link } from 'react-router-dom';
@@ -8,19 +10,24 @@ import { CALORIES_LINK } from '../Calories/Calories';
 import useAuth from '../../hooks/useAuth';
 import { useModals } from '../../context/modalsContext';
 
-export const HOME_TITLE = 'page.home.title';
 export const HOME_LINK = '/';
+export const HOME_TITLE = 'page.home.title';
+export const HOME_DESCRIPTION = 'page.home.description';
+export const HOME_KEYWORDS = 'page.home.keywords';
 
 export default function Home() {
 	const { t: translation } = useTranslation();
 	const [auth] = useAuth();
 	const modals = useModals();
 
-	const TRANSLATED_TITLE = translation(HOME_TITLE);
-	useWebsiteTitle(TRANSLATED_TITLE);
+	const TITLE = translation(HOME_TITLE);
+	useWebsiteTitle(TITLE);
+	const DESCRIPTION = translation(HOME_DESCRIPTION);
+	useWebsiteDescription(DESCRIPTION);
+	const KEYWORDS = translation(HOME_KEYWORDS);
+	useWebsiteKeywords(KEYWORDS);
 
 	const HEADER = translation('page.home.header');
-	const DESCRIPTION = translation('page.home.description');
 	const SUMMARY = translation('page.home.summary');
 
 	//BMI

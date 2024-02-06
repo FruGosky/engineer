@@ -2,7 +2,8 @@
 	"translation": {
 		"common": {
 			"app-name": "DoIt-Healthy",
-			"description": "Explore the journey to weight loss and well-being with DoIt-Healthy's BMI, BMR, Calories calculators, and exercise plans",
+			"description": "Explore the journey to weight loss and well-being with DoIt-Healthy's BMI, BMR, Calories calculators, and exercise plans.",
+			"keywords": "DoIt-Healthy, Lukasz Komandzik, BMI calculator, BMR calculator, Calories calculator, Exercises, How to lose weight, How to gain weight, Well-being",
 			"login": "Login",
 			"logout": "Logout",
 			"signup": "Signup",
@@ -58,7 +59,8 @@
 			"home": {
 				"title": "Home",
 				"header": "Calculate, Track, and Stay Fit with DoIt-Healthy",
-				"description": "Welcome to DoIt-Healthy, your go-to destination for wellness simplicity. Empower your well-being with our suite of tools, including BMI and BMR calculators, a calories calculator, and tailored exercise plans for beginners and intermediates. Start your journey to a healthier lifestyle with DoIt-Healthy",
+				"description": "Explore the journey to weight loss and well-being with DoIt-Healthy's BMI, BMR, Calories calculators, and exercise plans.",
+				"keywords": "DoIt-Healthy, Lukasz Komandzik, BMI calculator, BMR calculator, Calories calculator, Exercises, How to lose weight, How to gain weight, Well-being",
 				"summary": "DoIt-Healthy is not just a website. It's your partner in the journey to a healthier you. Empower yourself with knowledge, track your progress, and make informed decisions about your well-being. Start your transformative experience today!",
 				"bmi": {
 					"title": "BMI Calculator",
@@ -79,6 +81,8 @@
 			},
 			"bmi": {
 				"title": "Bmi",
+				"description": "Easily determine your Body Mass Index (BMI) using our convenient BMI calculator. Monitor your health and track progress towards your ideal weight effortlessly.",
+				"keywords": "DoIt-Healthy, Lukasz Komandzik, BMI calculator, Body Mass Index calculator, Calculate BMI, What is my BMI, BMI range, BMI formula, BMI calculator online, BMI calculator for health",
 				"calculator": {
 					"units": "Units",
 					"imperial": "Imperial",
@@ -107,6 +111,8 @@
 			},
 			"bmr": {
 				"title": "Bmr",
+				"description": "Calculate your Basal Metabolic Rate (BMR) effortlessly with our accurate BMR calculator. Discover your calorie needs for maintaining weight or reaching fitness goals.",
+				"keywords": "DoIt-Healthy, Lukasz Komandzik, BMR calculator, Basal Metabolic Rate calculator, Calculate BMR, What is my BMR, BMR range, BMR formula, BMR calculator online",
 				"choose-physical-activity": "Choose physical activity",
 				"none-activity": "Little activity (no exercise, sedentary life)",
 				"low-activity": "Low physical activity (sedentary lifestyle, 1-2 workouts per week)",
@@ -129,6 +135,8 @@
 			},
 			"calories": {
 				"title": "Calories",
+				"description": "Easily track your daily nutritional intake with our comprehensive calories calculator. Input your meals, search our database, or add custom items to monitor carbs, protein, fat, and total calories consumed.",
+				"keywords": "DoIt-Healthy, Lukasz Komandzik, Calories calculator, Macronutrient calculator, Nutrition calculator, Calorie counter, Food tracker, Meal planner, Diet tracker, Daily calorie intake calculator",
 				"look-through-our-food-product-database": "Look through our food product database",
 				"type-name-of-the-product-here...": "Type name of the product here...",
 				"no-data-found": "No data found.",
@@ -152,6 +160,8 @@
 			},
 			"exercises": {
 				"title": "Exercises",
+				"description": "Embark on your fitness journey with our beginner to intermediate exercise plans. Explore detailed descriptions of each exercise with links to examples, ensuring proper form and technique.",
+				"keywords": "DoIt-Healthy, Lukasz Komandzik, Beginner exercises, Intermediate exercises, Workout plans, Exercise routines, How to do exercises, Workout plan, Exercise tips",
 				"main-page-card": {
 					"title": "Time to exercise",
 					"description": "Choose your skill level to go to a training plan best for you, or learn about the exercises that are used in training plans"
@@ -161,10 +171,14 @@
 					"description": "Below you will find exercises, that are used in training plans"
 				},
 				"beginners-exercises": {
-					"title": "Exercises for beginners"
+					"title": "Exercises for beginners",
+					"description": "Start your fitness journey with our tailored beginner exercises. Access simple yet effective workouts designed to introduce you to fitness routines and build a strong foundation.",
+					"keywords": "DoIt-Healthy, Lukasz Komandzik, Beginners exercises, Beginner workout routines, Beginner friendly exercises, Simple workout for beginners, Novice exercise routines, Easy exercises for beginners, Starter workout routines"
 				},
 				"intermediate-exercises": {
-					"title": "Exercises for intermediate"
+					"title": "Exercises for intermediate",
+					"description": "Elevate your workout routine with our intermediate level exercises. Dive deeper into fitness with challenging yet manageable workouts designed to push your limits and enhance your progress.",
+					"keywords": "DoIt-Healthy, Lukasz Komandzik, Intermediate exercises, Intermediate workout routines, Intermediate friendly exercises, Simple workout for intermediate, Easy exercises for intermediate"
 				},
 				"we-execute-plan-as-follows": "We execute plan as follows",
 				"monday": "Monday",
@@ -174,6 +188,8 @@
 				"saturday": "Sobota",
 				"beginners-plan": {
 					"title": "Beginners plan",
+					"description": "Kickstart your fitness journey with our structured beginner's workout plan. Follow a systematic approach to building strength, flexibility, and endurance, designed to ease you into regular exercise.",
+					"keywords": "DoIt-Healthy, Lukasz Komandzik, Beginners plan, Beginner workout plan, Starter workout plan, Novice fitness plan, Easy workout plan for beginners, Simple fitness plan for beginners, Entry level workout plan, Getting started fitness plan",
 					"women": "Women",
 					"men": "Men",
 					"training": "Training",
@@ -245,6 +261,8 @@
 				},
 				"intermediate-plan": {
 					"title": "Intermediate plan",
+					"description": "Take your fitness to the next level with our intermediate workout plan. Designed to challenge and progress, this structured program will help you advance your strength, endurance, and overall fitness.",
+					"keywords": "DoIt-Healthy, Lukasz Komandzik, Intermediate plan, Intermediate workout plan, Easy workout plan for intermediate, Simple fitness plan for intermediate, Mid level workout plan",
 					"power-fbw": "POWER FBW (full body workout) - power exercises for all major muscle parts.",
 					"hyper-low": "HYPER LOW - hypertrophy exercises for the lower body.",
 					"hyper-up": "HYPER UP - hypertrophy exercises for the upper body.",
@@ -327,9 +345,6 @@
 						"link": "https://www.youtube.com/watch?v=ezEQkeQWMPM"
 					}
 				}
-			},
-			"food": {
-				"title": "Food"
 			},
 			"profile": {
 				"title": "Profile",
