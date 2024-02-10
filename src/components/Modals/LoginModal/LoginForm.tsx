@@ -34,7 +34,6 @@ export default function LoginForm() {
 	const NO_ACCOUNT_YET = translation('common.no-account-yet');
 	const INVALID_EMAIL = translation('common.invalid-email');
 	const INVALID_PASSWORD = translation('common.invalid-password');
-	const SUCCESSFUL_LOGIN = translation('common.successful-login');
 	const UNSUCCESSFUL_LOGIN = translation('common.unsuccessful-login');
 
 	const login = async (): Promise<boolean> => {
@@ -57,10 +56,6 @@ export default function LoginForm() {
 				setEmail('');
 				setPassword('');
 				setAuth(true, response.data);
-				toast.success(`${SUCCESSFUL_LOGIN}.`, {
-					duration: 1000,
-					position: 'top-right',
-				});
 				setIsLoading(false);
 				return true;
 			})
@@ -122,13 +117,12 @@ export default function LoginForm() {
 				<div className="form-group">
 					<label className="form-label">{`Email:`}</label>
 					<input
-						className={`form-control ${
-							formErrors.enabled
+						className={`form-control ${formErrors.enabled
 								? errors.email
 									? 'is-invalid'
 									: 'is-valid'
 								: null
-						}`}
+							}`}
 						type="email"
 						required={true}
 						placeholder="email@gmail.com"
@@ -141,13 +135,12 @@ export default function LoginForm() {
 				<div className="form-group">
 					<label className="form-label">{`${PASSWORD}:`}</label>
 					<input
-						className={`form-control ${
-							formErrors.enabled
+						className={`form-control ${formErrors.enabled
 								? errors.password
 									? 'is-invalid'
 									: 'is-valid'
 								: null
-						}`}
+							}`}
 						type="password"
 						required={true}
 						placeholder="************"

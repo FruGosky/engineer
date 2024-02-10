@@ -3,7 +3,6 @@ import styles from './UserIcon.module.scss';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
-import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 import * as bootstrap from 'bootstrap';
 import { userIconPages } from '../../../../../pages/pages';
@@ -24,7 +23,6 @@ export default function UserIcon() {
 	const TOGGLE = translation('common.toggle');
 	const MENU = translation('common.menu').toLowerCase();
 	const LOGOUT = translation('common.logout');
-	const SUCCESSFUL_LOGOUT = translation('common.successful-logout');
 
 	return (
 		<div className="d-flex align-items-center gap-3">
@@ -73,10 +71,6 @@ export default function UserIcon() {
 							onClick={() => {
 								dropdown?.hide();
 								setAuth(false);
-								toast.success(`${SUCCESSFUL_LOGOUT}.`, {
-									duration: 1000,
-									position: 'top-right',
-								});
 							}}
 						>
 							{LOGOUT}
