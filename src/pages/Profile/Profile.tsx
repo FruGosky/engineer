@@ -173,7 +173,7 @@ export default function Profile() {
 
 	return (
 		<div className="d-flex align-items-center justify-content-center">
-			<div className="col-md-12 col-lg-6 col-xl-5 card">
+			<div className="col-md-12 col-lg-7 col-xl-6 col-xxl-5 card mx-0 mx-sm-2">
 				<div className="d-flex justify-content-center mb-3 ">
 					<h2>
 						{token?.displayName
