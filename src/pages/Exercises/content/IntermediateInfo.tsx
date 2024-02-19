@@ -22,7 +22,7 @@ export default function IntermediateInfo() {
 	);
 
 	return (
-		<div className="px-4 py-5 my-5 text-center">
+		<div className="px-4 pt-0 pt-sm-5 my-5 text-center">
 			<img src={dumbbell} alt="dumbbell" />
 			<h2 className="display-5 fw-bold text-body-emphasis">
 				{`${TRANSLATED_INTERMEDIATE}:`}

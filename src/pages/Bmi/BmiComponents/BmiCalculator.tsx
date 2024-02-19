@@ -173,7 +173,7 @@ export default function BmiCalculator(): JSX.Element {
 
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
-			<div className="card m-4 p-5">
+			<div className="card m-4 p-2 p-sm-5">
 				<div className="d-flex justify-content-center mb-3">
 					<h2>{T_CALCULATOR_TITLE}</h2>
 				</div>

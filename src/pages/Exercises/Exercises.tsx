@@ -68,27 +68,27 @@ export default function Exercises() {
 					<p className="lead text-center">
 						{TRANSLATED_DESCRIPTION_MAIN_PAGE}
 					</p>
-					<div className="lead">
+					<div className="lead mt-5">
 						<div className="row">
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-4">
 								<NavLink
-									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
+									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated mt-0"
 									to={EXERCISES_LINK + BEGINNERS_PLAN_LINK}
 								>
 									{TRANSLATED_PLAN_CARD_BTN1}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-4">
 								<NavLink
-									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
+									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated mt-0"
 									to={EXERCISES_LINK + INTERMEDIATE_PLAN_LINK}
 								>
 									{TRANSLATED_PLAN_CARD_BTN2}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-4">
 								<NavLink
-									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
+									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated mt-0"
 									to={
 										EXERCISES_LINK +
 										BEGINNERS_EXERCISES_LINK
@@ -99,9 +99,9 @@ export default function Exercises() {
 									}
 								</NavLink>
 							</div>
-							<div className="col-sm-6 col-md-6 col-lg-3 mb-5">
+							<div className="col-sm-6 col-md-6 col-lg-3 mb-4">
 								<NavLink
-									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated"
+									className="button btn w-100 d-flex align-items-center justify-content-center text-wrap button--white button--animated mt-0"
 									to={
 										EXERCISES_LINK +
 										INTERMEDIATE_EXERCISES_LINK

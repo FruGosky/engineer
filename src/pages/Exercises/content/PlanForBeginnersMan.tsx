@@ -48,7 +48,7 @@ export default function PlanForBeginnersMan() {
 	);
 
 	return (
-		<div className="mt-5 pt-2 pb-0 card px-0 px-sm-4">
+		<div className="m-0 m-sm-3 mt-5 pt-2 pb-0 card px-0 px-sm-4">
 			<div className="card-body px-0 px-sm-4">
 				<h2 className="text-center card-title">{TRANSLATED_MEN}</h2>
 				<table className="table table-striped table-hover text-center m-0">

@@ -250,7 +250,7 @@ export default function BmrCalculator(): JSX.Element {
 
 	return (
 		<div className="d-flex align-items-center justify-content-center flex-column">
-			<div className="card">
+			<div className="card p-2 p-sm-4">
 				<div className="d-flex justify-content-center mb-3">
 					<h2>{T_CALCULATOR_TITLE}</h2>
 				</div>
