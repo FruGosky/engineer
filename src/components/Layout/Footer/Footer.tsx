@@ -7,7 +7,7 @@ export default function Footer() {
 
 	return (
 		<div
-			className={`d-flex justify-content-center align-items-center bg-body-tertiary text-secondary h-auto`}
+			className={`d-flex justify-content-center align-items-center text-secondary h-auto`}
 		>
 			<span>{`${SITE_CREATED_BY}: ${creators.join(', ')}.`}</span>
 		</div>

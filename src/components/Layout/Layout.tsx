@@ -25,7 +25,7 @@ export default function Layout(props: IProps) {
 				</main>
 			)}
 			{footer && (
-				<footer className={`${styles.footer} fixed-bottom`}>
+				<footer className={`${styles.footer} fixed-bottom bg-body-tertiary`}>
 					{footer}
 				</footer>
 			)}
