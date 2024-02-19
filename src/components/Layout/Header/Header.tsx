@@ -9,23 +9,23 @@ export default function Header() {
 	return (
 		<div>
 			<nav className="navbar bg-body-tertiary fixed-top">
-				<div className="container-fluid flex-column flex-sm-row justify-content-around">
-					<div className="row col-12 gap-2 gap-sm-0">
-						{/* LEFT SIDE OF HEADER */}
-						<div className="d-flex align-items-center gap-3 col-12 col-sm-6 p-0">
-							<div className="col-4 col-sm-auto">
-								<Menu />
-							</div>
-							<div className="col-8  col-sm-auto">
-								<Logo />
-							</div>
+				<div className="container-fluid">
+					{/* LEFT SIDE OF HEADER */}
+					<div className="d-flex align-items-center gap-sm-3 col-8 order-0 col-sm-5">
+						<div className="col-4 col-sm-auto">
+							<Menu />
 						</div>
-						{/* RIGHT SIDE OF HEADER */}
-						<div className="d-flex align-items-center gap-3 col-12 col-sm-6 justify-content-center justify-content-sm-end p-0">
-							<ThemeSwitcher />
-							<LanguageSwitcher />
-							<UserMenu />
+						<div className="col-8 col-sm-auto">
+							<Logo />
 						</div>
+					</div>
+					{/* RIGHT SIDE OF HEADER */}
+					<div className="d-flex align-items-center justify-content-end gap-3 col-12 col-sm-5 col-xl-6 order-2 order-sm-1">
+						<ThemeSwitcher />
+						<LanguageSwitcher />
+					</div>
+					<div className='d-flex justify-content-end col-4 col-sm-auto order-1 order-sm-2 mb-2 mb-sm-0'>
+						<UserMenu />
 					</div>
 				</div>
 			</nav>

@@ -11,7 +11,7 @@ export default function Login() {
 	return (
 		<button
 			type="button"
-			className="btn btn-primary"
+			className="btn btn-primary p-2 p-md-primary"
 			onClick={() => modals.loginModal?.show()}
 		>
 			{LOGIN}

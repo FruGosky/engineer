@@ -77,7 +77,7 @@ export default function Accessory() {
 	return (
 		<div className="m-0 m-sm-3 mt-5 pt-2 pb-0 card table-responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md-4">
-				<h2 className="text-center card-title mb-3">
+				<h2 className="text-center card-title mb-4">
 					{TRANSLATED_ACCESSORY}
 				</h2>
 				<table className="table table-striped-columns text-center">
